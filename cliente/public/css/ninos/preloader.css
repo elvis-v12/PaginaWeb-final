@@ -1,0 +1,50 @@
+
+
+/* Preloader con el logo */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0077ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Apilar logo y texto verticalmente */
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+/* Logo de preloader */
+#preloader img {
+    width: 150px;
+    height: auto;
+    /* Eliminamos la animación de rotación */
+}
+
+/* Texto de Cargando estilo retro */
+.loading-text {
+    font-family: 'Press Start 2P', cursive; /* Fuente estilo retro */
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: blink 1s steps(2, start) infinite; /* Efecto parpadeante */
+}
+
+/* Efecto parpadeante para el texto */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
