@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos - GuímarBot</title>
+    <link rel="stylesheet" href="/public/css/ninos/postloader.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=One+Little+Font&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="/public/img/ninos/guimar flash.gif" alt="Logo de GuímarBot">
+        <div class="loading-text">Cargando...</div>
+    </div>
+
+    <!-- Cargar el menú -->
+    <!-- Menú -->
+    <div class="mi-menu">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links" id="menu-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="informacion.html">Acerca de</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
+            </ul>
+            <div class="login">
+                <div class="dropdown">
+                    <button class="btn-login" id="login-button">Acceder</button>
+                    <div class="dropdown-content" id="login-dropdown">
+                        <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
+                        <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
+                    </div>
+                </div>
+                <a href="pagos.html" class="btn-cart">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+                </a>
+                <!-- Icono para activar la racha -->
+                <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
+                    <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
+                    <span class="streak-number">2</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Ventana emergente para la racha -->
+    <div class="streak-popup" id="streakPopup" style="display: none;">
+        <div class="streak-header">
+            <h3>2 días de racha</h3>
+            <img src="/public/img/ninos/feliz.gif" alt="Icono de fuego" class="streak-image">
+        </div>
+        <p>¡Has alcanzado tu racha más extensa!</p>
+        <div class="streak-calendar">
+            <span class="day-circle">Dom</span>
+            <span class="day-circle">Lun</span>
+            <span class="day-circle">Mar</span>
+            <span class="day-circle">Mié</span>
+            <span class="day-circle">Jue</span>
+            <span class="day-circle">Vie</span>
+            <span class="day-circle">Sáb</span>
+        </div>
+        <button class="streak-button" onclick="startStreak()">Comenzar racha</button>
+    </div>
+
+    <!-- Ventana emergente para el cuestionario -->
+    <div class="questionnaire-popup" id="questionnairePopup" style="display: none;">
+        <div class="questionnaire-content">
+            <h2>¡Completa la racha de hoy!</h2>
+            <div class="question">
+                <p id="questionText">Pregunta 1: ¿Qué significa HTML?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(0)">Hyperlinks and Text Markup Language</button>
+                    <button onclick="checkAnswer(1)">Hyper Text Markup Language</button>
+                    <button onclick="checkAnswer(2)">Home Tool Markup Language</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente de finalización del cuestionario -->
+    <div class="completion-popup" id="completionMessage" style="display: none; text-align: center;">
+        <img class="success-image" src="/public/img/ninos/bob1.gif" alt="Imagen de éxito">
+        <h2>¡COMPLETASTE LA LECCIÓN!</h2>
+        <div>
+            <div class="exp-box">
+                <p>PUNTAJE TOTAL</p>
+                <p><strong>⚡ <span id="expPoints">100</span></strong></p>
+            </div>
+            <div class="score-box">
+                <p>¡MUY BIEN!</p>
+                <p><strong><span id="scorePercentage">100</span>%</strong></p>
+            </div>
+        </div>
+        <button class="streak-button" onclick="closeCompletionMessage()">Continuar</button>
+    </div>
+
+    <!-- Nueva ventana de "Día de Racha" -->
+    <div class="streak-popup" id="streakMessage" style="display: none;">
+        <div class="streak-icon" id="icono">
+            <img src="/public/img/ninos/fuego.png" alt="Icono de fuego" style="width: 80px; height: auto;">
+            <span class="streak-number" id="streakDayNumber">2</span>
+        </div>
+        <div class="streak-calendar">
+            <div class="day-circle">Dom</div>
+            <div class="day-circle">Lun</div>
+            <div class="day-circle">Mar</div>
+            <div class="day-circle">Mié</div>
+            <div class="day-circle">Jue</div>
+            <div class="day-circle">Vie</div>
+            <div class="day-circle">Sáb</div>
+        </div>
+        <p class="mt-4">¡Practica cada día para que tu racha no vuelva a cero!</p>
+        <div style="display: flex; gap: 10px;">
+            <button class="streak-button" onclick="closeStreakMessage()">Continuar</button>
+            <button class="streak-button" onclick="viewRanking()" data-toggle="modal"
+                data-target="#clasificacionModal">Ver mi ranking</button>
+        </div>
+    </div>
+
+    <div class="payment-container">
+        <div class="payment-form">
+            <h2>Información de Pago</h2>
+            <p>Todas las transacciones son seguras y encriptadas</p>
+
+            <form action="procesar_pago.php" method="POST">
+                <label for="metodo-pago">Selecciona un método de pago:</label>
+                <select id="metodo-pago" name="metodo-pago" onchange="cambiarMetodoPago()">
+                    <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                    <option value="efectivo">Efectivo (con DNI)</option>
+                    <option value="billetera">Billetera Digital</option>
+                </select>
+
+                <div id="form-tarjeta">
+                    <label for="nombre">Nombre titular de la tarjeta:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="tarjeta">Número de tarjeta:</label>
+                    <input type="text" id="tarjeta" name="tarjeta" required>
+
+                    <div class="payment-details">
+                        <div class="expiration">
+                            <label for="expiracion">MM / AA:</label>
+                            <input type="text" id="expiracion" name="expiracion" required>
+                        </div>
+                        <div class="cvv">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="form-efectivo" style="display: none;">
+                    <label for="dni">Número de documento de identidad:</label>
+                    <input type="text" id="dni" name="dni" required>
+                </div>
+
+                <div id="form-billetera" style="display: none;">
+                    <label for="telefono">Número de teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+
+                    <label for="codigo-aprobacion">Código de aprobación:</label>
+                    <input type="text" id="codigo-aprobacion" name="codigo-aprobacion" required>
+                </div>
+
+                <label for="cuotas">Selecciona una opción de pago:</label>
+                <select id="cuotas" name="cuotas" onchange="actualizarBoton()">
+                    <option value="1">1 Cuota de S/ 139.98 PEN</option>
+                    <option value="4">4 Cuotas sin intereses de S/ 34.99 PEN</option>
+                </select>
+
+                <button type="submit" class="submit-btn" id="pagar-btn">Pagar S/ 139.98 PEN</button>
+            </form>
+        </div>
+
+        <!-- Resumen de Compra -->
+        <div class="order-summary" id="order-summary">
+            <h2>Resumen de Compra</h2>
+            <div class="items-resumen" id="items-resumen"></div>
+            <hr>
+            <h3 id="total-resumen">Total: S/0.00</h3>
+        </div>
+    </div>
+
+    <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+    <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
+            const cssType = localStorage.getItem('cssType') || 'ninos';
+
+            // Función para cargar un archivo CSS
+            function loadCss(filePath) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = filePath;
+                document.head.appendChild(link);
+            }
+
+            // Cargar los CSS necesarios
+            const cssFiles = [
+                `/public/css/${cssType}/pagos.css`,
+                `/public/css/${cssType}/menu.css`,
+                `/public/css/${cssType}/preloader.css`,
+            ];
+
+            // Ocultar el contenido mientras se cargan los estilos
+            document.body.classList.add('hidden');
+
+            // Cargar cada CSS en el orden definido
+            cssFiles.forEach(loadCss);
+
+            // Detectar cuando el último CSS ha cargado y mostrar el contenido
+            const lastCssLink = cssFiles[cssFiles.length - 1];
+            const checkCssLoaded = () => {
+                const link = document.querySelector(`link[href='${lastCssLink}']`);
+                if (link && link.sheet) {
+                    document.body.classList.remove('hidden'); // Mostrar contenido
+                } else {
+                    setTimeout(checkCssLoaded, 50); // Reintentar hasta que el CSS esté cargado
+                }
+            };
+            checkCssLoaded();
+        });
+    </script>
+
+    <!-- Lógica de preloader -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.transition = 'opacity 0.5s ease';
+            }, 1000);
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
+        });
+    </script>
+
+    <!-- Lógica de resumen de compra -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const itemsCarrito = [
+                { nombre: 'Curso de HTML Kids', precio: 49.99 },
+                { nombre: 'Curso de Python Kids', precio: 89.99 }
+            ];
+
+            const itemsResumen = document.getElementById('items-resumen');
+            const totalResumen = document.getElementById('total-resumen');
+            let total = 0;
+
+            itemsCarrito.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item-resumen');
+                itemDiv.innerHTML = `
+                    <p>${item.nombre}</p>
+                    <p>Precio: S/${item.precio.toFixed(2)}</p>
+                    <button class="btn-eliminar" data-index="${index}">Eliminar</button>
+                `;
+                itemsResumen.appendChild(itemDiv);
+                total += item.precio;
+            });
+
+            totalResumen.textContent = `Total: S/${total.toFixed(2)}`;
+            const pagarBtn = document.getElementById('pagar-btn');
+            pagarBtn.innerHTML = `Pagar S/ ${total.toFixed(2)} PEN`;
+
+            // Función para eliminar un item
+            document.querySelectorAll('.btn-eliminar').forEach(boton => {
+                boton.addEventListener('click', function () {
+                    const index = this.getAttribute('data-index');
+                    itemsCarrito.splice(index, 1); // Eliminar del carrito
+                    itemsResumen.innerHTML = ''; // Limpiar resumen
+                    total = 0; // Reiniciar total
+
+                    // Volver a llenar el resumen
+                    itemsCarrito.forEach((item, idx) => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add('item-resumen');
+                        itemDiv.innerHTML = `
+                            <p>${item.nombre}</p>
+                            <p>Precio: S/${item.precio.toFixed(2)}</p>
+                            <button class="btn-eliminar" data-index="${idx}">Eliminar</button>
+                        `;
+                        itemsResumen.appendChild(itemDiv);
+                        total += item.precio;
+                    });
+
+                    totalResumen.textContent = `Total: S/${total.toFixed(2)}`;
+                    pagarBtn.innerHTML = `Pagar S/ ${total.toFixed(2)} PEN`;
+
+                    // Volver a añadir eventos de eliminación
+                    document.querySelectorAll('.btn-eliminar').forEach(boton => {
+                        boton.addEventListener('click', function () {
+                            const index = this.getAttribute('data-index');
+                            itemsCarrito.splice(index, 1);
+                            // Lógica de actualización...
+                        });
+                    });
+                });
+            });
+        });
+
+        function actualizarBoton() {
+            const cuotas = document.getElementById('cuotas');
+            const pagarBtn = document.getElementById('pagar-btn');
+            const total = parseFloat(document.getElementById('total-resumen').textContent.replace('Total: S/', ''));
+
+            if (cuotas.value == "4") {
+                pagarBtn.innerHTML = "Pagar 4 Cuotas de S/ " + (total / 4).toFixed(2) + " PEN";
+            } else {
+                pagarBtn.innerHTML = "Pagar S/ " + total.toFixed(2) + " PEN";
+            }
+        }
+    </script>
+
+    <script src="/src/js/menu.js"></script>
+</body>
+
+</html>

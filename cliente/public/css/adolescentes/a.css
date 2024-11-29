@@ -1,0 +1,781 @@
+* {
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+/* Estilo General */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('../imagenes/adultos4.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del encabezado */
+.header {
+    padding: 90px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+@keyframes pop-effect {
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* Escala normal al inicio y al final */
+        opacity: 1;
+        /* Totalmente visible al inicio y al final */
+    }
+
+    50% {
+        transform: scale(1.02);
+        /* Escala ligeramente hacia arriba en el medio */
+        opacity: 1;
+        /* Totalmente visible en el medio */
+    }
+}
+
+/* Títulos Estilo Baby Shark */
+.phrase {
+    text-align: center;
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 4.2rem;
+    background: none;
+
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Sombra para crear el borde grueso blanco y la curvatura */
+    text-shadow:
+        -2px -2px 0 #d2b48c,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+        6px 6px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidad */
+
+    margin-top: 20px;
+    display: block;
+}
+
+/* Estilo específico para "¡Programa tu éxito!" */
+.highlight-exito {
+    font-size: 6.5rem;
+    color: #FF4081;
+    background: url('../imagenes/textura.png') repeat;
+
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        -2px -2px 0 #778c43,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+        6px 6px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidad */
+}
+
+/* Aplicar el efecto "pop" a las letras en bucle */
+.phrase span {
+    animation: pop-effect 1s ease forwards;
+    /* Aplica la animación */
+    opacity: 0;
+    /* Comienza invisible */
+    display: inline-block;
+    /* Permite animar cada letra individualmente */
+    animation-delay: 0s;
+    /* Sin retraso para la primera letra */
+    animation-iteration-count: infinite;
+    /* Ejecuta la animación indefinidamente */
+}
+
+/* Ajustes para el logo */
+.header-image {
+    width: 400px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Contenedor del buscador */
+.search-box-container {
+    background-color: rgba(27, 26, 26, 0.7);
+    /* Fondo oscuro translúcido */
+    padding: 30px;
+    /* Espacio interno */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Sombra alrededor de la caja */
+    max-width: 80%;
+    /* Limita el ancho del contenedor */
+    margin: 40px auto;
+    /* Centra el contenedor horizontalmente */
+    text-align: center;
+    /* Centra el contenido dentro */
+}
+
+/* Ajustes para el texto dentro de la caja */
+.text-above-search {
+    text-align: center;
+    /* Centra el texto */
+    margin-bottom: 20px;
+    /* Espacio debajo del texto */
+    font-family: 'Courier Prime', monospace;
+    /* Fuente Courier Prime */
+    font-size: 1.8em;
+    /* Aumenta el tamaño de la fuente */
+    color: rgba(255, 255, 255, 0.9);
+    /* Color del texto más vibrante */
+    overflow: hidden;
+    /* Oculta el texto que no se ha escrito */
+    border-right: 3px solid rgba(255, 255, 255, 0.9);
+    /* Cursor de máquina de escribir más delgado */
+    white-space: nowrap;
+    /* Evita que el texto se divida en varias líneas */
+    width: 0;
+    /* Comienza con el ancho en 0 */
+    animation: typing 3.5s steps(40, end) 1s infinite alternate, blink-caret 0.75s step-end infinite;
+    /* Animaciones */
+}
+
+/* Animación de escritura */
+@keyframes typing {
+    from {
+        width: 0;
+        /* Comienza con el ancho en 0 */
+    }
+
+    to {
+        width: 100%;
+        /* Aumenta al 100% */
+    }
+}
+
+/* Animación del cursor parpadeante */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: rgba(255, 255, 255, 0.9);
+        /* Cursor visible */
+    }
+
+    50% {
+        border-color: transparent;
+        /* Parpadeo del cursor */
+    }
+}
+
+/* Estilo general del buscador */
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 15px;
+    border: 2px solid #d2b48c;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #FF4081;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Resultados del buscador */
+.search-results {
+    margin-top: 10px;
+    max-width: 60%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: left;
+}
+
+.search-results div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-results div:hover {
+    background-color: #f0f0f0;
+}
+
+.search-results div:last-child {
+    border-bottom: none;
+}
+
+/* Animaciones y transiciones */
+.search-bar,
+.search-results div {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Estilo general del carrusel */
+.background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.carousel {
+    position: relative;
+    width: 90%;
+    /* Ancho del carrusel */
+    max-width: 1100px;
+    /* Ancho máximo del carrusel */
+    height: 520px;
+    /* Alto fijo para el carrusel */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(224, 247, 250, 0.9);
+}
+
+/* Estilo para las diapositivas del carrusel */
+.carousel-slide {
+    display: none;
+    /* Esconde todas las diapositivas inicialmente */
+    text-align: center;
+    padding: 20px 40px;
+    /* Agrega padding a los lados (mayor margen) */
+    transition: opacity 0.6s ease;
+    /* Transición suave de desvanecimiento */
+    position: relative;
+    /* Posicionamiento relativo para animaciones */
+    height: 100%;
+    /* Asegura que las diapositivas ocupen el espacio completo */
+}
+
+.carousel-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilo para el contenido dentro de cada diapositiva */
+.carousel-content {
+    max-width: 80%;
+    /* Limita el ancho del contenido */
+    margin: 0 auto;
+    /* Centra el contenido */
+    padding: 0 20px;
+    /* Añade margen interno al contenido */
+}
+
+.carousel-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    /* Bordes redondeados para las imágenes */
+    transition: transform 0.3s ease;
+    /* Transición suave al pasar el mouse */
+}
+
+.carousel-content img:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el mouse */
+}
+
+.title-kids,
+.title-quality,
+.title-programming,
+.title-exclusive {
+    font-family: 'Bubblegum Sans', cursive;
+    color: #d2b48c;
+    font-size: 2.5rem;
+    /* Ajuste de tamaño de fuente */
+    margin-bottom: 10px;
+}
+
+.fade-text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.fade-text2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    ;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+/* Estilo para los botones del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+    /* Asegura que los botones estén sobre las diapositivas */
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Estilo general para la sección de datos */
+.main-container {
+    display: flex;
+    justify-content: center; /* centrar horizontal */
+    align-items: center; /* centrar vertical */
+    padding: 40px; /* Espaciado en la sección */
+    background-image: url('../imagenes/adultos.png'); /* Textura de burbujas */
+    background-size: cover; /* Asegúrate de que la imagen cubra el área */
+    background-position: center; /* Centra la imagen */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 0 10%; /* Reduce los bordes laterales */
+    
+    position: relative; /* Necesario para el borde decorativo */
+}
+
+.main-container::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Ajusta el borde superior */
+    left: -10px; /* Ajusta el borde izquierdo */
+    right: -10px; /* Ajusta el borde derecho */
+    bottom: -10px; /* Ajusta el borde inferior */
+    border: 10px solid #fff; /* Cambia el color según lo necesites */
+    border-radius: 25px; /* Bordes más redondeados para el borde exterior */
+    z-index: -1; /* Coloca el borde detrás del contenedor */
+    background-color: #fff; /* Color del fondo del borde para ocultar el hueco */
+}
+
+
+
+.options {
+    display: flex;
+    flex-direction: column;
+    /* Alinea las opciones en columna */
+    width: 60%;
+    /* Ancho de las opciones */
+}
+
+.title {
+    text-align: center;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 2.7rem;
+    /* Color del texto del título */
+    margin-bottom: 20px;
+    /* Espaciado inferior del título */
+
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Sombra para crear el borde grueso blanco y la curvatura */
+    text-shadow:
+        -2px -2px 0 #008080,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+        6px 6px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidad */
+
+    margin-top: 20px;
+    display: block;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    /* Alinea el icono y el texto */
+    margin: 15px 0;
+    /* Espaciado entre las opciones */
+    padding: 15px;
+    /* Espaciado interno de las opciones */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    background-color: #ffffff;
+    /* Color de fondo blanco */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    transition: transform 0.3s, background-color 0.3s;
+    /* Transiciones suaves */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el mouse */
+}
+
+.option:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el mouse */
+    background-color: #a1a1a1;
+    /* Cambia el color de fondo al pasar el mouse */
+    color: white;
+    /* Cambia el color del texto al pasar el mouse */
+}
+
+.icon {
+    width: 50px;
+    /* Ancho del icono */
+    height: 50px;
+    /* Alto del icono */
+    margin-right: 15px;
+    /* Espaciado a la derecha del icono */
+}
+
+.image-display {
+    width: 35%;
+    /* Ancho de la imagen */
+    display: flex;
+    justify-content: center;
+    /* Centra la imagen */
+    align-items: center;
+    /* Centra verticalmente */
+}
+
+#displayed-media {
+    max-width: 100%;
+    /* Ajusta el ancho máximo de la imagen */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    border-radius: 15px;
+    /* Bordes redondeados para la imagen */
+    transition: transform 0.5s;
+    /* Transición suave al mostrar la imagen */
+}
+
+/* Animación bubble para la imagen */
+@keyframes bubble {
+    0% {
+        transform: scale(1);
+        /* Tamaño normal */
+    }
+
+    50% {
+        transform: scale(1.1);
+        /* Aumenta el tamaño al 110% */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Vuelve al tamaño normal */
+    }
+}
+
+/* Aplica la animación a la imagen */
+.image-display #displayed-media {
+    animation: bubble 3s infinite ease-in-out;
+    /* Duración de 3 segundos, se repite infinitamente */
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Estilo general de la sección de planes de pago */
+.cuadro {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Para dispositivos más pequeños */
+    padding: 50px 20px;
+}
+
+/* Estilo para cada recuadro */
+.recuadro {
+    background-color: #ffffff;
+    border: 2px solid #008080;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Ancho fijo para cada plan */
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Configura el recuadro en columnas para el contenido */
+    justify-content: space-between; /* Distribuye el contenido dentro del recuadro */
+    height: 100%; /* Asegura que todos los recuadros tengan la misma altura */
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.02); /* Aumenta ligeramente el tamaño */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Efecto de hover en los recuadros */
+.recuadro:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título */
+.anual {
+    font-size: 1.5rem;
+    color: #008080;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el texto principal */
+.texto-principal {
+    font-size: 2rem;
+    color: #333;
+    margin: 15px 0;
+}
+
+/* Estilo para el precio */
+.pago {
+    font-size: 1.8rem;
+    color: #008080;
+    margin: 15px 0;
+}
+
+/* Estilo para los iconos de verificación y error */
+.check {
+    color: green;
+    margin-right: 5px;
+}
+
+.x {
+    color: red;
+    margin-right: 5px;
+}
+
+/* Estilo para el botón */
+.boton-plan {
+    background-color: #d2b48c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Empuja el botón hacia el final del recuadro */
+}
+
+/* Efecto de hover en el botón */
+.boton-plan:hover {
+    background-color: #cca067;
+}
+
+.bandera {
+    display: inline-block;
+    width: 25px; /* Tamaño del círculo */
+    height: 25px; /* Altura del círculo */
+    border-radius: 50%; /* Hace que sea un círculo */
+    background: red; /* Color de fondo rojo */
+    position: relative; /* Para posicionar la franja blanca */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.bandera::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centra la franja blanca */
+    width: 10px; /* Ancho de la franja blanca */
+    height: 25px; /* Altura de la franja blanca */
+    background: white; /* Color de la franja blanca */
+    transform: translateX(-50%); /* Centra la franja blanca */
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Cajas de redes sociales */
+.boxes {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 40px 0;
+    flex-wrap: wrap; /* Permite que las cajas se ajusten en pantallas más pequeñas */
+}
+
+/* Estilo general de cada caja */
+.box {
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.box:hover {
+    transform: translateY(-10px); /* Efecto de "levitación" al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para un efecto más destacado */
+}
+
+/* Estilo para la imagen circular */
+.circle-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imagen-redes {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que llene el contenedor */
+    transition: transform 0.3s ease;
+}
+
+.box:hover .imagen-redes {
+    transform: scale(1.1); /* Efecto de zoom en la imagen */
+}
+
+/* Estilo para los títulos y subtítulos */
+.box-title {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Bubblegum Sans', cursive; /* Fuente divertida */
+}
+
+.box-subtitle {
+    font-size: 1rem;
+    color: #666;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .box {
+        width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+    }
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Estilo general del carrusel en el pie de página */
+.image-carousel {
+    width: 100%; /* Extremo a extremo */
+    overflow: hidden; /* Ocultar las imágenes que no están en el viewport */
+    background-color: rgba(27, 26, 26, 0.7);
+    padding: 20px 0; /* Espaciado en la parte superior e inferior */
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc(200px * 26); /* Ajusta el ancho según el número de imágenes */
+    animation: scroll 30s linear infinite; /* Animación continua */
+}
+
+.carousel-container img {
+    width: 30px; /* Ajusta el ancho de las imágenes */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    margin: 0 10px; /* Espacio entre imágenes */
+    transition: transform 0.3s ease;
+}
+
+.carousel-container img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Animación que hace que el carrusel se mueva */
+@keyframes scroll {
+    from {
+        transform: translateX(0); /* Empieza desde la posición original */
+    }
+    to {
+        transform: translateX(-50%); /* Mueve a la izquierda hasta la mitad, para repetir el ciclo */
+    }
+}
+
+/* Haciendo que el carrusel sea responsivo */
+@media screen and (max-width: 768px) {
+    .carousel-container img {
+        width: 100px; /* Imágenes más pequeñas en pantallas móviles */
+    }
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Estilo del pie de página */
+.footer {
+    background-color: #333; /* Color de fondo oscuro */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Espaciado interior */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    font-family: 'Arial', sans-serif; /* Tipografía simple y limpia */
+    border-top: 2px solid #008080; /* Líneas de separación */
+    position: relative;
+}
+
+.footer p {
+    margin: 0; /* Elimina los márgenes de los párrafos */
+    line-height: 1.5; /* Espaciado de línea */
+}

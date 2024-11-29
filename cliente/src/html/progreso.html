@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Progreso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=One+Little+Font&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/ninos/preloader.css">
+    <link rel="stylesheet" href="/public/css/ninos/progreso.css">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="/public/img/ninos/guimar flash.gif" alt="Logo de GuímarBot">
+        <div class="loading-text">Cargando...</div>
+    </div>
+
+    <!-- Cargamos el menú -->
+    <div id="menu-container"></div>
+
+    <div class="container">
+        <h1>Mi Progreso : </h1>
+        <div class="stats">
+            <div class="stat">
+                <i class="fas fa-clock"></i>
+                <h3 id="learningTime">0h 0m</h3> <!-- Aquí se actualizará dinámicamente -->
+                <p>Aprendiendo</p>
+            </div>
+            <div class="stat">
+                <i class="fas fa-play-circle"></i>
+                <h3>1 clase</h3>
+                <p>Vistas</p>
+            </div>
+            <div class="stat">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>0 cursos</h3>
+                <p>Aprobados</p>
+            </div>
+            <div class="stat">
+                <i class="fas fa-trophy"></i>
+                <h3>1 punto</h3>
+                <p>Platzi Rank</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-circular">
+                <canvas id="doughnutChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script>
+        // Función para calcular horas y minutos
+        function calcularHorasYMinutos(minutosTotales) {
+            const horas = Math.floor(minutosTotales / 60);
+            const minutos = minutosTotales % 60;
+            return { horas, minutos };
+        }
+
+        // Función para actualizar el contenedor de horas aprendiendo
+        function actualizarHorasAprendiendo() {
+            const totalMinutos = barChart.data.datasets[0].data.reduce((acc, curr) => acc + curr, 0);
+            const { horas, minutos } = calcularHorasYMinutos(totalMinutos);
+            document.getElementById('learningTime').textContent = `${horas}h ${minutos}m`;
+        }
+
+        // Gráfico de barras
+        const ctxBar = document.getElementById('barChart').getContext('2d');
+        const barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['14 oct', '15 oct', '16 oct', '17 oct', '18 oct', '19 oct', '20 oct'],
+                datasets: [{
+                    label: 'minutos',
+                    data: [0, 30, 120, 0, 0, 0, 0], // Datos de minutos
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 200 // Cambié el valor máximo para ajustar a minutos
+                    }
+                }
+            },
+            // Callback después de la creación del gráfico
+            plugins: [{
+                afterDraw: () => {
+                    actualizarHorasAprendiendo(); // Actualiza las horas aprendidas cada vez que se dibuja el gráfico
+                }
+            }]
+        });
+
+        // Gráfico circular
+        const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
+        const doughnutChart = new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: {
+                labels: ['Curso Java: Básico', 'Curso HTML: Básico'], // Etiquetas de los cursos
+                datasets: [{
+                    data: [60, 40], // Porcentajes completados para cada curso
+                    backgroundColor: ['#4CAF50', '#FF9800'], // Colores para cada curso
+                }]
+            },
+            options: {
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            color: 'black'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+                actualizarMenu(); // Actualiza el menú después de cargar
+            })
+            .catch(error => console.error("Error cargando el menú:", error));
+
+        function actualizarMenu() {
+            const loginButton = document.getElementById('login-button');
+            const loginDropdown = document.getElementById('login-dropdown');
+            const userName = localStorage.getItem('userName');
+
+            if (userName) {
+                loginButton.textContent = userName;
+                loginDropdown.innerHTML = `
+            <a href="cuenta.html">Editar perfil</a>
+            <a href="clasificacion.html">Clasificación</a>
+            <a href="progreso.html">Mi progreso</a>
+            <a href="mis-cursos.html">Mis cursos</a>
+            <a href="suscripciones.html">Suscripciones</a>
+            <a href="#" id="logout-link">Cerrar sesión</a>
+        `;
+
+                // Agregar evento para cerrar sesión
+                document.getElementById('logout-link').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    cerrarSesion(); // Llama a la función de cerrar sesión
+                });
+            }
+        }
+
+        function cerrarSesion() {
+            console.log("Cerrando sesión"); // Confirma que se está cerrando sesión
+            localStorage.removeItem('userName'); // Elimina el nombre del usuario
+            window.location.href = 'inicio.html'; // Redirige a la página de inicio
+        }
+    </script>
+
+    <!-- Script para el preloader -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.transition = 'opacity 0.5s ease'; // Suaviza la desaparición
+            }, 1000); // Se acorta el tiempo a 1 segundo
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none'; // Se oculta completamente después de la transición
+            }, 1500); // Espera 1.5 segundos antes de ocultarlo completamente
+        });
+    </script>
+
+    <script src="/src/js/menu.js"></script>
+</body>
+
+</html>

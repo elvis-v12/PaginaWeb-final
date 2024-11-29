@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/ninos/postloader.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=One+Little+Font&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=One+Little+Font&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+    <title>Cursos - Learnly</title>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="/public/img/ninos/guimar flash.gif" alt="Logo de GuímarBot">
+        <div class="loading-text">Cargando...</div>
+    </div>
+
+    <!-- Cargar el menú -->
+    <!-- Menú -->
+    <div class="mi-menu">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links" id="menu-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="informacion.html">Acerca de</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
+            </ul>
+            <div class="login">
+                <div class="dropdown">
+                    <button class="btn-login" id="login-button">Acceder</button>
+                    <div class="dropdown-content" id="login-dropdown">
+                        <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
+                        <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
+                    </div>
+                </div>
+                <a href="pagos.html" class="btn-cart">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+                </a>
+                <!-- Icono para activar la racha -->
+                <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
+                    <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
+                    <span class="streak-number">2</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Ventana emergente para la racha -->
+    <div class="streak-popup" id="streakPopup" style="display: none;">
+        <div class="streak-header">
+            <h3>2 días de racha</h3>
+            <img src="/public/img/ninos/feliz.gif" alt="Icono de fuego" class="streak-image">
+        </div>
+        <p>¡Has alcanzado tu racha más extensa!</p>
+        <div class="streak-calendar">
+            <span class="day-circle">Dom</span>
+            <span class="day-circle">Lun</span>
+            <span class="day-circle">Mar</span>
+            <span class="day-circle">Mié</span>
+            <span class="day-circle">Jue</span>
+            <span class="day-circle">Vie</span>
+            <span class="day-circle">Sáb</span>
+        </div>
+        <button class="streak-button" onclick="startStreak()">Comenzar racha</button>
+    </div>
+
+    <!-- Ventana emergente para el cuestionario -->
+    <div class="questionnaire-popup" id="questionnairePopup" style="display: none;">
+        <div class="questionnaire-content">
+            <h2>¡Completa la racha de hoy!</h2>
+            <div class="question">
+                <p id="questionText">Pregunta 1: ¿Qué significa HTML?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(0)">Hyperlinks and Text Markup Language</button>
+                    <button onclick="checkAnswer(1)">Hyper Text Markup Language</button>
+                    <button onclick="checkAnswer(2)">Home Tool Markup Language</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente de finalización del cuestionario -->
+    <div class="completion-popup" id="completionMessage" style="display: none; text-align: center;">
+        <img class="success-image" src="/public/img/ninos/bob1.gif" alt="Imagen de éxito">
+        <h2>¡COMPLETASTE LA LECCIÓN!</h2>
+        <div>
+            <div class="exp-box">
+                <p>PUNTAJE TOTAL</p>
+                <p><strong>⚡ <span id="expPoints">100</span></strong></p>
+            </div>
+            <div class="score-box">
+                <p>¡MUY BIEN!</p>
+                <p><strong><span id="scorePercentage">100</span>%</strong></p>
+            </div>
+        </div>
+        <button class="streak-button" onclick="closeCompletionMessage()">Continuar</button>
+    </div>
+
+    <!-- Nueva ventana de "Día de Racha" -->
+    <div class="streak-popup" id="streakMessage" style="display: none;">
+        <div class="streak-icon" id="icono">
+            <img src="/public/img/ninos/fuego.png" alt="Icono de fuego" style="width: 80px; height: auto;">
+            <span class="streak-number" id="streakDayNumber">2</span>
+        </div>
+        <div class="streak-calendar">
+            <div class="day-circle">Dom</div>
+            <div class="day-circle">Lun</div>
+            <div class="day-circle">Mar</div>
+            <div class="day-circle">Mié</div>
+            <div class="day-circle">Jue</div>
+            <div class="day-circle">Vie</div>
+            <div class="day-circle">Sáb</div>
+        </div>
+        <p class="mt-4">¡Practica cada día para que tu racha no vuelva a cero!</p>
+        <div style="display: flex; gap: 10px;">
+            <button class="streak-button" onclick="closeStreakMessage()">Continuar</button>
+            <button class="streak-button" onclick="viewRanking()" data-toggle="modal"
+                data-target="#clasificacionModal">Ver mi ranking</button>
+        </div>
+    </div>
+
+
+    <header class="header-decorated">
+        <img src="/public/img/ninos/logo2.gif" alt="Logo de GuímarBot" class="logoCurso logo-large animated">
+        <h1 class="titulo">Cursos de Learnly</h1>
+        <p class="subtitu">¡Explora el fascinante mundo academico con nuestros cursos interactivos!</p>
+        <!-- Contenedor del Buscador -->
+        <div class="search-box-container">
+            <!-- Texto de la máquina de escribir -->
+            <div class="text-above-search">
+                ¿Qué curso te interesa aprender el día de hoy?....
+            </div>
+            <!-- Barra de búsqueda -->
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Cursos de Python, HTML, JavaScript y Arduino"
+                    id="searchBar">
+                <div class="search-results" id="results" style="display: none;"></div>
+            </div>
+        </div>
+    </header>
+
+    <div id="content">
+        <div class="info-container">
+            <!-- Cursos de Python -->
+            <a href="apartadoP1.html" class="course-card" data-course-name="python básico">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerPy.jpg" alt="Curso de Python: básico" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">🐍</i> Curso de Python: <br> Básico</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 1" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Ana G.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoP3.html" class="course-card" data-course-name="python avanzado">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerPy2.jpg" alt="Curso de Python: Avanzado" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">🐍</i> Curso de Python: <br> Avanzado</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 2" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Luis R.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoP2.html" class="course-card" data-course-name="python intermedio">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerPy3.jpg" alt="Curso de Python: Intermedio" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">🐍</i> Curso de Python: <br> Intermedio</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 3" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Marta L.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Cursos de HTML -->
+            <a href="apartadoH1.html" class="course-card" data-course-name="html básico">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerH.jpg" alt="Curso de HTML: Básico" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">🌐</i> Curso de HTML: <br> Básico</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 4" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Juan P.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoH3.html" class="course-card" data-course-name="html avanzado">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerH2.jpg" alt="Curso de HTML: Avanzado" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1> <i class="icon-class">🌐</i> Curso de HTML: <br> Avanzado</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 5" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Clara T.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoH2.html" class="course-card" data-course-name="html intermedio">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerH3.jpg" alt="Curso de HTML: Intermedio" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1> <i class="icon-class">🌐</i> Curso de HTML: <br> Intermedio</h1>
+
+
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 6" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Pedro M.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Cursos de Javascript -->
+            <a href="apartadoJ1.html" class="course-card" data-course-name="javascript básico">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerJs.jpg" alt="Curso de javascript: Básico" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Jscript: <br> Básico</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 7" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Estefany A.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoJ3.html" class="course-card" data-course-name="javascript avanzado">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerJs2.jpg" alt="Curso de javascript: Avanzado" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Jscript: <br> Avanzado</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 8" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Diego D.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoJ2.html" class="course-card" data-course-name="javascript intermedio">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerJs3.jpg" alt="Curso de javascript: Intermedio"
+                        class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Jscript: <br> Intermedio</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 9" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Oscar B.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Cursos de Cinema 4D -->
+            <a href="apartadoC1.html" class="course-card" data-course-name="cinema 4d básico">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerC1.jpg" alt="Curso de Cinema 4D: Básico" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Cinema 4D: <br> Básico</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 7" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Estefany A.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoC3.html" class="course-card" data-course-name="cinema 4d avanzado">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerC3.jpg" alt="Curso de Cinema 4D: Avanzado" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Cinema 4D: <br> Avanzado</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 8" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Diego D.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoC2.html" class="course-card" data-course-name="cinema 4d intermedio">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerC2.jpg" alt="Curso de Cinema 4D: Intermedio" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Cinema 4D: <br> Intermedio</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 9" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Oscar B.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Cursos de nODE JS-->
+            <a href="apartadoN1.html" class="course-card" data-course-name="nodejs básico">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerN.jpg" alt="Curso de Node.js : Básico" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Node.js: <br> Básico</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 7" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Estefany A.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoN2.html" class="course-card" data-course-name="nodejs avanzado">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerN2.jpg" alt="Curso de Node.js : Avanzado" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Node.js: <br> Avanzado</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 8" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Diego D.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoN3.html" class="course-card" data-course-name="nodejs intermedio">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerN3.jpg" alt="Curso de Node.js : Intermedio" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Node.js: <br> Intermedio</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 9" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Oscar B.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+
+            <!-- Cursos de SQL SERVER-->
+            <a href="apartadoS.html" class="course-card" data-course-name="sql server básico">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerS.jpg" alt="Curso de sql server: básico" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Sql Server: <br> Básico</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 7" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Estefany A.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoN2.html" class="course-card" data-course-name="sql server avanzado">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerS2.jpg" alt="Curso de sql server: avanzado" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Sql Server: <br> Avanzado</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 8" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Diego D.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoN3.html" class="course-card" data-course-name="sql server intermedio">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerS3.jpg" alt="Curso de sql server: intermedio"
+                        class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de Sql Server: <br> Intermedio</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 9" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Oscar B.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Cursos de  MYSQL -->
+            <a href="apartadoMs.html" class="course-card" data-course-name="mysql básico">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerMS.jpg" alt="Curso de mysql: Básico" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de MySql: <br> Básico</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 7" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Estefany A.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoN2.html" class="course-card" data-course-name="mysql avanzado">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerMS2.jpg" alt="Curso de mysql: avanzado" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de MySql: <br> Avanzado</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 8" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Diego D.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="apartadoN3.html" class="course-card" data-course-name="mysql intermedio">
+                <div class="image-container">
+                    <img src="/public/img/ninos/bannerMS3.jpg" alt="Curso de mysql: intermedio" class="course-image">
+                </div>
+                <div class="content-container">
+                    <h1><i class="icon-class">💻</i> Curso de MySql: <br> Intermedio</h1>
+                    <div class="instructors-list">
+                        <div class="instructor-item">
+                            <img src="/public/img/ninos/profe.png" alt="Instructor 9" class="instructor-image">
+                            <div class="instructor-info">
+                                <h3 class="instructor-name">Doc. Oscar B.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+
+        </div>
+    </div>
+
+    <script>
+        const searchBar = document.getElementById('searchBar');
+        const courseCards = document.querySelectorAll('.course-card');
+
+        searchBar.addEventListener('input', function () {
+            const query = this.value.toLowerCase();
+            console.log("Consulta actual:", query);
+
+            courseCards.forEach(card => {
+                const courseName = card.getAttribute('data-course-name');
+                if (courseName.includes(query) || query === '') {
+                    card.style.display = ''; // Muestra el curso
+                } else {
+                    card.style.display = 'none'; // Oculta el curso
+                }
+            });
+        });
+    </script>
+
+    <script src="/src/js/cursos.js"></script>
+    <script src="/src/js/menu.js"></script>
+
+    <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
+            const cssType = localStorage.getItem('cssType') || 'ninos';
+
+            // Función para cargar un archivo CSS
+            function loadCss(filePath) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = filePath;
+                document.head.appendChild(link);
+            }
+
+            // Cargar los CSS necesarios
+            const cssFiles = [
+                `/public/css/${cssType}/cursos.css`,
+                `/public/css/${cssType}/menu.css`,
+                `/public/css/${cssType}/preloader.css`,
+            ];
+
+            // Ocultar el contenido mientras se cargan los estilos
+            document.body.classList.add('hidden');
+
+            // Cargar cada CSS en el orden definido
+            cssFiles.forEach(loadCss);
+
+            // Detectar cuando el último CSS ha cargado y mostrar el contenido
+            const lastCssLink = cssFiles[cssFiles.length - 1];
+            const checkCssLoaded = () => {
+                const link = document.querySelector(`link[href='${lastCssLink}']`);
+                if (link && link.sheet) {
+                    document.body.classList.remove('hidden'); // Mostrar contenido
+                } else {
+                    setTimeout(checkCssLoaded, 50); // Reintentar hasta que el CSS esté cargado
+                }
+            };
+            checkCssLoaded();
+        });
+    </script>
+
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.transition = 'opacity 0.5s ease';
+            }, 1000);
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
+        });
+    </script>
+
+
+
+</body>
+
+</html>
