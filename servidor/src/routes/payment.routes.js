@@ -40,6 +40,10 @@ router.post('/process-payment', async (req, res) => {
                 card: { token }, // Token recibido del cliente
             },
             confirm: true, // Confirmar inmediatamente
+            automatic_payment_methods: {
+                enabled: true, // Habilitar métodos automáticos
+            },
+            return_url: 'https://tusitio.com/pago-exitoso', // URL para redirección tras el pago
         });
 
         // Responder con éxito
