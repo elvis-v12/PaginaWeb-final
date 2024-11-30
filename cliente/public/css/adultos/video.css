@@ -1,0 +1,695 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/public/img/ninos/oceano.png');
+}
+
+.header {
+    background-color: #67a9ff;
+    /* Color de fondo de la cabecera */
+    background-image: url('/public/img/ninos/burbujas.gif');
+    /* Reemplaza con la URL de tu GIF */
+    background-size: cover;
+    /* Asegura que el GIF cubra todo el área */
+    background-repeat: no-repeat;
+    /* Evita que se repita el GIF */
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* Tamaño original */
+    }
+
+    50% {
+        transform: scale(1.05);
+        /* Aumentar ligeramente el tamaño */
+    }
+}
+
+.header h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 3em;
+    /* Aumentar tamaño de la fuente */
+    animation: pulse 2s infinite;
+    /* Animación de pulso permanente */
+    font-family: 'Freckle Face', cursive;
+    color: #ffcc00;
+    /* Color de la letra (amarillo) */
+    text-shadow: 2px 2px 0 white;
+    /* Sombra blanca */
+    margin-left: 10px;
+}
+
+
+.header h1 i {
+    margin-right: 10px;
+    font-size: 1.5em;
+    color: white;
+}
+
+
+/*LINEA DE PROGRESO INICIO */
+.progress-container {
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.progress-line {
+    height: 20px;
+    /* Aumenta la altura para que sea más gruesa */
+    background-color: #808080;
+    /* Color inicial */
+    border-radius: 5px;
+    transition: width 0.4s;
+    /* Animación para el cambio de tamaño */
+}
+
+/*LINEA DE PROGRESO FIN */
+
+
+.class-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-text {
+    font-family: 'Nanum Gothic Coding', monospace;
+    margin-right: 15px;
+    font-size: 1.1em;
+    margin-left: 10px;
+}
+
+.view-button {
+    background-color: #8c980c;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    /* Ajusta el padding para hacer el botón más pequeño */
+    cursor: pointer;
+    font-size: 14px;
+    /* Tamaño de fuente ajustado */
+}
+
+/* INICIO DE PLAYLIST */
+.video-container {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    font-family: 'Freckle Face', cursive;
+}
+
+.video-and-playlist {
+    display: flex;
+    align-items: flex-start;
+    transition: margin-top 0.3s;
+}
+
+.video {
+    width: 100%;
+    height: calc(100vh - 150px);
+    transition: height 0.3s;
+}
+
+.video-and-playlist.expanded .video {
+    height: calc(100vh - 300px);
+}
+
+.video-indicator {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    /* Aumenta el espacio entre la franja y el video */
+}
+
+.indicator-item {
+    width: 15px;
+    /* Ancho de los indicadores */
+    height: 70px;
+    /* Alto de los indicadores */
+    background-color: pink;
+    /* Color por defecto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.indicator-item.active {
+    background-color: hotpink;
+    /* Color cuando el video es visto */
+}
+
+.playlist {
+    display: none;
+    /* Oculta la playlist por defecto */
+    background-color: #ffebee;
+    /* Fondo de la playlist */
+    padding: 20px;
+    /* Aumenta el padding */
+    border-radius: 5px;
+    flex-grow: 1;
+    max-width: 300px;
+    /* Limite de ancho de la lista */
+}
+
+.playlist.visible {
+    display: block;
+    /* Muestra la playlist cuando tiene la clase 'visible' */
+}
+
+.playlist-item {
+    margin-bottom: 15px;
+    /* Espacio entre items de la playlist */
+    cursor: pointer;
+    background-color: #f8bbd0;
+    /* Fondo de los items de la playlist */
+    padding: 10px;
+    /* Aumenta el espaciado interno */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    font-size: 1.2em;
+    /* Aumenta el tamaño de la fuente */
+
+}
+
+.playlist-item.active {
+    background-color: hotpink;
+    color: white;
+    font-weight: bold;
+    /* Resalta texto activo */
+}
+
+/* COMENTARIOS */
+.comentarios-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.comments-section {
+    width: 40%;
+    margin-right: 10px;
+}
+
+.comentarios-anteriores {
+    width: 55%;
+    background-color: #d3d3d3;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    height: 400px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 1px;
+    margin-left: 160px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.comment,
+.response {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.user,
+.teacher-user {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    /* Adjusted icon size */
+    height: 20px;
+    /* Adjusted icon size */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.verified {
+    color: green;
+    margin-left: 5px;
+}
+
+
+.previous-comments {
+    display: flex;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-bottom: 1px;
+}
+
+.comments-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.comments-list {
+    flex: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-right: 20px;
+    background-color: rgba(52, 152, 219, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.response-list {
+    flex: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.comment {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: rgba(52, 152, 219, 0.2);
+    border-radius: 5px;
+}
+
+.response {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.comments-title {
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 2px;
+}
+
+.comments-banner {
+    font-size: 24px;
+    padding: 13px;
+    text-align: center;
+    border: 2px solid orange;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(30) forwards;
+    font-family: 'Nanum Gothic Coding', monospace;
+    margin-left: 18px;
+    margin-top: 10px;
+    background-color: #f6d29d;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+#commentInput {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Nanum Gothic Coding', monospace;
+    margin-left: 20px;
+}
+
+.comments-display {
+    background-color: #b0b0b0;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.response {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.check-icon {
+    color: #3498db;
+    /* Color azul para el ícono */
+    margin-left: 5px;
+    /* Espacio entre el nombre y el ícono */
+    font-size: 1em;
+    /* Tamaño del ícono */
+}
+
+/* FINALIZACION */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Evita el desplazamiento */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fondo claro con opacidad */
+    background-image: url('/public/img/ninos/burbuja.jpg');
+    /* Cambia esto por la ruta de tu imagen */
+    background-size: cover;
+    overflow: hidden;
+    /* Evita el desplazamiento */
+}
+
+.modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 223, 0, 0.5), rgba(0, 191, 255, 0) 70%);
+    opacity: 0.5;
+    pointer-events: none;
+    /* Permite interactuar con los elementos del modal */
+    animation: sparkle 1.5s infinite;
+    /* Añade la animación de destellos */
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+        /* Aumenta la opacidad */
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo blanco con opacidad */
+    margin: auto;
+    /* Centra el modal vertical y horizontalmente */
+    padding: 20px;
+    /* Aumenta un poco el padding para mejor espaciamiento */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    width: 80%;
+    max-width: 600px;
+    /* Ancho máximo del modal */
+    text-align: center;
+    animation: bounce 1s;
+    /* Efecto de rebote */
+    font-family: 'Comic Neue', cursive;
+    /* Fuente animada */
+}
+
+.modal-gif {
+    width: 170px;
+    /* Tamaño del GIF */
+    height: auto;
+    /* Mantiene la proporción */
+    margin: 0 auto 10px;
+    /* Centra el GIF y añade margen inferior */
+}
+
+.modal-content h2 {
+    font-family: 'Freckle Face', cursive;
+    /* Fuente para el título */
+    font-size: 69px;
+    /* Aumenta el tamaño de la fuente del título */
+    margin: 6px 0;
+    /* Añade un margen para reducir el espacio alrededor del título */
+    background: linear-gradient(90deg, #436ccb, #7dbbeb);
+    /* Degradado */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Relleno de texto transparente para el degradado */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Sombra del texto */
+    animation: bounce 1s infinite;
+    /* Efecto de rebote permanente */
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+        /* Posición inicial */
+    }
+
+    40% {
+        transform: translateY(-15px);
+        /* Sube */
+    }
+
+    60% {
+        transform: translateY(-10px);
+        /* Baja un poco */
+    }
+}
+
+.modal-content p {
+    font-family: 'Gidugu', cursive;
+    /* Fuente para el párrafo */
+    font-size: 39px;
+    /* Tamaño de la fuente del párrafo */
+    margin: 5px 0;
+    /* Reduce el margen para juntar más el título y el párrafo */
+    color: #491057;
+    /* Color del texto del párrafo */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    /* Sombra del texto */
+    white-space: nowrap;
+    /* Evita saltos de línea */
+    overflow: hidden;
+    /* Oculta el texto que no se muestra */
+    border-right: 0.15em solid #491057;
+    /* Cursor de escritura */
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    /* Animaciones */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #491057;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+#resolve-quiz-button {
+    background-color: #97ebc1;
+    /* Color rosado */
+    color: rgb(0, 0, 0);
+    /* Color del texto */
+    padding: 15px 30px;
+    /* Espaciado interno aumentado */
+    border: none;
+    /* Sin borde */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el mouse */
+    font-size: 26px;
+    /* Aumenta el tamaño de la fuente */
+    border-radius: 12px;
+    /* Bordes más redondeados */
+    margin-top: 10px;
+    /* Margen superior */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transición suave */
+    font-family: 'Tiny5', sans-serif;
+    /* Cambia el tipo de letra a Verdana */
+}
+
+#resolve-quiz-button:hover {
+    background-color: #509761;
+    /* Color rosado más oscuro al pasar el mouse */
+    transform: scale(1.05);
+    /* Efecto de crecimiento al pasar el mouse */
+}
+
+#resolve-quiz-button:active {
+    background-color: #ceeafe;
+    /* Color rosado más oscuro al hacer clic */
+    transform: scale(0.95);
+    /* Efecto de contracción al hacer clic */
+}
+
+.playlist-item.disabled {
+    pointer-events: none;
+    /* Prevenir eventos de clic */
+    opacity: 0.5;
+    /* Cambiar opacidad */
+}
+
+/* */
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+        /* Ajusta el tamaño de la fuente */
+        text-align: center;
+        /* Centra el texto */
+        margin-left: 0;
+        /* Elimina el margen */
+    }
+
+    .video {
+        height: 200px;
+        /* Ajusta la altura del video */
+    }
+
+    .comentarios-container {
+        flex-direction: column;
+        /* Apila los comentarios y respuestas en lugar de mostrarlos uno al lado del otro */
+        align-items: center;
+        /* Centra el contenido */
+    }
+
+    .comments-section,
+    .comentarios-anteriores {
+        width: 100%;
+        /* Haz que ocupen todo el ancho */
+        margin: 10px 0;
+        /* Añade margen entre las secciones */
+    }
+
+    .modal-content {
+        width: 95%;
+        /* Ajusta el ancho del modal en pantallas pequeñas */
+    }
+
+    .class-info {
+        flex-direction: column;
+        /* Coloca los elementos en una columna */
+        align-items: flex-start;
+        /* Alinea a la izquierda */
+    }
+
+    .view-button {
+        width: 100%;
+        /* Botón de ancho completo */
+        margin-top: 10px;
+        /* Añade margen superior */
+    }
+
+    .playlist-item {
+        font-size: 1em;
+        /* Ajusta el tamaño de la fuente en la playlist */
+        padding: 5px;
+        /* Reduce el padding */
+    }
+
+    .modal-content h2 {
+        font-size: 2em;
+        /* Reduce el tamaño de la fuente del título en el modal */
+    }
+
+    .modal-content p {
+        font-size: 1em;
+        /* Ajusta el tamaño del párrafo */
+    }
+
+    .btn {
+        margin-left: 0;
+        width: 100%;
+        /* Botón de ancho completo */
+        text-align: center;
+        /* Centra el texto del botón */
+    }
+}

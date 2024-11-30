@@ -6,7 +6,7 @@
 html,
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/adultos/adultos4.png') no-repeat center center fixed;
+    background: #c99e8f;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -22,7 +22,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
+    background: #d6d0cd;
+    /*esto no deberia esta acá*/
     /* Mantiene la altura completa */
 }
 
@@ -38,8 +40,8 @@ body {
     margin-top: 80px;
     font-size: 4rem;
     font-weight: bold;
-    color: #FFD700;
-    text-shadow: 3px 3px 0px #ffffff;
+    color: rgb(13, 29, 41);
+    text-shadow: 3px 3px 0px #4ca4b9;
     position: fixed;
     left: 0;
     width: 100%;
@@ -74,7 +76,7 @@ body {
 
 
 .water-stain {
-    background-color: rgba(255, 20, 145, 0.623);
+    background-color: rgb(8, 64, 104);
     width: 750px;
     height: 500px;
     border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
@@ -208,7 +210,7 @@ body {
 }
 
 .button-primary {
-    background-color: #6aa7f6;
+    background-color: #35b10f;
     font-size: 18px;
     color: white;
     border: none;
@@ -230,7 +232,7 @@ body {
 }
 
 .button-primary:hover {
-    background-color: #206da7;
+    background-color: #2b8012;
 }
 
 .button-primary svg {
@@ -258,22 +260,24 @@ body {
 /* SEGUNDO APARTADO NUEVO - TEMARIO */
 
 .temario {
-    background-color: #7AD9FF;
-    color: white;
-    border-radius: 8px;
+    border-top: 1px solid black;
+    background: #d6d0cd;
     padding: 1.5em;
 }
 
-.temario h2{
+.temario h2 {
     margin-top: 35px;
     font-family: 'Rammetto One', sans-serif;
     font-size: 2.7em;
-    color: rgb(213, 231, 252); /* Color azul */
-    text-shadow: 2px 5px 0 rgb(80, 143, 219); /* Sombra sólida */
+    color: rgb(0, 0, 0);
+    /* Color azul */
+    text-shadow: 2px 5px 0 rgb(84, 180, 204);
+    /* Sombra sólida */
     text-align: center;
     margin-left: 10px;
     margin-bottom: 20px;
-    animation: reboteFrente 2s ease-in-out infinite; /* Llama a la animación */
+
+    /* Llama a la animación */
 }
 
 .temario-div {
@@ -286,7 +290,7 @@ body {
 /* Estilo personalizado para los videos */
 /* Contenedor general */
 .contenedor-recursos {
-    background-color: #7ed7ff;
+    background-color: #d8771d;
     /* Fondo del contenedor principal */
     padding: 20px;
     border-radius: 10px;
@@ -308,7 +312,7 @@ body {
 
 /* Tarjeta de curso */
 .content-card {
-    background-color: #37748a;
+    background-color: #85a4af;
     /* Fondo de cada tarjeta */
     padding: 20px;
     margin: 10px;
@@ -319,7 +323,7 @@ body {
     gap: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     /* Sombra */
-    color: #ffef6f;
+    color: #161615;
     /* Color del texto */
     font-family: Arial, sans-serif;
 }
@@ -412,10 +416,9 @@ button:hover {
 }
 
 .contenedor-requisitos {
-    background-color: #cc6dc9c9;
+    background-color: rgb(48, 109, 153);
     padding: 10px;
     /* Espaciado interno para que los elementos no estén pegados al borde */
-    border: 2px solid #84377e;
     /* Borde negro */
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     /* Sombra */
@@ -459,8 +462,7 @@ button:hover {
     text-align: center;
     margin-left: 10px;
     margin-bottom: 20px;
-    animation: reboteFrente 2s ease-in-out infinite;
-    /* Llama a la animación */
+
 }
 
 @keyframes reboteFrente {
@@ -525,7 +527,6 @@ button:hover {
 }
 
 .info-box {
-    border: 2px solid #84377e;
     /* Borde negro */
     padding: 15px;
     /* Espacio interno */
@@ -533,9 +534,8 @@ button:hover {
     /* Esquinas redondeadas */
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     /* Sombra */
-    background-color: #cc6dc9c9;
-    animation: agarrarCaja 6s ease-in-out infinite;
-    /* Llama a la animación */
+    background-color: rgb(48, 109, 153);
+
 }
 
 @keyframes agarrarCaja {
@@ -591,7 +591,6 @@ button:hover {
 .textito1 {
     font-family: 'Satisfy', cursive;
     font-size: 2rem;
-    color: #ffe0fc;
 }
 
 .temario-iz h3 {

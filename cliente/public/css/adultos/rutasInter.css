@@ -1,0 +1,528 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #b2b7bb;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.search-input {
+  width: 1000px;
+  /* Aumentar el ancho */
+  padding: 10px;
+  /* Más espaciado interno */
+  border: none;
+  border-radius: 20px;
+  /* Bordes más redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra sutil */
+  outline: none;
+  font-size: 14px;
+}
+
+#placeholder-text {
+  animation: typewriter 2s steps(20) infinite normal;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s;
+  /* Transición para el ancho */
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 900px;
+    /* Ancho completo del input */
+  }
+}
+
+.search-button {
+  background-color: transparent;
+  /* Quitar color de fondo */
+  border: none;
+  margin-left: 10px;
+  /* Separar el botón del campo de búsqueda */
+  cursor: pointer;
+}
+
+.search-button i {
+  color: #39a9ff;
+  /* Color del ícono */
+  font-size: 18px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: left;
+  display: flex;
+  justify-content: left;
+}
+
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  /* Bordes redondeados como en Google */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  /* Sombra ligera */
+}
+
+.search-results {
+  position: absolute;
+  top: 80px;
+  /* Ajusta para alinear con el campo de búsqueda */
+  width: 60%;
+  /* Se asegura de que los resultados tengan el mismo ancho que el buscador */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0 0 10px 10px;
+  /* Bordes redondeados solo en la parte inferior */
+  max-height: 100px;
+  /* Limitar la altura de los resultados */
+  overflow-y: auto;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra para que resalten los resultados */
+}
+
+.search-results div {
+  padding: 8px 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  /* Hacer el texto más pequeño */
+  color: #555;
+  /* Color gris */
+}
+
+.search-results div:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+    /* Comienza en su posición original */
+  }
+
+  40% {
+    transform: translateY(-20px);
+    /* Rebote hacia arriba */
+  }
+
+  60% {
+    transform: translateY(-10px);
+    /* Rebote menor hacia arriba */
+  }
+}
+
+.content {
+  background-color: rgba(206, 153, 73, 0.979);
+  padding: 40px;
+  border-radius: 12px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 5px;
+  /* Agrega margen superior para acercarlo al buscador */
+
+  /* Agrega la animación de rebote */
+  animation: bounce 1.5s ease infinite;
+  /* Duración 1.5s y repetición infinita */
+}
+
+
+.header {
+  margin-bottom: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    color: #ffffff;
+  }
+
+  50% {
+    color: #fec2ff90;
+    /* Cambia el color a amarillo */
+  }
+
+  100% {
+    color: #ffffff;
+  }
+}
+
+.ruta-title {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0;
+  animation: pulse 1.5s infinite;
+  /* Aplica la animación de pulso */
+}
+
+
+.gif-container {
+  width: 300px;
+  height: 300px;
+}
+
+.gif {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 4.7rem;
+  margin: 0;
+  font-family: 'Spicy Rice', cursive;
+  color: #2b2922;
+}
+
+.description {
+  font-size: 18px;
+  margin-bottom: 18px;
+  color: #ffe7f5;
+}
+
+.start-button {
+  background-color: #3c9419;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-button i {
+  margin-right: 10px;
+}
+
+.start-button span {
+  margin-left: 5px;
+}
+
+.start-button:hover {
+  background-color: #0685b0;
+}
+
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-20px);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+
+  80% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  padding: 40px 20px;
+  text-align: left;
+  position: relative;
+  top: 22px;
+  bottom: 22px;
+  border-top: 1px solid black;
+
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  bottom: -22px;
+  border-radius: 25px;
+  z-index: -1;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer h2 {
+  font-size: 34px;
+  font-weight: bold;
+  color: #dfb65d;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Coiny', cursive;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.next-steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-step-item:hover {
+  transform: translateY(-10px);
+  /* Eleva el elemento al pasar el cursor */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  /* Sombra para un efecto de profundidad */
+}
+
+.next-step-item {
+  background-color: rgba(39, 109, 150, 0.82);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: left;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.course-icon {
+  margin-right: 20px;
+}
+
+.course-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.course-info h3 {
+  font-size: 18px;
+  margin-top: 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.course-info p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.circular-logo {
+  width: 30px;
+  /* Ajusta el tamaño del logo */
+  height: 30px;
+  border-radius: 50%;
+  /* Hace que la imagen tenga forma circular */
+  object-fit: cover;
+  /* Asegura que la imagen se ajuste bien al círculo */
+  filter: brightness(0) invert(1);
+  /* Cambia los colores a blanco */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  /* Transición suave */
+}
+
+.next-step-item:hover .circular-logo {
+  transform: scale(1.2);
+  /* Aumenta el tamaño de la imagen al pasar el cursor */
+  filter: brightness(1) invert(1);
+  /* Cambia el brillo de la imagen al pasar el cursor */
+}
+
+
+
+.info-container {
+  background-color: #f1f1f1b7;
+  border-radius: 20px;
+  padding: 0;
+  width: 60%;
+  /* Mantener el 60% */
+  max-width: 400px;
+  /* Cambiado a 300px */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  animation: bounce 1.5s ease infinite;
+  /* Duración 1.5s y repetición infinita */
+}
+
+.image-container {
+  flex-basis: 50%;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: relative;
+}
+
+.course-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  /* Reducido a 30px */
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.content-container {
+  flex-basis: 50%;
+  padding: 10px;
+  /* Reducido a 10px */
+}
+
+
+.course-details {
+  display: flex;
+  justify-content: left;
+  margin-top: 5px;
+  /* Reducido a 5px */
+  font-size: 12px;
+  /* Reducido a 12px */
+  border-top: 2px solid #a5aeb6;
+  border-bottom: 2px solid #a5aeb6;
+  padding: 5px 0;
+  /* Reducido a 5px */
+}
+
+.course-link {
+  text-decoration: none;
+  color: #e1e7e9;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  /* Reducido a 5px */
+}
+
+.detail-item i {
+  margin-right: 5px;
+}
+
+.content-container h2 {
+  text-align: left;
+  color: #82b0c1;
+  font-size: 18px;
+}
+
+.content-container h1 {
+  font-family: 'Concert One', cursive;
+  align-items: left;
+  font-size: 26px;
+  /* Reducido a 24px */
+  color: #58d8ff;
+  margin-left: 10px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente el ícono y el texto */
+  margin: 0 10px;
+  /* Espaciado lateral */
+  color: #82b0c1;
+}
+
+.detail-item i {
+  margin-right: 5px;
+  /* Espacio entre el ícono y el texto */
+  font-size: 12px;
+  /* Tamaño del ícono */
+  color: #6b99aa;
+}
+
+.instructors-list {
+  display: flex;
+  justify-content: center;
+  /* Centra la lista de instructores */
+  flex-wrap: wrap;
+  /* Permite que los instructores se envuelvan en varias líneas */
+  margin-top: 10px;
+  /* Espacio superior */
+}
+
+.instructor-item {
+  text-align: center;
+  /* Centra el texto */
+  margin: 5px;
+  /* Espacio entre los instructores */
+}
+
+.instructor-image {
+  width: 30px;
+  /* Ancho de la imagen */
+  height: 30px;
+  /* Alto de la imagen */
+  border-radius: 50%;
+  /* Hace que la imagen sea redonda */
+  object-fit: cover;
+  /* Asegura que la imagen mantenga su proporción */
+}
+
+.instructor-name {
+  margin-top: 2px;
+  /* Espacio superior del nombre */
+  font-size: 12px;
+  /* Ajusta el tamaño de fuente del nombre */
+  color: #6b99aa;
+  ;
+}

@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/ninos/preloader.css">
-    <link rel="stylesheet" href="/public/css/ninos/cuenta.css">
+    <link rel="stylesheet" href="/public/css/adultos/preloader.css">
+    <link rel="stylesheet" href="/public/css/adultos/cuenta.css">
+
 </head>
 
 <body>
@@ -20,7 +21,43 @@
         <div class="loading-text">Cargando...</div>
     </div>
 
-    <!-- Cargamos el menú -->
+    <div class="mi-menu">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links" id="menu-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="informacion.html">Acerca de</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
+            </ul>
+            <div class="login">
+                <div class="dropdown">
+                    <button class="btn-login" id="login-button">Acceder</button>
+                    <div class="dropdown-content" id="login-dropdown">
+                        <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
+                        <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
+                    </div>
+                </div>
+                <a href="pagos.html" class="btn-cart">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+                </a>
+                <!-- Icono para activar la racha -->
+                <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
+                    <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
+                    <span class="streak-number">2</span>
+                </div>
+            </div>
+        </nav>
+    </div>
     <div id="menu-container"></div>
 
     <div class="contenedor-ajustes-cuenta">
@@ -138,44 +175,64 @@
     </div>
 
     <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
-                actualizarMenu(); // Actualiza el menú después de cargar
-            })
-            .catch(error => console.error("Error cargando el menú:", error));
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
+            const cssType = localStorage.getItem('cssType') || 'adultos';          /*Cambiar a*/
 
-        function actualizarMenu() {
-            const loginButton = document.getElementById('login-button');
-            const loginDropdown = document.getElementById('login-dropdown');
-            const userName = localStorage.getItem('userName');
-
-            if (userName) {
-                loginButton.textContent = userName;
-                loginDropdown.innerHTML = `
-            <a href="cuenta.html">Editar perfil</a>
-            <a href="clasificacion.html">Clasificación</a>
-            <a href="progreso.html">Mi progreso</a>
-            <a href="mis-cursos.html">Mis cursos</a>
-            <a href="suscripciones.html">Suscripciones</a>
-            <a href="#" id="logout-link">Cerrar sesión</a>
-        `;
-
-                // Agregar evento para cerrar sesión
-                document.getElementById('logout-link').addEventListener('click', (e) => {
-                    e.preventDefault();
-                    cerrarSesion(); // Llama a la función de cerrar sesión
-                });
+            // Función para cargar un archivo CSS
+            function loadCss(filePath) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = filePath;
+                document.head.appendChild(link);
             }
-        }
 
-        function cerrarSesion() {
-            console.log("Cerrando sesión"); // Confirma que se está cerrando sesión
-            localStorage.removeItem('userName'); // Elimina el nombre del usuario
-            window.location.href = 'inicio.html'; // Redirige a la página de inicio
-        }
+            // Cargar los CSS necesarios
+            const cssFiles = [
+                `/public/css/${cssType}/cuenta.css`,
+                `/public/css/${cssType}/menu.css`,
+                `/public/css/${cssType}/preloader.css`,
+            ];
+
+            // Ocultar el contenido mientras se cargan los estilos
+            document.body.classList.add('hidden');
+
+            // Cargar cada CSS en el orden definido
+            cssFiles.forEach(loadCss);
+
+            // Detectar cuando el último CSS ha cargado y mostrar el contenido
+            const lastCssLink = cssFiles[cssFiles.length - 1];
+            const checkCssLoaded = () => {
+                const link = document.querySelector(`link[href='${lastCssLink}']`);
+                if (link && link.sheet) {
+                    document.body.classList.remove('hidden'); // Mostrar contenido
+                } else {
+                    setTimeout(checkCssLoaded, 50); // Reintentar hasta que el CSS esté cargado
+                }
+            };
+            checkCssLoaded();
+        });
     </script>
 
     <!-- Script para el preloader -->

@@ -1,95 +1,145 @@
 /* Estilo General del Login */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('../imagenes/adultos2.png') no-repeat center center fixed;
-    background-size: cover;
+
+    background: #bdaaa4;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la ventana */
+    height: 100vh;
+    /* Ocupa toda la altura de la ventana */
 }
 
 .container {
-    max-width: 400px; /* Ancho máximo */
-    padding: 40px; /* Disminuido el padding para reducir espacio */
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
-    text-align: center; /* Centrar texto */
+    max-width: 400px;
+    /* Ancho máximo */
+    padding: 40px;
+    /* Disminuido el padding para reducir espacio */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo blanco translúcido */
+    border-radius: 15px;
+    /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra */
+    text-align: center;
+    /* Centrar texto */
 }
 
 .logo {
-    width: 120px; /* Ajusta el tamaño del logo */
-    margin-bottom: 10px; /* Reduce el espacio inferior */
+    width: 120px;
+    /* Ajusta el tamaño del logo */
+    margin-bottom: 10px;
+    /* Reduce el espacio inferior */
 }
 
 .titulo-login {
-    font-family: 'Fredoka One', sans-serif; /* Fuente redondeada */
-    font-size: 2.5rem; /* Tamaño del título reducido */
-    color: #008080; /* Color del texto */
-    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2); /* Sombra del texto */
-    margin-bottom: 20px; /* Reduce el espacio inferior */
+    font-family: 'Fredoka One', sans-serif;
+    /* Fuente redondeada */
+    font-size: 2.5rem;
+    /* Tamaño del título reducido */
+    color: #112a6e;
+    /* Color del texto */
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra del texto */
+    margin-bottom: 20px;
+    /* Reduce el espacio inferior */
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"],
-input[type="date"] { /* Añadido input[type="date"] */
-    width: calc(100% - 20px); /* Ancho igual al botón menos el padding */
-    padding: 10px; /* Espaciado interno */
-    margin-bottom: 15px; /* Reduce el espacio inferior */
-    border: 2px solid #d2b48c; /* Borde */
-    border-radius: 5px; /* Bordes redondeados */
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
-    font-size: 1rem; /* Tamaño de la fuente */
-    color: #333; /* Color del texto */
-    display: block; /* Para centrar mejor */
-    margin-left: auto; /* Para centrar el input */
-    margin-right: auto; /* Para centrar el input */
+input[type="date"] {
+    /* Añadido input[type="date"] */
+    width: calc(100% - 20px);
+    /* Ancho igual al botón menos el padding */
+    padding: 10px;
+    /* Espaciado interno */
+    margin-bottom: 15px;
+    /* Reduce el espacio inferior */
+    border: 2px solid #112a6e;
+    /* Borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo blanco translúcido */
+    font-size: 1rem;
+    /* Tamaño de la fuente */
+    color: #333;
+    /* Color del texto */
+    display: block;
+    /* Para centrar mejor */
+    margin-left: auto;
+    /* Para centrar el input */
+    margin-right: auto;
+    /* Para centrar el input */
 }
 
 /* Estilos específicos para el input de fecha */
 input[type="date"] {
-    background-image: url('../imagenes/calendario-icono.png'); /* Icono de calendario */
+    background-image: url('../imagenes/calendario-icono.png');
+    /* Icono de calendario */
     background-repeat: no-repeat;
-    background-position: right 10px center; /* Ajusta la posición del icono */
-    background-size: 20px; /* Tamaño del icono */
+    background-position: right 10px center;
+    /* Ajusta la posición del icono */
+    background-size: 20px;
+    /* Tamaño del icono */
 }
 
 /* Botones */
 .btn-enviar {
     display: block;
-    width: 100%; /* Ancho completo */
-    padding: 15px; /* Espaciado interno */
-    background-color: #d2b48c; /* Color del botón */
-    color: white; /* Color del texto */
-    font-size: 1.3rem; /* Tamaño de la fuente ligeramente reducido */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor */
-    transition: background-color 0.3s ease; /* Transición del color */
+    width: 100%;
+    /* Ancho completo */
+    padding: 15px;
+    /* Espaciado interno */
+    background-color: #112a6e;
+    /* Color del botón */
+    color: white;
+    /* Color del texto */
+    font-size: 1.3rem;
+    /* Tamaño de la fuente ligeramente reducido */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor */
+    transition: background-color 0.3s ease;
+    /* Transición del color */
 }
 
 .btn-enviar:hover {
-    background-color: #ad8058; /* Color al pasar el mouse */
-    transform: scale(1.05); /* Escalar un poco */
+    background-color: #168368;
+    /* Color al pasar el mouse */
+    transform: scale(1.05);
+    /* Escalar un poco */
 }
 
 .btn-regresar {
-    margin-top: 15px; /* Disminuye el espacio superior */
-    background-color: transparent; /* Fondo transparente */
-    border: 2px solid #d2b48c; /* Borde */
-    color: #d2b48c; /* Color del texto */
-    padding: 10px 20px; /* Espaciado */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones */
+    margin-top: 15px;
+    /* Disminuye el espacio superior */
+    background-color: transparent;
+    /* Fondo transparente */
+    border: 2px solid #112a6e;
+    /* Borde */
+    color: #112a6e;
+    /* Color del texto */
+    padding: 10px 20px;
+    /* Espaciado */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transiciones */
 }
 
 .btn-regresar:hover {
-    background-color: #e4b154; /* Color de fondo al pasar el mouse */
-    color: white; /* Color del texto al pasar el mouse */
+    background-color: #19729b;
+    /* Color de fondo al pasar el mouse */
+    color: white;
+    /* Color del texto al pasar el mouse */
 }

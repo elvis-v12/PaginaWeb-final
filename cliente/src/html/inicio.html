@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learnly</title>
-    <link rel="stylesheet" href="/public/css/ninos/postloader.css">
+    <link rel="stylesheet" href="/public/css/adultos/inicio.css">
+    <link rel="stylesheet" href="/public/css/adultos/menu.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -142,7 +143,8 @@
         <p class="mt-4">¡Practica cada día para que tu racha no vuelva a cero!</p>
         <div style="display: flex; gap: 10px;">
             <button class="streak-button" onclick="closeStreakMessage()">Continuar</button>
-            <button class="streak-button" onclick="viewRanking()" data-toggle="modal" data-target="#clasificacionModal">Ver mi ranking</button>
+            <button class="streak-button" onclick="viewRanking()" data-toggle="modal"
+                data-target="#clasificacionModal">Ver mi ranking</button>
         </div>
     </div>
 
@@ -386,7 +388,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
-            const cssType = localStorage.getItem('cssType') || 'ninos';
+            const cssType = localStorage.getItem('cssType') || 'adultos';
 
             // Función para cargar un archivo CSS
             function loadCss(filePath) {

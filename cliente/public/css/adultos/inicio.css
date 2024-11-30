@@ -1,14 +1,17 @@
 body.hidden {
-    display: none;  /* Oculta todo el contenido hasta que el CSS se cargue */
+    display: none;
+    /* Oculta todo el contenido hasta que el CSS se cargue */
 }
 
 * {
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    box-sizing: border-box;
+    /* Incluye el padding y el borde en el ancho total */
 }
+
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/adultos/adultos4.png') no-repeat center center fixed;
+    background: #d6d0cd;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -108,14 +111,16 @@ body {
 
 /* Ajustes para el logo */
 .imagen-fondo {
-    width: 550px; /* Ancho del contenedor */
-    height: 350px; /* Altura del contenedor */
-    margin-left: 10px; 
-    
+    width: 550px;
+    /* Ancho del contenedor */
+    height: 350px;
+    /* Altura del contenedor */
+    margin-left: 10px;
+
     background-image: url('/public/img/adultos/logocafe.gif');
-    background-size: contain; 
-    background-repeat: no-repeat; 
-    background-position: center; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -282,6 +287,7 @@ body {
 /* Estilo para las diapositivas del carrusel */
 .carousel-slide {
     display: none;
+    background-color: #c08066;
     /* Esconde todas las diapositivas inicialmente */
     text-align: center;
     padding: 20px 40px;
@@ -314,8 +320,10 @@ body {
     height: auto;
     margin-bottom: 15px;
     border-radius: 10px;
-    width: 350px; /* Ancho del contenedor */
-    height: 250px; /* Altura del contenedor */
+    width: 350px;
+    /* Ancho del contenedor */
+    height: 250px;
+    /* Altura del contenedor */
     /* Bordes redondeados para las imágenes */
     transition: transform 0.3s ease;
     /* Transición suave al pasar el mouse */
@@ -331,7 +339,7 @@ body {
 .title-programming,
 .title-exclusive {
     font-family: 'Bubblegum Sans', cursive;
-    color: #778c43;
+    color: #1b1b19;
     font-size: 2.5rem;
     /* Ajuste de tamaño de fuente */
     margin-bottom: 10px;
@@ -398,30 +406,48 @@ body {
 /* Estilo general para la sección de datos */
 .main-container {
     display: flex;
-    justify-content: center; /* centrar horizontal */
-    align-items: center; /* centrar vertical */
-    padding: 40px; /* Espaciado en la sección */
-    background-image: url('/public/img/adultos/adultos3.png'); /* Textura de burbujas */
-    background-size: cover; /* Asegúrate de que la imagen cubra el área */
-    background-position: center; /* Centra la imagen */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin: 0 10%; /* Reduce los bordes laterales */
-    
-    position: relative; /* Necesario para el borde decorativo */
+    justify-content: center;
+    /* centrar horizontal */
+    align-items: center;
+    /* centrar vertical */
+    padding: 40px;
+    /* Espaciado en la sección */
+    background-color: #96b383;
+    /* Textura de burbujas */
+    background-size: cover;
+    /* Asegúrate de que la imagen cubra el área */
+    background-position: center;
+    /* Centra la imagen */
+    border-radius: 15px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    margin: 0 10%;
+    /* Reduce los bordes laterales */
+
+    position: relative;
+    /* Necesario para el borde decorativo */
 }
 
 .main-container::before {
     content: '';
     position: absolute;
-    top: -10px; /* Ajusta el borde superior */
-    left: -10px; /* Ajusta el borde izquierdo */
-    right: -10px; /* Ajusta el borde derecho */
-    bottom: -10px; /* Ajusta el borde inferior */
-    border: 10px solid #fff; /* Cambia el color según lo necesites */
-    border-radius: 25px; /* Bordes más redondeados para el borde exterior */
-    z-index: -1; /* Coloca el borde detrás del contenedor */
-    background-color: #fff; /* Color del fondo del borde para ocultar el hueco */
+    top: -10px;
+    /* Ajusta el borde superior */
+    left: -10px;
+    /* Ajusta el borde izquierdo */
+    right: -10px;
+    /* Ajusta el borde derecho */
+    bottom: -10px;
+    /* Ajusta el borde inferior */
+    border: 10px solid #fff;
+    /* Cambia el color según lo necesites */
+    border-radius: 25px;
+    /* Bordes más redondeados para el borde exterior */
+    z-index: -1;
+    /* Coloca el borde detrás del contenedor */
+    background-color: #fff;
+    /* Color del fondo del borde para ocultar el hueco */
 }
 
 
@@ -524,7 +550,8 @@ body {
 .cuadro {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Para dispositivos más pequeños */
+    flex-wrap: wrap;
+    /* Para dispositivos más pequeños */
     padding: 50px 20px;
 }
 
@@ -534,14 +561,18 @@ body {
     border: 2px solid #778c43;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Ancho fijo para cada plan */
+    width: 300px;
+    /* Ancho fijo para cada plan */
     padding: 20px;
     margin: 20px;
     text-align: center;
     display: flex;
-    flex-direction: column; /* Configura el recuadro en columnas para el contenido */
-    justify-content: space-between; /* Distribuye el contenido dentro del recuadro */
-    height: 100%; /* Asegura que todos los recuadros tengan la misma altura */
+    flex-direction: column;
+    /* Configura el recuadro en columnas para el contenido */
+    justify-content: space-between;
+    /* Distribuye el contenido dentro del recuadro */
+    height: 100%;
+    /* Asegura que todos los recuadros tengan la misma altura */
     transition: transform 0.3s, box-shadow 0.3s;
     animation: pulse 2s infinite;
 }
@@ -551,10 +582,14 @@ body {
         transform: scale(1);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
+
     50% {
-        transform: scale(1.02); /* Aumenta ligeramente el tamaño */
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+        transform: scale(1.02);
+        /* Aumenta ligeramente el tamaño */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        /* Sombra más intensa */
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -609,7 +644,8 @@ body {
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: auto; /* Empuja el botón hacia el final del recuadro */
+    margin-top: auto;
+    /* Empuja el botón hacia el final del recuadro */
 }
 
 /* Efecto de hover en el botón */
@@ -619,23 +655,34 @@ body {
 
 .bandera {
     display: inline-block;
-    width: 25px; /* Tamaño del círculo */
-    height: 25px; /* Altura del círculo */
-    border-radius: 50%; /* Hace que sea un círculo */
-    background: red; /* Color de fondo rojo */
-    position: relative; /* Para posicionar la franja blanca */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    width: 25px;
+    /* Tamaño del círculo */
+    height: 25px;
+    /* Altura del círculo */
+    border-radius: 50%;
+    /* Hace que sea un círculo */
+    background: red;
+    /* Color de fondo rojo */
+    position: relative;
+    /* Para posicionar la franja blanca */
+    margin-right: 10px;
+    /* Espacio entre la imagen y el texto */
 }
 
 .bandera::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 50%; /* Centra la franja blanca */
-    width: 10px; /* Ancho de la franja blanca */
-    height: 25px; /* Altura de la franja blanca */
-    background: white; /* Color de la franja blanca */
-    transform: translateX(-50%); /* Centra la franja blanca */
+    left: 50%;
+    /* Centra la franja blanca */
+    width: 10px;
+    /* Ancho de la franja blanca */
+    height: 25px;
+    /* Altura de la franja blanca */
+    background: white;
+    /* Color de la franja blanca */
+    transform: translateX(-50%);
+    /* Centra la franja blanca */
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -645,7 +692,8 @@ body {
     justify-content: space-around;
     gap: 20px;
     padding: 40px 0;
-    flex-wrap: wrap; /* Permite que las cajas se ajusten en pantallas más pequeñas */
+    flex-wrap: wrap;
+    /* Permite que las cajas se ajusten en pantallas más pequeñas */
 }
 
 /* Estilo general de cada caja */
@@ -660,8 +708,10 @@ body {
 }
 
 .box:hover {
-    transform: translateY(-10px); /* Efecto de "levitación" al pasar el mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para un efecto más destacado */
+    transform: translateY(-10px);
+    /* Efecto de "levitación" al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Aumenta la sombra para un efecto más destacado */
 }
 
 /* Estilo para la imagen circular */
@@ -676,12 +726,14 @@ body {
 .imagen-redes {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen para que llene el contenedor */
+    object-fit: cover;
+    /* Ajusta la imagen para que llene el contenedor */
     transition: transform 0.3s ease;
 }
 
 .box:hover .imagen-redes {
-    transform: scale(1.1); /* Efecto de zoom en la imagen */
+    transform: scale(1.1);
+    /* Efecto de zoom en la imagen */
 }
 
 /* Estilo para los títulos y subtítulos */
@@ -689,7 +741,8 @@ body {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 10px;
-    font-family: 'Bubblegum Sans', cursive; /* Fuente divertida */
+    font-family: 'Bubblegum Sans', cursive;
+    /* Fuente divertida */
 }
 
 .box-subtitle {
@@ -701,71 +754,94 @@ body {
 /* Responsivo */
 @media screen and (max-width: 768px) {
     .box {
-        width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+        width: 100%;
+        /* Ocupa el ancho completo en pantallas pequeñas */
     }
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo general del carrusel en el pie de página */
 .image-carousel {
-    width: 100%; /* Extremo a extremo */
-    overflow: hidden; /* Ocultar las imágenes que no están en el viewport */
+    width: 100%;
+    /* Extremo a extremo */
+    overflow: hidden;
+    /* Ocultar las imágenes que no están en el viewport */
     background-color: rgba(27, 26, 26, 0.7);
-    padding: 20px 0; /* Espaciado en la parte superior e inferior */
+    padding: 20px 0;
+    /* Espaciado en la parte superior e inferior */
 }
 
 .carousel-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: calc(200px * 26); /* Ajusta el ancho según el número de imágenes */
-    animation: scroll 30s linear infinite; /* Animación continua */
+    width: calc(200px * 26);
+    /* Ajusta el ancho según el número de imágenes */
+    animation: scroll 30s linear infinite;
+    /* Animación continua */
 }
 
 .carousel-container img {
-    width: 30px; /* Ajusta el ancho de las imágenes */
-    height: auto; /* Mantiene la proporción de las imágenes */
-    margin: 0 10px; /* Espacio entre imágenes */
+    width: 30px;
+    /* Ajusta el ancho de las imágenes */
+    height: auto;
+    /* Mantiene la proporción de las imágenes */
+    margin: 0 10px;
+    /* Espacio entre imágenes */
     transition: transform 0.3s ease;
 }
 
 .carousel-container img:hover {
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el mouse */
 }
 
 /* Animación que hace que el carrusel se mueva */
 @keyframes scroll {
     from {
-        transform: translateX(0); /* Empieza desde la posición original */
+        transform: translateX(0);
+        /* Empieza desde la posición original */
     }
+
     to {
-        transform: translateX(-50%); /* Mueve a la izquierda hasta la mitad, para repetir el ciclo */
+        transform: translateX(-50%);
+        /* Mueve a la izquierda hasta la mitad, para repetir el ciclo */
     }
 }
 
 /* Haciendo que el carrusel sea responsivo */
 @media screen and (max-width: 768px) {
     .carousel-container img {
-        width: 100px; /* Imágenes más pequeñas en pantallas móviles */
+        width: 100px;
+        /* Imágenes más pequeñas en pantallas móviles */
     }
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo del pie de página */
 .footer {
-    background-color: #333; /* Color de fondo oscuro */
-    color: #fff; /* Color de texto blanco */
-    text-align: center; /* Centrar el texto */
-    padding: 20px; /* Espaciado interior */
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif; /* Tipografía simple y limpia */
-    border-top: 2px solid #778c43; /* Líneas de separación */
+    background-color: #333;
+    /* Color de fondo oscuro */
+    color: #fff;
+    /* Color de texto blanco */
+    text-align: center;
+    /* Centrar el texto */
+    padding: 20px;
+    /* Espaciado interior */
+    font-size: 0.9rem;
+    /* Tamaño de fuente más pequeño */
+    font-family: 'Arial', sans-serif;
+    /* Tipografía simple y limpia */
+    border-top: 2px solid #778c43;
+    /* Líneas de separación */
     position: relative;
 }
 
 .footer p {
-    margin: 0; /* Elimina los márgenes de los párrafos */
-    line-height: 1.5; /* Espaciado de línea */
+    margin: 0;
+    /* Elimina los márgenes de los párrafos */
+    line-height: 1.5;
+    /* Espaciado de línea */
 }
 
 /* Responsivo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -852,7 +928,7 @@ body {
     }
 
     .carousel-container img {
-        width: 100px; 
+        width: 100px;
     }
 
     .title-kids,
@@ -874,7 +950,8 @@ body {
     }
 
     .box {
-        width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+        width: 100%;
+        /* Ocupa el ancho completo en pantallas pequeñas */
     }
 }
 
@@ -918,8 +995,10 @@ body {
         height: auto;
         margin-bottom: 15px;
         border-radius: 10px;
-        width: 150px; /* Ancho del contenedor */
-        height: 150px; /* Altura del contenedor */
+        width: 150px;
+        /* Ancho del contenedor */
+        height: 150px;
+        /* Altura del contenedor */
     }
 
     .carousel-content {
@@ -942,9 +1021,12 @@ body {
         font-size: 1.2rem;
         padding: 6px;
     }
+
     .imagen-fondo {
-        width: 250px; /* Ancho del contenedor */
-        height: 150px; /* Altura del contenedor */
+        width: 250px;
+        /* Ancho del contenedor */
+        height: 150px;
+        /* Altura del contenedor */
     }
 }
 
@@ -953,10 +1035,14 @@ body {
 /* Ajustes para pantallas más pequeñas (móviles) */
 @media (max-width: 768px) {
     .carousel {
-        min-height: 400px; /* Ajusta la altura mínima en móviles */
-        padding: 0; /* Elimina el padding para que ocupe todo el espacio horizontal */
-        border-radius: 0; /* Elimina los bordes redondeados en móviles */
+        min-height: 400px;
+        /* Ajusta la altura mínima en móviles */
+        padding: 0;
+        /* Elimina el padding para que ocupe todo el espacio horizontal */
+        border-radius: 0;
+        /* Elimina los bordes redondeados en móviles */
     }
+
     .carousel-content img {
         max-width: 60%;
     }
@@ -967,70 +1053,89 @@ body {
 /* --- Media Queries para pantallas pequeñas (tablets y móviles) DATOS ++++++++++++++++++++++++++++++++++++++++++++++++++++ --- */
 @media (max-width: 1024px) {
     .main-container {
-        margin: 0 5%; /* Reduce el margen lateral */
+        margin: 0 5%;
+        /* Reduce el margen lateral */
         padding: 30px;
-        flex-direction: column; /* Cambia a columna */
+        flex-direction: column;
+        /* Cambia a columna */
     }
 
     .options {
-        width: 80%; /* Ajusta el ancho de las opciones */
+        width: 80%;
+        /* Ajusta el ancho de las opciones */
     }
 
     .image-display {
-        width: 100%; /* Ocupa el ancho completo */
-        margin-top: 20px; /* Añade margen entre imagen y contenido */
+        width: 100%;
+        /* Ocupa el ancho completo */
+        margin-top: 20px;
+        /* Añade margen entre imagen y contenido */
     }
 
     .title {
-        font-size: 2.5rem; /* Ajusta el tamaño de la fuente */
+        font-size: 2.5rem;
+        /* Ajusta el tamaño de la fuente */
     }
 
     .icon {
-        width: 40px; /* Ajusta el tamaño del ícono */
+        width: 40px;
+        /* Ajusta el tamaño del ícono */
         height: 40px;
     }
 }
 
 @media (max-width: 768px) {
     .main-container {
-        margin: 0 3%; /* Reduce el margen en pantallas más pequeñas */
-        padding: 20px; /* Reduce el padding */
+        margin: 0 3%;
+        /* Reduce el margen en pantallas más pequeñas */
+        padding: 20px;
+        /* Reduce el padding */
     }
 
     .title {
-        font-size: 2rem; /* Ajusta aún más el tamaño de la fuente */
+        font-size: 2rem;
+        /* Ajusta aún más el tamaño de la fuente */
     }
 
     .options {
-        width: 100%; /* Las opciones ocuparán todo el ancho disponible */
+        width: 100%;
+        /* Las opciones ocuparán todo el ancho disponible */
     }
 
     .option {
-        padding: 10px; /* Reduce el padding en las opciones */
-        margin: 10px 0; /* Menor espacio entre las opciones */
+        padding: 10px;
+        /* Reduce el padding en las opciones */
+        margin: 10px 0;
+        /* Menor espacio entre las opciones */
     }
 
     .icon {
-        width: 35px; /* Ajusta el tamaño del ícono */
+        width: 35px;
+        /* Ajusta el tamaño del ícono */
         height: 35px;
     }
 
     .image-display {
-        width: 100%; /* Asegura que la imagen ocupe todo el ancho */
-        margin-top: 15px; /* Espaciado superior */
+        width: 100%;
+        /* Asegura que la imagen ocupe todo el ancho */
+        margin-top: 15px;
+        /* Espaciado superior */
     }
 
     #displayed-media {
-        max-width: 90%; /* Reduce el tamaño máximo de la imagen */
+        max-width: 90%;
+        /* Reduce el tamaño máximo de la imagen */
     }
 }
 
 @media (max-width: 768px) {
     .carousel-container {
-        width: calc(100% + 40px); /* Extiende el ancho al 100% para pantallas pequeñas */
+        width: calc(100% + 40px);
+        /* Extiende el ancho al 100% para pantallas pequeñas */
     }
 
     .carousel-container img {
-        width: 25%; /* Ajusta el ancho de las imágenes a un 25% en pantallas pequeñas */
+        width: 25%;
+        /* Ajusta el ancho de las imágenes a un 25% en pantallas pequeñas */
     }
 }

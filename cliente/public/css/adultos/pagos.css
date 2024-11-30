@@ -1,6 +1,8 @@
 * {
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    box-sizing: border-box;
+    /* Incluye el padding y el borde en el ancho total */
 }
+
 /* Estilos Generales */
 body {
     font-family: 'Arial', sans-serif;
@@ -20,7 +22,7 @@ body {
     background-color: #fff;
     padding: 50px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     max-width: 1000px;
     width: 90%;
     margin: 100px auto;
@@ -37,13 +39,19 @@ body {
 /* Nuevos estilos para los títulos */
 .payment-form h2,
 .order-summary h2 {
-    font-family: 'Poppins', sans-serif; /* Fuente destacada para títulos */
-    font-size: 2rem; /* Tamaño más grande */
-    font-weight: 700; /* Asegura que el título sea más visible */
-    color: #008080; /* Conserva el color azul del diseño */
+    font-family: 'Poppins', sans-serif;
+    /* Fuente destacada para títulos */
+    font-size: 2rem;
+    /* Tamaño más grande */
+    font-weight: 700;
+    /* Asegura que el título sea más visible */
+    color: #008080;
+    /* Conserva el color azul del diseño */
     margin-bottom: 20px;
-    text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    letter-spacing: 1px; /* Da un espacio entre las letras para más elegancia */
+    text-transform: uppercase;
+    /* Convierte el texto a mayúsculas */
+    letter-spacing: 1px;
+    /* Da un espacio entre las letras para más elegancia */
     text-align: center;
 }
 
