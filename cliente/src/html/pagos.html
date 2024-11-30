@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <a href="pagos.html" class="btn-cart">
-                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon"><span id="numerito" class="numerito">0</span>
                 </a>
                 <!-- Icono para activar la racha -->
                 <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
@@ -153,25 +153,16 @@
                     <option value="billetera">Billetera Digital</option>
                 </select>
 
+
                 <div id="form-tarjeta">
-                    <label for="nombre">Nombre titular de la tarjeta:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-
-                    <label for="tarjeta">Número de tarjeta:</label>
-                    <input type="text" id="tarjeta" name="tarjeta" required>
-
-                    <div class="payment-details">
-                        <div class="expiration">
-                            <label for="expiracion">MM / AA:</label>
-                            <input type="text" id="expiracion" name="expiracion" required>
-                        </div>
-                        <div class="cvv">
-                            <label for="cvv">CVV:</label>
-                            <input type="text" id="cvv" name="cvv" required>
-                        </div>
-                    </div>
+                    <label for="nombre">Titular de la Tarjeta:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre del titular" required>
+                
+                    <label for="card-element">Detalles de la Tarjeta:</label>
+                    <div id="card-element"></div> <!-- Contenedor para Stripe Elements -->
+                    <div id="card-errors" role="alert" style="color: red; margin-top: 10px;"></div>
                 </div>
-
+                
                 <div id="form-efectivo" style="display: none;">
                     <label for="dni">Número de documento de identidad:</label>
                     <input type="text" id="dni" name="dni" required>
@@ -259,84 +250,16 @@
         });
     </script>
 
-    <!-- Lógica de resumen de compra -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const itemsCarrito = [
-                { nombre: 'Curso de HTML Kids', precio: 49.99 },
-                { nombre: 'Curso de Python Kids', precio: 89.99 }
-            ];
-
-            const itemsResumen = document.getElementById('items-resumen');
-            const totalResumen = document.getElementById('total-resumen');
-            let total = 0;
-
-            itemsCarrito.forEach((item, index) => {
-                const itemDiv = document.createElement('div');
-                itemDiv.classList.add('item-resumen');
-                itemDiv.innerHTML = `
-                    <p>${item.nombre}</p>
-                    <p>Precio: S/${item.precio.toFixed(2)}</p>
-                    <button class="btn-eliminar" data-index="${index}">Eliminar</button>
-                `;
-                itemsResumen.appendChild(itemDiv);
-                total += item.precio;
-            });
-
-            totalResumen.textContent = `Total: S/${total.toFixed(2)}`;
-            const pagarBtn = document.getElementById('pagar-btn');
-            pagarBtn.innerHTML = `Pagar S/ ${total.toFixed(2)} PEN`;
-
-            // Función para eliminar un item
-            document.querySelectorAll('.btn-eliminar').forEach(boton => {
-                boton.addEventListener('click', function () {
-                    const index = this.getAttribute('data-index');
-                    itemsCarrito.splice(index, 1); // Eliminar del carrito
-                    itemsResumen.innerHTML = ''; // Limpiar resumen
-                    total = 0; // Reiniciar total
-
-                    // Volver a llenar el resumen
-                    itemsCarrito.forEach((item, idx) => {
-                        const itemDiv = document.createElement('div');
-                        itemDiv.classList.add('item-resumen');
-                        itemDiv.innerHTML = `
-                            <p>${item.nombre}</p>
-                            <p>Precio: S/${item.precio.toFixed(2)}</p>
-                            <button class="btn-eliminar" data-index="${idx}">Eliminar</button>
-                        `;
-                        itemsResumen.appendChild(itemDiv);
-                        total += item.precio;
-                    });
-
-                    totalResumen.textContent = `Total: S/${total.toFixed(2)}`;
-                    pagarBtn.innerHTML = `Pagar S/ ${total.toFixed(2)} PEN`;
-
-                    // Volver a añadir eventos de eliminación
-                    document.querySelectorAll('.btn-eliminar').forEach(boton => {
-                        boton.addEventListener('click', function () {
-                            const index = this.getAttribute('data-index');
-                            itemsCarrito.splice(index, 1);
-                            // Lógica de actualización...
-                        });
-                    });
-                });
-            });
-        });
-
-        function actualizarBoton() {
-            const cuotas = document.getElementById('cuotas');
-            const pagarBtn = document.getElementById('pagar-btn');
-            const total = parseFloat(document.getElementById('total-resumen').textContent.replace('Total: S/', ''));
-
-            if (cuotas.value == "4") {
-                pagarBtn.innerHTML = "Pagar 4 Cuotas de S/ " + (total / 4).toFixed(2) + " PEN";
-            } else {
-                pagarBtn.innerHTML = "Pagar S/ " + total.toFixed(2) + " PEN";
-            }
-        }
-    </script>
+    
+    
+    
+    <!-- SDK de Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
 
     <script src="/src/js/menu.js"></script>
+    <script src="/src/js/Pagoapp.js"></script>
+    <script src="/src/js/PagoStripe.js"></script>
+    <script src="/src/js/Format.js"></script>
 </body>
 
 </html>
