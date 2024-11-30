@@ -45,7 +45,7 @@ body {
     width: 100%;
     text-align: center;
     z-index: 20;
-    font-family: 'Coiny', cursive;
+    font-family: 'Frijole', sans-serif;
     top: 0;
     background: linear-gradient(to right, rgba(255, 255, 255, 0.176), rgba(255, 255, 255, 0.025));
     border-radius: 10px;
@@ -74,11 +74,11 @@ body {
 
 
 .water-stain {
-    background-color: rgba(161, 129, 61, 0.623);
-    width: 750px;
-    height: 500px;
-    border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
-    animation: morph 6s ease-in-out infinite;
+    background-color: rgba(86, 76, 44, 0.74);
+    width: 720px;
+    height: 490px;
+    border-radius: 0; /* Elimina las curvas para que sea un rectángulo */
+    animation: none; /* Elimina la animación de cambio de forma */
     margin-right: 5rem;
     margin-top: 3rem;
     display: flex;
@@ -86,8 +86,6 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    margin-top: 100px;
-    flex: 90%;
 }
 
 .subtitle-container {
@@ -173,33 +171,19 @@ body {
     flex: 1%;
 }
 
-.image-container img {
-    max-width: 310px;
+.image {
+    width: 380px;
+    height: 400px; /* Define la altura explícita */
     max-height: 1000px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    background-image: url('/public/img/adolescentes/info.png');
+    background-size: cover;
+    background-position: center;
     z-index: 1;
     margin-right: 90px;
 }
 
-.image-container::before,
-.image-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 15%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
-    z-index: 0;
-}
-
-.image-container::before {
-    left: 0;
-}
-
-.image-container::after {
-    right: 0;
-}
 
 .button-container {
     display: flex;
@@ -266,7 +250,7 @@ body {
 
 .temario h2{
     margin-top: 35px;
-    font-family: 'Rammetto One', sans-serif;
+    font-family: 'Sixtyfour', sans-serif;
     font-size: 2.7em;
     color: rgb(213, 231, 252); /* Color azul */
     text-shadow: 2px 5px 0 rgba(80, 219, 94, 0.658); /* Sombra sólida */
@@ -463,27 +447,6 @@ button:hover {
     /* Llama a la animación */
 }
 
-@keyframes reboteFrente {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateX(0);
-        /* Sin movimiento horizontal */
-    }
-
-    40% {
-        transform: translateX(10px);
-        /* Mueve hacia adelante 10 píxeles */
-    }
-
-    60% {
-        transform: translateX(5px);
-        /* Mueve hacia adelante 5 píxeles */
-    }
-}
 
 
 .textito {
@@ -492,24 +455,26 @@ button:hover {
     color: #ffffff;
 }
 
+.course-title{
+    color: #b4aaff;
+}
 
 .gif-container {
     display: flex;
-    /* Alinea los elementos en fila */
-    justify-content: space-around;
-    /* Espacio igual entre los elementos */
-    margin-top: 0.5rem;
-    /* Espacio superior del contenedor */
+    justify-content: space-around; /* Espacio igual entre los elementos */
+    margin-top: 0.5rem; /* Espacio superior del contenedor */
 }
 
-.gif-container img {
+.gif-image {
     width: 30%;
-    /* Ajusta el tamaño de las imágenes */
+    aspect-ratio: 3 / 2; /* Mantén proporciones (ancho/alto) */
+    background-image: url('/public/img/adolescentes/gifApartado.gif');
+    background-size: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+    background-position: center; /* Centra la imagen */
     display: block;
-    /* Alinea las imágenes al inicio de cada línea */
     margin: 0;
-    /* Elimina cualquier margen para alinear a la izquierda */
 }
+
 
 .gif-mediano {
     width: 100%;
@@ -534,41 +499,14 @@ button:hover {
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     /* Sombra */
     background-color: #cc906dc9;
-    animation: agarrarCaja 6s ease-in-out infinite;
-    /* Llama a la animación */
+    
 }
 
-@keyframes agarrarCaja {
-    0% {
-        transform: scale(1) rotate(0deg);
-        /* Sin escala ni rotación */
-    }
-
-    25% {
-        transform: scale(1.05) rotate(2deg);
-        /* Aumenta al 105% y rota 2 grados */
-    }
-
-    50% {
-        transform: scale(1.1) rotate(-2deg);
-        /* Aumenta al 110% y rota -2 grados */
-    }
-
-    75% {
-        transform: scale(1.05) rotate(2deg);
-        /* Vuelve al 105% y rota 2 grados */
-    }
-
-    100% {
-        transform: scale(1) rotate(0deg);
-        /* Vuelve al tamaño original */
-    }
-}
 
 
 
 .flex-1 {
-    color: #ffe23c;
+    color: #a74ef5;
 }
 
 .bg-gray-800 {
@@ -589,13 +527,13 @@ button:hover {
 }
 
 .textito1 {
-    font-family: 'Satisfy', cursive;
+    font-family: 'Pixelify Sans', sans-serif;
     font-size: 2rem;
-    color: #ffe0fc;
+    color: #e0e4ff;
 }
 
 .temario-iz h3 {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Pixelify Sans', sans-serif;
     font-size: 40px;
     margin: 0;
 }
