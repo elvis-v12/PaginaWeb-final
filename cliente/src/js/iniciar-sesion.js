@@ -16,12 +16,21 @@ document.getElementById('loginForm').addEventListener('submit', async function (
             body: JSON.stringify(datos)
         });
 
-        const texto = await respuesta.text();
-        const resultado = texto ? JSON.parse(texto) : {};
+        const resultado = await respuesta.json(); // Parsear directamente como JSON
 
         if (respuesta.ok) {
             alert('Inicio de sesión exitoso.');
-            console.log(resultado);
+
+            // Guardar los datos en localStorage
+            localStorage.setItem('userName', resultado.nombre);
+            localStorage.setItem('cssType', resultado.rango_edad);
+
+            console.log('Datos almacenados en localStorage:', {
+                nombre: resultado.nombre,
+                cssType: resultado.rango_edad
+            });
+
+            // Redirigir a la página de inicio
             window.location.href = '/src/html/inicio.html';
         } else {
             alert(`Error: ${resultado.mensaje || 'Ocurrió un error inesperado.'}`);
