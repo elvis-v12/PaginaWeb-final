@@ -28,8 +28,34 @@ export const iniciarSesion = async (req, res) => {
       return res.status(401).json({ mensaje: 'Contraseña incorrecta.' });
     }
 
-    // Si todo está bien, puedes devolver un token, el usuario, etc.
-    res.status(200).json({ mensaje: 'Inicio de sesión exitoso.', usuario });
+    // Obtener los datos del estudiante
+    const [estudiante] = await db.execute(
+      `SELECT nombres, rango_edad FROM estudiantes WHERE correo = ?`,
+      [correo]
+    );
+
+    if (!estudiante || estudiante.length === 0) {
+      return res.status(404).json({ mensaje: 'Estudiante no encontrado.' });
+    }
+
+    // Obtener el primer nombre
+    const primerNombre = estudiante[0].nombres.split(' ')[0];
+    const rango_edad = estudiante[0].rango_edad;
+
+    // Enviar solo los datos necesarios en la respuesta
+    res.status(200).json({
+      exito: true,
+      mensaje: 'Inicio de sesión exitoso.',
+      correo: correo,
+      nombre: primerNombre,
+      rango_edad: rango_edad // Enviar el rango de edad
+    });
+
+    console.log('Datos enviados al cliente:', {
+      nombre: primerNombre,
+      correo,
+      rango_edad
+    });
   } catch (error) {
     console.error('Error al iniciar sesión:', error);
     res.status(500).json({ mensaje: 'Error en el servidor.' });

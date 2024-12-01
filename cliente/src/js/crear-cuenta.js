@@ -5,7 +5,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     const data = Object.fromEntries(formData.entries());
 
     try {
-        const response = await fetch('http://localhost:3000/crear-cuenta', {
+        const response = await fetch('http://localhost:3000/registro', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

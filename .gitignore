@@ -7,5 +7,3 @@ cliente/public/img/
 # Ignorar archivos GIF grandes
 cliente/public/img/ninos/html.gif
 
-# Ignorar LFS (si es necesario)
-.git/lfs/
