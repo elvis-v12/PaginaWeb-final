@@ -1,42 +1,33 @@
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+document.getElementById('loginForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
 
-    const correo = document.querySelector('[name="correo"]').value;
-    const contra = document.querySelector('[name="contra"]').value;
+    // Usa `event.target.elements` para acceder a los campos
+    const correo = event.target.elements.correo.value;
+    const contrasena = event.target.elements.contra.value;
 
-    // Validación simple
-    if (!correo || !contra) {
-        alert('Por favor, completa todos los campos.');
-        return;
-    }
+    const datos = { correo, contrasena };
 
-    // Enviar los datos al servidor
-    fetch('http://localhost:3000/iniciar-sesion', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ correo, contra })
-    })
-        .then(response => {
-            console.log(response);  // Revisa la respuesta del servidor
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);  // Revisa los datos devueltos
-            if (data.exito) {
-                // Guardar el nombre del usuario y el tipo de CSS en localStorage
-                localStorage.setItem('userName', data.nombre);  // Guarda el nombre del usuario
-                localStorage.setItem('cssType', data.css);  // Guarda el tipo de CSS
-
-                // Redirigir a la página principal
-                window.location.href = 'inicio.html';
-            } else {
-                alert(data.mensaje); // Muestra el mensaje de error (ej. "Credenciales incorrectas")
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Hubo un problema con la conexión al servidor.');
+    try {
+        const respuesta = await fetch('http://localhost:3000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datos)
         });
+
+        const texto = await respuesta.text();
+        const resultado = texto ? JSON.parse(texto) : {};
+
+        if (respuesta.ok) {
+            alert('Inicio de sesión exitoso.');
+            console.log(resultado);
+            window.location.href = '/src/html/inicio.html';
+        } else {
+            alert(`Error: ${resultado.mensaje || 'Ocurrió un error inesperado.'}`);
+        }
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error);
+        alert('Hubo un problema al procesar la solicitud. Por favor, inténtalo de nuevo.');
+    }
 });

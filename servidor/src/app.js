@@ -4,6 +4,9 @@ import express from 'express';
 import cors from 'cors';
 
 import paymentRoutes from './routes/payment.routes.js';
+import setupDatabase from './models/dbConnection.js'; // Configuración de la base de datos
+import registroRoutes from './routes/registro.routes.js'; // Importar las rutas
+import loginRoutes from './routes/login.routes.js';
 
 // Cargar variables de entorno desde el archivo .env
 dotenv.config({ path: path.resolve('./.env') });
@@ -29,9 +32,12 @@ app.use('/src/js', express.static(path.join('..', 'src', 'js')));
 // Configuración de rutas
 
 app.use('/api/payments', paymentRoutes);
+app.use('/api', registroRoutes); // Configura las rutas bajo el prefijo /api
+app.use('/api', loginRoutes);
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
 });
+
