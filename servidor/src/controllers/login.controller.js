@@ -42,21 +42,18 @@ export const iniciarSesion = async (req, res) => {
     const primerNombre = estudiante[0].nombres.split(' ')[0];
     const rango_edad = estudiante[0].rango_edad;
 
-    console.log('Datos obtenidos del estudiante:', {
-      primerNombre,
-      rango_edad
-    });
-
     // Enviar solo los datos necesarios en la respuesta
     res.status(200).json({
       exito: true,
       mensaje: 'Inicio de sesión exitoso.',
+      correo: correo,
       nombre: primerNombre,
       rango_edad: rango_edad // Enviar el rango de edad
     });
 
     console.log('Datos enviados al cliente:', {
       nombre: primerNombre,
+      correo,
       rango_edad
     });
   } catch (error) {
@@ -64,3 +61,4 @@ export const iniciarSesion = async (req, res) => {
     res.status(500).json({ mensaje: 'Error en el servidor.' });
   }
 };
+

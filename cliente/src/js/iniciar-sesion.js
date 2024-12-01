@@ -24,10 +24,12 @@ document.getElementById('loginForm').addEventListener('submit', async function (
             // Guardar los datos en localStorage
             localStorage.setItem('userName', resultado.nombre);
             localStorage.setItem('cssType', resultado.rango_edad);
+            localStorage.setItem('correo', resultado.correo);
 
             console.log('Datos almacenados en localStorage:', {
                 nombre: resultado.nombre,
-                cssType: resultado.rango_edad
+                cssType: resultado.rango_edad,
+                correo: resultado.correo
             });
 
             // Redirigir a la página de inicio
