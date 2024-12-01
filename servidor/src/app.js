@@ -2,7 +2,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
-
+//Hola
 import paymentRoutes from './routes/payment.routes.js';
 import setupDatabase from './models/dbConnection.js'; // Configuración de la base de datos
 import registroRoutes from './routes/registro.routes.js'; // Importar las rutas
