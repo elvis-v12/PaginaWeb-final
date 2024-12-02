@@ -107,6 +107,7 @@ body {
 
     /* Animación de burbuja */
     animation: bubble 3s infinite ease-in-out;
+    margin-top: 50px;
 }
 
 /* Estilo del párrafo */
@@ -135,6 +136,7 @@ body {
     width: 250px;
     /* Tamaño del GIF */
     height: auto;
+    display: none;
     /* Mantiene la proporción */
 }
 

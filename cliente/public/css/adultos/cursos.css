@@ -16,6 +16,7 @@ body {
 /* Decoración del encabezado */
 .header-decorated {
   background-size: cover;
+  margin-top: 50px;
   padding: 50px;
   color: white;
   background: #d6d0cd;
@@ -51,12 +52,7 @@ body {
 }
 
 .logoCurso {
-  padding-top: 50px;
-  max-width: 230px;
-  /* Tamaño del gif*/
-  margin-bottom: 20px;
-  border-radius: 50%;
-  animation: bounce 2s infinite ease-in-out;
+  display: none;
 }
 
 .logoCurso-large {
@@ -120,6 +116,7 @@ body {
 .subtitu {
   text-align: center;
   /* Alinea el texto a la izquierda */
+  width: 1400px;
   font-family: 'Fredoka One', sans-serif;
   /* Fuente redondeada */
   font-size: 3rem;
@@ -284,9 +281,9 @@ p {
 }
 
 .course-card {
-  background: rgba(253, 226, 150, 0.468);
+  background: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
   margin: 10px;
   flex: 1 1 30%;
   max-width: 30%;

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnly - Becas</title>
+    <link rel="stylesheet" href="/public/css/adultos/becas.css">
+    <link rel="stylesheet" href="/public/css/adultos/menu.css">
+    <link rel="stylesheet" href="/public/css/adultos/preloader.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=One+Little+Font&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="preloader">
+        <img src="/public/img/ninos/guimar flash.gif" alt="Logo de GuímarBot">
+        <div class="loading-text">Cargando...</div>
+    </div>
+
+    <!-- Cargar el menú -->
+    <!-- Menú -->
+    <div class="mi-menu">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links" id="menu-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="informacion.html">Acerca de</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="cursosCat.html">Categorias</a></li>
+                <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
+                <li><a href="becas.html">Becas</a></li>
+            </ul>
+            <div class="login">
+                <div class="dropdown">
+                    <button class="btn-login" id="login-button">Acceder</button>
+                    <div class="dropdown-content" id="login-dropdown">
+                        <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
+                        <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
+                    </div>
+                </div>
+                <a href="pagos.html" class="btn-cart">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+                </a>
+                <!-- Icono para activar la racha -->
+                <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
+                    <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
+                    <span class="streak-number">2</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <section class="soporte">
+        <h1 class="titulo-soporte">POSTULACIÓN DE BECAS</h1>
+        <div class="preguntas-frecuentes">
+            <h2 class="titulo-faq">En Learnly, facilitamos tu camino al éxito: ¡Da el siguiente paso y crece con
+                nosotros!</h2>
+            <div class="pregunta">
+                <h3>Nombre completo:</h3>
+                <div class="editable-line" contenteditable="true" placeholder="Escribe tu nombre aquí..."></div>
+            </div>
+
+            <!-- Pregunta para Correo -->
+            <div class="pregunta">
+                <h3>Correo:</h3>
+                <div class="editable-line" contenteditable="true" placeholder="Escribe tu correo aquí..."></div>
+            </div>
+
+            <!-- Pregunta abierta ¿Por qué quieres postularte? -->
+            <div class="pregunta">
+                <h3>¿Por qué quieres postularte?</h3>
+                <div class="editable-line" contenteditable="true" placeholder="Escribe tu respuesta aquí..."
+                    style="min-height: 80px;"></div>
+            </div>
+
+
+
+            <div class="contenedor-cursos">
+                <!-- Tarjeta 1 -->
+                <div class="tarjeta-curso">
+                    <h3>Curso GRATIS de Python</h3>
+                    <a href="apartadoJ1.html" class="btn-gratis">Ver mas del curso</a>
+                    <img src="/public/img/ninos/gratis1.jpg" alt="Imagen del curso">
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="tarjeta-curso">
+                    <h3>Curso GRATIS de HTML </h3>
+                    <a href="apartadoJ1.html" class="btn-gratis">Ver mas del curso</a>
+                    <img src="/public/img/ninos/gratis3.jpg" alt="Imagen del curso">
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="tarjeta-curso">
+                    <h3>Curso GRATIS de JavaScript</h3>
+                    <a href="apartadoJ1.html" class="btn-gratis">Ver mas del curso</a>
+                    <img src="/public/img/ninos/gratis2.jpg" alt="Imagen del curso">
+                </div>
+            </div>
+
+            <!-- Botones para subir documentos y certificados -->
+            <div class="subir-archivos">
+                <div class="boton-subir">
+                    <input type="file" id="subir-documento" accept=".pdf" />
+                    <label for="subir-documento" class="btn-subir">Subir Documentos (PDF)</label>
+                </div>
+                <div class="boton-subir">
+                    <input type="file" id="subir-certificado" accept=".pdf, .jpg, .jpeg, .png" />
+                    <label for="subir-certificado" class="btn-subir">Subir Certificados (PDF o JPG)</label>
+                </div>
+            </div>
+
+            <!-- Checkbox para aceptar condiciones -->
+            <div class="aceptar-condiciones">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="aceptar-condiciones" />
+                    Acepto todas las condiciones
+                </label>
+            </div>
+
+            <!-- Botón de Enviar Postulación -->
+            <div class="acciones">
+                <button id="btn-enviar" class="btn-enviar" disabled>Enviar Postulación</button>
+                <div id="advertencia" class="advertencia" style="display: none;">Por favor, completa todos los
+                    campos
+                    antes de enviar.</div>
+            </div>
+
+    </section>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="/public/img/ninos/check.gif" alt="Gif de confirmación" class="modal-gif">
+            </div>
+            <div class="modal-body">
+                <h2>¡Registro de beca exitoso!</h2>
+                <p>La administración revisará tu consulta. Verifica tu correo en estos días.</p>
+                <p>LEARNLY ESTÁ GUSTOSO DE PODER AYUDARTE </p>
+            </div>
+            <div class="modal-footer">
+                <button id="cerrar-modal" class="btn-cerrar">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Sección de pie de pagina -->
+    <div class="footer">
+        <p>© 2024 - Learnly - Todos los derechos reservados.</p>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.transition = 'opacity 0.5s ease'; // Suaviza la desaparición
+            }, 1000); // Se acorta el tiempo a 1 segundo
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none'; // Se oculta completamente después de la transición
+            }, 1500); // Espera 1.5 segundos antes de ocultarlo completamente
+        });
+    </script>
+
+
+    <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
+            const cssType = localStorage.getItem('cssType') || 'adultos';
+
+            // Función para cargar un archivo CSS
+            function loadCss(filePath) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = filePath;
+                document.head.appendChild(link);
+            }
+
+            // Cargar los CSS necesarios
+            const cssFiles = [
+                `/public/css/${cssType}/becas.css`,
+            ];
+
+            // Ocultar el contenido mientras se cargan los estilos
+            document.body.classList.add('hidden');
+
+            // Cargar cada CSS en el orden definido
+            cssFiles.forEach(loadCss);
+
+            // Detectar cuando el último CSS ha cargado y mostrar el contenido
+            const lastCssLink = cssFiles[cssFiles.length - 1];
+            const checkCssLoaded = () => {
+                const link = document.querySelector(`link[href='${lastCssLink}']`);
+                if (link && link.sheet) {
+                    document.body.classList.remove('hidden'); // Mostrar contenido
+                } else {
+                    setTimeout(checkCssLoaded, 50); // Reintentar hasta que el CSS esté cargado
+                }
+            };
+            checkCssLoaded();
+        });
+
+
+        //Script para boton
+        // Función para verificar que todos los campos estén completos
+        function validarFormulario() {
+            const nombre = document.querySelector('.editable-line[placeholder="Escribe tu nombre aquí..."]').innerText;
+            const correo = document.querySelector('.editable-line[placeholder="Escribe tu correo aquí..."]').innerText;
+            const porquePostular = document.querySelector('.editable-line[placeholder="Escribe tu respuesta aquí..."]').innerText;
+            const aceptarCondiciones = document.getElementById('aceptar-condiciones').checked;
+
+            // Verifica que los campos no estén vacíos y que el checkbox esté marcado
+            if (nombre && correo && porquePostular && aceptarCondiciones) {
+                document.getElementById('btn-enviar').disabled = false;  // Habilitar el botón de envío
+                document.getElementById('advertencia').style.display = 'none'; // Ocultar mensaje de advertencia
+            } else {
+                document.getElementById('btn-enviar').disabled = true; // Deshabilitar el botón de envío
+                document.getElementById('advertencia').style.display = 'block'; // Mostrar mensaje de advertencia
+            }
+        }
+
+        // Escucha el evento de cambios en los campos para activar la validación
+        document.querySelectorAll('.editable-line').forEach(function (element) {
+            element.addEventListener('input', validarFormulario);
+        });
+
+        document.getElementById('aceptar-condiciones').addEventListener('change', validarFormulario);
+
+
+        // Función para mostrar el modal
+        function mostrarModal() {
+            document.getElementById("modal").style.display = "block"; // Muestra el modal
+        }
+
+        // Función para cerrar el modal
+        document.getElementById("cerrar-modal").onclick = function () {
+            document.getElementById("modal").style.display = "none"; // Oculta el modal
+        }
+
+        // Añadir el evento al botón de enviar postulación
+        document.getElementById("btn-enviar").onclick = function (event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+            // Mostrar el modal si todos los campos están llenos
+            if (document.getElementById("btn-enviar").disabled === false) {
+                mostrarModal();
+            }
+        }
+    </script>
+
+
+    <script src="/src/js/menu.js"></script>
+
+</body>
+
+</html>

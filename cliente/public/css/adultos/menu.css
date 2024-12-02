@@ -8,6 +8,7 @@ body {
 /* Encapsulamiento del menú */
 .mi-menu {
   margin: 0 auto;
+  margin-left: -10px;
   /* Centra el menú */
 }
 

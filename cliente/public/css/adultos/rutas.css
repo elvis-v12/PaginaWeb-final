@@ -29,8 +29,8 @@ body {
     text-align: center;
     font-size: 5rem;
     font-family: 'Spicy Rice', cursive;
-    color: #040500;
-    background-color: rgb(15, 59, 95);
+    color: rgb(15, 59, 95);
+    background-color: rgb(255, 255, 255);
     margin-bottom: 40px;
     margin-top: 20px;
     text-shadow: 4px 4px 0px #ffffff;
@@ -92,7 +92,7 @@ body {
     text-align: left;
     font-family: 'Concert One', cursive;
     font-weight: bold;
-    color: #000000;
+    color: rgb(15, 59, 95);
 
 }
 
@@ -104,7 +104,7 @@ body {
 
 /* Contenedor de la lista de cursos */
 .course-list-clear {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(165, 204, 170);
     padding: 10px;
     border-radius: 8px;
 }

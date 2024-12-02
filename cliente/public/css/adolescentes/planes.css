@@ -1,5 +1,6 @@
 * {
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    box-sizing: border-box;
+    /* Incluye el padding y el borde en el ancho total */
 }
 
 /* Estilo General */
@@ -27,6 +28,7 @@ body {
         /* Vuelve a la posición original */
     }
 }
+
 
 
 .titulo-seccion {
@@ -356,17 +358,26 @@ body {
 
 /* Estilo del pie de página */
 .footer {
-    background-color: #333; /* Color de fondo oscuro */
-    color: #fff; /* Color de texto blanco */
-    text-align: center; /* Centrar el texto */
-    padding: 20px; /* Espaciado interior */
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif; /* Tipografía simple y limpia */
-    border-top: 2px solid #6fb94d; /* Líneas de separación */
+    background-color: #333;
+    /* Color de fondo oscuro */
+    color: #fff;
+    /* Color de texto blanco */
+    text-align: center;
+    /* Centrar el texto */
+    padding: 20px;
+    /* Espaciado interior */
+    font-size: 0.9rem;
+    /* Tamaño de fuente más pequeño */
+    font-family: 'Arial', sans-serif;
+    /* Tipografía simple y limpia */
+    border-top: 2px solid #6fb94d;
+    /* Líneas de separación */
     position: relative;
 }
 
 .footer p {
-    margin: 0; /* Elimina los márgenes de los párrafos */
-    line-height: 1.5; /* Espaciado de línea */
+    margin: 0;
+    /* Elimina los márgenes de los párrafos */
+    line-height: 1.5;
+    /* Espaciado de línea */
 }
