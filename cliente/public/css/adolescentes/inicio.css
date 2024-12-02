@@ -51,9 +51,13 @@ body {
 /* Títulos Estilo Baby Shark */
 .phrase {
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 4.2rem;
+    font-size: 1.8rem;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6;
     background: none;
+    letter-spacing: 4px;
+
+    margin-top: 10px;
 
     /* Propiedades para compatibilidad */
     background-clip: text;
@@ -75,8 +79,13 @@ body {
 
 /* Estilo específico para "¡Programa tu éxito!" */
 .highlight-exito {
-    font-size: 6.5rem;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 4.8rem;
     color: #FF4081;
+    line-height: 1.3; /* Aumenta el espacio entre líneas */
+    letter-spacing: 2;
+    margin-top: 40px;
+
 
     /* Propiedades para compatibilidad */
     background-clip: text;
@@ -108,8 +117,8 @@ body {
 
 /* Ajustes para el logo */
 .imagen-fondo {
-    width: 550px; /* Ancho del contenedor */
-    height: 350px; /* Altura del contenedor */
+    width: 700px; /* Ancho del contenedor */
+    height: 500px; /* Altura del contenedor */
     margin-left: 10px; 
     
     background-image: url('/public/img/adolescentes/minecraftlogo.gif');
@@ -276,7 +285,7 @@ body {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(224, 247, 250, 0.9);
+    background-color: rgba(236, 224, 250, 0.9);
 }
 
 /* Estilo para las diapositivas del carrusel */
@@ -331,7 +340,7 @@ body {
 .title-programming,
 .title-exclusive {
     font-family: 'Bubblegum Sans', cursive;
-    color: #45c5f8;
+    color: #604c2e;
     font-size: 2.5rem;
     /* Ajuste de tamaño de fuente */
     margin-bottom: 10px;

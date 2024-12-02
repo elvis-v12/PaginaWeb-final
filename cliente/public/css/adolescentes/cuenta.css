@@ -1,7 +1,15 @@
+body.hidden {
+    display: none;  /* Oculta todo el contenido hasta que el CSS se cargue */
+}
+
+* {
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
 /* Estilo General */
 body {
     font-family: 'Poppins', sans-serif;
-    background: url('../imagenes/oceano.png') no-repeat center center fixed;
+    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -33,7 +41,7 @@ body {
     
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #ffb302,  
+        -2px -2px 0 #a97c3a,  
         2px -2px 0 #ffffff,   
         -2px 2px 0 #ffffff,   
         2px 2px 0 #ffffff,    
@@ -72,7 +80,7 @@ body {
 .imagen-perfil {
     width: 150px;
     height: 150px;
-    background-color: #00BFFF; /* Color de fondo */
+    background-color: #6fb94d; /* Color de fondo */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -94,7 +102,7 @@ body {
 }
 
 .texto-subir a {
-    color: #00BFFF; /* Color de enlace */
+    color: #6fb94d; /* Color de enlace */
     text-decoration: none;
 }
 
@@ -112,7 +120,7 @@ body {
 .btn-social {
     display: block;
     width: 100%;
-    background-color: #00BFFF; /* Color del botón social */
+    background-color: #6fb94d; /* Color del botón social */
     color: white;
     padding: 10px;
     border: none;
@@ -123,13 +131,13 @@ body {
 }
 
 .btn-social:hover {
-    background-color: #008BBE; /* Color de hover */
+    background-color: #037705; /* Color de hover */
 }
 
 .btn-renovar {
     display: block;
     width: 100%;
-    background-color: #FF4081; /* Color del botón social */
+    background-color: #a97c3a; /* Color del botón social */
     color: white;
     padding: 10px;
     border: none;
@@ -152,7 +160,7 @@ body {
     width: 100%;
     margin: 10px 0;
     padding: 10px;
-    border: 1px solid #00BFFF; /* Color de borde */
+    border: 1px solid #6fb94d; /* Color de borde */
     border-radius: 5px;
 }
 
@@ -239,7 +247,7 @@ h2 {
 }
 
 .btn-guardar {
-    background-color: #3164ff;
+    background-color: #016611;
     color: white;
     border: none;
 }

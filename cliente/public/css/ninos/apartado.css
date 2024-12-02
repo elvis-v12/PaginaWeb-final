@@ -169,37 +169,24 @@ body {
     justify-content: center;
     align-items: flex-start;
     position: relative;
-    margin-top: 6rem;
+    margin-top: 10rem;
     flex: 1%;
 }
 
-.image-container img {
-    max-width: 310px;
+.image {
+    width: 380px;
+    height: 400px; /* Define la altura explícita */
     max-height: 1000px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    background-image: url('/public/img/ninos/info.png');
+    background-size: cover;
+    background-position: center;
     z-index: 1;
     margin-right: 90px;
 }
 
-.image-container::before,
-.image-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 15%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
-    z-index: 0;
-}
 
-.image-container::before {
-    left: 0;
-}
-
-.image-container::after {
-    right: 0;
-}
 
 .button-container {
     display: flex;
@@ -495,21 +482,19 @@ button:hover {
 
 .gif-container {
     display: flex;
-    /* Alinea los elementos en fila */
-    justify-content: space-around;
-    /* Espacio igual entre los elementos */
-    margin-top: 0.5rem;
-    /* Espacio superior del contenedor */
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 2rem; /* Ajusta la distancia superior */
 }
 
-.gif-container img {
-    width: 30%;
-    /* Ajusta el tamaño de las imágenes */
-    display: block;
-    /* Alinea las imágenes al inicio de cada línea */
-    margin: 0;
-    /* Elimina cualquier margen para alinear a la izquierda */
+.gif-image {
+    width: 300px; /* Ajusta al tamaño deseado */
+    height: 200px; /* Altura proporcionada (puedes ajustar según el GIF) */
+    background-image: url('/public/img/ninos/gifApartado.gif'); /* Ruta de tu GIF */
+    background-size: contain; /* Ajusta para que el GIF se muestre completo */
+    background-repeat: no-repeat; /* Evita repeticiones */
+    background-position: center; /* Centra el GIF en el contenedor */
 }
+
 
 .gif-mediano {
     width: 100%;

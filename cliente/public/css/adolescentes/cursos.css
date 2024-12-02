@@ -63,9 +63,9 @@ body {
 .titulo {
     text-align: center;
     /* Alinea el texto a la izquierda */
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Press Start 2P';
     /* Fuente redondeada */
-    font-size: 5rem;
+    font-size: 4rem;
     /* Tamaño grande */
     background: linear-gradient(90deg, #FF4081, #FFC107);
     /* Gradiente vibrante */

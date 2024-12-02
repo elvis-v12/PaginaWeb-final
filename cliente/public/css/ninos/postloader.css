@@ -37,7 +37,6 @@
   animation: blink 1s steps(2, start) infinite; /* Efecto parpadeante */
 }
 
-
 /* Efecto parpadeante para el texto */
 @keyframes blink {
   0%, 100% { opacity: 1; }
@@ -48,24 +47,4 @@
 @keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0; }
-}
-#card-element {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  margin-bottom: 15px;
-}
-.card-container {
-  padding: 15px; /* Simula padding alrededor del iframe */
-  border: 1px solid #ccc; /* Bordes */
-  border-radius: 8px; /* Bordes redondeados */
-  background-color: #fff; /* Fondo blanco */
-  margin-bottom: 20px; /* Espaciado con otros elementos */
-}
-
-#card-errors {
-  color: #fa755a; /* Color para errores */
-  font-size: 14px; /* Ajusta el tamaño del texto */
-  margin-top: 10px; /* Espaciado superior */
 }
