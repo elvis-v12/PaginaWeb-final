@@ -1,0 +1,243 @@
+.admin-container {
+  max-width: 90%;
+  width: 100%;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left:5%;
+}
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #041427;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+table tr:hover {
+  background-color: #f7f8fa;
+}
+
+.modaladmin {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: rgb(246, 246, 247)  ;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: justify;
+}
+
+.modaladmin-content {
+  position: relative;
+}
+
+.modaladmin h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #061c33;
+}
+
+.modaladmin form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modaladmin input, .modaladmin select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.modaladmin input:focus, .modaladmin select:focus {
+  border-color: #007bff;
+}
+
+.modaladmin button {
+  padding: 10px 15px;
+  background: #020e1b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modaladmin button:hover {
+  background:rgb(61, 129, 29);
+  width: auto;
+  height: auto;
+}
+
+.modaladmin .close {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  color: #df0505;
+  background:transparent;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
+}
+.modaladmin .close:hover {
+  background:rgb(236, 209, 209);
+  width: auto;
+  height: auto;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  table th, table td {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filters input, .filters button {
+    width: 100%;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .modaladmin {
+    width: 95%;
+  }
+}
+
+/* Botones generales */
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #f0f0f0;
+  background-color: #0f1c31;  
+}
+
+@media (max-width: 768px) {
+  button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
+ 
+/* Modal de mensaje */
+
+#modal-mensaje {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Fondo más oscuro */
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-mensaje .modal-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#modal-mensaje h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#modal-mensaje p {
+  font-size: 1rem;
+  margin: 15px 0;
+  color: #555;
+}
+
+#modal-mensaje button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#modal-mensaje button:hover {
+  background-color: #0056b3;
+}
+
+/* Icono dentro del modal */
+#modal-mensaje .icono {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+  color: #007bff;
+}
+
+/* Ajustes responsivos para el modal */
+@media (max-width: 480px) {
+  #modal-mensaje .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}
+/* paginación */
+.paginacion-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+ 
+.pagina-boton {
+  background-color:#030d18;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+ 
+.pagina-boton.activo {
+  background-color:#0056b3 ;
+  cursor: default; /*VERIFICARRRR*/
+}

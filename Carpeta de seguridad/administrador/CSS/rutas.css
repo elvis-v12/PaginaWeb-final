@@ -1,0 +1,155 @@
+ 
+#learning-paths h2 {
+  font-size: 2rem;
+  color: #758f5a;
+  margin-bottom: 20px;
+  font-family: "Tilt Warp", sans-serif;
+  font-size: 2.5rem;
+  animation: zoomRepeat 4s ease-in-out infinite;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+#learning-paths label {
+  display: block;
+  margin-bottom: 10px;
+  color: #5c3c2c;
+  font-family: "ADLaM Display", sans-serif;
+  font-size: 21px;
+}
+
+#learning-paths #form-ruta input[type="text"],
+#learning-paths #form-ruta textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #9c3c00;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#learning-paths button {
+  background-color: #c9b19c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "ADLaM Display", sans-serif;
+  margin-top: -30px;
+  margin-left: 20px;
+  float: right;
+}
+
+#learning-paths .select-seccion {
+  width: 200px;
+  padding: 10px;
+  font-size: 13px;
+  border: 1px solid #c9b19c;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  appearance: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#learning-paths button:hover {
+  background-color: #495646;
+}
+
+#learning-paths form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+#learning-paths table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+#learning-paths table,
+#learning-paths th,
+#learning-paths td {
+  border: 1px solid #d7c4b8;
+}
+
+#learning-paths th,
+#learning-paths td {
+  padding: 15px;
+  text-align: left;
+}
+
+#learning-paths th {
+  color: rgb(235, 233, 233);
+  font-family: "Bayon", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+#learning-paths td {
+  background-color: #fffcf3;
+  font-family: "ADLaM Display", sans-serif;
+  color: #3d4032;
+}
+
+#learning-paths thead {
+  background-color: #a77f5b;
+}
+
+#learning-paths tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#learning-paths button.editar {
+  background-color: #cab9a6;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#learning-paths button.editar:hover {
+  background-color: #8ab576;
+}
+
+/* Estilos responsivos específicos */
+@media (max-width: 1024px) {
+  #learning-paths h2 {
+    font-size: 2rem;
+  }
+
+  #learning-paths table,
+  #learning-paths th,
+  #learning-paths td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  #learning-paths form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #learning-paths h2 {
+    font-size: 1.5rem;
+  }
+
+  #learning-paths input[type="text"],
+  #learning-paths textarea {
+    padding: 8px;
+  }
+
+  #learning-paths button {
+    padding: 8px 10px;
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,74 @@
+/* Estilo del modal para estudiantes */
+.modal-estudiante {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content-estudiante {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content-estudiante h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-estudiante-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-estudiante-foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.modal-content-estudiante p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+.close-estudiante {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.close-estudiante:hover {
+  color: #333;
+}
+
+.btn-ver-estudiante {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-ver-estudiante:hover {
+  background-color: #0056b3;
+}

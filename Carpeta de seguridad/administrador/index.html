@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="CSS/mensajeria.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/curso.css">
+  <link rel="stylesheet" href="CSS/becas.css">
+    <link rel="stylesheet" href="CSS/rutas.css">
+  <link rel="stylesheet" href="CSS/certificado.css">
+  <link rel="stylesheet" href="CSS/admin.css">
+  <link rel="stylesheet" href="CSS/graficos.css">
+  <title>Admin</title>
+</head>
+
+<body>
+  <!-- SIDEBAR -->
+  <section id="sidebar">
+    <!--  <a href="#" class="brand">
+        <i class="bx bxs-dashboard"></i>
+        <span class="text"></span>
+      </a>-->
+    <ul class="side-menu top">
+      <li class="active" data-section="dashboard">
+        <a href="#">
+          <i class="bx bxs-bar-chart-alt-2"></i>
+          <span class="text">Dashboard</span>
+        </a>
+      </li>
+      <li data-section="admin-management">
+        <a href="#">
+          <i class="bx bxs-user-detail"></i>
+          <span class="text">Gestión de Administradores</span>
+        </a>
+      </li>
+      <li data-section="student-management">
+        <a href="#">
+          <i class="bx bxs-group"></i>
+          <span class="text">Gestión de Estudiantes</span>
+        </a>
+      </li>
+      <li data-section="teacher-management">
+        <a href="#">
+          <i class="bx bxs-group"></i>
+          <span class="text">Gestión de Profesores</span>
+        </a>
+      </li>
+      <li data-section="courses">
+        <a href="#">
+          <i class="bx bxs-book"></i>
+          <span class="text">Cursos</span>
+        </a>
+      </li>
+      <li data-section="learning-paths">
+        <a href="#">
+          <i class="bx bxs-bookmark-alt"></i>
+          <span class="text">Rutas de Aprendizaje</span>
+        </a>
+      </li>
+      <li data-section="certificates">
+        <a href="#">
+          <i class="bx bxs-graduation"></i>
+          <span class="text">Certificados</span>
+        </a>
+      </li>
+      <li data-section="scholarship-requests">
+        <a href="#">
+          <i class="bx bxs-graduation"></i>
+          <span class="text">Solicitudes de Becas</span>
+        </a>
+      </li>
+      <li data-section="messaging">
+        <a href="#">
+          <i class="bx bxs-message-dots"></i>
+          <span class="text">Mensajería</span>
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="side-menu">
+      <li>
+        <a href="#" class="logout">
+          <i class="bx bxs-log-out-circle"></i>
+          <span class="text">Cerrar Sesión</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+ 
+  <section id="content">
+    <!-- NAVBAR -->
+    <nav>
+      <i class="bx bx-menu"></i>
+      <form action="#">
+        <div class="form-input">
+          <input type="search" placeholder="Search..." />
+          <button type="submit" class="search-btn">
+            <i class="bx bx-search"></i>
+          </button>
+        </div>
+      </form>
+      <input type="checkbox" id="switch-mode" hidden />
+      <label for="switch-mode" class="switch-mode"></label>
+      <a href="#" class="notification">
+        <i class="bx bxs-bell"></i>
+        <span class="num">8</span>
+      </a>
+      <a href="#" class="mensajeria">
+        <i class="bx bxs-message-dots"></i>
+        <span class="mejs">8</span>
+      </a>
+      <a href="#" class="profile">
+        <img src="img/people.jpg" />
+      </a>
+    </nav>
+    <!-- NAVBAR -->
+
+    <!-- MAIN  -->
+    <main>
+      <div id="dashboard" class="section active">
+         <div class="head-title">
+				 <h1>Dashboard</h1>
+
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Descargar PDF</span>
+				</a>
+			</div>
+      
+
+ <div class="graficos">  
+   <ul class="box-info">
+          <li>
+            <i class="fa fa-bar-chart"></i>
+            <span class="text">
+              <h3>$100</h3>
+              <p>Suscripciones </p>
+            </span>
+          </li>
+            <li>
+            <i class="fa fa-line-chart"></i>
+            <span class="text">
+              <h3>$100</h3>
+              <p>Cuentas</p>
+            </span>
+          </li>
+          <li>
+            <i class="fa fa-area-chart"></i>
+            <span class="text">
+              <h3>283</h3>
+              <p>Visitas</p>
+            </span>
+          </li>
+          <li>
+            <i class="fa fa-pie-chart"></i>
+            <span class="text">
+              <h3>250</h3>
+              <p>Docentes</p>
+            </span>
+          </li> 
+        </ul>  
+        <div class="arribagrafico">
+          
+    <div class="chart-container">
+      <h3>Tendencias en Suscripciones</h3>
+      <div class="chart-with-legend">
+        <canvas id="barChart"></canvas>
+        <div class="custom-legend bar-legend"></div>
+      </div>
+    </div> 
+     <div class="chart-container">
+        <h3>Rutas de Aprendizaje Populares</h3>
+        <canvas id="horizontalBarChart"></canvas>  
+    </div>
+    <div class="chart-container">
+      <h3>Distribución de Categorías</h3>
+      <div class="chart-with-legend">
+        <canvas id="doughnutChart"></canvas>
+        <div class="custom-legend doughnut-legend"></div>
+      </div>
+    </div> 
+     <div class="chart-container">
+      <h3>Cursos Más Populares</h3>
+      <div class="chart-with-legend">
+        <canvas id="pieChart"></canvas>
+        <div class="custom-legend pie-legend"></div>
+      </div>
+    </div>
+  </div>  
+</div>
+  </div>
+
+ 
+      
+      <!-- Contenido para la gestión de administradores -->
+      <div id="admin-management" class="section ">
+
+        <h1>Gestión de Administradores</h1>
+ <div class="filter-container">
+          <select>
+            <option value="all">Todos los roles</option>
+            <option value="super-admin">Super Administrador</option>
+            <option value="admin">Administrador</option>
+          </select>
+          <select>
+            <option value="all">Todos los estados</option>
+            <option value="active">Activo</option>
+            <option value="inactive">Inactivo</option>
+          </select>
+          <button onclick="abrirModalInsertar()">Agregar</button>
+          <button onclick="descargarReporte()">
+   <!--- <i class='bx bxs-download'></i> Descargar Reporte-->
+    <i class="bx bxs-cloud-download"></i> Descargar PDF
+
+  </button>
+        </div>
+         <div class="admin-container">
+      <table id="tabla-administradores" aria-labelledby="titulo-pagina">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombres</th>
+          <th>Correo</th>
+          <th>Rol</th>
+          <th>Estado</th>
+          <th>Fecha de Registro</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>   
+       
+     <!-- Modal para insertar -->
+    <div id="modal-insertar" class="modaladmin" role="dialog" aria-labelledby="modal-insertar-titulo" aria-hidden="true">
+      <div class="modal-content">
+        <button onclick="cerrarModalInsertar()" class="close" aria-label="Cerrar modal">&times;</button>
+        <h2 id="modal-insertar-titulo">Insertar Administrador</h2>
+        <form id="form-insertar-administrador" novalidate>
+          <label for="nombres-insertar">Nombres:</label>
+          <input type="text" id="nombres-insertar" placeholder="Nombres" required>
+          <label for="correo-insertar">Correo:</label>
+          <input type="email" id="correo-insertar" placeholder="Correo" required>
+          <label for="rol-id-insertar">ID del Rol:</label>
+          <input type="number" id="rol-id-insertar" placeholder="ID del Rol" required>
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal para editar -->
+    <div id="modal-editar" class="modaladmin" role="dialog" aria-labelledby="modal-editar-titulo" aria-hidden="true">
+      <div class="modal-content">
+        <button onclick="cerrarModalEditar()" class="close" aria-label="Cerrar modal">&times;</button>
+        <h2 id="modal-editar-titulo">Editar Administrador</h2>
+        <form id="form-editar-administrador" novalidate>
+          <label for="nombres-editar">Nombres:</label>
+          <input type="text" id="nombres-editar" placeholder="Nombres" required>
+          <label for="correo-editar">Correo:</label>
+          <input type="email" id="correo-editar" placeholder="Correo" required>
+          <label for="rol-id-editar">ID del Rol:</label>
+          <input type="number" id="rol-id-editar" placeholder="ID del Rol" required>
+          <label for="estado-editar">Estado:</label>
+          <select id="estado-editar">
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+          <button type="submit">Actualizar</button>
+        </form>
+      </div>
+    </div>
+ <div id="modal-mensaje">
+  <div class="modal-content">
+    <span class="icono" id="modal-mensaje-icono"></span>
+    <h2 id="modal-mensaje-titulo">Título del Mensaje</h2>
+    <p id="modal-mensaje-texto">Contenido del mensaje aquí.</p>
+    <button onclick="cerrarModalMensaje()">Aceptar</button>
+  </div>
+</div>
+</div>
+      </div>
+
+      <!-- Contenido para la gestión de estudiantes -->
+       <div id="student-management" class="section">
+  <h1>Gestión de Estudiantes</h1>
+  <div class="filter-container-estudiantes">
+    <select>
+      <option value="all">Todos los cursos</option>
+      <option value="curso1">JavaScript</option>
+      <option value="curso2">Python</option>
+    </select>
+    <select>
+      <option value="all">Todos los estados</option>
+      <option value="active">Activo</option>
+      <option value="inactive">Inactivo</option>
+    </select>
+    <button onclick="abrirModalInsertarEstudiante()">Agregar</button>
+    <button onclick="descargarReporteEstudiantes()">
+      <i class='bx bxs-download'></i> Descargar Reporte
+    </button>
+  </div>
+
+  <div class="estudiantes-container">
+    <table id="tabla-estudiantes" aria-labelledby="titulo-estudiantes">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombres</th>
+          <th>Correo</th>
+          <th>Cursos Inscritos</th>
+          <th>Nose</th>
+          <th>Estado</th>
+          <th>Fecha de Registro</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas generadas dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+
+   
+</div>
+
+      <!-- Contenido para la gestión de profesores -->
+      <div id="teacher-management" class="section">
+        <h1>Gestión de Profesores</h1>
+        <div class="filter-container">
+          <select>
+            <option value="all">Todos los estados</option>
+            <option value="active">Activo</option>
+            <option value="inactive">Inactivo</option>
+          </select>
+          <select>
+            <option value="all">Todos los cursos</option>
+            <option value="curso1">JavaScript</option>
+            <option value="curso2">Curso 2</option>
+          </select>
+          <button class="btn-add">Agregar</button>
+        </div>
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Profesores Registrados</h3>
+              <div class="form-input">
+                <input type="search" placeholder="buscar..." />
+                <button type="submit" class="search-btn">
+                  <i class="bx bx-search"></i>
+                </button>
+              </div>
+              <i class="bx bx-filter"></i>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Correo Electrónico</th>
+                  <th>Cursos Asignados</th>
+                  <th>Estado de Cuenta</th>
+                  <th>Fecha de Registro</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pedro Sánchez</td>
+                  <td>pedro.sanchez@example.com</td>
+                  <td>Curso de JavaScript</td>
+                  <td><span class="status active">Activo</span></td>
+                  <td>15-08-2023</td>
+                  <td>
+                    <button class="btn-view">Ver Perfil</button>
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-toggle-status">Desactivar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido para cursos -->
+      <section id="courses" class="section">
+        <header class="courses__header"></header>
+        <div class="courses__content">
+        </div>
+      </section>
+
+      <section id="coursesEdit" class="section">
+        <header class="coursesEdit_tabs">
+          <div class="coursesEdit_tabs__item coursesEdit-1">Datos</div>
+          <div class="coursesEdit_tabs__item coursesEdit-2 active">Contenido</div>
+        </header>
+        <!-- Parte de cmodificar datos de un curso -->
+        <div class="coursesEdit__content coursesEdit__content-datos coursesEdit-1"
+          style="visibility:hidden; display:none">
+          <form class="form-course-content">
+            <!-- Div para los campos de datos -->
+            <div class="course-data">
+              <div class="course-data__field">
+                <label for="course-name">Nombre</label>
+                <input type="text" id="course-name" name="name" placeholder="Nombre del curso" required>
+              </div>
+
+              <div class="course-data__field">
+                <label for="course-price">Precio</label>
+                <input type="number" id="course-price" name="price" placeholder="Precio del curso" required>
+              </div>
+
+              <div class="course-data__field">
+                <label for="course-language">Lenguaje</label>
+                <input type="text" id="course-language" name="language" placeholder="Lenguaje del curso" required>
+              </div>
+
+              <!-- Div editable para Descripción -->
+              <div class="course-data__field">
+                <label for="course-description">Descripción</label>
+                <div id="course-description" class="editable-field" contenteditable="true"
+                  placeholder="Descripción del curso"></div>
+                <div class="editor-options">
+                  <button type="button" class="btn-bold">Negrita</button>
+                  <button type="button" class="btn-list">Lista</button>
+                  <button type="button" class="btn-list-ordered">Lista Enumerada</button>
+                </div>
+              </div>
+
+              <!-- Div editable para Resumen -->
+              <div class="course-data__field">
+                <label for="course-summary">Resumen</label>
+                <div id="course-summary" class="editable-field" contenteditable="true" placeholder="Resumen del curso">
+                </div>
+                <div class="editor-options">
+                  <button type="button" class="btn-bold">Negrita</button>
+                  <button type="button" class="btn-list">Lista</button>
+                  <button type="button" class="btn-list-ordered">Lista Enumerada</button>
+                </div>
+              </div>
+
+              <!-- Div editable para Detalles -->
+              <div class="course-data__field">
+                <label for="course-details">Detalles</label>
+                <div id="course-details" class="editable-field" contenteditable="true" placeholder="Detalles del curso">
+                </div>
+                <div class="editor-options">
+                  <button type="button" class="btn-bold">Negrita</button>
+                  <button type="button" class="btn-list">Lista</button>
+                  <button type="button" class="btn-list-ordered">Lista Enumerada</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Div para el botón de envío -->
+            <div class="form-options-content-menu">
+              <button type="submit">Guardar cambios</button>
+            </div>
+          </form>
+        </div>
+        <!-- Parte de cmodificar contenido de un curso -->
+        <div class="coursesEdit__content coursesEdit__content-contenido coursesEdit-2">
+          <div class="module-list">
+            <h3>Módulos del Curso</h3>
+            <ul class="module-items">
+              <li class="add-module-item">
+                <button class="btn-add-module">Agregar Nuevo Módulo</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="module-edit-form">
+            <h3>Editar o Agregar Módulo</h3>
+            <form class="form-module-content">
+              <div class="module-data">
+                <div class="module-data__field">
+                  <label for="module-name">Nombre del Módulo</label>
+                  <input type="text" id="module-name" placeholder="Nombre del módulo" required>
+                </div>
+                <div class="module-data__field">
+                  <label for="module-description">Descripción</label>
+                  <div id="module-description" class="editable-field" contenteditable="true"></div>
+                  <div class="editor-options">
+                    <button type="button" class="btn-bold">Negrita</button>
+                    <button type="button" class="btn-list">Lista</button>
+                    <button type="button" class="btn-list-ordered">Lista Enumerada</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-options-content-menu">
+                <button type="submit">Guardar Módulo</button>
+              </div>
+            </form>
+
+            <!-- Formulario para sesiones dentro de cada módulo -->
+            <div class="session-edit-form">
+              <h3>Editar o Agregar Sesión</h3>
+              <form class="form-session-content">
+                <div class="session-data">
+                  <div class="session-data__field">
+                    <label for="session-name">Nombre de la Sesión</label>
+                    <input type="text" id="session-name" placeholder="Nombre de la sesión" required>
+                  </div>
+                  <div class="session-data__field">
+                    <label for="session-description">Descripción</label>
+                    <div id="session-description" class="editable-field" contenteditable="true"></div>
+                    <div class="editor-options">
+                      <button type="button" class="btn-bold">Negrita</button>
+                      <button type="button" class="btn-list">Lista</button>
+                      <button type="button" class="btn-list-ordered">Lista Enumerada</button>
+                    </div>
+                  </div>
+                  <div class="session-data__field">
+                    <label for="session-content">Contenido (Video URL)</label>
+                    <input type="url" id="session-content" placeholder="URL del video" required>
+                  </div>
+                  <div class="session-edit-resources">
+                    <label>Recursos de la Sesión</label>
+                  </div>
+                  <div class="session-data__field">
+                    <label for="session-cover">Portada de la Sesión</label>
+                    <input type="file" id="session-cover">
+                  </div>
+                </div>
+                <div class="form-options-content-menu">
+                  <button type="submit">Guardar Sesión</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <div id="learning-paths" class="section">
+      <h1>Crear y Editar Rutas de Aprendizaje</h1>
+
+            <form id="form-ruta">
+                 
+                <label for="nombre-ruta">Nombre de la Ruta:</label>
+                <input type="text" id="nombre-ruta" name="nombre-ruta" placeholder="Introduce el nombre de la ruta"
+                    required>
+
+                <!-- Campo para la descripción de la ruta -->
+                <label for="descripcion-ruta">Descripción de la Ruta:</label>
+                <textarea id="descripcion-ruta" name="descripcion-ruta" placeholder="Descripción de la ruta"
+                    required></textarea>
+
+                <div id="seccion-container">
+                    <label for="seccion-select">Curso a agregar :</label>
+                    <select id="seccion-select" class="select-seccion">
+                        <option value="">Seleccione una opción</option>
+                        <option value="HTML">HTML</option>
+                        <option value="Python">Python</option>
+                        <option value="js">JavaScript</option>
+                    </select>
+                </div>
+
+                <!-- Botón para guardar la ruta -->
+                <button type="submit">Guardar Ruta</button>
+            </form>
+
+            <table id="tabla-rutas">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se mostrarán las rutas creadas -->
+                </tbody>
+            </table>
+      </div>
+
+      <div id="certificates" class="section">
+        <h1>Certificados</h1>
+ 
+
+           
+ 
+      </div>
+
+      <!-- Contenido para solicitudes de becas -->
+      <div id="scholarship-requests" class="section">
+        <h1>Solicitudes de Becas</h1>
+          <!-- Filtros de búsqueda -->
+          <div class="filtros">
+            <select id="filtroEstado" onchange="filtrarPostulantes()">
+                <option value="">Estado de Solicitud</option>
+                <option value="Pendiente">Pendiente</option>
+                <option value="Aprobado">Aprobado</option>
+                <option value="Rechazado">Rechazado</option>
+            </select>
+            <input type="number" id="filtroEdad" placeholder="Edad" onchange="filtrarPostulantes()">
+            <input type="number" id="filtroPromedio" placeholder="Promedio mínimo" onchange="filtrarPostulantes()">
+            <input type="text" id="busquedaNombre" placeholder="Buscar por nombre" onkeyup="filtrarPostulantes()">
+        </div>
+
+        <!-- Tabla de postulantes -->
+        <div class="postulantes">
+            <h1>Bandeja de Solicitudes de Becas</h1>
+
+            <table id="tabla-solicitudes">
+                <thead>
+                    <tr>
+                        <th>Nombre del Estudiante</th>
+                        <th>Razon de la Solicitud</th>
+                        <th>Historial de Cursos</th>
+                        <th>Archivo PDF</th> <!-- Nueva columna para el archivo PDF -->
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán las solicitudes dinámicamente -->
+                </tbody>
+            </table>
+
+            <div id="detalles-solicitud" class="detalles-solicitud">
+                <h3>Detalles de la Solicitud</h3>
+                <div id="detalle-razon"></div>
+                <div id="detalle-historial"></div>
+                <div id="detalle-archivo"></div> <!-- Detalle para el archivo PDF -->
+                <div>
+                    <label for="tipo-beca">Selecciona Tipo de Beca:</label>
+                    <select id="tipo-beca">
+                        <option value="" disabled selected>Selecciona tipo de beca</option>
+                        <option value="programacion">Beca de Programación</option>
+                        <option value="matematicas">Beca de Matemáticas</option>
+                        <option value="diseno">Beca de Diseño y Animación</option>
+                        <option value="bases-datos">Beca de Bases de Datos</option>
+                    </select>
+                </div>
+                <div class="acciones">
+                    <button id="aprobar-btn" class="btn-accion">Aprobar</button>
+                    <button id="rechazar-btn" class="btn-accion">Rechazar</button>
+                    <button id="solicitar-info-btn" class="btn-accion">Solicitar Más Información</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Modal de detalles -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                 <h2>Información del Postulante</h2>
+        
+        <div class="modal-body">
+            <div class="left-section">
+                <div class="profile-avatar">
+                    <img src="avatar_placeholder.png" alt="Avatar del Postulante" class="avatar">
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <!-- Información personal -->
+                <div class="profile-info">
+                    <div class="info-item">
+                        <label>Nombre Completo:</label>
+                        <span id="nombre"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Fecha de Nacimiento:</label>
+                        <span id="fechaNacimiento"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Sexo:</label>
+                        <span id="sexo"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Teléfono:</label>
+                        <span id="telefono"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Correo Electrónico:</label>
+                        <span id="email"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Dirección:</label>
+                        <span id="direccion"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Promedio:</label>
+                        <span id="promedio"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Estado de Solicitud:</label>
+                        <span id="estadoSolicitud"></span>
+                    </div>
+                </div>
+
+                <!-- Documentos Adjuntos -->
+                <div class="documents-section">
+                    <h3>Documentos Adjuntos</h3>
+                    <ul id="documentos" class="document-list">
+                        <!-- Enlaces a documentos -->
+                    </ul>
+                </div>
+
+                <!-- Cursos -->
+                <div class="courses-section">
+    <h3>Cursos Libres Completados</h3>
+    <div class="course-cards" id="cursosLibres">
+        <!-- Tarjetas de cursos completados generadas dinámicamente -->
+    </div>
+
+    <h3>Cursos Elegidos para Beca</h3>
+    <div class="course-cards" id="cursosPostulados">
+        <!-- Tarjetas de cursos postulados generadas dinámicamente -->
+    </div>
+</div>
+            </div>
+        </div>
+                <div class="modal-actions">
+                    <button class="btn-accept" onclick="gestionarBeca('aprobar')">Aprobar Beca</button>
+                    <button class="btn-reject" onclick="gestionarBeca('rechazar')">Rechazar Beca</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div id="messaging" class="section">
+        <h1>Mensajería</h1>
+        <div class="mensajeriabox">
+          <div class="sidebar">
+            <h2>Chats Recientes</h2>
+            <div class="chat-list">
+              <div class="chat-item" onclick="openChat('Juan Pérez')">
+                <img src="img/jbkb.png.webp" alt="Avatar" />
+                <div class="chat-info">
+                  <h4>Juan Pérez</h4>
+                  <p>¡Hola! ¿Cómo estás?</p>
+                </div>
+              </div>
+              <div class="chat-item" onclick="openChat('María Rodríguez')">
+                <img src="img/IU.webp" alt="Avatar" />
+                <div class="chat-info">
+                  <h4>María Rodríguez</h4>
+                  <p>¿Nos vemos mañana?</p>
+                </div>
+              </div>
+              <div class="chat-item" onclick="openChat('Carlos Sánchez')">
+                <img src="img/TAE.webp" alt="Avatar" />
+                <div class="chat-info">
+                  <h4>Carlos Sánchez</h4>
+                  <p>¿Qué opinas del proyecto?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="chat-container">
+            <div class="chat-header" id="chat-header">Seleccione un chat</div>
+            <div class="chat-messages" id="chat-messages">
+              <!-- Ejemplo de mensajes -->
+              <div class="message-container received">
+                <div class="message received">¿Nos vemos mañana?</div>
+                <div class="timestamp-received">11:35</div>
+              </div>
+              <div class="message-container sent">
+                <div class="message sent">¡Claro! ¿A qué hora?</div>
+                <div class="timestamp-sent">11:36</div>
+              </div>
+            </div>
+            <div class="chat-input-container">
+              <button id="emoji-button"><i class="fas fa-smile"></i></button>
+              <input
+                type="text"
+                id="chat-input"
+                placeholder="Escribe un mensaje..."
+                onkeypress="handleKeyPress(event)"
+              />
+              <input
+                type="file"
+                id="file-input"
+                style="display: none"
+                onchange="handleFileSelect(event)"
+              />
+
+              <button
+                id="attach-button"
+                onclick="document.getElementById('file-input').click();"
+              >
+                <i class="fas fa-paperclip"></i>
+              </button>
+    
+              <button onclick="sendMessage()" id="send-button">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+  <script src="JS/administradores.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="JS/script.js"></script>
+  <script type="module" src="JS/curso.js"></script>
+  <script src="JS/mensajeria.js"></script>
+  <script src="JS/beca.js"></script>
+  <script src="JS/certificados.js"></script>
+   <script src="JS/rutas.js"></script>
+  <script src="JS/graficos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</body>
+
+</html>

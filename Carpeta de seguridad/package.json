@@ -1,0 +1,26 @@
+{
+  "name": "carpeta-de-seguridad",
+  "version": "1.0.0",
+  "main": "admin.html",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chart.js": "^4.4.6",
+    "cors": "^2.8.5",
+    "e": "^0.2.33",
+    "express": "^4.21.1",
+    "express-myconnection": "^1.0.4",
+    "js": "^0.1.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
