@@ -408,7 +408,7 @@ textarea {
     font-size: 69px; /* Aumenta el tamaño de la fuente del título */
     margin: 6px 0; /* Añade un margen para reducir el espacio alrededor del título */
     background: linear-gradient(90deg, #436ccb, #7dbbeb); /* Degradado */
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent; /* Relleno de texto transparente para el degradado */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
     animation: bounce 1s infinite; /* Efecto de rebote permanente */

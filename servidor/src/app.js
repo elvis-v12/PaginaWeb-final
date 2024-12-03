@@ -23,7 +23,7 @@ app.use(express.json());
 
 // Servir la carpeta cliente como archivos estáticos
 app.use(express.static(path.resolve('../cliente')));
-
+//app.use(express.static(path.join(__dirname, 'cliente/src')));
 
 // Middleware para archivos estáticos adicionales
 app.use('/public', express.static(path.join('..', 'public')));

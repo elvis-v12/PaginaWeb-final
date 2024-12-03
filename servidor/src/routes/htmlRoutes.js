@@ -30,6 +30,7 @@ const pages = [
     'examenPython',
     'videoHtml',
     'videoCine',
+    'video2',
     'videoJS',
     'videoPython',
     'cuestionarioCin',
