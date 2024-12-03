@@ -1,0 +1,104 @@
+{
+  "basico": {
+    "titulo": "Curso de HTML para niños",
+    "subtitulo": "Curso de HTML\nbásico para niños",
+    "nivel": "BÁSICO",
+    "descripcion": "En este curso, los niños aprenderán HTML de una manera divertida y fácil de entender, utilizando proyectos creativos que estimulan su imaginación. Desde crear sus propias páginas web hasta diseñar elementos visuales, los estudiantes desarrollarán habilidades básicas de programación mientras se sumergen en el emocionante mundo del diseño web. Con un enfoque práctico y actividades interactivas, los niños no solo aprenderán a estructurar contenido en línea, sino que también adquirirán confianza para expresar sus ideas y compartirlas con el mundo.",
+    "imagen": "/public/img/ninos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "HTML desde Cero: Tu Primer Sitio Web",
+        "duracion": "01:50 min",
+        "progreso": "40%"
+      },
+      {
+        "titulo": "Domina HTML: Estructura y Etiquetas Esenciales",
+        "duracion": "01:02 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Creando Páginas Web: Introducción a HTML",
+        "duracion": "01:50 min",
+        "progreso": "80%"
+      },
+      {
+        "titulo": "HTML 101: Fundamentos para Principiantes",
+        "duracion": "01:50 min",
+        "progreso": "10%"
+      },
+      {
+        "titulo": "Explorando HTML: Tu Primer Paso en el Desarrollo Web",
+        "duracion": "01:50 min",
+        "progreso": "50%"
+      }
+    ]
+  },
+  "intermedio": {
+    "titulo": "Curso de HTML Intermedio",
+    "subtitulo": "Curso de HTML\nIntermedio",
+    "nivel": "INTERMEDIO",
+    "descripcion": "En este curso intermedio, aprenderás conceptos avanzados de HTML, como la semántica, formularios y multimedia, para construir sitios web más dinámicos y funcionales. Este curso está diseñado para quienes ya tienen una base sólida y desean profundizar sus conocimientos para enfrentar proyectos más complejos.",
+    "imagen": "/public/img/ninos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Formularios en HTML",
+        "duracion": "02:00 min",
+        "progreso": "40%"
+      },
+      {
+        "titulo": "Multimedia: Imágenes, Videos y Audio",
+        "duracion": "01:45 min",
+        "progreso": "70%"
+      },
+      {
+        "titulo": "HTML Semántico: Buenas Prácticas",
+        "duracion": "02:30 min",
+        "progreso": "50%"
+      },
+      {
+        "titulo": "Usando Canvas y SVG en HTML",
+        "duracion": "01:30 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Construcción de Sitios Responsivos",
+        "duracion": "03:00 min",
+        "progreso": "80%"
+      }
+    ]
+  },
+  "avanzado": {
+    "titulo": "Curso de HTML Avanzado",
+    "subtitulo": "Curso de HTML\nAvanzado",
+    "nivel": "AVANZADO",
+    "descripcion": "Este curso avanzado está diseñado para quienes desean dominar HTML en profundidad, explorando temas como accesibilidad, optimización para SEO y rendimiento web. Además, aprenderás a trabajar con APIs y otras herramientas avanzadas que te permitirán construir sitios web de última generación.",
+    "imagen": "/public/img/ninos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Accesibilidad Web: Haciendo Sitios Inclusivos",
+        "duracion": "03:00 min",
+        "progreso": "50%"
+      },
+      {
+        "titulo": "Optimización SEO con HTML",
+        "duracion": "04:00 min",
+        "progreso": "70%"
+      },
+      {
+        "titulo": "HTML y APIs: Conexión con Servicios Externos",
+        "duracion": "03:30 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Mejorando el Rendimiento de tus Páginas",
+        "duracion": "02:45 min",
+        "progreso": "90%"
+      },
+      {
+        "titulo": "Prácticas Avanzadas con HTML",
+        "duracion": "03:30 min",
+        "progreso": "80%"
+      }
+    ]
+  }
+}

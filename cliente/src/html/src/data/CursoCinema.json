@@ -1,0 +1,105 @@
+{
+    "basico": {
+      "titulo": "Curso de Cinema 4D para niños",
+      "subtitulo": "Curso de Cinema\n4D básico para niños",
+      "nivel": "BÁSICO",
+      "descripcion": "En este emocionante curso de Cinema 4D para niños, aprenderás a hacer tus propias animaciones en 3D como las que ves en tus películas y videojuegos favoritos. ¡No necesitas experiencia previa! Aquí te enseñaremos desde lo más básico, usando explicaciones claras y fáciles de seguir. Al finalizar, podrás guardar y compartir tus creaciones. ¡Este curso es para ti!",
+      "imagen": "/public/img/ninos/programador.jpg",
+      "recursos": [
+        {
+          "titulo": "¡Bienvenido al Mundo 3D! – Introducción a Cinema 4D",
+          "duracion": "01:50 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Conoce la Herramienta: Navegando en Cinema 4D",
+          "duracion": "01:02 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "¡Manos a la Obra! Cómo Crear tu Primer Objeto en 3D",
+          "duracion": "01:50 min",
+          "progreso": "80%"
+        },
+        {
+          "titulo": "Dando Vida a tus Creaciones: Modelado Básico",
+          "duracion": "01:50 min",
+          "progreso": "10%"
+        },
+        {
+          "titulo": "Personajes Divertidos: Diseñando tu primer personaje en 3D",
+          "duracion": "01:50 min",
+          "progreso": "50%"
+        }
+      ]
+    },
+    "intermedio": {
+      "titulo": "Curso de Cinema 4D Intermedio",
+      "subtitulo": "Curso de Cinema\n4D Intermedio",
+      "nivel": "INTERMEDIO",
+      "descripcion": "Lleva tus habilidades de Cinema 4D al siguiente nivel. Aprende técnicas intermedias como texturización, iluminación avanzada y animación de objetos. Este curso está diseñado para quienes ya tienen una base y quieren ampliar sus conocimientos.",
+      "imagen": "/public/img/ninos/programador.jpg",
+      "recursos": [
+        {
+          "titulo": "Iluminación Creativa en Cinema 4D",
+          "duracion": "02:00 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Creando Texturas Realistas",
+          "duracion": "01:45 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Animación de Objetos: Movimientos Naturales",
+          "duracion": "02:30 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Renderizado Básico: Da vida a tus escenas",
+          "duracion": "01:30 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Diseño de Escenarios en 3D",
+          "duracion": "03:00 min",
+          "progreso": "80%"
+        }
+      ]
+    },
+    "avanzado": {
+      "titulo": "Curso de Cinema 4D Avanzado",
+      "subtitulo": "Curso de Cinema\n4D Avanzado",
+      "nivel": "AVANZADO",
+      "descripcion": "Este curso avanzado está diseñado para expertos que desean dominar Cinema 4D. Aprende sobre simulaciones físicas, partículas, modelado avanzado y renderizado profesional. Ideal para quienes buscan crear animaciones de calidad profesional.",
+      "imagen": "/public/img/ninos/programador.jpg",
+      "recursos": [
+        {
+          "titulo": "Simulaciones Físicas en Cinema 4D",
+          "duracion": "03:00 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Trabajando con Partículas",
+          "duracion": "04:00 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Modelado Avanzado: Técnicas Profesionales",
+          "duracion": "03:30 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Renderizado de Alta Calidad",
+          "duracion": "02:45 min",
+          "progreso": "90%"
+        },
+        {
+          "titulo": "Creando Animaciones Complejas",
+          "duracion": "03:30 min",
+          "progreso": "80%"
+        }
+      ]
+    }
+  }
+  

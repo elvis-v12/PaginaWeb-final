@@ -1,0 +1,105 @@
+{
+    "basico": {
+      "titulo": "Curso de Python para niños",
+      "subtitulo": "Curso de Python\npara niños",
+      "nivel": "BÁSICO",
+      "descripcion": "En este curso, los niños aprenderán Python de una manera divertida y fácil de entender, utilizando proyectos creativos que estimulan su imaginación. Desde crear sus propias páginas web hasta diseñar elementos visuales, los estudiantes desarrollarán habilidades básicas de programación mientras se sumergen en el emocionante mundo del diseño web. Con un enfoque práctico y actividades interactivas, los niños no solo aprenderán a estructurar contenido en línea, sino que también adquirirán confianza para expresar sus ideas y compartirlas con el mundo.",
+      "imagen": "/public/img/ninos/programador.jpg",
+      "recursos": [
+        {
+          "titulo": "Introducción a Python: ¡Hola, Mundo!",
+          "duracion": "01:50 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Variables y Tipos de Datos: Guardando Información",
+          "duracion": "01:02 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Condicionales: Tomando Decisiones",
+          "duracion": "01:50 min",
+          "progreso": "80%"
+        },
+        {
+          "titulo": "Bucles: Repetir y Repetir",
+          "duracion": "01:50 min",
+          "progreso": "10%"
+        },
+        {
+          "titulo": "Funciones: Reutilizando Código",
+          "duracion": "01:50 min",
+          "progreso": "50%"
+        }
+      ]
+    },
+    "intermedio": {
+      "titulo": "Curso de Python Intermedio",
+      "subtitulo": "Curso de Python\nIntermedio",
+      "nivel": "INTERMEDIO",
+      "descripcion": "En este curso, los estudiantes aprenderán a trabajar con estructuras de datos avanzadas, algoritmos intermedios y conceptos de programación orientada a objetos. Este nivel está diseñado para quienes ya tienen un conocimiento básico de Python y buscan expandir sus habilidades para proyectos más complejos. Con actividades prácticas, los estudiantes aplicarán los conceptos para resolver problemas reales y desarrollar aplicaciones útiles.",
+      "imagen": "/public/img/ninos/programador.jpg",
+      "recursos": [
+        {
+          "titulo": "Estructuras de Datos: Listas y Diccionarios",
+          "duracion": "02:30 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Funciones Avanzadas: Decoradores y Generadores",
+          "duracion": "01:45 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "POO: Clases y Objetos en Python",
+          "duracion": "02:00 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Manejo de Errores y Excepciones",
+          "duracion": "01:30 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Automatización de Tareas con Python",
+          "duracion": "03:00 min",
+          "progreso": "80%"
+        }
+      ]
+    },
+    "avanzado": {
+      "titulo": "Curso de Python Avanzado",
+      "subtitulo": "Curso de Python\nAvanzado",
+      "nivel": "AVANZADO",
+      "descripcion": "Este curso avanzado está diseñado para estudiantes que desean dominar Python en profundidad. Incluye temas como programación funcional, manejo avanzado de datos, y uso de bibliotecas especializadas para el análisis de datos, machine learning y desarrollo web. Con proyectos desafiantes, los participantes aprenderán a optimizar su código y desarrollar aplicaciones escalables.",
+      "imagen": "/public/img/ninos/programador.jpg",
+      "recursos": [
+        {
+          "titulo": "Programación Funcional y Lambda",
+          "duracion": "02:30 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Procesamiento de Datos con Pandas y NumPy",
+          "duracion": "03:00 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Machine Learning con Python",
+          "duracion": "04:00 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Desarrollo Web con Flask y Django",
+          "duracion": "03:30 min",
+          "progreso": "90%"
+        },
+        {
+          "titulo": "Optimización y Buenas Prácticas en Python",
+          "duracion": "02:30 min",
+          "progreso": "80%"
+        }
+      ]
+    }
+  }
+  
