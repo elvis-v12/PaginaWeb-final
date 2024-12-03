@@ -1,0 +1,372 @@
+* {
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+/* Estilo General */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+        /* Sube el texto */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Vuelve a la posición original */
+    }
+}
+
+
+.titulo-seccion {
+    text-align: center;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 4.2rem;
+    background: none;
+
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Sombra para crear el borde grueso blanco y la curvatura */
+    text-shadow:
+        -2px -2px 0 #6fb94d,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+        6px 6px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidad */
+
+    margin-top: 20px;
+    display: block;
+
+    /* Animación de burbuja */
+    animation: bubble 3s infinite ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo general de la sección de planes de pago ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.cuadro {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* Para dispositivos más pequeños */
+    padding: 50px 20px;
+}
+
+/* Estilo para cada recuadro */
+.recuadro {
+    background-color: #ffffff;
+    border: 2px solid #6fb94d;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    /* Ancho fijo para cada plan */
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* Configura el recuadro en columnas para el contenido */
+    justify-content: space-between;
+    /* Distribuye el contenido dentro del recuadro */
+    height: 100%;
+    /* Asegura que todos los recuadros tengan la misma altura */
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        transform: scale(1.02);
+        /* Aumenta ligeramente el tamaño */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        /* Sombra más intensa */
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Efecto de hover en los recuadros */
+.recuadro:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título */
+.anual {
+    font-size: 1.5rem;
+    color: #6fb94d;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el texto principal */
+.texto-principal {
+    font-size: 2rem;
+    color: #333;
+    margin: 15px 0;
+}
+
+/* Estilo para el precio */
+.pago {
+    font-size: 1.8rem;
+    color: #6fb94d;
+    margin: 15px 0;
+}
+
+/* Estilo para los iconos de verificación y error */
+.check {
+    color: green;
+    margin-right: 5px;
+}
+
+.x {
+    color: red;
+    margin-right: 5px;
+}
+
+/* Estilo para el botón */
+.boton-plan {
+    background-color: #6fb94d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto;
+    /* Empuja el botón hacia el final del recuadro */
+}
+
+/* Efecto de hover en el botón */
+.boton-plan:hover {
+    background-color: #30e1e7;
+}
+
+.bandera {
+    display: inline-block;
+    width: 25px;
+    /* Tamaño del círculo */
+    height: 25px;
+    /* Altura del círculo */
+    border-radius: 50%;
+    /* Hace que sea un círculo */
+    background: red;
+    /* Color de fondo rojo */
+    position: relative;
+    /* Para posicionar la franja blanca */
+    margin-right: 10px;
+    /* Espacio entre la imagen y el texto */
+}
+
+.bandera::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* Centra la franja blanca */
+    width: 10px;
+    /* Ancho de la franja blanca */
+    height: 25px;
+    /* Altura de la franja blanca */
+    background: white;
+    /* Color de la franja blanca */
+    transform: translateX(-50%);
+    /* Centra la franja blanca */
+}
+
+/* Sección de recomendaciones +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.recomendaciones {
+    background-color: #e0f7fade;
+    /* Fondo claro para las recomendaciones */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 40px 0;
+    /* Espacio alrededor de la sección */
+}
+
+.titulo-recomendaciones {
+    font-size: 2rem;
+    color: #6fb94d;
+    margin-bottom: 20px;
+}
+
+.tweets {
+    display: flex;
+    flex-direction: column;
+    /* Coloca los tweets en columna */
+    align-items: center;
+}
+
+.tweet {
+    background: #fff;
+    border: 1px solid #a97c3a;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    /* Espacio entre los tweets */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    /* Efecto de hover */
+}
+
+.tweet:hover {
+    transform: scale(1.02);
+    /* Efecto de aumento al pasar el mouse */
+}
+
+/* Seccion de regalar plan +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.caja-regalo {
+    display: flex;
+    /* Usamos flexbox para alinear los elementos */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    background-color: #ffffff;
+    /* Fondo blanco para la caja */
+    border: 2px solid #a97c3a;
+    /* Borde color vibrante */
+    border-radius: 15px;
+    /* Esquinas redondeadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    padding: 30px;
+    /* Espaciado interno */
+    margin: 20px;
+    /* Margen alrededor de la caja */
+    justify-content: center;
+    /* Centra los elementos en la caja */
+}
+
+/* Espacio para la imagen */
+.caja-regalo .imagen {
+    width: 180px;
+    /* Ancho fijo para la imagen */
+    height: 180px;
+    /* Altura fija para la imagen */
+    background-image: url('/public/img/ninos/regalo.gif');
+    /* Ruta de tu imagen */
+    background-size: cover;
+    /* Asegúrate de cubrir todo el espacio */
+    background-position: center;
+    /* Centra la imagen */
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    margin-right: 60px;
+    /* Espacio a la derecha de la imagen */
+}
+
+/* Estilo del título */
+.caja-regalo h1 {
+    font-size: 2.5rem;
+    /* Tamaño de fuente aumentado */
+    color: #6fb94d;
+    /* Color vibrante */
+    margin: 0 0 10px 0;
+    /* Margen inferior */
+    font-family: 'Poppins', sans-serif;
+    /* Cambiar a la fuente deseada */
+}
+
+/* Estilo del texto descriptivo */
+.caja-regalo p {
+    font-size: 1.25rem;
+    /* Tamaño de fuente aumentado */
+    color: #333;
+    /* Color del texto */
+    margin: 0 0 20px 0;
+    /* Margen inferior */
+    font-family: 'Poppins', sans-serif;
+    /* Cambiar a la fuente deseada */
+}
+
+/* Estilo de los pasos */
+.caja-regalo ul {
+    list-style-type: none;
+    /* Sin viñetas */
+    padding: 0;
+    /* Sin padding */
+}
+
+.caja-regalo ul li {
+    font-size: 1.25rem;
+    /* Tamaño de fuente para pasos aumentado */
+    margin: 5px 0;
+    /* Margen entre los pasos */
+    font-family: 'Poppins', sans-serif;
+    /* Cambiar a la fuente deseada */
+}
+
+/* Estilo para el botón */
+.boton-regalo {
+    background-color: #6fb94d;
+    /* Fondo color vibrante */
+    color: white;
+    /* Texto blanco */
+    border: none;
+    /* Sin borde */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    border-radius: 5px;
+    /* Esquinas redondeadas */
+    font-size: 1.25rem;
+    /* Tamaño de fuente aumentado */
+    cursor: pointer;
+    /* Cursor de mano */
+    transition: background-color 0.3s;
+    /* Transición suave */
+    margin-right: 10px;
+    /* Margen entre botones */
+}
+
+.boton-regalo:hover {
+    background-color: #30e1e7;
+    /* Color al pasar el mouse */
+}
+
+/* Estilo del pie de página */
+.footer {
+    background-color: #333; /* Color de fondo oscuro */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Espaciado interior */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    font-family: 'Arial', sans-serif; /* Tipografía simple y limpia */
+    border-top: 2px solid #6fb94d; /* Líneas de separación */
+    position: relative;
+}
+
+.footer p {
+    margin: 0; /* Elimina los márgenes de los párrafos */
+    line-height: 1.5; /* Espaciado de línea */
+}

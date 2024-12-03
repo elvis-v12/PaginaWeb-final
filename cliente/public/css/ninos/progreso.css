@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+body {
+    background-image: url('/public/img/ninos/burbuja.jpg');
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 15px auto;
+    padding: 10px;
+    padding-top: 80px;
+    background-color: rgba(201, 243, 255, 0.82);
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    font-family: 'Coiny', cursive;
+    color: #ffcc00;
+    text-shadow: 2px 2px 0px #b8a430;
+    margin-left: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat {
+    background-color: #b348afe1;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 23%;
+    margin-left: 10px;
+}
+
+.stat i {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.stat h3 {
+    font-family: 'Nanum Gothic Coding', monospace;
+    margin-bottom: 5px;
+}
+
+.stat p {
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center; /* Centra los gráficos horizontalmente */
+    margin-top: 20px;
+}
+
+.chart {
+    width: 50%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.721);
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 10px; /* Añade margen lateral para separación */
+}
+
+.chart-circular {
+    width: 25%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.701);
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 10px; /* Añade margen lateral para separación */
+}

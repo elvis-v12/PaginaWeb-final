@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+/* Estilo General */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+.header {
+    max-width: 1200px;
+    /* Controla el ancho máximo del encabezado */
+    margin: 0 auto;
+    /* Centra el encabezado horizontalmente */
+    padding: 50px;
+    /* Espacio alrededor del encabezado */
+    display: flex;
+    /* Flexbox para alinear elementos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    justify-content: space-between;
+    /* Espacio entre los elementos */
+    background: none;
+    /* Sin color de fondo */
+    position: relative;
+    /* Para posicionar elementos absolutas dentro */
+}
+
+/* Fondo del GIF */
+.cuadro {
+    position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+    padding-top: 50px; /* Ajusta este valor según necesites */
+}
+
+.gif-background {
+    position: absolute;
+    top: 50px; /* Ajusta este valor según necesites */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Envía el fondo detrás del contenido */
+}
+
+.gif-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre todo el espacio sin distorsionar */
+}
+
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+        /* Sube el texto */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Vuelve a la posición original */
+    }
+}
+
+/* Estilo del Título */
+.titulo {
+    text-align: center;
+    /* Alinea el texto a la izquierda */
+    font-family: 'Fredoka One', sans-serif;
+    /* Fuente redondeada */
+    font-size: 2.5rem;
+    /* Tamaño grande */
+    background: linear-gradient(90deg, #FF4081, #FFC107);
+    /* Gradiente vibrante */
+
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Sombra para dar profundidad */
+    text-shadow:
+        -2px -2px 0 #6fb94d,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+        6px 6px 10px rgba(0, 0, 0, 0.3);
+
+    padding-bottom: 20px;
+    margin-top: 0;
+    /* Sin margen superior */
+    margin-bottom: 10px;
+    /* Margen inferior para espacio */
+
+    /* Animación de burbuja */
+    animation: bubble 3s infinite ease-in-out;
+}
+
+/* Estilo del párrafo */
+.titulo p {
+    font-family: 'Fredoka One', sans-serif;
+    /* Fuente moderna */
+    font-size: 2rem;
+    /* Tamaño más pequeño */
+    text-shadow:
+        -2px -2px 0 #a97c3a,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+        6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* GIF Derecha */
+.gif-container {
+    display: flex;
+    /* Flexbox para alinear */
+    justify-content: flex-end;
+    /* Alinea a la derecha */
+}
+
+.gif {
+    width: 250px;
+    /* Tamaño del GIF */
+    height: auto;
+    /* Mantiene la proporción */
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Contenedor General de la Sección "Quiénes Somos" */
+.somos-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: -20px auto 50px auto; /* Subir contenedor (-20px) */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la Imagen */
+.image-container {
+    flex: 1;
+    padding-right: 20px;
+}
+
+/* Imagen "Quiénes Somos" */
+.somos-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Contenedor del Texto */
+.somos-text {
+    flex: 2;
+    padding-left: 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: justify; /* Texto justificado */
+}
+
+/* Estilo del Título */
+.somos-text h1 {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333;
+}
+
+/* Destacado en el Título */
+.highlight {
+    color: #6fb94d;
+}
+
+/* Estilo del Párrafo */
+.somos-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify; /* Justificado para el párrafo */
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Estilos compartidos */
+.section-container {
+    display: flex;
+    align-items: center; /* Alinear verticalmente */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: -20px auto 50px auto; /* Subir contenedor */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para "Nuestra Misión" */
+.vision-container {
+    background-color: #f0f8ffe4; /* Color de fondo claro */ /* Fondo claro para la misión */
+}
+
+.vision-text h1 {
+    color: #FF5733; /* Color del título de la misión */
+}
+
+/* Estilos específicos para "Nuestros Servicios" */
+.nuestros-servicios {
+    background-color: #f0f8ffe4; /* Fondo claro para los servicios */
+}
+
+.quienes-text2 h1 {
+    color: #007BFF; /* Color del título de los servicios */
+}
+
+/* Estilo general para los textos */
+.section-text {
+    padding-left: 20px; /* Espacio entre imagen y texto */
+    font-family: 'Arial', sans-serif;
+    text-align: justify; /* Texto justificado */
+}
+
+.section-text h1 {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333; /* Color general de texto */
+}
+
+.section-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555; /* Color general de párrafo */
+}
+
+/* Estilos para la imagen */
+.image-container {
+    flex: 0 0 40%; /* Ajusta el tamaño de la imagen */
+}
+
+.image-container img {
+    width: 100%; /* Mantiene la proporción */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.02); /* Aumenta ligeramente el tamaño */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.section-container {
+    animation: pulse 2s infinite;
+}
+
+.somos-container {
+    animation: pulse 2s infinite;
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Contador de seguidores */
+.contenedor-seguidores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f8ff; /* Color de fondo claro */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    margin: 20px; /* Margen alrededor del contenedor */
+}
+
+.item {
+    text-align: center;
+    display: flex; /* Flexbox para alinear el logo y el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+.logoFace {
+    width: 60px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+    display: block; /* Asegura que la imagen se comporte como bloque */
+    padding-left: 30px;
+    justify-content: center;
+}
+
+.logoInsta {
+    width: 60px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+    display: block; /* Asegura que la imagen se comporte como bloque */
+    padding-left: 30px;
+    justify-content: center;
+}
+
+
+.red-social, .red-social2 {
+    text-decoration: none;
+    color: #333; /* Color del texto */
+    font-size: 1.5rem;
+    transition: color 0.3s ease; /* Suaviza la transición del color */
+}
+
+.red-social:hover, .red-social2:hover {
+    color: #FF4081; /* Cambia el color al pasar el mouse */
+}
+
+.cantidad {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block; /* Asegura que la cantidad ocupe su línea */
+    margin: 5px 0; /* Espacio entre la cantidad y el texto */
+}
+
+.seguidores {
+    font-size: 1.2rem;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Estilo del pie de página */
+.footer {
+    background-color: #333; /* Color de fondo oscuro */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Espaciado interior */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    font-family: 'Arial', sans-serif; /* Tipografía simple y limpia */
+    border-top: 2px solid #6fb94d; /* Líneas de separación */
+    position: relative;
+}
+
+.footer p {
+    margin: 0; /* Elimina los márgenes de los párrafos */
+    line-height: 1.5; /* Espaciado de línea */
+}
