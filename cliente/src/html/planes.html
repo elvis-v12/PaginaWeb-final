@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/ninos/postloader.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=One+Little+Font&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+    <title>Learnly - Planes</title>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="/public/img/ninos/guimar flash.gif" alt="Logo de GuímarBot">
+        <div class="loading-text">Cargando...</div>
+    </div>
+
+    <!-- Cargar el menú -->
+    <!-- Menú -->
+    <div class="mi-menu">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links" id="menu-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="informacion.html">Acerca de</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
+            </ul>
+            <div class="login">
+                <div class="dropdown">
+                    <button class="btn-login" id="login-button">Acceder</button>
+                    <div class="dropdown-content" id="login-dropdown">
+                        <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
+                        <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
+                    </div>
+                </div>
+                <a href="pagos.html" class="btn-cart">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon"><span id="numerito" class="numerito">0</span>
+                </a>
+                <!-- Icono para activar la racha -->
+                <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
+                    <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
+                    <span class="streak-number">2</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Ventana emergente para la racha -->
+    <div class="streak-popup" id="streakPopup" style="display: none;">
+        <div class="streak-header">
+            <h3>2 días de racha</h3>
+            <img src="/public/img/ninos/feliz.gif" alt="Icono de fuego" class="streak-image">
+        </div>
+        <p>¡Has alcanzado tu racha más extensa!</p>
+        <div class="streak-calendar">
+            <span class="day-circle">Dom</span>
+            <span class="day-circle">Lun</span>
+            <span class="day-circle">Mar</span>
+            <span class="day-circle">Mié</span>
+            <span class="day-circle">Jue</span>
+            <span class="day-circle">Vie</span>
+            <span class="day-circle">Sáb</span>
+        </div>
+        <button class="streak-button" onclick="startStreak()">Comenzar racha</button>
+    </div>
+
+    <!-- Ventana emergente para el cuestionario -->
+    <div class="questionnaire-popup" id="questionnairePopup" style="display: none;">
+        <div class="questionnaire-content">
+            <h2>¡Completa la racha de hoy!</h2>
+            <div class="question">
+                <p id="questionText">Pregunta 1: ¿Qué significa HTML?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(0)">Hyperlinks and Text Markup Language</button>
+                    <button onclick="checkAnswer(1)">Hyper Text Markup Language</button>
+                    <button onclick="checkAnswer(2)">Home Tool Markup Language</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente de finalización del cuestionario -->
+    <div class="completion-popup" id="completionMessage" style="display: none; text-align: center;">
+        <img class="success-image" src="/public/img/ninos/bob1.gif" alt="Imagen de éxito">
+        <h2>¡COMPLETASTE LA LECCIÓN!</h2>
+        <div>
+            <div class="exp-box">
+                <p>PUNTAJE TOTAL</p>
+                <p><strong>⚡ <span id="expPoints">100</span></strong></p>
+            </div>
+            <div class="score-box">
+                <p>¡MUY BIEN!</p>
+                <p><strong><span id="scorePercentage">100</span>%</strong></p>
+            </div>
+        </div>
+        <button class="streak-button" onclick="closeCompletionMessage()">Continuar</button>
+    </div>
+
+    <!-- Nueva ventana de "Día de Racha" -->
+    <div class="streak-popup" id="streakMessage" style="display: none;">
+        <div class="streak-icon" id="icono">
+            <img src="/public/img/ninos/fuego.png" alt="Icono de fuego" style="width: 80px; height: auto;">
+            <span class="streak-number" id="streakDayNumber">2</span>
+        </div>
+        <div class="streak-calendar">
+            <div class="day-circle">Dom</div>
+            <div class="day-circle">Lun</div>
+            <div class="day-circle">Mar</div>
+            <div class="day-circle">Mié</div>
+            <div class="day-circle">Jue</div>
+            <div class="day-circle">Vie</div>
+            <div class="day-circle">Sáb</div>
+        </div>
+        <p class="mt-4">¡Practica cada día para que tu racha no vuelva a cero!</p>
+        <div style="display: flex; gap: 10px;">
+            <button class="streak-button" onclick="closeStreakMessage()">Continuar</button>
+            <button class="streak-button" onclick="viewRanking()" data-toggle="modal"
+                data-target="#clasificacionModal">Ver mi ranking</button>
+        </div>
+    </div>
+
+
+    <!-- Sección de Planes de Pago -->
+    <div class="cuadro">
+        <div class="recuadro">
+            <div class="anual">Anual</div>
+            <h2 class="texto-principal">Básico </h2>
+            <p class="transparente"> Para 1 persona</p>
+            <p class="pago">
+                <span class="bandera"></span> S/200.00
+            </p>
+            <p><span class="check">&#10003;</span> Acceso a todos los cursos </p>
+            <p><span class="check">&#10003;</span> Soporte técnico 24/7 </p>
+            <p><span class="check">&#10003;</span> Certificado de finalización </p>
+            <p><span class="check">&#10003;</span> Descarga de contenido </p>
+            <p><span class="check">&#10003;</span> Descuento por fidelización </p>
+            <p><span class="check">&#10003;</span> contenido exclusivo </p>
+            <button class="boton-plan">Seleccionar Plan</button>
+        </div>
+
+        <div class="recuadro">
+            <div class="anual">Anual</div>
+            <h2 class="texto-principal">Experto Dúo</h2>
+            <p class="transparente"> Para 2 personas</p>
+            <p class="pago">
+                <span class="bandera"></span> S/350.00
+            </p>
+            <p><span class="check">&#10003;</span> Acceso a todos los cursos </p>
+            <p><span class="check">&#10003;</span> Soporte técnico 24/7 </p>
+            <p><span class="check">&#10003;</span> Certificado de finalización </p>
+            <p><span class="check">&#10003;</span> Descarga de contenido </p>
+            <p><span class="check">&#10003;</span> Descuento por fidelización </p>
+            <p><span class="check">&#10003;</span> contenido exclusivo </p>
+            <button class="boton-plan">Seleccionar Plan</button>
+        </div>
+
+        <div class="recuadro">
+            <div class="anual">Anual</div>
+            <h2 class="texto-principal">Familiar</h2>
+            <p class="transparente"> Para 3+ personas</p>
+            <p class="pago">
+                <span class="bandera"></span> S/500.00
+            </p>
+            <p><span class="check">&#10003;</span> Acceso a todos los cursos </p>
+            <p><span class="check">&#10003;</span> Soporte técnico 24/7 </p>
+            <p><span class="check">&#10003;</span> Certificado de finalización </p>
+            <p><span class="check">&#10003;</span> Descarga de contenido </p>
+            <p><span class="check">&#10003;</span> Descuento por fidelización </p>
+            <p><span class="check">&#10003;</span> contenido exclusivo </p>
+            <button class="boton-plan">Seleccionar Plan</button>
+        </div>
+    </div>
+    </div>
+
+    <!-- Sección de Recomendaciones -->
+    <div class="recomendaciones">
+        <h2 class="titulo-recomendaciones">Lo que dicen nuestros estudiantes</h2>
+        <div class="tweets">
+            <div class="tweet">
+                <p>"¡Me encantaron los cursos! Aprendí mucho y los instructores son geniales." - @usuario1</p>
+            </div>
+            <div class="tweet">
+                <p>"¡Recomiendo esta plataforma a todos mis amigos!" - @usuario2</p>
+            </div>
+            <div class="tweet">
+                <p>"Las clases son muy divertidas y educativas. ¡Gracias!" - @usuario3</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección para Regalar un Plan -->
+    <div class="caja-regalo">
+        <div class="imagen"></div> <!-- Espacio para tu imagen -->
+        <div class="contenido"> <!-- Contenedor para el texto -->
+            <h1>Regala Learnly</h1>
+            <p>Envía 1 año de educación profesional efectiva a quien tú quieras en 3 pasos.</p>
+            <ul>
+                <li>1. Personaliza la tarjeta de regalo con tus datos.</li>
+                <li>2. Completa la compra del plan que elegiste.</li>
+                <li>3. Envía la tarjeta con el enlace de activación ¡Y listo!</li>
+            </ul>
+            <button class="boton-regalo">Regala Plan Experto Dúo</button>
+            <button class="boton-regalo">Regala Plan Básico</button>
+        </div>
+    </div>
+
+    <!-- Sección de pie de pagina -->
+    <div class="footer">
+        <p>© 2024 - Learnly - Todos los derechos reservados.</p>
+    </div>
+
+    <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
+            const cssType = localStorage.getItem('cssType') || 'ninos';
+
+            // Función para cargar un archivo CSS
+            function loadCss(filePath) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = filePath;
+                document.head.appendChild(link);
+            }
+
+            // Cargar los CSS necesarios
+            const cssFiles = [
+                `/public/css/${cssType}/planes.css`,
+                `/public/css/${cssType}/menu.css`,
+                `/public/css/${cssType}/preloader.css`,
+            ];
+
+            // Ocultar el contenido mientras se cargan los estilos
+            document.body.classList.add('hidden');
+
+            // Cargar cada CSS en el orden definido
+            cssFiles.forEach(loadCss);
+
+            // Detectar cuando el último CSS ha cargado y mostrar el contenido
+            const lastCssLink = cssFiles[cssFiles.length - 1];
+            const checkCssLoaded = () => {
+                const link = document.querySelector(`link[href='${lastCssLink}']`);
+                if (link && link.sheet) {
+                    document.body.classList.remove('hidden'); // Mostrar contenido
+                } else {
+                    setTimeout(checkCssLoaded, 50); // Reintentar hasta que el CSS esté cargado
+                }
+            };
+            checkCssLoaded();
+        });
+    </script>
+
+
+
+    <!-- Script para el preloader -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.transition = 'opacity 0.5s ease'; // Suaviza la desaparición
+            }, 1000); // Se acorta el tiempo a 1 segundo
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none'; // Se oculta completamente después de la transición
+            }, 1500); // Espera 1.5 segundos antes de ocultarlo completamente
+        });
+    </script>
+
+    <script src="/src/js/menu.js"></script>
+    <script src="/src/js/Carritoapp.js"></script>
+</body>
+
+</html>

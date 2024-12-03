@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+    <link rel="stylesheet" href="/public/css/ninos/rutasInter.css">
+    <link rel="stylesheet" href="/public/css/ninos/preloader.css">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=One+Little+Font&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=One+Little+Font&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="/public/img/ninos/guimar flash.gif" alt="Logo de GuímarBot">
+        <div class="loading-text">Cargando...</div>
+    </div>
+
+    <!-- Cargar el menú -->
+    <!-- Menú -->
+    <div class="mi-menu">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links" id="menu-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="informacion.html">Acerca de</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
+            </ul>
+            <div class="login">
+                <div class="dropdown">
+                    <button class="btn-login" id="login-button">Acceder</button>
+                    <div class="dropdown-content" id="login-dropdown">
+                        <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
+                        <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
+                    </div>
+                </div>
+                <a href="pagos.html" class="btn-cart">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+                </a>
+                <!-- Icono para activar la racha -->
+                <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
+                    <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
+                    <span class="streak-number">2</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Ventana emergente para la racha -->
+    <div class="streak-popup" id="streakPopup" style="display: none;">
+        <div class="streak-header">
+            <h3>2 días de racha</h3>
+            <img src="/public/img/ninos/feliz.gif" alt="Icono de fuego" class="streak-image">
+        </div>
+        <p>¡Has alcanzado tu racha más extensa!</p>
+        <div class="streak-calendar">
+            <span class="day-circle">Dom</span>
+            <span class="day-circle">Lun</span>
+            <span class="day-circle">Mar</span>
+            <span class="day-circle">Mié</span>
+            <span class="day-circle">Jue</span>
+            <span class="day-circle">Vie</span>
+            <span class="day-circle">Sáb</span>
+        </div>
+        <button class="streak-button" onclick="startStreak()">Comenzar racha</button>
+    </div>
+
+    <!-- Ventana emergente para el cuestionario -->
+    <div class="questionnaire-popup" id="questionnairePopup" style="display: none;">
+        <div class="questionnaire-content">
+            <h2>¡Completa la racha de hoy!</h2>
+            <div class="question">
+                <p id="questionText">Pregunta 1: ¿Qué significa HTML?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(0)">Hyperlinks and Text Markup Language</button>
+                    <button onclick="checkAnswer(1)">Hyper Text Markup Language</button>
+                    <button onclick="checkAnswer(2)">Home Tool Markup Language</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente de finalización del cuestionario -->
+    <div class="completion-popup" id="completionMessage" style="display: none; text-align: center;">
+        <img class="success-image" src="/public/img/ninos/bob1.gif" alt="Imagen de éxito">
+        <h2>¡COMPLETASTE LA LECCIÓN!</h2>
+        <div>
+            <div class="exp-box">
+                <p>PUNTAJE TOTAL</p>
+                <p><strong>⚡ <span id="expPoints">100</span></strong></p>
+            </div>
+            <div class="score-box">
+                <p>¡MUY BIEN!</p>
+                <p><strong><span id="scorePercentage">100</span>%</strong></p>
+            </div>
+        </div>
+        <button class="streak-button" onclick="closeCompletionMessage()">Continuar</button>
+    </div>
+
+    <!-- Nueva ventana de "Día de Racha" -->
+    <div class="streak-popup" id="streakMessage" style="display: none;">
+        <div class="streak-icon" id="icono">
+            <img src="/public/img/ninos/fuego.png" alt="Icono de fuego" style="width: 80px; height: auto;">
+            <span class="streak-number" id="streakDayNumber">2</span>
+        </div>
+        <div class="streak-calendar">
+            <div class="day-circle">Dom</div>
+            <div class="day-circle">Lun</div>
+            <div class="day-circle">Mar</div>
+            <div class="day-circle">Mié</div>
+            <div class="day-circle">Jue</div>
+            <div class="day-circle">Vie</div>
+            <div class="day-circle">Sáb</div>
+        </div>
+        <p class="mt-4">¡Practica cada día para que tu racha no vuelva a cero!</p>
+        <div style="display: flex; gap: 10px;">
+            <button class="streak-button" onclick="closeStreakMessage()">Continuar</button>
+            <button class="streak-button" onclick="viewRanking()" data-toggle="modal"
+                data-target="#clasificacionModal">Ver mi ranking</button>
+        </div>
+    </div>
+
+    <div class="search-container" id="search-container">
+        <input type="text" id="placeholder-text" placeholder="¿Qué ruta estás buscando?..." class="search-input">
+        <div id="search-results" class="search-results"></div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <h6 class="ruta-title">RUTA</h6>
+            </div>
+            <div class="main-content">
+                <h1 class="title">JavaScript: De cero a experto</h1>
+                <p class="description">
+                    Domina las bases de JavaScript, manipula el DOM y mejora
+                    la interactividad de tu página web. Utiliza Web APIs,
+                    escribe código seguro y escalable con TypeScript.
+                </p>
+                <button class="start-button">
+                    <i class="fas fa-play"></i>
+                    <span>COMENZAR RUTA</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="image-container">
+                <img src="/public/img/ninos/bannerJs.jpg" alt="JavaScript Course" class="course-image">
+            </div>
+            <div class="content-container">
+                <h1>Curso de JavaScript: Introducción para principiantes </h1>
+                <h2>
+                    <i class="icon-class">💻</i> <!-- Ícono de computadora -->
+                    Ruta de Fundamentos de JavaScript
+                </h2>
+                <div class="course-details">
+                    <div class="detail-item">
+                        <i class="fas fa-cubes"></i>
+                        <span>8 cursos</span>
+                    </div>
+                </div>
+                <div class="instructors-list">
+                    <div class="instructor-item">
+                        <img src="/public/img/ninos/profe.png" alt="Instructor 1" class="instructor-image">
+                        <div class="instructor-info">
+                            <h3 class="instructor-name">Doc. Estefany A.</h3>
+                        </div>
+                    </div>
+                    <div class="instructor-item">
+                        <img src="/public/img/ninos/profe.png" alt="Instructor 2" class="instructor-image">
+                        <div class="instructor-info">
+                            <h3 class="instructor-name">Doc. Diego D.</h3>
+                        </div>
+                    </div>
+                    <div class="instructor-item">
+                        <img src="/public/img/ninos/profe.png" alt="Instructor 3" class="instructor-image">
+                        <div class="instructor-info">
+                            <h3 class="instructor-name">Doc. Oscar B.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <h2>A continuación, inicia tu camino por la ruta : </h2>
+            <div class="next-steps-container">
+
+                <div class="next-step-item">
+                    <div class="course-icon">
+                        <span class="icon text-success">
+                            <img src="/public/img/ninos/jsLogo.png" alt="Logo" class="circular-logo">
+                        </span>
+                    </div>
+                    <div class="course-info">
+                        <h3><a href="apartadoJ1.html" class="course-link">JavaScript: Introducción para principiantes
+                            </a></h3>
+                        <p>7 horas de práctica</p>
+                    </div>
+                </div>
+
+                <div class="next-step-item">
+                    <div class="course-icon">
+                        <span class="icon text-success">
+                            <img src="/public/img/ninos/jsLogo.png" alt="Logo" class="circular-logo">
+                        </span>
+                    </div>
+                    <div class="course-info">
+                        <h3><a href="apartadoJ1.html" class="course-link">Fundamentos de JS: Tu primer programa</a>
+                        </h3>
+                        <p>5 horas de práctica</p>
+                    </div>
+                </div>
+
+                <div class="next-step-item">
+                    <div class="course-icon">
+                        <span class="icon text-success">
+                            <img src="/public/img/ninos/jsLogo.png" alt="Logo" class="circular-logo">
+                        </span>
+                    </div>
+                    <div class="course-info">
+                        <h3><a href="apartadoJ1.html" class="course-link">Funciones y módulos JavaScript </a>
+                        </h3>
+                        <p>7 horas de práctica</p>
+                    </div>
+                </div>
+
+                <div class="next-step-item">
+                    <div class="course-icon">
+                        <span class="icon text-success">
+                            <img src="/public/img/ninos/jsLogo.png" alt="Logo" class="circular-logo">
+                        </span>
+                    </div>
+                    <div class="course-info">
+                        <h3><a href="apartadoJ1.html" class="course-link">Curso de Estructuras de Datos con
+                                JavaScript</a></h3>
+                        <p>6 horas de práctica</p>
+                    </div>
+                </div>
+
+                <div class="next-step-item">
+                    <div class="course-icon">
+                        <span class="icon text-success">
+                            <img src="/public/img/ninos/jsLogo.png" alt="Logo" class="circular-logo">
+                        </span>
+                    </div>
+                    <div class="course-info">
+                        <h3><a href="apartadoJ1.html" class="course-link">Curso de Fundamentos de JavaScript</a></h3>
+                        <p>8 horas de práctica</p>
+                    </div>
+                </div>
+
+                <div class="next-step-item">
+                    <div class="course-icon">
+                        <span class="icon text-success">
+                            <img src="/public/img/ninos/jsLogo.png" alt="Logo" class="circular-logo">
+                        </span>
+                    </div>
+                    <div class="course-info">
+                        <h3><a href="apartadoJ1.html" class="course-link">Curso de JavaScript Asíncrono</a></h3>
+                        <p>8 horas de práctica</p>
+                    </div>
+                </div>
+
+                <div class="next-step-item">
+                    <div class="course-icon">
+                        <span class="icon text-success">
+                            <img src="/public/img/ninos/jsLogo.png" alt="Logo" class="circular-logo">
+                        </span>
+                    </div>
+                    <div class="course-info">
+                        <h3><a href="apartadoJ1.html" class="course-link">Curso de Frameworks JavaScript: React</a></h3>
+                        <p>7 horas de práctica</p>
+                    </div>
+                </div>
+
+                <div class="next-step-item">
+                    <div class="course-icon">
+                        <span class="icon text-success">
+                            <img src="/public/img/ninos/jsLogo.png" alt="Logo" class="circular-logo">
+                        </span>
+                    </div>
+                    <div class="course-info">
+                        <h3><a href="apartadoJ1.html" class="course-link">Curso de Desarrollo Web con JavaScript</a>
+                        </h3>
+                        <p>5 horas de práctica</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
+            const cssType = localStorage.getItem('cssType') || 'ninos';
+
+            // Función para cargar un archivo CSS
+            function loadCss(filePath) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = filePath;
+                document.head.appendChild(link);
+            }
+
+            // Cargar los CSS necesarios
+            const cssFiles = [
+                `/public/css/${cssType}/rutasInter.css`,
+                `/public/css/${cssType}/menu.css`,
+                `/public/css/${cssType}/preloader.css`,
+            ];
+
+            // Ocultar el contenido mientras se cargan los estilos
+            document.body.classList.add('hidden');
+
+            // Cargar cada CSS en el orden definido
+            cssFiles.forEach(loadCss);
+
+            // Detectar cuando el último CSS ha cargado y mostrar el contenido
+            const lastCssLink = cssFiles[cssFiles.length - 1];
+            const checkCssLoaded = () => {
+                const link = document.querySelector(`link[href='${lastCssLink}']`);
+                if (link && link.sheet) {
+                    document.body.classList.remove('hidden'); // Mostrar contenido
+                } else {
+                    setTimeout(checkCssLoaded, 50); // Reintentar hasta que el CSS esté cargado
+                }
+            };
+            checkCssLoaded();
+        });
+    </script>
+
+    <!-- Script para el preloader -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.transition = 'opacity 0.5s ease';
+            }, 1000);
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
+        });
+    </script>
+
+    <script src="/src/js/menu.js"></script>
+    <script src="/src/js/rutasInter.js"></script>
+
+</body>
+
+</html>

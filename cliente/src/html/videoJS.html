@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Nanum+Gothic+Coding&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Gidugu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Chela+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/ninos/video.css"> <!-- Cambia a tu archivo de estilos -->
+    <link rel="stylesheet" href="/public/css/ninos/preloader.css">
+    <title>Plataforma de Cursos</title>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="/public/img/ninos/guimar flash.gif" alt="Logo de GuímarBot">
+        <div class="loading-text">Cargando...</div>
+    </div>
+
+    <div class="header">
+        <h1>Bienvenido a la Plataforma de Cursos <img src="/public/img/ninos/javaLogo.png" alt="Descripción de la imagen"
+                style="width: 45px; height: auto; margin-left: 13px;"></h1>
+
+        <div class="progress-container">
+            <div class="progress-line" id="progress-line"></div>
+            <span id="progress-percentage" style="font-family: 'Allerta Stencil', sans-serif;">0%</span>
+        </div>
+        <div class="class-info">
+            <div class="class-text" style="font-family: 'Nanum Gothic Coding', monospace;">Curso de JavaScript</div>
+            <button class="view-button" onclick="togglePlaylist()"
+                style="font-family: 'Nanum Gothic Coding', monospace;">Ver Playlist</button>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <div class="video-and-playlist">
+            <iframe id="main-video" class="video" width="560" height="315"
+                src="https://www.youtube.com/embed/mpIwKBNr7_o?enablejsapi=1" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <div class="video-indicator">
+                <div class="indicator-item active"></div>
+                <div class="indicator-item"></div>
+                <div class="indicator-item"></div>
+                <div class="indicator-item"></div>
+                <div class="indicator-item"></div>
+            </div>
+            <div class="playlist" id="playlist">
+                <div class="playlist-item active"
+                    onclick="playVideo('https://www.youtube.com/embed/mpIwKBNr7_o', this, 0)">Video 1: Portada
+                    JavaScript</div>
+                <div class="playlist-item" onclick="playVideo('https://www.youtube.com/embed/fH4rfaBkgCc', this, 1)">
+                    Video 2: Funciones con NÚMEROS</div>
+                <div class="playlist-item" onclick="playVideo('https://www.youtube.com/embed/wIPhTyvkZ0E', this, 2)">
+                    Video 3: Funciones a calcular</div>
+                <div class="playlist-item" onclick="playVideo('https://www.youtube.com/embed/bQciY0LFQvo', this, 3)">
+                    Video 4: Ejemplos con EDADES</div>
+                <div class="playlist-item" onclick="playVideo('https://www.youtube.com/embed/3XpXklYEiSQ', this, 4)">
+                    Video 5: RESTAR y SUMAR con JS</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="completion-modal" class="modal">
+        <div class="modal-content">
+            <img src="/public/img/ninos/bob.gif" alt="Descripción del GIF" class="modal-gif">
+            <h2>¡Felicidades!</h2>
+            <p>Has terminado con éxito el curso de JavaScript.</p>
+            <button id="resolve-quiz-button" onclick="window.location.href='cuestionarioJ.html'">Resolver
+                Cuestionario</button>
+        </div>
+    </div>
+
+    <div class="comentarios-container">
+        <div class="comments-section">
+            <div class="comments-banner">Deja tu comentario</div>
+            <form id="commentForm" onsubmit="addComment(); return false;">
+                <textarea id="commentInput" placeholder="Escribe tu comentario aquí..." required></textarea>
+                <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+            </form>
+        </div>
+        <div class="previous-comments">
+            <div class="comments-list" id="commentsDisplay">
+                <div class="comments-title">COMENTARIOS:</div>
+                <!-- Comentario predeterminado (se reemplazará al enviar uno nuevo) -->
+                <div class="comment" id="defaultComment">
+                    <div class="user">
+                        <img src="/public/img/ninos/estudiante.png" alt="Student" class="icon">
+                        <span class="name">Juan Pérez</span>
+                    </div>
+                    <p>¡Excelente vídeo de JavaScript! Me encantaría descubrir mucho más sobre este tema; Estoy
+                        disfrutando mucho el curso.</p>
+
+                    <div class="response">
+                        <span class="response-name">Profesor. Roberto Torres :</span>
+                        <i class="check-icon fas fa-check-circle"></i>
+                        <p>¡Me alegro que estés disfrutando del curso! Déjame saber si tienes alguna pregunta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addComment() {
+            // Obtener el contenido del comentario
+            const commentText = document.getElementById("commentInput").value;
+
+            // Verificar si hay un comentario predeterminado y eliminarlo
+            const defaultComment = document.getElementById("defaultComment");
+            if (defaultComment) {
+                defaultComment.remove();
+            }
+
+            // Crear el nuevo elemento de comentario
+            const newComment = document.createElement("div");
+            newComment.classList.add("comment");
+
+            // Contenido del nuevo comentario
+            newComment.innerHTML = `
+                <div class="user">
+                    <img src="/public/img/ninos/estudiante.png" alt="Student" class="icon">
+                    <span class="name">Ximena Gavidia</span>
+                </div>
+                <p>${commentText}</p>
+            `;
+
+            // Agregar el comentario al contenedor de comentarios
+            document.getElementById("commentsDisplay").appendChild(newComment);
+
+            // Limpiar el área de texto
+            document.getElementById("commentInput").value = '';
+        }
+    </script>
+
+    <!-- Script para el preloader -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.transition = 'opacity 0.5s ease';
+            }, 1000);
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
+        });
+    </script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="/src/js/videoJS.js"></script>
+
+</body>
+
+</html>
