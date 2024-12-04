@@ -7,13 +7,6 @@ export class CursosService {
                         }
                         const data = await response.json()
                         return data
-                } catch (error) {
-
-
-
-                }
-
-             
+                } catch (error) { }
         }
-
 }

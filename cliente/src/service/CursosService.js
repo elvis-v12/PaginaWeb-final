@@ -1,19 +1,17 @@
 export class CursosService {
         static findAll = async () => {
                 try {
-                        const response = await fetch("/cliente/src/data/dataCourses.json")
+                        const response = await fetch("./src/data/dataCourses.json")
                         if (!response.ok) {
                                 throw new Error("Error en la respuesta del servidor")
                         }
                         const data = await response.json()
                         return data
-                } catch (error) {
-
-                }
+                } catch (error) { }
         }
         findCoursesNovedades = async () => {
                 try {
-                        const response = await fetch("/cliente/src/data/dataCoursesNovedades.json")
+                        const response = await fetch("./src/data/dataCoursesNovedades.json")
                         if (!response.ok) {
                                 throw new Error("Error en la respuesta del servidor")
                         }
@@ -26,7 +24,7 @@ export class CursosService {
 
         async searchCourses(searchTerm) {
                 try {
-                        const response = await fetch("/cliente/src/data/dataCoursesNovedades.json")
+                        const response = await fetch("./src/data/dataCoursesNovedades.json")
                         if (!response.ok) {
                                 throw new Error("Error en la respuesta del servidor")
                         }
@@ -63,7 +61,6 @@ export class CursosService {
                                 if (!aMatchAll && bMatchAll) return 1;
                                 return 0; // Si ambos o ninguno coincide con todas las palabras, mantener el orden
                         });
-
                         return sortedCourses;
                 } catch (error) {
                         console.error("Error al filtrar los cursos:", error);
@@ -72,34 +69,30 @@ export class CursosService {
 
         findById = async ({ code }) => {
                 try {
-                        const response = await fetch("/cliente/src/data/dataCourse.json")
+                        const response = await fetch("./src/data/dataCourse.json")
                         if (!response.ok) {
                                 throw new Error("Error en la respuesta del servidor")
                         }
                         const data = await response.json()
                         const curso = data.find(curso => curso.code === code)
                         return curso
-                } catch (error) {
-
-                }
+                } catch (error) { }
         }
         findByCodeByUser = async ({ username, code }) => {
                 try {
-                        const response = await fetch("/cliente/src/data/dataCourseUser.json")
+                        const response = await fetch("./src/data/dataCourseUser.json")
                         if (!response.ok) {
                                 throw new Error("Error en la respuesta del servidor")
                         }
                         const data = await response.json()
                         const curso = data.find(curso => curso.code === code)
                         return curso
-                } catch (error) {
-
-                }
+                } catch (error) { }
         }
 
         findCommentsByCourseModuleSession = async ({ course, session }) => {
                 try {
-                        const response = await fetch("/cliente/src/data/dataComentarios.json");
+                        const response = await fetch("./src/data/dataComentarios.json");
                         if (!response.ok) {
                                 throw new Error("Error en la respuesta del servidor");
                         }
@@ -110,12 +103,10 @@ export class CursosService {
                                 comment.courseCode === course &&
                                 comment.sessionCode === session
                         );
-
                         return filteredComments;
                 } catch (error) {
                         console.error("Error al obtener comentarios:", error);
                         return []; // Return an empty array in case of an error
                 }
         };
-
 }
