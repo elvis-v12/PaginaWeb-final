@@ -53,10 +53,8 @@
                 <li><a href="informacion.html">Acerca de</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="rutas.html">Rutas</a></li>
-                <li><a href="becas.html">Becas</a></li>
                 <li><a href="planes.html">Planes</a></li>
                 <li><a href="soporte.html">Soporte</a></li>
-               
             </ul>
             <div class="login">
                 <div class="dropdown">
@@ -67,7 +65,7 @@
                     </div>
                 </div>
                 <a href="pagos.html" class="btn-cart">
-                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon"><span id="numerito" class="numerito">0</span>
                 </a>
                 <!-- Icono para activar la racha -->
                 <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
@@ -172,62 +170,66 @@
         </div>
     </header>
 
+
     <div id="content">
         <div class="info-container">
             <!-- Cursos de Python -->
-            <a href="apartadoP1.html" class="course-card" data-course-name="python básico">
+            <a href="apartadoP1.html?nivel=basico" class="course-card" data-course-name="python basico">
                 <div class="image-container">
-                    <img src="/public/img/ninos/bannerPy.jpg" alt="Curso de Python: básico" class="course-image">
+                  <img src="/public/img/ninos/bannerPy.jpg" alt="Curso de Python: básico" class="course-image">
                 </div>
                 <div class="content-container">
-                    <h1><i class="icon-class">🐍</i> Curso de Python: <br> Básico</h1>
-                    <div class="instructors-list">
-                        <div class="instructor-item">
-                            <img src="/public/img/ninos/profe.png" alt="Instructor 1" class="instructor-image">
-                            <div class="instructor-info">
-                                <h3 class="instructor-name">Doc. Ana G.</h3>
-                            </div>
-                        </div>
+                  <h1><i class="icon-class">🐍</i> Curso de Python: <br> Básico</h1>
+                  <div class="instructors-list">
+                    <div class="instructor-item">
+                      <img src="/public/img/ninos/profe.png" alt="Instructor 1" class="instructor-image">
+                      <div class="instructor-info">
+                        <h3 class="instructor-name">Doc. Ana G.</h3>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </a>
+              </a>
+              
+              <a href="apartadoP1.html?nivel=avanzado" class="course-card" data-course-name="python avanzado">
+                <div class="image-container">
+                  <img src="/public/img/ninos/bannerPy2.jpg" alt="Curso de Python: avanzado" class="course-image">
+                </div>
+                <div class="content-container">
+                  <h1><i class="icon-class">🐍</i> Curso de Python: <br> Avanzado</h1>
+                  <div class="instructors-list">
+                    <div class="instructor-item">
+                      <img src="/public/img/ninos/profe.png" alt="Instructor 2" class="instructor-image">
+                      <div class="instructor-info">
+                        <h3 class="instructor-name">Doc. Luis R.</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="apartadoP1.html?nivel=intermedio" class="course-card" data-course-name="python intermedio">
+                <div class="image-container">
+                  <img src="/public/img/ninos/bannerPy3.jpg" alt="Curso de Python: intermedio" class="course-image">
+                </div>
+                <div class="content-container">
+                  <h1><i class="icon-class">🐍</i> Curso de Python: <br> Intermedio</h1>
+                  <div class="instructors-list">
+                    <div class="instructor-item">
+                      <img src="/public/img/ninos/profe.png" alt="Instructor 3" class="instructor-image">
+                      <div class="instructor-info">
+                        <h3 class="instructor-name">Doc. Marta L.</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              
 
-            <a href="apartadoP3.html" class="course-card" data-course-name="python avanzado">
-                <div class="image-container">
-                    <img src="/public/img/ninos/bannerPy2.jpg" alt="Curso de Python: Avanzado" class="course-image">
-                </div>
-                <div class="content-container">
-                    <h1><i class="icon-class">🐍</i> Curso de Python: <br> Avanzado</h1>
-                    <div class="instructors-list">
-                        <div class="instructor-item">
-                            <img src="/public/img/ninos/profe.png" alt="Instructor 2" class="instructor-image">
-                            <div class="instructor-info">
-                                <h3 class="instructor-name">Doc. Luis R.</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="apartadoP2.html" class="course-card" data-course-name="python intermedio">
-                <div class="image-container">
-                    <img src="/public/img/ninos/bannerPy3.jpg" alt="Curso de Python: Intermedio" class="course-image">
-                </div>
-                <div class="content-container">
-                    <h1><i class="icon-class">🐍</i> Curso de Python: <br> Intermedio</h1>
-                    <div class="instructors-list">
-                        <div class="instructor-item">
-                            <img src="/public/img/ninos/profe.png" alt="Instructor 3" class="instructor-image">
-                            <div class="instructor-info">
-                                <h3 class="instructor-name">Doc. Marta L.</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            <!--Empieza otra seccion de los cursos-->
 
             <!-- Cursos de HTML -->
-            <a href="apartadoH1.html" class="course-card" data-course-name="html básico">
+            <a href="apartadoH1.html?curso=html&nivel=basico" class="course-card" data-course-name="html básico">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerH.jpg" alt="Curso de HTML: Básico" class="course-image">
                 </div>
@@ -244,7 +246,7 @@
                 </div>
             </a>
 
-            <a href="apartadoH3.html" class="course-card" data-course-name="html avanzado">
+            <a href="apartadoH1.html?curso=html&nivel=avanzado" class="course-card" data-course-name="html avanzado">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerH2.jpg" alt="Curso de HTML: Avanzado" class="course-image">
                 </div>
@@ -261,7 +263,7 @@
                 </div>
             </a>
 
-            <a href="apartadoH2.html" class="course-card" data-course-name="html intermedio">
+            <a href="apartadoH1.html?curso=html&nivel=intermedio" class="course-card" data-course-name="html intermedio">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerH3.jpg" alt="Curso de HTML: Intermedio" class="course-image">
                 </div>
@@ -281,61 +283,61 @@
             </a>
 
 
-            <!-- Cursos de Javascript -->
-            <a href="apartadoJ1.html" class="course-card" data-course-name="javascript básico">
+                    <!-- Cursos de JavaScript -->
+            <a href="apartadoJ1.html?curso=javascript&nivel=basico" class="course-card" data-course-name="javascript básico">
                 <div class="image-container">
-                    <img src="/public/img/ninos/bannerJs.jpg" alt="Curso de javascript: Básico" class="course-image">
+                <img src="/public/img/ninos/bannerJs.jpg" alt="Curso de JavaScript: Básico" class="course-image">
                 </div>
                 <div class="content-container">
-                    <h1><i class="icon-class">💻</i> Curso de Jscript: <br> Básico</h1>
-                    <div class="instructors-list">
-                        <div class="instructor-item">
-                            <img src="/public/img/ninos/profe.png" alt="Instructor 7" class="instructor-image">
-                            <div class="instructor-info">
-                                <h3 class="instructor-name">Doc. Estefany A.</h3>
-                            </div>
-                        </div>
+                <h1><i class="icon-class">💻</i> Curso de JScript: <br> Básico</h1>
+                <div class="instructors-list">
+                    <div class="instructor-item">
+                    <img src="/public/img/ninos/profe.png" alt="Instructor 7" class="instructor-image">
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Doc. Estefany A.</h3>
+                    </div>
                     </div>
                 </div>
+                </div>
             </a>
-
-            <a href="apartadoJ3.html" class="course-card" data-course-name="javascript avanzado">
+            
+            <a href="apartadoJ1.html?curso=javascript&nivel=avanzado" class="course-card" data-course-name="javascript avanzado">
                 <div class="image-container">
-                    <img src="/public/img/ninos/bannerJs2.jpg" alt="Curso de javascript: Avanzado" class="course-image">
+                <img src="/public/img/ninos/bannerJs2.jpg" alt="Curso de JavaScript: Avanzado" class="course-image">
                 </div>
                 <div class="content-container">
-                    <h1><i class="icon-class">💻</i> Curso de Jscript: <br> Avanzado</h1>
-                    <div class="instructors-list">
-                        <div class="instructor-item">
-                            <img src="/public/img/ninos/profe.png" alt="Instructor 8" class="instructor-image">
-                            <div class="instructor-info">
-                                <h3 class="instructor-name">Doc. Diego D.</h3>
-                            </div>
-                        </div>
+                <h1><i class="icon-class">💻</i> Curso de JScript: <br> Avanzado</h1>
+                <div class="instructors-list">
+                    <div class="instructor-item">
+                    <img src="/public/img/ninos/profe.png" alt="Instructor 8" class="instructor-image">
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Doc. Diego D.</h3>
+                    </div>
                     </div>
                 </div>
+                </div>
             </a>
-
-            <a href="apartadoJ2.html" class="course-card" data-course-name="javascript intermedio">
+  
+            <a href="apartadoJ1.html?curso=javascript&nivel=Intermedio" class="course-card" data-course-name="javascript intermedio">
                 <div class="image-container">
-                    <img src="/public/img/ninos/bannerJs3.jpg" alt="Curso de javascript: Intermedio"
-                        class="course-image">
+                <img src="/public/img/ninos/bannerJs3.jpg" alt="Curso de JavaScript: Intermedio" class="course-image">
                 </div>
                 <div class="content-container">
-                    <h1><i class="icon-class">💻</i> Curso de Jscript: <br> Intermedio</h1>
-                    <div class="instructors-list">
-                        <div class="instructor-item">
-                            <img src="/public/img/ninos/profe.png" alt="Instructor 9" class="instructor-image">
-                            <div class="instructor-info">
-                                <h3 class="instructor-name">Doc. Oscar B.</h3>
-                            </div>
-                        </div>
+                <h1><i class="icon-class">💻</i> Curso de JScript: <br> Intermedio</h1>
+                <div class="instructors-list">
+                    <div class="instructor-item">
+                    <img src="/public/img/ninos/profe.png" alt="Instructor 9" class="instructor-image">
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Doc. Oscar B.</h3>
+                    </div>
                     </div>
                 </div>
+                </div>
             </a>
+            
 
-            <!-- Cursos de Cinema 4D -->
-            <a href="apartadoC1.html" class="course-card" data-course-name="cinema 4d básico">
+                        <!-- Cursos de Cinema 4D -->
+            <a href="apartadoC1.html?curso=cinema&nivel=basico" class="course-card" data-course-name="cinema 4d básico">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerC1.jpg" alt="Curso de Cinema 4D: Básico" class="course-image">
                 </div>
@@ -352,7 +354,7 @@
                 </div>
             </a>
 
-            <a href="apartadoC3.html" class="course-card" data-course-name="cinema 4d avanzado">
+            <a href="apartadoC1.html?curso=cinema&nivel=avanzado" class="course-card" data-course-name="cinema 4d avanzado">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerC3.jpg" alt="Curso de Cinema 4D: Avanzado" class="course-image">
                 </div>
@@ -369,7 +371,7 @@
                 </div>
             </a>
 
-            <a href="apartadoC2.html" class="course-card" data-course-name="cinema 4d intermedio">
+            <a href="apartadoC1.html?curso=cinema&nivel=intermedio" class="course-card" data-course-name="cinema 4d intermedio">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerC2.jpg" alt="Curso de Cinema 4D: Intermedio" class="course-image">
                 </div>
@@ -386,8 +388,9 @@
                 </div>
             </a>
 
-            <!-- Cursos de nODE JS-->
-            <a href="apartadoN1.html" class="course-card" data-course-name="nodejs básico">
+
+                    <!-- Cursos de Node.js -->
+            <a href="apartadoN1.html?curso=nodejs&nivel=basico" class="course-card" data-course-name="nodejs básico">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerN.jpg" alt="Curso de Node.js : Básico" class="course-image">
                 </div>
@@ -404,7 +407,7 @@
                 </div>
             </a>
 
-            <a href="apartadoN2.html" class="course-card" data-course-name="nodejs avanzado">
+            <a href="apartadoN1.html?curso=nodejs&nivel=avanzado" class="course-card" data-course-name="nodejs avanzado">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerN2.jpg" alt="Curso de Node.js : Avanzado" class="course-image">
                 </div>
@@ -421,7 +424,7 @@
                 </div>
             </a>
 
-            <a href="apartadoN3.html" class="course-card" data-course-name="nodejs intermedio">
+            <a href="apartadoN1.html?curso=nodejs&nivel=intermedio" class="course-card" data-course-name="nodejs intermedio">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerN3.jpg" alt="Curso de Node.js : Intermedio" class="course-image">
                 </div>
@@ -440,8 +443,7 @@
 
 
 
-            <!-- Cursos de SQL SERVER-->
-            <a href="apartadoS.html" class="course-card" data-course-name="sql server básico">
+            <a href="apartadoS.html?curso=sqlserver&nivel=basico" class="course-card" data-course-name="sql server básico">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerS.jpg" alt="Curso de sql server: básico" class="course-image">
                 </div>
@@ -458,7 +460,7 @@
                 </div>
             </a>
 
-            <a href="apartadoN2.html" class="course-card" data-course-name="sql server avanzado">
+            <a href="apartadoS.html?curso=sqlserver&nivel=avanzado" class="course-card" data-course-name="sql server avanzado">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerS2.jpg" alt="Curso de sql server: avanzado" class="course-image">
                 </div>
@@ -474,11 +476,11 @@
                     </div>
                 </div>
             </a>
-
-            <a href="apartadoN3.html" class="course-card" data-course-name="sql server intermedio">
+            
+            
+            <a href="apartadoS.html?curso=sqlserver&nivel=intermedio" class="course-card" data-course-name="sql server intermedio">
                 <div class="image-container">
-                    <img src="/public/img/ninos/bannerS3.jpg" alt="Curso de sql server: intermedio"
-                        class="course-image">
+                    <img src="/public/img/ninos/bannerS3.jpg" alt="Curso de sql server: intermedio" class="course-image">
                 </div>
                 <div class="content-container">
                     <h1><i class="icon-class">💻</i> Curso de Sql Server: <br> Intermedio</h1>
@@ -492,15 +494,15 @@
                     </div>
                 </div>
             </a>
+            
+        
 
-
-            <!-- Cursos de  MYSQL -->
-            <a href="apartadoMs.html" class="course-card" data-course-name="mysql básico">
+            <a href="apartadoMs.html?curso=mysql&nivel=basico" class="course-card" data-course-name="mysql básico">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerMS.jpg" alt="Curso de mysql: Básico" class="course-image">
                 </div>
                 <div class="content-container">
-                    <h1><i class="icon-class">💻</i> Curso de MySql: <br> Básico</h1>
+                    <h1><i class="icon-class">💻</i> Curso de MySQL: <br> Básico</h1>
                     <div class="instructors-list">
                         <div class="instructor-item">
                             <img src="/public/img/ninos/profe.png" alt="Instructor 7" class="instructor-image">
@@ -511,13 +513,13 @@
                     </div>
                 </div>
             </a>
-
-            <a href="apartadoN2.html" class="course-card" data-course-name="mysql avanzado">
+            
+            <a href="apartadoMs.html?curso=mysql&nivel=avanzado" class="course-card" data-course-name="mysql avanzado">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerMS2.jpg" alt="Curso de mysql: avanzado" class="course-image">
                 </div>
                 <div class="content-container">
-                    <h1><i class="icon-class">💻</i> Curso de MySql: <br> Avanzado</h1>
+                    <h1><i class="icon-class">💻</i> Curso de MySQL: <br> Avanzado</h1>
                     <div class="instructors-list">
                         <div class="instructor-item">
                             <img src="/public/img/ninos/profe.png" alt="Instructor 8" class="instructor-image">
@@ -528,13 +530,14 @@
                     </div>
                 </div>
             </a>
-
-            <a href="apartadoN3.html" class="course-card" data-course-name="mysql intermedio">
+            
+            
+            <a href="apartadoMs.html?curso=mysql&nivel=intermedio" class="course-card" data-course-name="mysql intermedio">
                 <div class="image-container">
                     <img src="/public/img/ninos/bannerMS3.jpg" alt="Curso de mysql: intermedio" class="course-image">
                 </div>
                 <div class="content-container">
-                    <h1><i class="icon-class">💻</i> Curso de MySql: <br> Intermedio</h1>
+                    <h1><i class="icon-class">💻</i> Curso de MySQL: <br> Intermedio</h1>
                     <div class="instructors-list">
                         <div class="instructor-item">
                             <img src="/public/img/ninos/profe.png" alt="Instructor 9" class="instructor-image">
@@ -545,8 +548,8 @@
                     </div>
                 </div>
             </a>
-
-
+            
+    
 
         </div>
     </div>
@@ -572,7 +575,7 @@
 
     <script src="/src/js/cursos.js"></script>
     <script src="/src/js/menu.js"></script>
-
+   
     <!-- Script para cargar el menú y aplicar las opciones de usuario -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {

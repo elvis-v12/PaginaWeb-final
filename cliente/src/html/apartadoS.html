@@ -34,46 +34,44 @@
     <div class="loading-text">Cargando...</div>
   </div>
 
-    <!-- Cargar el menú -->
-    <!-- Menú -->
-    <div class="mi-menu">
-      <nav class="navbar">
-          <div class="logo">
-              <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+  <!-- Cargar el menú -->
+  <!-- Menú -->
+  <div class="mi-menu">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+      </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links" id="menu-links">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="informacion.html">Acerca de</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="rutas.html">Rutas</a></li>
+        <li><a href="planes.html">Planes</a></li>
+        <li><a href="soporte.html">Soporte</a></li>
+      </ul>
+      <div class="login">
+        <div class="dropdown">
+          <button class="btn-login" id="login-button">Acceder</button>
+          <div class="dropdown-content" id="login-dropdown">
+            <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
+            <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
           </div>
-          <div class="hamburger">
-              <div></div>
-              <div></div>
-              <div></div>
-          </div>
-          <ul class="nav-links" id="menu-links">
-              <li><a href="inicio.html">Inicio</a></li>
-              <li><a href="informacion.html">Acerca de</a></li>
-              <li><a href="cursos.html">Cursos</a></li>
-              <li><a href="rutas.html">Rutas</a></li>
-              <li><a href="becas.html">Becas</a></li>
-              <li><a href="planes.html">Planes</a></li>
-              <li><a href="soporte.html">Soporte</a></li>
-             
-          </ul>
-          <div class="login">
-              <div class="dropdown">
-                  <button class="btn-login" id="login-button">Acceder</button>
-                  <div class="dropdown-content" id="login-dropdown">
-                      <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
-                      <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
-                  </div>
-              </div>
-              <a href="pagos.html" class="btn-cart">
-                  <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
-              </a>
-              <!-- Icono para activar la racha -->
-              <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
-                  <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
-                  <span class="streak-number">2</span>
-              </div>
-          </div>
-      </nav>
+        </div>
+        <a href="pagos.html" class="btn-cart">
+          <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+        </a>
+        <!-- Icono para activar la racha -->
+        <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
+          <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
+          <span class="streak-number">2</span>
+        </div>
+      </div>
+    </nav>
   </div>
 
   <!-- Ventana emergente para la racha -->
@@ -375,7 +373,7 @@
   </script>
 
   <script src="/src/js/menu.js"></script>
-
+  <script src="/src/js/CambioSql.js"></script>
 </body>
 
 </html>
