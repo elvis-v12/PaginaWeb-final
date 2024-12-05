@@ -1,104 +1,105 @@
 {
     "basico": {
-        "titulo": "Curso de SQL Server para niños",
-        "subtitulo": "Curso de SQL Server\nbásico para niños",
-        "nivel": "BÁSICO",
-        "descripcion": "En este emocionante y creativo curso de SQL Server para niños, aprenderás a hacer tus propias páginas dinámicas como las que ves en tus redes y videos favoritos. ¡No necesitas experiencia previa! Aquí te enseñaremos desde lo más básico, usando explicaciones claras y fáciles de seguir, para que te diviertas mientras aprendes a crear increíbles mundos digitales. Al finalizar, podrás guardar y compartir tus creaciones con tus amigos, familiares o profesores. ¡Este curso es para ti!",
-        "imagen": "/public/img/ninos/bannerS.jpg",
-        "recursos": [
-            {
-                "titulo": "Introducción a SQL Server",
-                "duracion": "01:50 min",
-                "progreso": "40%"
-            },
-            {
-                "titulo": "Creación de Tablas",
-                "duracion": "01:02 min",
-                "progreso": "60%"
-            },
-            {
-                "titulo": "Inserción de Datos",
-                "duracion": "01:50 min",
-                "progreso": "80%"
-            },
-            {
-                "titulo": "Consultas Básicas",
-                "duracion": "01:50 min",
-                "progreso": "10%"
-            },
-            {
-                "titulo": "Actualización de Datos",
-                "duracion": "01:50 min",
-                "progreso": "50%"
-            }
-        ]
+      "titulo": "Curso de SQL Server para Niños",
+      "subtitulo": "Curso Básico de SQL Server para Niños",
+      "nivel": "BÁSICO",
+      "descripcion": "¡Bienvenidos al curso más divertido de SQL Server! En este curso, aprenderás a hacer tus propias bases de datos y gestionar toda la información, tal como lo hacen los grandes programadores. Desde crear tablas hasta insertar datos y hacer consultas sencillas, te guiaremos paso a paso para que aprendas mientras te diviertes. No necesitas tener experiencia previa, solo ganas de aprender y explorar el emocionante mundo de las bases de datos. Al finalizar, podrás crear tus propias bases de datos y ¡compartirlas con tus amigos y familia!",
+      "imagen": "/public/img/ninos/bannerS.jpg",
+      "recursos": [
+        {
+          "titulo": "Introducción a SQL Server",
+          "duracion": "01:50 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Creación de Tablas",
+          "duracion": "01:02 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Inserción de Datos",
+          "duracion": "01:50 min",
+          "progreso": "80%"
+        },
+        {
+          "titulo": "Consultas Básicas",
+          "duracion": "01:50 min",
+          "progreso": "10%"
+        },
+        {
+          "titulo": "Actualización de Datos",
+          "duracion": "01:50 min",
+          "progreso": "50%"
+        }
+      ]
     },
     "intermedio": {
-        "titulo": "Curso de SQL Server intermedio",
-        "subtitulo": "Curso de SQL Server\nintermedio",
-        "nivel": "INTERMEDIO",
-        "descripcion": "En este emocionante y desafiante curso de SQL Server intermedio, aprenderás a trabajar con relaciones entre tablas, funciones avanzadas y procedimientos almacenados para gestionar datos de forma eficiente. Usaremos ejemplos prácticos que te permitirán comprender y aplicar cada concepto de manera efectiva. Además, te enseñaremos a optimizar consultas para mejorar el rendimiento de tus bases de datos. Al finalizar, tendrás un dominio intermedio de SQL Server y estarás listo para proyectos más complejos.",
-        "imagen": "/public/img/ninos/bannerS3.jpg",
-        "recursos": [
-            {
-                "titulo": "Relaciones entre Tablas",
-                "duracion": "02:00 min",
-                "progreso": "40%"
-            },
-            {
-                "titulo": "Consultas Avanzadas",
-                "duracion": "01:45 min",
-                "progreso": "70%"
-            },
-            {
-                "titulo": "Funciones de Agregación",
-                "duracion": "02:30 min",
-                "progreso": "50%"
-            },
-            {
-                "titulo": "Procedimientos Almacenados",
-                "duracion": "01:30 min",
-                "progreso": "60%"
-            },
-            {
-                "titulo": "Optimización de Consultas",
-                "duracion": "03:00 min",
-                "progreso": "80%"
-            }
-        ]
+      "titulo": "Curso de SQL Server para Adolescentes",
+      "subtitulo": "Curso Intermedio de SQL Server para Adolescentes",
+      "nivel": "INTERMEDIO",
+      "descripcion": "Este curso está diseñado para adolescentes que ya conocen lo básico de SQL Server y desean aprender más. Te enseñaremos cómo trabajar con relaciones entre tablas, cómo realizar consultas más avanzadas y cómo usar procedimientos almacenados para mejorar la gestión de tus datos. Además, aprenderás a optimizar tus consultas para que tu base de datos funcione más rápido. Este curso es ideal si quieres convertirte en un experto en el manejo de bases de datos y aplicar lo aprendido en proyectos más complejos.",
+      "imagen": "/public/img/ninos/bannerS3.jpg",
+      "recursos": [
+        {
+          "titulo": "Relaciones entre Tablas",
+          "duracion": "02:00 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Consultas Avanzadas",
+          "duracion": "01:45 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Funciones de Agregación",
+          "duracion": "02:30 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Procedimientos Almacenados",
+          "duracion": "01:30 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Optimización de Consultas",
+          "duracion": "03:00 min",
+          "progreso": "80%"
+        }
+      ]
     },
     "avanzado": {
-        "titulo": "Curso de SQL Server avanzado",
-        "subtitulo": "Curso de SQL Server\navanzado",
-        "nivel": "AVANZADO",
-        "descripcion": "En este curso avanzado de SQL Server, aprenderás a utilizar herramientas como triggers, vistas y replicación para gestionar grandes volúmenes de datos. Profundizaremos en técnicas avanzadas de seguridad y optimización, asegurándonos de que tus bases de datos sean robustas y de alto rendimiento. Usaremos casos prácticos para que puedas aplicar tus conocimientos en situaciones reales. Al finalizar, tendrás las habilidades necesarias para convertirte en un experto en SQL Server.",
-        "imagen": "/public/img/ninos/bannerS2.jpg",
-        "recursos": [
-            {
-                "titulo": "Implementación de Vistas",
-                "duracion": "03:00 min",
-                "progreso": "50%"
-            },
-            {
-                "titulo": "Uso de Triggers",
-                "duracion": "04:00 min",
-                "progreso": "70%"
-            },
-            {
-                "titulo": "Replicación de Datos",
-                "duracion": "03:30 min",
-                "progreso": "60%"
-            },
-            {
-                "titulo": "Seguridad Avanzada",
-                "duracion": "02:45 min",
-                "progreso": "90%"
-            },
-            {
-                "titulo": "Rendimiento Optimizado",
-                "duracion": "03:30 min",
-                "progreso": "80%"
-            }
-        ]
+      "titulo": "Curso de SQL Server para Adultos",
+      "subtitulo": "Curso Avanzado de SQL Server para Adultos",
+      "nivel": "AVANZADO",
+      "descripcion": "Este curso avanzado está diseñado para quienes ya tienen experiencia en SQL Server y desean profundizar en el manejo de grandes volúmenes de datos. Aprenderás cómo utilizar herramientas como triggers, vistas y replicación para optimizar y gestionar bases de datos complejas. Además, abordaremos aspectos de seguridad avanzada y rendimiento, para que puedas diseñar bases de datos robustas y eficientes. Este curso es ideal para quienes desean especializarse en bases de datos de alto rendimiento.",
+      "imagen": "/public/img/ninos/bannerS2.jpg",
+      "recursos": [
+        {
+          "titulo": "Implementación de Vistas",
+          "duracion": "03:00 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Uso de Triggers",
+          "duracion": "04:00 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Replicación de Datos",
+          "duracion": "03:30 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Seguridad Avanzada",
+          "duracion": "02:45 min",
+          "progreso": "90%"
+        },
+        {
+          "titulo": "Rendimiento Optimizado",
+          "duracion": "03:30 min",
+          "progreso": "80%"
+        }
+      ]
     }
-}
+  }
+  
