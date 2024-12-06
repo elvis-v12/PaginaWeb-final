@@ -6,7 +6,7 @@
 html,
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/ninos/oceano.png') no-repeat center center fixed;
+    background: url('/public/img/ninos/burbuja.jpg')no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -74,10 +74,11 @@ body {
 
 
 .water-stain {
-    background-color: rgba(255, 20, 145, 0.623);
+    background-color: #58abefee;
     width: 750px;
     height: 500px;
     border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
+
     animation: morph 6s ease-in-out infinite;
     margin-right: 5rem;
     margin-top: 3rem;
@@ -99,11 +100,12 @@ body {
 }
 
 .subtitle {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
-    color: #fff;
+    color: #ffffff;
     font-family: 'Satisfy', cursive;
     margin-left: 130px;
+    margin-bottom: 10px;
 }
 
 .rating {
@@ -130,11 +132,11 @@ body {
 }
 
 .description {
-    font-size: 1rem;
+    font-size: 1.1rem;
     /* Tamaño de fuente */
     font-family: 'Nanum Gothic Coding', monospace;
     /* Fuente */
-    color: #ffe3f7;
+    color: #ffffff;
     /* Color del texto */
     text-align: justify;
     /* Justificar el texto */
@@ -164,42 +166,36 @@ body {
     }
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-    margin-top: 6rem;
-    flex: 1%;
-}
 
 .image-container img {
-    max-width: 310px;
-    max-height: 1000px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    max-width: 400px;
+    max-height: 3000px;
+    margin-top: 8rem;
     z-index: 1;
     margin-right: 90px;
+    animation: bounce 2s infinite;
 }
 
-.image-container::before,
-.image-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 15%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
-    z-index: 0;
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
-.image-container::before {
-    left: 0;
-}
 
-.image-container::after {
-    right: 0;
-}
 
 .button-container {
     display: flex;
@@ -208,11 +204,11 @@ body {
 }
 
 .button-primary {
-    background-color: #6aa7f6;
+    background-color: #f858c8;
     font-size: 18px;
     color: white;
-    border: none;
     font-weight: bold;
+    border:none;
     margin: 5px;
     padding: 10px 15px;
     /* Asegura espacio adecuado dentro del botón */
@@ -266,14 +262,14 @@ body {
 
 .temario h2{
     margin-top: 35px;
-    font-family: 'Rammetto One', sans-serif;
-    font-size: 2.7em;
-    color: rgb(213, 231, 252); /* Color azul */
-    text-shadow: 2px 5px 0 rgb(80, 143, 219); /* Sombra sólida */
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 3.8em;
+    color: rgb(255, 214, 48);
+    text-shadow: 2px 5px 0 rgb(149, 123, 37); /* Sombra sólida */
     text-align: center;
     margin-left: 10px;
     margin-bottom: 20px;
-    animation: reboteFrente 2s ease-in-out infinite; /* Llama a la animación */
+ 
 }
 
 .temario-div {
@@ -416,9 +412,7 @@ button:hover {
     padding: 10px;
     /* Espaciado interno para que los elementos no estén pegados al borde */
     border: 2px solid #84377e;
-    /* Borde negro */
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra */
+  
 }
 
 .contenedor-requisitos h3 {
@@ -488,7 +482,7 @@ button:hover {
 
 .textito {
     font-family: 'Grand Hotel', cursive;
-    font-size: 2.5rem;
+    font-size: 1.7rem;
     color: #ffffff;
 }
 
@@ -531,8 +525,7 @@ button:hover {
     /* Espacio interno */
     border-radius: 8px;
     /* Esquinas redondeadas */
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra */
+  
     background-color: #cc6dc9c9;
     animation: agarrarCaja 6s ease-in-out infinite;
     /* Llama a la animación */
@@ -583,7 +576,7 @@ button:hover {
 }
 
 .info-box p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: 'Nanum Gothic Coding', monospace;
 
 }
@@ -591,12 +584,12 @@ button:hover {
 .textito1 {
     font-family: 'Satisfy', cursive;
     font-size: 2rem;
-    color: #ffe0fc;
+    color: #ffffff;
 }
 
 .temario-iz h3 {
     font-family: 'Pacifico', cursive;
-    font-size: 40px;
+    font-size: 37px;
     margin: 0;
 }
 
