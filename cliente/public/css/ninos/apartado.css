@@ -26,9 +26,10 @@ body {
     position: relative;
 }
 
+
 .title {
-    margin-top: 80px;
-    font-size: 4rem;
+    margin-top:70px;
+    font-size: 4.5rem;
     font-weight: bold;
     color: #FFD700;
     text-shadow: 2px 5px 0 rgb(149, 123, 37); /* Sombra sólida */
@@ -37,15 +38,11 @@ body {
     text-align: center;
     z-index: 20;
     font-family: 'Coiny', cursive;
-    top: 0;
     background: linear-gradient(to right, rgba(255, 255, 255, 0.176), rgba(255, 255, 255, 0.025));
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
     animation: bounce 2s infinite;
 }
-
-
-
 @keyframes bounce {
 
     0%,
@@ -65,20 +62,20 @@ body {
     }
 }
 
-
-.water-stain {
+.water-stain { 
     background-color: #58abefee;
     width: 750px;
     height: 500px;
     border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
     animation: morph 6s ease-in-out infinite;
-    margin-right: 3rem;
+    margin: 0; /* Elimina márgenes */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0; /* Reduce el padding interno a cero si no es necesario */
 }
+
 
 .subtitle-container {
     display: flex;
@@ -160,29 +157,27 @@ body {
     max-width: 400px;
     max-height: 3000px;
     z-index: 1;
-    margin-right: 90px;
-    animation: bounce 2s infinite;
+    margin-right: 80px;
+    animation: shake-and-rotate 2s ease-in-out infinite; /* Animación con menor intensidad */
 }
 
-@keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-10px);
-    }
-
-    60% {
-        transform: translateY(-5px);
-    }
+@keyframes shake-and-rotate {
+  0% {
+    transform: translateX(0) rotate(0deg); /* Posición inicial sin rotación */
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg); /* Movimiento a la izquierda con rotación reducida */
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg); /* Movimiento a la derecha con rotación reducida */
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg); /* Movimiento a la izquierda con rotación reducida */
+  }
+  100% {
+    transform: translateX(0) rotate(0deg); /* Regreso a la posición inicial */
+  }
 }
-
 
 
 .button-container {
@@ -245,20 +240,22 @@ body {
     background-color: #7AD9FF;
     color: white;
     border-radius: 8px;
-    padding: 1.5em;
+
 }
 
 .temario h2 {
-    margin-top: 35px;
+
     font-family: 'Coiny', cursive;
-    font-size: 4.5em;
+    font-size: 4.7em;
     color: rgb(255, 214, 48);
     text-shadow: 2px 5px 0 rgb(149, 123, 37); /* Sombra sólida */
     text-align: center; /* Centra el texto horizontalmente */
-    margin-left: auto; /* Quita margen específico hacia la izquierda */
-    margin-right: auto; /* Centra dentro del contenedor */
     margin-bottom: 20px;
     width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.566), rgba(255, 255, 255, 0.025));
+    width: 100%;
+    text-align: center;
+    animation: bounce 2s infinite;
 }
 
 .temario-div {
@@ -273,7 +270,6 @@ body {
 .contenedor-recursos {
     background-color: #7ed7ff;
     /* Fondo del contenedor principal */
-    padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -293,7 +289,7 @@ body {
 
 /* Tarjeta de curso */
 .content-card {
-    background-color: #37748a;
+    background-color: #376a8a;
     /* Fondo de cada tarjeta */
     padding: 20px;
     margin: 10px;
@@ -304,7 +300,7 @@ body {
     gap: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     /* Sombra */
-    color: #ffef6f;
+    color: #ffffff;
     /* Color del texto */
     font-family: Arial, sans-serif;
 }
@@ -332,8 +328,8 @@ body {
 
 /* Duración del curso */
 .duration {
-    color: #e0e0e0;
-    font-size: 0.9em;
+    color: #e0e0e0d0;
+    font-size: 1em;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -352,7 +348,7 @@ body {
 
 .progress-bar-fill {
     height: 100%;
-    background-color: #2bffb5;
+    background-color: #ffd900;
     /* Color de la barra de progreso */
     width: 80%;
     /* Cambia este valor según el progreso de cada curso */
@@ -375,9 +371,6 @@ button:hover {
 }
 
 
-
-
-
 /* Estilo personalizado para el contenedor principal */
 .bg-gray-900 {
     background-color: hsl(197, 100%, 74%);
@@ -396,13 +389,24 @@ button:hover {
     min-width: 250px;
 }
 
+/* Estilo de la caja de requisitos */
 .contenedor-requisitos {
-    background-color: #cc6dc9c9;
-    padding: 10px;
-    /* Espaciado interno para que los elementos no estén pegados al borde */
-    border: 2px solid #84377e;
-  
+    background-color: #df4ec0a9; /* Fondo con transparencia */
+    border: 2px solid #84377e; /* Borde de color púrpura */
+    border-radius: 20px; /* Esquinas redondeadas */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    margin-left: 20px;
 }
+
+/* Efecto al pasar el cursor */
+.contenedor-requisitos:hover {
+    transform: scale(1.05); /* Agranda ligeramente el elemento */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    background-color: #e472d2; /* Fondo cambia a un color más brillante */
+}
+
 
 .contenedor-requisitos h3 {
     font-size: 1.2em;
@@ -414,7 +418,7 @@ button:hover {
 }
 
 .contenedor-requisitos li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .contenedor-requisitos i {
@@ -422,29 +426,15 @@ button:hover {
 }
 
 .icono-reloj {
-    color: #ffffff;
+    color: #ffffffde;
     /* Ejemplo: rojo tomate */
 }
 
 .icono-ejercicio {
-    color: #ffffff;
+    color: #ffffffde;
     /* Ejemplo: azul claro */
 }
 
-.font-bold {
-    margin-top: 35px;
-    font-family: 'Rammetto One', sans-serif;
-    font-size: 2.7em;
-    color: rgb(213, 231, 252);
-    /* Color azul */
-    text-shadow: 2px 5px 0 rgb(80, 143, 219);
-    /* Sombra sólida */
-    text-align: center;
-    margin-left: 10px;
-    margin-bottom: 20px;
-    animation: reboteFrente 2s ease-in-out infinite;
-    /* Llama a la animación */
-}
 
 @keyframes reboteFrente {
 
@@ -469,13 +459,6 @@ button:hover {
 }
 
 
-.textito {
-    font-family: 'Grand Hotel', cursive;
-    font-size: 1.7rem;
-    color: #ffffff;
-}
-
-
 .gif-container {
     display: flex;
     /* Alinea los elementos en fila */
@@ -494,58 +477,41 @@ button:hover {
     /* Elimina cualquier margen para alinear a la izquierda */
 }
 
-.gif-mediano {
-    width: 100%;
-    /* Hace que el GIF se ajuste al ancho del contenedor */
-    max-width: 200px;
-    /* Limita el tamaño máximo del GIF a 200px (ajusta según lo necesites) */
-    display: block;
-    /* Asegura que el GIF se alinee correctamente */
-    margin: 0;
-    /* Elimina el margen automático para mejor alineación */
-    margin-top: 1px;
-    /* Margen superior */
-}
 
 .info-box {
-    border: 2px solid #84377e;
-    /* Borde negro */
-    padding: 15px;
-    /* Espacio interno */
-    border-radius: 8px;
-    /* Esquinas redondeadas */
-  
-    background-color: #cc6dc9c9;
-    animation: agarrarCaja 6s ease-in-out infinite;
-    /* Llama a la animación */
+    border: 2px solid #84377e; /* Borde de color púrpura */
+    padding: 20px; /* Espacio interno */
+    border-radius: 20px; /* Esquinas redondeadas */
+    background-color:  #e472d2;/* Fondo con transparencia */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    margin-left: 20px;
 }
 
-@keyframes agarrarCaja {
-    0% {
-        transform: scale(1) rotate(0deg);
-        /* Sin escala ni rotación */
-    }
-
-    25% {
-        transform: scale(1.05) rotate(2deg);
-        /* Aumenta al 105% y rota 2 grados */
-    }
-
-    50% {
-        transform: scale(1.1) rotate(-2deg);
-        /* Aumenta al 110% y rota -2 grados */
-    }
-
-    75% {
-        transform: scale(1.05) rotate(2deg);
-        /* Vuelve al 105% y rota 2 grados */
-    }
-
-    100% {
-        transform: scale(1) rotate(0deg);
-        /* Vuelve al tamaño original */
-    }
+/* Efecto al pasar el cursor */
+.info-box:hover {
+    transform: scale(1.05); /* Agranda ligeramente el elemento */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    background-color: #d152be; /* Fondo cambia a un color más brillante */
 }
+
+.info-container {
+    display: flex; /* Elementos en línea */
+    flex-wrap: wrap; /* Permite filas adicionales si es necesario */
+    gap: 1rem; /* Espacio entre elementos */
+    list-style: none; /* Sin puntos de lista */
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* Centra los elementos horizontalmente */
+  }
+
+  .info-container li {
+    display: flex; /* Ícono y texto en línea */
+    align-items: center; /* Centra verticalmente */
+    flex: 1 1 calc(50% - 1rem); /* Dos columnas */
+    max-width: 300px; /* Limita el ancho máximo */
+  }
+
 
 
 
@@ -566,29 +532,34 @@ button:hover {
 
 .info-box p {
     font-size: 1.1rem;
-    font-family: 'Nanum Gothic Coding', monospace;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: #ffffffde;
 
 }
 
 .textito1 {
     font-family: 'Satisfy', cursive;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #ffffff;
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center; 
+  
  
 }
 
 .temario-iz h3 {
     font-family: 'Satisfy', cursive;
-    font-size: 37px;
-    text-align: center; /* Centra el texto horizontalmente */
-  
+    font-size: 39px;
+    text-align: center; 
 }
 
 .temario-iz ul li {
-    font-family: 'Nanum Gothic Coding', monospace;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 18px;
+    color: #ffffffde;
+  
 }
+
+
 
 @keyframes transformarRectangulo {
     0% {
