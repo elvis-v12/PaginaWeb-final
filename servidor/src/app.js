@@ -10,7 +10,8 @@ import registroRoutes from './routes/registro.routes.js'; // Importar las rutas
 import loginRoutes from './routes/login.routes.js';
 import loginAdmiRoutes from './routes/loginAdmi.routes.js'; // Nueva ruta de administrador
 import adminRoutes from "./routes/admin.routes.js";
-
+import cursoRoutes  from "./routes/curso.routes.js";
+import cursoCliente  from "./routes/CursosCliente.routes.js";
 // Cargar variables de entorno desde el archivo .env
 dotenv.config({ path: path.resolve('./.env') });
 
@@ -46,6 +47,12 @@ app.use('/api/admin', loginAdmiRoutes); // Sin conflicto
 
 //Agregar la nueva ruta para traer los datos del administrador
 app.use("/api/datosAdmin", adminRoutes);
+
+// Rutas para el administrador de cursos (ruta con prefijo /admin)
+app.use('/api/admin/cursos', cursoRoutes); // Acceso solo a administradores
+
+// Rutas para el cliente que ve los cursos (ruta con prefijo /client)
+app.use('/api/client/cursos', cursoCliente); // Acceso público a los cursos
 
 app.get('/admin/test', (req, res) => {
     res.send('<h1>El módulo Administrador está funcionando correctamente</h1>');
