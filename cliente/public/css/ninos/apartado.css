@@ -18,14 +18,6 @@ body {
     margin-top: 2em;
 }
 
-.bg-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    /* Mantiene la altura completa */
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -39,8 +31,7 @@ body {
     font-size: 4rem;
     font-weight: bold;
     color: #FFD700;
-    text-shadow: 3px 3px 0px #ffffff;
-    position: fixed;
+    text-shadow: 2px 5px 0 rgb(149, 123, 37); /* Sombra sólida */
     left: 0;
     width: 100%;
     text-align: center;
@@ -52,6 +43,8 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
     animation: bounce 2s infinite;
 }
+
+
 
 @keyframes bounce {
 
@@ -78,17 +71,13 @@ body {
     width: 750px;
     height: 500px;
     border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
-
     animation: morph 6s ease-in-out infinite;
-    margin-right: 5rem;
-    margin-top: 3rem;
+    margin-right: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    margin-top: 100px;
-    flex: 90%;
 }
 
 .subtitle-container {
@@ -170,7 +159,6 @@ body {
 .image-container img {
     max-width: 400px;
     max-height: 3000px;
-    margin-top: 8rem;
     z-index: 1;
     margin-right: 90px;
     animation: bounce 2s infinite;
@@ -260,16 +248,17 @@ body {
     padding: 1.5em;
 }
 
-.temario h2{
+.temario h2 {
     margin-top: 35px;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 3.8em;
+    font-family: 'Coiny', cursive;
+    font-size: 4.5em;
     color: rgb(255, 214, 48);
     text-shadow: 2px 5px 0 rgb(149, 123, 37); /* Sombra sólida */
-    text-align: center;
-    margin-left: 10px;
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-left: auto; /* Quita margen específico hacia la izquierda */
+    margin-right: auto; /* Centra dentro del contenedor */
     margin-bottom: 20px;
- 
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
 }
 
 .temario-div {
@@ -585,12 +574,15 @@ button:hover {
     font-family: 'Satisfy', cursive;
     font-size: 2rem;
     color: #ffffff;
+    text-align: center; /* Centra el texto horizontalmente */
+ 
 }
 
 .temario-iz h3 {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Satisfy', cursive;
     font-size: 37px;
-    margin: 0;
+    text-align: center; /* Centra el texto horizontalmente */
+  
 }
 
 .temario-iz ul li {
