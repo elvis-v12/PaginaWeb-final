@@ -1,36 +1,46 @@
+
+// Seleccionamos todos los botones de descarga
+document.querySelectorAll(".download-btn_be").forEach(button => {
+  button.addEventListener("click", function () {
+    // Seleccionamos el enlace invisible para la descarga
+    const link = document.getElementById("download-linkss");
+
+    // Hacemos clic en el enlace para iniciar la descarga
+    link.click();
+  });
+});
+
+// Esperar que el documento esté listo
 document.addEventListener("DOMContentLoaded", function () {
-  // Código relacionado con el DOM
-  setTimeout(function () {
-    const preloader = document.getElementById("preloader");
-    if (preloader) {
-      preloader.style.opacity = "0";
-      preloader.style.transition = "opacity 0.5s ease";
-    }
-  }, 1000);
+  const botonDescarga = document.querySelector(".descargarreportebecas"); // El botón para descargar el reporte
 
-  setTimeout(function () {
-    const preloader = document.getElementById("preloader");
-    if (preloader) {
-      preloader.style.display = "none";
-    }
-  }, 1500);
+  botonDescarga.addEventListener("click", function () {
+    // Seleccionar la tabla y las filas (maximo 7)
+    const tabla = document.getElementById("tabla-administradores");
+    const filas = tabla.querySelectorAll("tbody tr");
 
-  const cerrarSesion = document.getElementById("cerrar-sesion");
-  if (cerrarSesion) {
-    cerrarSesion.addEventListener("click", (e) => {
-      e.preventDefault();
-      localStorage.removeItem("userId");
-      localStorage.removeItem("userRole");
-      window.location.href = "iniciar-sesion.html";
+    // Limitar a 7 filas
+    const filasLimitadas = Array.from(filas).slice(0, 7);
+
+    // Crear un array de objetos con los datos de la tabla
+    const datos = [];
+    filasLimitadas.forEach(fila => {
+      const celdas = fila.querySelectorAll("td");
+      const filaDatos = {
+        DNI: celdas[0].textContent,
+        Nombre: celdas[1].textContent,
+        Fecha: celdas[2].textContent,
+        Curso: celdas[3].textContent,
+        Nivel: celdas[4].textContent,
+        Estado: celdas[5].textContent
+      };
+      datos.push(filaDatos);
     });
-  }
 
-  const userName = localStorage.getItem("userName");
-  if (userName) {
-    const primerNombre = userName.split(" ")[0];
-    const bienvenidaDiv = document.getElementById("bienvenida");
-    if (bienvenidaDiv) {
-      bienvenidaDiv.textContent = `Bienvenido, ${primerNombre}`;
-    }
-  }
+    // Usar SheetJS para crear el archivo Excel
+    const wb = XLSX.utils.book_new(); // Crear un nuevo libro de trabajo
+    const ws = XLSX.utils.json_to_sheet(datos); // Convertir los datos a una hoja de trabajo
+    XLSX.utils.book_append_sheet(wb, ws, "Reporte"); // Agregar la hoja al libro
+    XLSX.writeFile(wb, "Reporte_Solicitudes_Becas.xlsx"); // Descargar el archivo Excel
+  });
 });

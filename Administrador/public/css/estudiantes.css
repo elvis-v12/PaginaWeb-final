@@ -42,7 +42,7 @@
 }
 .form-input-estudiante input:focus {
   width: 110%; /* Expande el input */
-  border-color: #007bff; /* Cambia a borde azul celeste */
+  border-color: #1c2835; /* Cambia a borde azul celeste */
 }
 
 .form-input-estudiante button {
@@ -121,7 +121,7 @@
   overflow-x: auto;
   padding: 15px;
   border-radius: 25px;
-  background: whitesmoke;
+  background: rgb(255, 255, 255);
 }
 
 #student-management .btn-view {
@@ -138,18 +138,109 @@
 
 .student-details {
   padding: 20px;
-  background-color: white;
+  background-color:#ffffffc9;
   border-radius: 10px;
   border: none;
   transition: transform 0.3s ease, opacity 0.3s ease;
   justify-content: space-between;
   justify-content: flex-start;
+  color: rgb(24, 27, 41);
+  max-width: 300px;
+  font-size: 14px;
+
+ 
 }
+.student-details-info p {
+  margin: 5px 0; /* Espaciado entre párrafos */
+}
+
+.student-details-info strong {
+
+  color: #262b40; 
+  font-family: "Martian Mono", monospace;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.student-details-info span {
+  color: #262b40; 
+  font-size: 13px;
+  color: #2c3e50; 
+}
+
 
 .student-details.hidden {
   transform: translateX(100%);
   opacity: 0;
 }
+
+
+
+/*nuevo*/
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  animation: shake-and-rotate 2s ease-in-out infinite; /* Animación con menor intensidad */
+}
+
+@keyframes shake-and-rotate {
+  0% {
+    transform: translateX(0) rotate(0deg); /* Posición inicial sin rotación */
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg); /* Movimiento a la izquierda con rotación reducida */
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg); /* Movimiento a la derecha con rotación reducida */
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg); /* Movimiento a la izquierda con rotación reducida */
+  }
+  100% {
+    transform: translateX(0) rotate(0deg); /* Regreso a la posición inicial */
+  }
+}
+
+
+.profile-info {
+  flex: 1;
+}
+
+#detail-names {
+  font-size: 1.3rem; /* Tamaño de fuente aumentado */
+  font-weight: bold; /* Hacer el texto en negrita */
+  color:#bbcae7;
+  text-shadow:
+      
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+       ;
+
+  letter-spacing: 1px; /* Espaciado entre letras */
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease; /* Transición suave para efecto de hover */
+}
+
+.separator-line {
+  height: 2px;
+  background-color: #181c2a; /* Gris claro */
+  margin: 20px 0; /* Espaciado arriba y abajo */
+}
+
+
+
+
+
+
+/**/
 
 #sidebar.hide ~ #content .student-content {
   gap: 10px;

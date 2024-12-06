@@ -14,7 +14,20 @@ const students = [
     genero: "Masculino",
     rangoEdad: "Adultos",
   },
-  // Otros estudiantes
+  {
+    id: 2,
+    nombres: "Fernanda Torres",
+    correo: "ferd@example.com",
+    fechaRegistro: "2024-11-01",
+    cursosInscritos: ["JavaScript", "CSS Avanzado", "Html"],
+    estado: "Activo",
+    fechaNacimiento: "2000-08-10",
+    telefono: "923456789",
+    direccion: "Calle 103",
+    biografia: "Estudiante",
+    genero: "Femenino",
+    rangoEdad: "Niños",
+  }
 ];
 
 // Renderizar tabla
@@ -39,6 +52,7 @@ const renderTable = () => {
     )
     .join("");
 };
+
 const searchButtonEstudiante = document.querySelector(
   ".form-input-estudiante button"
 );
@@ -79,28 +93,39 @@ searchInputEstudiante.addEventListener("keydown", (e) => {
     resetInput();
   }
 });
+
 // Mostrar detalles
 const showDetails = (id) => {
   const student = students.find((s) => s.id === id);
   if (!student) return;
 
+  // Actualizar los detalles
   document.getElementById("detail-id").innerText = student.id;
   document.getElementById("detail-names").innerText = student.nombres;
   document.getElementById("detail-email").innerText = student.correo;
-  document.getElementById("detail-birthdate").innerText =
-    student.fechaNacimiento;
+  document.getElementById("detail-birthdate").innerText = student.fechaNacimiento;
   document.getElementById("detail-phone").innerText = student.telefono || "N/A";
-  document.getElementById("detail-address").innerText =
-    student.direccion || "N/A";
-  document.getElementById("detail-biography").innerText =
-    student.biografia || "N/A";
+  document.getElementById("detail-address").innerText = student.direccion || "N/A";
+  document.getElementById("detail-biography").innerText = student.biografia || "N/A";
   document.getElementById("detail-gender").innerText = student.genero || "N/A";
-  document.getElementById("detail-age-range").innerText =
-    student.rangoEdad || "N/A";
+  document.getElementById("detail-age-range").innerText = student.rangoEdad || "N/A";
   document.getElementById("detail-courses").innerHTML = student.cursosInscritos
     .map((curso) => `<li>${curso}</li>`)
     .join("");
 
+  // Mostrar imagen según género
+  const maleImg = document.getElementById("male-profile-img");
+  const femaleImg = document.getElementById("female-profile-img");
+
+  if (student.genero === "Masculino") {
+    maleImg.classList.remove("hidden");
+    femaleImg.classList.add("hidden");
+  } else if (student.genero === "Femenino") {
+    femaleImg.classList.remove("hidden");
+    maleImg.classList.add("hidden");
+  }
+
+  // Mostrar el contenedor de detalles
   document.getElementById("student-details").classList.remove("hidden");
 };
 
@@ -111,3 +136,4 @@ document.getElementById("close-details").addEventListener("click", () => {
 
 // Inicializar
 renderTable();
+

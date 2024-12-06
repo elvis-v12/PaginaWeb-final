@@ -1,155 +1,82 @@
-// Gestión del sidebar
-(() => {
-    const allSideMenu = document.querySelectorAll("#sidebar .side-menu.top li a");
-    const sections = document.querySelectorAll("main .section"); // Todas las secciones de contenido
+// Elementos clave
+const tableBody = document.querySelector("table tbody"); // Si no usas tabla, puedes omitir esto
+const btnAgregar = document.querySelector(".agregar-btn"); // Botón Agregar
 
-    allSideMenu.forEach((item) => {
-        const li = item.parentElement;
+// Dropdowns
+const dropdownInfo = document.querySelector(".dropdow");
+const dropdownAgregar = document.querySelector(".dropdowagregar");
+const dropdownEdit = document.querySelector(".dropdoweditar");
 
-        item.addEventListener("click", function () {
-            // Desactivar todas las opciones del sidebar
-            allSideMenu.forEach((i) => {
-                i.parentElement.classList.remove("active");
-            });
-
-            // Activar la opción seleccionada
-            li.classList.add("active");
-
-            // Mostrar la sección correspondiente y ocultar las demás
-            const sectionId = li.getAttribute("data-section");
-            sections.forEach((section) => {
-                section.classList.remove("active");
-            });
-            if (sectionId) {
-                document.getElementById(sectionId).classList.add("active");
-            }
-        });
-    });
-})();
-
-
-// Toggle del buscador en pantallas pequeñas
-(() => {
-    const searchButton = document.querySelector(
-        "#content nav form .form-input button"
-    );
-    const searchButtonIcon = document.querySelector(
-        "#content nav form .form-input button .bx"
-    );
-    const searchForm = document.querySelector("#content nav form");
-
-    searchButton.addEventListener("click", function (e) {
-        if (window.innerWidth < 576) {
-            e.preventDefault();
-            searchForm.classList.toggle("show");
-            if (searchForm.classList.contains("show")) {
-                searchButtonIcon.classList.replace("bx-search", "bx-x");
-            } else {
-                searchButtonIcon.classList.replace("bx-x", "bx-search");
-            }
-        }
-    });
-
-    // Ajustes para responsive
-    if (window.innerWidth < 768) {
-        document.getElementById("sidebar").classList.add("hide");
-    } else if (window.innerWidth > 576) {
-        searchButtonIcon.classList.replace("bx-x", "bx-search");
-        searchForm.classList.remove("show");
+// Función para mostrar un dropdown específico
+function showDropdown(dropdown) {
+    hideAllDropdowns(); // Cierra cualquier otro dropdown abierto
+    if (dropdown) {
+        dropdown.style.display = "block";
     }
+}
 
-    window.addEventListener("resize", function () {
-        if (this.innerWidth > 576) {
-            searchButtonIcon.classList.replace("bx-x", "bx-search");
-            searchForm.classList.remove("show");
-        }
-    });
-})();
-
-// Switch para modo oscuro/claro
-(() => {
-    const switchMode = document.getElementById("switch-mode");
-
-    switchMode.addEventListener("change", function () {
-        if (this.checked) {
-            document.body.classList.add("dark");
-        } else {
-            document.body.classList.remove("dark");
-        }
-    });
-})();
-
-// Progress bar
-(() => {
-    const allProgress = document.querySelectorAll("main .card .progress");
-    allProgress.forEach((item) => {
-        item.style.setProperty("--value", item.dataset.value);
-    });
-})();
-
-// Dropdown
-(() => {
-    document.addEventListener("DOMContentLoaded", function () {
-        const infoButton = document.getElementById("Info_p"); // Botón para abrir el dropdown
-        const dropdown = document.querySelector(".dropdow"); // Elemento del dropdown
-        const closeButton = document.querySelector(".sali"); // Botón para cerrar el dropdown
-
-        // Verifica si los elementos existen
-        if (infoButton && dropdown && closeButton) {
-            // Abrir o alternar el estado del dropdown
-            infoButton.addEventListener("click", function () {
-                dropdown.classList.toggle("show"); // Cambia la visibilidad
-            });
-
-            // Cerrar el dropdown al hacer clic en el botón de cerrar
-            closeButton.addEventListener("click", function () {
-                dropdown.classList.remove("show"); // Asegúrate de que el dropdown esté oculto
-            });
-        }
-    });
-})();
-
-// Mostrar u ocultar el formulario al hacer clic en el botón "Agregar"
-(() => {
-    const agregarButton = document.getElementById("Agregar"); // Botón con ID "Agregar"
-    const formulario = document.querySelector(".dropdowagregar"); // Div con clase "dropdowagregar"
-
-    if (agregarButton && formulario) {
-        agregarButton.addEventListener("click", function () {
-            // Alterna la visibilidad del formulario
-            formulario.style.display = formulario.style.display === "none" || formulario.style.display === "" ? "block" : "none";
-        });
+// Función para ocultar un dropdown específico
+function hideDropdown(dropdown) {
+    if (dropdown) {
+        dropdown.style.display = "none";
     }
-})();
-// Ocultar el formulario al hacer clic en el botón "X" (saliagregar)
-(() => {
-    const salirButton = document.querySelector(".saliagregar"); // Botón con clase "saliagregar"
-    const formulario = document.querySelector(".dropdowagregar"); // Div con clase "dropdowagregar"
+}
 
-    if (salirButton && formulario) {
-        salirButton.addEventListener("click", function () {
-            // Cambiar el display del formulario a "none"
-            formulario.style.display = "none";
-        });
+// Función para ocultar todos los dropdowns
+function hideAllDropdowns() {
+    document.querySelectorAll(".dropdow").forEach((dropdown) => {
+        dropdown.style.display = "none";
+    });
+    document.querySelectorAll(".dropdowagregar").forEach((dropdown) => {
+        dropdown.style.display = "none";
+    });
+    document.querySelectorAll(".dropdoweditar").forEach((dropdown) => {
+        dropdown.style.display = "none";
+    });
+}
+
+// Manejador de eventos para los botones
+document.addEventListener("click", (event) => {
+    const target = event.target.closest("button"); // Busca el botón más cercano
+    if (!target) return;
+
+    if (target.classList.contains("btn-info_p")) {
+        console.log("Abrir dropdown información");
+        showDropdown(dropdownInfo);
+    } else if (target.classList.contains("btn-edit_p")) {
+        console.log("Abrir dropdown editar");
+        showDropdown(dropdownEdit);
+    } else if (target.classList.contains("agregar-btn")) {
+        console.log("Abrir dropdown agregar");
+        showDropdown(dropdownAgregar);
     }
-})();
+});
 
+// Manejador de evento para el botón agregar
+btnAgregar?.addEventListener("click", () => {
+    console.log("Abrir dropdown agregar");
+    showDropdown(dropdownAgregar);
+});
 
-// Mostrar y ocultar el div de edición
-(() => {
-    const configButton = document.getElementById("Confi_p"); // Botón para mostrar
-    const editDropdown = document.querySelector(".dropdoweditar"); // Div a mostrar/ocultar
-    const closeButton = document.querySelector(".salieditar"); // Botón para cerrar
+// Manejadores para cerrar los dropdowns al hacer clic en los botones de cierre
+document.querySelector(".close-info_p")?.addEventListener("click", () => {
+    hideDropdown(dropdownInfo);
+});
 
-    if (configButton && editDropdown && closeButton) {
-        // Mostrar el div al hacer clic en el botón "Confi_p"
-        configButton.addEventListener("click", function () {
-            editDropdown.style.display = "block"; // Cambiar a visible
-        });
+document.querySelector(".close-add_p")?.addEventListener("click", () => {
+    hideDropdown(dropdownAgregar);
+});
 
-        // Ocultar el div al hacer clic en el botón "X" (salieditar)
-        closeButton.addEventListener("click", function () {
-            editDropdown.style.display = "none"; // Cambiar a oculto
-        });
+document.querySelector(".close-edit_p")?.addEventListener("click", () => {
+    hideDropdown(dropdownEdit);
+});
+
+// Ocultar todos los dropdowns si se hace clic fuera de ellos
+document.addEventListener("click", (event) => {
+    const isDropdown = event.target.closest(".dropdow, .dropdowagregar, .dropdoweditar");
+    const isButton = event.target.closest("button");
+
+    if (!isDropdown && !isButton) {
+        hideAllDropdowns();
     }
-})();
+});

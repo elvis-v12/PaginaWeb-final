@@ -9,8 +9,16 @@ document.querySelector('.input-submit').addEventListener('click', async (e) => {
         return;
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Por favor, ingrese un correo válido.');
+        return;
+    }
+
+    const submitButton = document.querySelector('.input-submit');
+    submitButton.disabled = true; // Deshabilitar botón durante la solicitud
+
     try {
-        // Realizar la solicitud con fetch y esperar su respuesta
         const response = await fetch('http://localhost:3000/api/admin/login', {
             method: 'POST',
             headers: {
@@ -19,25 +27,25 @@ document.querySelector('.input-submit').addEventListener('click', async (e) => {
             body: JSON.stringify({ email, password }),
         });
 
-        // Verificar si la respuesta es válida
         if (!response.ok) {
-            const errorText = await response.text(); // Obtener el texto completo del error
-            console.error('Error en la respuesta:', errorText);
-            alert(`Error: ${errorText}`);
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message || 'Error inesperado'}`);
             return;
         }
 
-        const data = await response.json(); // Parsear el JSON si la respuesta es válida
+        const data = await response.json();
+        console.log('Respuesta del servidor:', data); // Para depurar
 
-        if (data) {
-            alert(data.message);
-            console.log('Datos del usuario:', data.data);
-            // Redirigir al panel de administrador o realizar alguna acción
+        if (data.redirectUrl) {
+            console.log('Redirigiendo a:', data.redirectUrl); // Para depurar
+            window.location.href = data.redirectUrl;
         } else {
-            alert('Datos inválidos.');
+            alert('No se proporcionó una URL de redirección.');
         }
     } catch (error) {
         console.error('Error en el inicio de sesión:', error);
         alert('Error al conectar con el servidor.');
+    } finally {
+        submitButton.disabled = false; // Rehabilitar botón
     }
 });

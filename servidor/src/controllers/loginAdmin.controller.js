@@ -18,6 +18,7 @@ export const loginUser = async (req, res) => {
             return res.status(200).json({
                 message: 'Inicio de sesión exitoso',
                 data: rows[0],
+                redirectUrl: 'http://127.0.0.1:55601/admin/src/html/Dashboard.html', // URL completa y correcta
             });
         } else {
             return res.status(401).json({ message: 'Correo o contraseña incorrectos' });

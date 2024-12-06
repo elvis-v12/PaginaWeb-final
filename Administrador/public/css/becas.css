@@ -1,69 +1,84 @@
+
  .atras_becas {
-    height: 500px;
-    width: 1360px;
-    margin-left: 200px;
-    margin-top: 30px;
-}
+     height: 500px;
+     width: 1360px;
+     margin-left: 200px;
+     margin-top: 30px;
+ }
 
 
-.titulo_becas {
-    margin-left: 10px;
-    margin-bottom: 60px;
-}
+ .titulo_becas {
+     margin-left: 10px;
+     margin-bottom: 60px;
+ }
 
-.becas-container {
-    max-width: 90%;
-    width: 100%;
-    padding: 20px;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-left: 5%;
-}
+ .becas-container {
+     max-width: 90%;
+     width: 100%;
+     padding: 20px;
+     background: #ffffff;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     border-radius: 10px;
+     overflow: hidden;
+     margin-left: 5%;
+ }
 
-.filter-becas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 10px 0;
-    margin-right: 5%;
+ .filter-becas {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: flex-end;
+     align-items: center;
+     gap: 10px;
+     margin-bottom: 20px;
+     margin-right: 5%;
 
-}
+ }
 
-.butt_on2 {
-    background-color: #ffffff00;
-    height: 34px;
-    margin-left: -46px;
-    position: absolute;
-}
+ .butt_on2 {
+     background-color: #ffffff00;
+     height: 34px;
+     margin-left: -46px;
+     position: absolute;
+ }
 
-.butt_on2 i {
-    position: relative;
-    font-size: 15px;
-    color: #020f25;
-}
+ .butt_on2 i {
+     position: relative;
+     font-size: 15px;
+     color: #020f25;
+ }
 
-.filter-becas input,
-.filter-becas select {
-    padding: 8px 16px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
-    font-family: "Roboto", sans-serif;
-    color: #333;
-    flex: 1;
-    /* Asegura que ocupen el mismo espacio */
-    max-width: 200px;
-    /* Limita el ancho máximo */
-}
+ .filter-becas input,
+ .filter-becas select {
+     padding: 8px 16px;
+     font-size: 14px;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+     background-color: #f9f9f9;
+     transition: all 0.3s ease;
+     font-family: "Roboto", sans-serif;
+     color: #333;
+     flex: 1;
+     margin-top: -1px;
+     /* Asegura que ocupen el mismo espacio */
+     max-width: 200px;
+     /* Limita el ancho máximo */
+ }
 
-.filter-becas input[type="date"] {
-    background-color: white;
-    /* Los input de tipo date suelen tener un fondo diferente */
-}
+ #estado_certificado,
+ #nivel {
+     margin-top: -10px;
+ }
+
+ .filter-becas input[type="date"] {
+     background-color: white;
+     /* Los input de tipo date suelen tener un fondo diferente */
+ }
+
+ #download-linkss {
+     display: none;
+ }
+
+ .descargarreportebecas {
+     margin-top: 60px;
+     margin-left: 90px;
+ }

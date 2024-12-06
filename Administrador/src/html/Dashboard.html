@@ -82,7 +82,7 @@
   </a>
 </li>
 
-        <li data-section="messaging">
+        <li data-section="mensajeria" >
           <a href="#">
             <i class="bx bxs-message-dots"></i>
             <span class="text">Mensajería</span>
@@ -403,8 +403,8 @@
           </div>
         </div>
 
-        <!-- Contenido para la gestión de estudiantes -->
-        <div id="student-management" class="section">
+         <!-- Contenido para la gestión de estudiantes -->
+         <div id="student-management" class="section">
           <h1>Gestión de Estudiantes</h1>
           <div class="student-header">
             <div class="estudiantes-filter-container">
@@ -459,38 +459,34 @@
               </table>
             </div>
 
-            <!-- Panel de detalles -->
             <div id="student-details" class="student-details hidden">
               <button id="close-details" class="btn-close">
                 <i class="fa fa-times-circle"></i>
               </button>
-              <h3>Detalles del Estudiante</h3>
-              <div>
+              
+              <div class="profile-header">
+                <img src="/public/img/nino.png" alt="Foto de perfil masculino" class="profile-img" id="male-profile-img">
+                <img src="/public/img/nina.png" alt="Foto de perfil femenino" class="profile-img hidden" id="female-profile-img">
+                <div id="detail-names"></div>
+              </div>
+              
+              
+              <!-- Línea de separación con div -->
+              <div class="separator-line"></div>
+              
+              <div class="student-details-info">
                 <p><strong>ID:</strong> <span id="detail-id"></span></p>
-                <p><strong>Nombres:</strong> <span id="detail-names"></span></p>
                 <p><strong>Correo:</strong> <span id="detail-email"></span></p>
-                <p>
-                  <strong>Fecha de Nacimiento:</strong>
-                  <span id="detail-birthdate"></span>
-                </p>
-                <p>
-                  <strong>Teléfono:</strong> <span id="detail-phone"></span>
-                </p>
-                <p>
-                  <strong>Dirección:</strong> <span id="detail-address"></span>
-                </p>
-                <p>
-                  <strong>Biografía:</strong>
-                  <span id="detail-biography"></span>
-                </p>
+                <p><strong>Fecha de Nacimiento:</strong> <span id="detail-birthdate"></span></p>
+                <p><strong>Teléfono:</strong> <span id="detail-phone"></span></p>
+                <p><strong>Dirección:</strong> <span id="detail-address"></span></p>
+                <p><strong>Biografía:</strong> <span id="detail-biography"></span></p>
                 <p><strong>Género:</strong> <span id="detail-gender"></span></p>
-                <p>
-                  <strong>Rango de Edad:</strong>
-                  <span id="detail-age-range"></span>
-                </p>
+                <p><strong>Rango de Edad:</strong> <span id="detail-age-range"></span></p>
                 <p><strong>Cursos Inscritos:</strong></p>
                 <ul id="detail-courses"></ul>
               </div>
+              
             </div>
           </div>
         </div>
@@ -946,98 +942,166 @@
 
         <!-- Contenido para solicitudes de becas -->
         <div id="becas" class="section">
-        <div class="atras_becas">
-          <h1 class="titulo_becas">Gestión de becas</h1>
-          <div class="filter-becas">
-            <div class="grupo_dni">
-              <input type="text" id="dni" placeholder="DNI" value="DNI">
-              <button class="butt_on2"><i class="fas fa-search"></i></button>
+          <div class="atras_becas">
+            <h1 class="titulo_becas">Gestión de becas</h1>
+            <div class="filter-becas">
+              <div class="grupo_dni">
+                <input type="text" id="dni" placeholder="DNI" value="DNI">
+                <button class="butt_on2"><i class="fas fa-search"></i></button>
+              </div>
+              <div class="grupo_nombre">
+                <input type="text" id="nombre" placeholder="Nombre" value="Nombre">
+                <button class="butt_on2"><i class="fas fa-search"></i></button>
+              </div>
+              <input type="date" id="fecha">
+  
+              <div class="grupo_curso">
+                <input type="text" id="curso" placeholder="Curso" value="Curso">
+                <button class="butt_on2"><i class="fas fa-search"></i></button>
+              </div>
+              <select id="nivel">
+                <option value="nivel">Nivel</option>
+                <option value="niños">Niños</option>
+                <option value="adolescentes">Adolescentes</option>
+                <option value="adultos">Adultos</option>
+              </select>
+              <select id="estado_certificado">
+                <option value="estado">Estado del Certificado</option>
+                <option value="aprobado">Aprobado</option>
+                <option value="rechazado">Rechazado</option>
+                <option value="en_revision">En Revisión</option>
+              </select>
             </div>
-            <div class="grupo_nombre">
-              <input type="text" id="nombre" placeholder="Nombre" value="Nombre">
-              <button class="butt_on2"><i class="fas fa-search"></i></button>
+            <div class="becas-container">
+              <table id="tabla-administradores" aria-labelledby="titulo-pagina">
+                <thead>
+                  <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Curso</th>
+                    <th>Nivel</th>
+                    <th>Estado del certificado</th>
+                    <th>Descargar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>715561561</td>
+                    <td>Henry</td>
+                    <td>15/2/24</td>
+                    <td>Matematica</td>
+                    <td>Adulto</td>
+                    <td>Aprobado</td>
+                    <td>
+                      <button class="download-btn_be">
+                        <i class="fa fa-download"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Puedes agregar más filas según sea necesario -->
+                  <tr>
+                    <td>234234</td>
+                    <td>Ana</td>
+                    <td>16/3/24</td>
+                    <td>Python</td>
+                    <td>Niños</td>
+                    <td>En Revisión</td>
+                    <td>
+                      <button class="download-btn_be">
+                        <i class="fa fa-download"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="paginacion">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+              </div>
             </div>
-            <input type="date" id="fecha">
-
-            <div class="grupo_curso">
-              <input type="text" id="curso" placeholder="Curso" value="Curso">
-              <button class="butt_on2"><i class="fas fa-search"></i></button>
-            </div>
-            <select id="nivel">
-              <option value="nivel">Nivel</option>
-              <option value="niños">Niños</option>
-              <option value="adolescentes">Adolescentes</option>
-              <option value="adultos">Adultos</option>
-            </select>
-            <select id="estado_certificado">
-              <option value="estado">Estado del Certificado</option>
-              <option value="aprobado">Aprobado</option>
-              <option value="rechazado">Rechazado</option>
-              <option value="en_revision">En Revisión</option>
-            </select>
-
+            <button class="descargarreportebecas">Descargar datos</button>
           </div>
-          <div class="becas-container">
-            <table id="tabla-administradores" aria-labelledby="titulo-pagina">
-              <thead>
-                <tr>
-                  <th>DNI</th>
-                  <th>Nombre</th>
-                  <th>Fecha</th>
-                  <th>Curso</th>
-                  <th>Nivel</th>
-                  <th>Estado del certificado</th>
-                  <th>Descargar</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>715561561</td>
-                  <td>Henry</td>
-                  <td>15/2/24</td>
-                  <td>Matematica</td>
-                  <td>Adulto</td>
-                  <td>Aprobado</td>
-                  <td>
-                    <button class="settings-btn">
-                      <i class="fa fa-download"></i>
-                    </button>
-                  </td>
-                </tr>
-                <!-- Puedes agregar más filas según sea necesario -->
-                <tr>
-                  <td>234234</td>
-                  <td>Ana</td>
-                  <td>16/3/24</td>
-                  <td>Python</td>
-                  <td>Niños</td>
-                  <td>En Revisión</td>
-                  <td>
-                    <button class="settings-btn">
-                      <i class="fa fa-download"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <a id="download-linkss" href="/public/pdf/Informe de Solicitud de Beca.pdf"
+            download="Informe de Solicitud de Beca.pdf"></a>
+        </div>
+
+
+
+
+
+
+
+        <div id="mensajeria" class="section">
+        
+          <div class="botones">
+              <!-- Botones para mostrar Bandeja de Entrada y Redactar -->
+              <button class="tab-btn" onclick="mostrarBandeja()">Bandeja de Entrada</button>
+              <button class="tab-btn" onclick="mostrarRedactar()">Redactar</button>
           </div>
+          
+          <!-- Bandeja de Entrada -->
+          <div id="bandeja">
+              <h2>Bandeja de Entrada</h2>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Remitente</th>
+                          <th>Asunto</th>
+                          <th>Fecha</th>
+                          <th>Acciones</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Ana López</td>
+                          <td>Reunión</td>
+                          <td>2024-12-05</td>
+                          <td><button onclick="abrirMensaje()">Leer</button></td>
+                      </tr>
+                      <tr>
+                          <td>Juan Pérez</td>
+                          <td>Informe</td>
+                          <td>2024-12-03</td>
+                          <td><button onclick="abrirMensaje()">Leer</button></td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          
+          <!-- Redactar Mensaje -->
+          <div id="redactar" style="display:none;">
+            <h2>Redactar Nuevo Mensaje</h2>
+            <form id="form-redactar">
+              <label for="destinatario">Destinatario:</label>
+              <input type="email" id="destinatario" name="destinatario" placeholder="Escribe el correo del destinatario" required>
+          
+              <label for="asunto">Asunto:</label>
+              <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto del mensaje" required>
+          
+              <label for="mensaje">Mensaje:</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+          
+              <button type="submit" class="btn-enviar">Enviar</button>
+          </form>
         </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-        <div id="messaging" class="section">
-          <h1>Mensajería</h1>
+  
+          
+          <div id="mensaje-leido" style="display:none;">
+            <div class="mensaje-leido-container">
+                <h2 class="mensaje-titulo">MENSAJE: REUNIÓN</h2>
+                <p><strong>De:</strong> Ana López</p>
+                <p><strong>Correo:</strong> ana.lopez@example.com</p>
+                <p><strong>Fecha:</strong> 2024-12-05</p>
+                <div class="mensaje-contenido">
+                    <strong>Mensaje:</strong>
+                    <p>Vamos a reunirnos mañana a las 10 AM.</p>
+                </div>
+                <button onclick="cerrarMensaje()" class="btn-cerrar">Cerrar</button>
+            </div>
+          </div> 
         </div>
-           
         
         
         
@@ -1366,5 +1430,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="/src/js/pago.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.24/jspdf.plugin.autotable.min.js"></script>
+
+
   </body>
 </html>

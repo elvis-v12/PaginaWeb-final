@@ -240,10 +240,10 @@ function actualizarPaginacion() {
   }
 }
 
-function descargarReporte() {
-  // Aquí puedes implementar la lógica para descargar el reporte
-  alert("Descargando reporte...");
-}
+
+
+
+
 // Agrega un contenedor para la paginación en el HTML
 document.addEventListener("DOMContentLoaded", () => {
   const adminContainer = document.querySelector(".admin-container");
@@ -252,3 +252,5 @@ document.addEventListener("DOMContentLoaded", () => {
   paginacionContainer.classList.add("paginacion-container");
   adminContainer.appendChild(paginacionContainer);
 });
+
+
