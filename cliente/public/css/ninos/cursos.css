@@ -276,6 +276,48 @@ p {
   padding: 15px;
 }
 
+.button-container {
+  margin-top: 10px;
+  display: flex; /* Flexbox para alinear en paralelo */
+  justify-content: center; /* Centrar botones horizontalmente */
+  gap: 15px; /* Espacio entre botones */
+  margin-right: 20px;
+}
+
+.btn-add-route,
+.btn-add-cart {
+    padding: 15px 30px; /* Más espacio interno */
+    font-size: 1.2rem; /* Aumenta el tamaño del texto */
+    color: white;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: none; /* Evita que los botones crezcan desproporcionadamente */
+    width: 250px; /* Ancho fijo para hacerlos más grandes horizontalmente */
+    max-width: 300px; /* Límite opcional del ancho */
+}
+
+
+.btn-add-route {
+  background-color: #51b2ef; /* Azul */
+}
+
+.btn-add-route:hover {
+  background-color: #49a0d6; /* Azul oscuro */
+}
+
+.btn-add-cart {
+  background-color: #3bcff0; /* Verde */
+}
+
+.btn-add-cart:hover {
+  background-color: #38b0cb; /* Verde oscuro */
+}
+
+
+
 /* Título del curso */
 h1, .modal-title, .modal-body h4 {
   font-family: 'Fredoka One', cursive;
@@ -291,6 +333,7 @@ h2, .instructor-name, .modal-body p {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2em;
   color: #555;
+  margin-right: 40px;
 }
 
 /* Detalles del curso e instructores */
@@ -299,7 +342,7 @@ h2, .instructor-name, .modal-body p {
 }
 .detail-item, .instructor-item {
   display: flex;
-  align-items: center;
+  align-items: left;
   margin-top: 6px;
   font-family: 'Poppins', sans-serif;
 }
@@ -307,8 +350,11 @@ h2, .instructor-name, .modal-body p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-left: 30px;
+  margin-bottom: 40px;
+  margin-top: 15px;
 }
+
 
 /* Miembros destacados */
 .modal-horizontal {
