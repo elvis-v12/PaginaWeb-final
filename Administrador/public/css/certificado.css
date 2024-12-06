@@ -1,0 +1,207 @@
+#certificates .contenedor {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff7ec;
+  flex-direction: row; /* Mantener la barra lateral a la izquierda en pantallas grandes */
+}
+
+#certificates .contenido-principal {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff7ec;
+  max-width: 1200px;
+  margin-top: 10px;
+  margin: 0 auto;
+}
+
+@keyframes smoothBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+#certificates h2 {
+  font-size: 2.9rem;
+  color: #1c222d;
+  margin-bottom: 20px;
+  font-family: 'Tilt Warp', sans-serif;
+  animation: zoomRepeat 4s ease-in-out infinite; /* Animación de zoom controlado */
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+#certificates .galeria-imagenes .casillero {
+  display: none;  /* Ocultamos todas las imágenes por defecto */
+}
+
+#certificates .galeria-imagenes .casillero.ninos,
+#certificates .galeria-imagenes .casillero.adolescentes,
+#certificates .galeria-imagenes .casillero.adultos {
+  display: block;  /* Solo se mostrará la categoría activa */
+}
+
+#certificates .subir-plantilla h3 {
+  margin-top: 30px;
+  font-family: 'Mochiy Pop One', sans-serif;
+  color: #1a1a2a;
+  font-size: 25px;
+  margin-left: 70px;
+}
+
+#certificates .subir-plantilla {
+  margin-right: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#certificates table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#certificates th, #certificates td {
+  padding: 15px;
+  border: 1px solid #1c222d;
+  text-align: left;
+}
+
+#certificates th {
+  background-color: #1c222d;
+  color: white;
+  font-family: 'Bayon', sans-serif;
+  font-size: 22px;
+}
+
+#certificates td {
+  font-family: 'ADLaM Display', sans-serif;
+  color: #1c222d;
+  background-color: #fffcf3;
+}
+
+#certificates .btn-accion {
+  background-color: #212d43;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-family: 'ADLaM Display', sans-serif;
+}
+
+#certificates .btn-accion:hover {
+  background-color: #212d43 #6c7a39;
+}
+
+#certificates .detalles-certificado {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #212d43;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+#certificates .detalles-certificado h3 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  color: #1d1d2f;
+}
+
+#certificates .oculto {
+  display: none;
+}
+
+#certificates .header-plantilla {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#certificates .btn-img {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #22314d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#certificates .contenido-flex {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+#certificates .categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: auto;
+}
+
+#certificates .categorias .btn-categoria {
+  padding: 10px 20px;
+  background-color: #252b47;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: auto;
+}
+
+#certificates .categorias .btn-categoria:hover {
+  background-color: #202539;
+}
+
+#certificates .galeria-imagenes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#certificates .casillero {
+  width: 100%;
+  height: 150px;
+  background-color: #f3f3f3;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+#certificates .casillero img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  #certificates .grafico-certificados {
+    font-size: 20px;
+  }
+
+  #certificates .galeria-imagenes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #certificates .casillero {
+    height: 120px;
+  }
+}

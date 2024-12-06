@@ -9,6 +9,7 @@ import setupDatabase from './models/dbConnection.js'; // Configuración de la ba
 import registroRoutes from './routes/registro.routes.js'; // Importar las rutas
 import loginRoutes from './routes/login.routes.js';
 import loginAdmiRoutes from './routes/loginAdmi.routes.js'; // Nueva ruta de administrador
+import adminRoutes from "./routes/admin.routes.js";
 
 // Cargar variables de entorno desde el archivo .env
 dotenv.config({ path: path.resolve('./.env') });
@@ -37,14 +38,14 @@ app.use('/src/js', express.static(path.join('..', 'src', 'js')));
 // Configurar la carpeta Administrador para listar archivos
 app.use('/admin', express.static(adminFolder), serveIndex(adminFolder, { icons: true }));
 // Configuración de rutas
-
 app.use('/api/payments', paymentRoutes);
 app.use('/api', registroRoutes); // Configura las rutas bajo el prefijo /api
 app.use('/api', loginRoutes);
-
 // Agregar nueva ruta para login de administrador
 app.use('/api/admin', loginAdmiRoutes); // Sin conflicto
 
+//Agregar la nueva ruta para traer los datos del administrador
+app.use("/api/datosAdmin", adminRoutes);
 
 app.get('/admin/test', (req, res) => {
     res.send('<h1>El módulo Administrador está funcionando correctamente</h1>');
@@ -52,7 +53,7 @@ app.get('/admin/test', (req, res) => {
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
-    console.log(`Cliente en: http://localhost:${PORT}`);
+  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+  console.log(`Cliente en: http://localhost:${PORT}`);   
     console.log(`Administrador en: http://localhost:${PORT}/admin`);
 });

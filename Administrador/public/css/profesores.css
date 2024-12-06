@@ -1,0 +1,183 @@
+ 
+
+:root {
+    --background: #f8f9fa;
+  --primary-color: #86cff3;
+  --secondary-color: #249eb6;
+  --tertiary-color: #84cc16;
+  --quaternary-color: #07271d;
+  --quinary-color: #1a4533;
+  --senary-color: #4b6f4e;
+  --septenary-color: #dcea76;
+  --octonary-color: #b0d4ce;
+  --nonary-color: #309057;
+  --denary-color: #a0c7a4;
+  --chart-font-color: #333;
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+  --light: #020f25; /*#05121b;*/
+  --blue: #fdfdfd;
+  --light-blue: #93c5fd;
+  --grey: #f3ece2; /*#e7dfd1*/
+  --dark-grey: #93c5fd;
+  --dark: #e9f1f1;
+  --red: #f30f0f;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #60a5fa;
+  --celeste: #007bff;
+  --light-orange: #c7d2fe;
+  --negro: rgb(10, 10, 10);
+  --blanco: rgb(255, 255, 255);
+  --crema: rgb(231, 227, 218);
+  --AmarilloPastel: #d9f99d;
+  --RosaPastel: #93c5fd;
+  --IntermedioRosa: #c7d2fe;
+  --AmarilloPatito: #f1eba5;
+  --verdeFosforescente: #65a30d;
+  --AmarilloBrillo: #eab308;
+  --RosaRojo: #4c0519;
+  --clr-color-background: #181a1e;
+  --clr-white: #202528;
+  --clr-light: rgba(0, 0, 0, 0.4);
+  --clr-dark: #edeffd;
+  --clr-dark-variant: #677483;
+  --box-shadow: 0 2rem 3rem var(--clr-light);
+}
+.profesor-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+ /*letras de los selectores*/
+.styled-select {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid #d9dadb;
+  border-radius: 8px;
+  background-color: white;
+  color: var(--light);
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 180px;
+}
+
+.styled-select:hover,
+.styled-select:focus {
+  border-color: var(--celeste);
+}
+
+ 
+/* Botón para agregar nuevo profesor */
+.btn-add-profesor {
+  padding: 10px 20px;
+  background-color: var(--light);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+ }
+
+.btn-add-profesor:hover {
+  background-color:var(--nonary-color);
+  transform: scale(1.05);
+}
+
+/* Botón de descargar reporte */
+.btn-download {
+  padding: 10px 20px;
+  background-color: var(--light);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+ 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-download i {
+  font-size: 24px;
+}
+
+.btn-download:hover {
+  background-color: var(--nonary-color);
+  transform: scale(1.05);
+}
+
+/* Botón de descargar con spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Feedback de descarga */
+.feedback {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #4caf50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeOut 3s forwards;
+}
+
+.feedback i {
+  font-size: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.teacher-management-table{
+  padding: 15px;
+  background: white;
+border-radius: 25px;
+}
+ 
+
+

@@ -1,0 +1,178 @@
+ 
+.head-estudiante {
+  display:flex;
+  justify-content: end;
+  align-items: center;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+  min-width: 420px;
+}
+
+.head-estudiante h3 {
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+.head-estudiante .bx-filter-estudiante {
+  cursor: pointer;
+  color: #6c757d;
+}
+
+/* Estilo del buscador */
+.form-input-estudiante {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  transition: all 0.3s ease;
+}
+
+.form-input-estudiante input {
+  flex-grow: 1;
+  padding: 0 16px;
+  height: 100%;
+  border: 1px solid transparent;
+  background: rgb(255, 255, 255);
+  color: black;
+  border-radius: 36px 0 0 36px;
+  outline: none;
+  width: 100%;
+  transition: all 0.3s ease; 
+}
+.form-input-estudiante input:focus {
+  width: 110%; /* Expande el input */
+  border-color: #007bff; /* Cambia a borde azul celeste */
+}
+
+.form-input-estudiante button {
+  width: 36px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(253, 253, 253);
+  color: black;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+}
+
+.search-btn-estudiante {
+   background-color: #6c757d;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.search-btn-estudiante:hover {
+  background-color:white;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 576px) {
+  .form-input-estudiante input {
+    display: none;
+  }
+
+  .form-input-estudiante button {
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-radius: none;
+    color: var(--dark);
+  }
+
+  .form-input-estudiante.show input {
+    display: block;
+    width: 100%;
+  }
+
+  .form-input-estudiante.show button {
+    width: 36px;
+    height: 100%;
+    border-radius: 0 36px 36px 0;
+    color: var(--light);
+    background: var(--red);
+  }
+}
+
+/* Otros estilos ya definidos */
+.student-header {
+  display: flex;
+  justify-content: right;  
+  margin-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+.student-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.student-content {
+  display: flex;
+  gap: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.student-table {
+  flex: 3;
+  overflow-x: auto;
+  padding: 15px;
+  border-radius: 25px;
+  background: whitesmoke;
+}
+
+#student-management .btn-view {
+  border-radius: 50px;
+  background: #020f25;
+  border: none;
+  cursor: pointer;
+  color: #ece2e1;
+  font-size: 1.2em;
+  width: auto;
+  height: 30%x;
+  text-align: center;
+}
+
+.student-details {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+.student-details.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+#sidebar.hide ~ #content .student-content {
+  gap: 10px;
+}
+
+#sidebar.hide ~ #content .student-details {
+  flex: 0.8;
+}
+
+#student-management .btn-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #9b1611;
+  transition: color 0.3s ease;
+  justify-content: flex-end;
+}
+
+.btn-close:hover {
+  color: #3a0503;
+}
+
+.btn-close i {
+  pointer-events: none;
+}

@@ -6,7 +6,8 @@
   "scripts": {
     "start:cliente": "cd cliente && npm start",
     "start:servidor": "cd servidor && npm start",
-    "start": "concurrently \"npm run start:cliente\" \"npm run start:servidor\""
+    "start:Administrador": "cd administrador && npm start",
+    "start": "concurrently \"npm run start:cliente\" \"npm run start:servidor\" \"npm run start:Administrador\""
   },
   "keywords": [],
   "author": "",

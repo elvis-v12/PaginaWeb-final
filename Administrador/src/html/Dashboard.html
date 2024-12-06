@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+
+    <link rel="stylesheet" href="/public/css/mensajeria.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/profesores.css" />
+    <link rel="stylesheet" href="/public/css/curso.css" />
+    <link rel="stylesheet" href="/public/css/pago.css" />
+    <link rel="stylesheet" href="/public/css/estudiantes.css" />
+    <link rel="stylesheet" href="/public/css/becas.css" />
+    <link rel="stylesheet" href="/public/css/rutas.css" />
+    <link rel="stylesheet" href="/public/css/certificado.css" />
+    <link rel="stylesheet" href="/public/css/admin.css" />
+    <link rel="stylesheet" href="/public/css/graficos.css" />
+    <title>Admin</title>
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <!--  <a href="#" class="brand">
+        <i class="bx bxs-dashboard"></i>
+        <span class="text"></span>
+      </a>-->
+      <ul class="side-menu top">
+        <li class="active" data-section="dashboard">
+          <a href="#">
+            <i class="bx bxs-bar-chart-alt-2"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li data-section="admin-management">
+          <a href="#">
+            <i class="bx bxs-user-detail"></i>
+            <span class="text">Gestión de Administradores</span>
+          </a>
+        </li>
+        <li data-section="student-management">
+          <a href="#">
+            <i class="bx bxs-group"></i>
+            <span class="text">Gestión de Estudiantes</span>
+          </a>
+        </li>
+        <li data-section="teacher-management">
+          <a href="#">
+            <i class="bx bxs-group"></i>
+            <span class="text">Gestión de Profesores</span>
+          </a>
+        </li>
+        <li data-section="cursos">
+          <a href="#">
+            <i class="bx bxs-book"></i>
+            <span class="text">Cursos</span>
+          </a>
+        </li>
+
+        <li data-section="learning-paths">
+          <a href="#">
+            <i class="bx bxs-bookmark-alt"></i>
+            <span class="text">Rutas de Aprendizaje</span>
+          </a>
+        </li>
+        <li data-section="certificates">
+          <a href="#">
+            <i class="bx bxs-graduation"></i>
+            <span class="text">Certificados</span>
+          </a>
+        </li>
+        <li data-section="becas">
+  <a href="#">
+    <i class="bx bxs-file-find"></i>
+    <span class="text">Solicitudes de Becas</span>
+  </a>
+</li>
+
+        <li data-section="messaging">
+          <a href="#">
+            <i class="bx bxs-message-dots"></i>
+            <span class="text">Mensajería</span>
+          </a>
+        </li>
+        <li data-section="pago">
+          <a href="#">
+            <i class="bx bx-wallet"></i>
+            <span class="text">Gestión de Pagos</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+        <a href="#" class="notification">
+          <i class="bx bxs-bell"></i>
+          <span class="num">8</span>
+        </a>
+        <a href="#" class="mensajeria">
+          <i class="bx bxs-message-dots"></i>
+          <span class="mejs">8</span>
+        </a>
+        <a href="#" class="profile">
+          <img src="/public/img/people.jpg" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
+
+      <!-- MAIN  -->
+      <main>
+        <div id="dashboard" class="section active">
+          <div class="head-title">
+            <h1>Dashboard</h1>
+
+            <a href="#" class="btn-download">
+              <i class="bx bxs-cloud-download"></i>
+              <span class="text">Descargar PDF</span>
+            </a>
+          </div>
+
+          <div class="graficos">
+            <ul class="box-info">
+              <li>
+                <i class="fa fa-bar-chart"></i>
+                <span class="text">
+                  <h3>$100</h3>
+                  <p>Suscripciones</p>
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-line-chart"></i>
+                <span class="text">
+                  <h3>$100</h3>
+                  <p>Cuentas</p>
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-area-chart"></i>
+                <span class="text">
+                  <h3>283</h3>
+                  <p>Visitas</p>
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-pie-chart"></i>
+                <span class="text">
+                  <h3>250</h3>
+                  <p>Docentes</p>
+                </span>
+              </li>
+              <!--<div class="card">
+					<div class="head">
+						<div>
+							<h2>$1500</h2>
+							<p>Ingresos</p>
+						</div>
+						<i class='bx bx-trending-up icon' ></i>
+					</div>
+					<span class="progress" data-value="40%"></span>
+					<span class="label">40%</span>
+				</div> 
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>$234</h2>
+							<p>Cuentas</p>
+						</div>
+						<i class='bx bx-trending-down icon down' ></i>
+            
+					</div>
+					<span class="progress" data-value="60%"></span>
+					<span class="label">60%</span>
+				</div>-->
+            </ul>
+
+            <div class="arribagrafico">
+              <div class="chart-container">
+                <h3>Tendencias en Suscripciones</h3>
+                <div class="chart-with-legend">
+                  <canvas id="barChart"></canvas>
+                  <div class="custom-legend bar-legend"></div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <h3>Rutas de Aprendizaje Populares</h3>
+                <canvas id="horizontalBarChart"></canvas>
+              </div>
+
+              <div class="chart-container">
+                <h3>Distribución de Categorías</h3>
+                <div class="chart-with-legend">
+                  <canvas id="doughnutChart"></canvas>
+                  <div class="custom-legend doughnut-legend"></div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <h3>Cursos Más Populares</h3>
+                <div class="chart-with-legend">
+                  <canvas id="pieChart"></canvas>
+                  <div class="custom-legend pie-legend"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ranking añadido -->
+            <div class="ranking">
+              <div class="ranking-header">
+                <h3>Estudiantes Top</h3>
+                <i class="bx bx-trophy"></i>
+                <select id="ranking-category-filter">
+                  <option value="all">Todas las categorías</option>
+                  <option value="programming">Programación</option>
+                  <option value="languages">Idiomas</option>
+                  <option value="design">Diseño</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="business">Negocios</option>
+                </select>
+              </div>
+              <ul class="ranking-list">
+                <li class="top">
+                  <div class="rank">1</div>
+                  <p>Juan Pérez</p>
+                  <span>Cursos completados: 15</span>
+                </li>
+                <li>
+                  <div class="rank">2</div>
+                  <p>María López</p>
+                  <span>Cursos completados: 12</span>
+                </li>
+                <li>
+                  <div class="rank">3</div>
+                  <p>Carlos García</p>
+                  <span>Cursos completados: 10</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenido para la gestión de administradores -->
+        <div id="admin-management" class="section">
+          <h1>Gestión de Administradores</h1>
+          <div class="filter-container">
+            <select>
+              <option value="all">Todos los roles</option>
+              <option value="super-admin">Super Administrador</option>
+              <option value="admin">Administrador</option>
+            </select>
+            <select>
+              <option value="all">Todos los estados</option>
+              <option value="active">Activo</option>
+              <option value="inactive">Inactivo</option>
+            </select>
+            <button onclick="abrirModalInsertar()">Agregar</button>
+            <button onclick="descargarReporte()">
+              <!--- <i class='bx bxs-download'></i> Descargar Reporte-->
+              <i class="bx bxs-cloud-download"></i> Descargar PDF
+            </button>
+          </div>
+          <div class="admin-container">
+            <table id="tabla-administradores" aria-labelledby="titulo-pagina">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombres</th>
+                  <th>Correo</th>
+                  <th>Rol</th>
+                  <th>Estado</th>
+                  <th>Fecha de Registro</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+
+            <!-- Modal para insertar -->
+            <div
+              id="modal-insertar"
+              class="modaladmin"
+              role="dialog"
+              aria-labelledby="modal-insertar-titulo"
+              aria-hidden="true"
+            >
+              <div class="modal-content">
+                <button
+                  onclick="cerrarModalInsertar()"
+                  class="close"
+                  aria-label="Cerrar modal"
+                >
+                  &times;
+                </button>
+                <h2 id="modal-insertar-titulo">Insertar Administrador</h2>
+                <form id="form-insertar-administrador" novalidate>
+                  <label for="nombres-insertar">Nombres:</label>
+                  <input
+                    type="text"
+                    id="nombres-insertar"
+                    placeholder="Nombres"
+                    required
+                  />
+                  <label for="correo-insertar">Correo:</label>
+                  <input
+                    type="email"
+                    id="correo-insertar"
+                    placeholder="Correo"
+                    required
+                  />
+                  <label for="rol-id-insertar">ID del Rol:</label>
+                  <input
+                    type="number"
+                    id="rol-id-insertar"
+                    placeholder="ID del Rol"
+                    required
+                  />
+                  <button type="submit">Guardar</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Modal para editar -->
+            <div
+              id="modal-editar"
+              class="modaladmin"
+              role="dialog"
+              aria-labelledby="modal-editar-titulo"
+              aria-hidden="true"
+            >
+              <div class="modal-content">
+                <button
+                  onclick="cerrarModalEditar()"
+                  class="close"
+                  aria-label="Cerrar modal"
+                >
+                  &times;
+                </button>
+                <h2 id="modal-editar-titulo">Editar Administrador</h2>
+                <form id="form-editar-administrador" novalidate>
+                  <label for="nombres-editar">Nombres:</label>
+                  <input
+                    type="text"
+                    id="nombres-editar"
+                    placeholder="Nombres"
+                    required
+                  />
+                  <label for="correo-editar">Correo:</label>
+                  <input
+                    type="email"
+                    id="correo-editar"
+                    placeholder="Correo"
+                    required
+                  />
+                  <label for="rol-id-editar">ID del Rol:</label>
+                  <input
+                    type="number"
+                    id="rol-id-editar"
+                    placeholder="ID del Rol"
+                    required
+                  />
+                  <label for="estado-editar">Estado:</label>
+                  <select id="estado-editar">
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                  </select>
+                  <button type="submit">Actualizar</button>
+                </form>
+              </div>
+            </div>
+            <div id="modal-mensaje">
+              <div class="modal-content">
+                <span class="icono" id="modal-mensaje-icono"></span>
+                <h2 id="modal-mensaje-titulo">Título del Mensaje</h2>
+                <p id="modal-mensaje-texto">Contenido del mensaje aquí.</p>
+                <button onclick="cerrarModalMensaje()">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenido para la gestión de estudiantes -->
+        <div id="student-management" class="section">
+          <h1>Gestión de Estudiantes</h1>
+          <div class="student-header">
+            <div class="estudiantes-filter-container">
+              <select id="filtros-nivel-estudiantes" class="styled-select">
+                <option value="all">Todos los niveles</option>
+                <option value="kids">Niños</option>
+                <option value="teens">Adolescentes</option>
+                <option value="adults">Adultos</option>
+              </select>
+              <select
+                id="filtros-suscripcion-estudiantes"
+                class="styled-select"
+              >
+                <option value="all">Todas las suscripciones</option>
+                <option value="basic">Básico</option>
+                <option value="intermediate">Intermedio</option>
+                <option value="expert">Experto</option>
+              </select>
+            </div>
+
+            <div class="student-controls">
+              <button class="btn-student-register">Registrar Estudiante</button>
+            </div>
+          </div>
+
+          <div class="student-content">
+            <!-- Tabla de estudiantes -->
+            <div class="student-table">
+              <div class="head-estudiante">
+                <div class="form-input-estudiante">
+                  <input type="search" placeholder="buscar..." />
+                  <button type="submit" class="search-btn-estudiante">
+                    <i class="bx bx-search"></i>
+                  </button>
+                </div>
+                <i class="bx bx-filter-estudiante"></i>
+              </div>
+
+              <table id="students-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Fecha de Registro</th>
+                    <th>Cursos Inscritos</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+
+            <!-- Panel de detalles -->
+            <div id="student-details" class="student-details hidden">
+              <button id="close-details" class="btn-close">
+                <i class="fa fa-times-circle"></i>
+              </button>
+              <h3>Detalles del Estudiante</h3>
+              <div>
+                <p><strong>ID:</strong> <span id="detail-id"></span></p>
+                <p><strong>Nombres:</strong> <span id="detail-names"></span></p>
+                <p><strong>Correo:</strong> <span id="detail-email"></span></p>
+                <p>
+                  <strong>Fecha de Nacimiento:</strong>
+                  <span id="detail-birthdate"></span>
+                </p>
+                <p>
+                  <strong>Teléfono:</strong> <span id="detail-phone"></span>
+                </p>
+                <p>
+                  <strong>Dirección:</strong> <span id="detail-address"></span>
+                </p>
+                <p>
+                  <strong>Biografía:</strong>
+                  <span id="detail-biography"></span>
+                </p>
+                <p><strong>Género:</strong> <span id="detail-gender"></span></p>
+                <p>
+                  <strong>Rango de Edad:</strong>
+                  <span id="detail-age-range"></span>
+                </p>
+                <p><strong>Cursos Inscritos:</strong></p>
+                <ul id="detail-courses"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- profesordddddddddddddddddddddddddddddddddddddddddd -->
+        <div id="teacher-management" class="section">
+          <h1>Gestión de Profesores</h1>
+          <div class="profesor-filter-container">
+            <select id="profesor-role-filter" class="styled-select">
+              <option value="all">Todos los roles</option>
+              <option value="programming">Programación</option>
+              <option value="languages">Idiomas</option>
+              <option value="design">Diseño</option>
+              <option value="marketing">Marketing</option>
+              <option value="business">Negocios</option>
+            </select>
+            <select id="profesor-status-filter" class="styled-select">
+              <option value="all">Todos los estados</option>
+              <option value="active">Activo</option>
+              <option value="inactive">Inactivo</option>
+            </select>
+
+            <button id="profesor-add-btn" class="btn-add-profesor">
+              Agregar Profesor
+            </button>
+          </div>
+
+          <div class="teacher-management-table">
+            <table id="teacher-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombres</th>
+                  <th>Correo</th>
+                  <th>Estado</th>
+                  <th>Categoría</th>
+                  <th>Curso</th>
+                  <th>Fecha Registro</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Filas dinámicas -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Modal -->
+          <div id="teacher-modal" class="teacher-modal hidden">
+            <div class="teacher-modal-content">
+              <i class="close-icon" onclick="closeModal()">✖</i>
+              <h2 id="teacher-modal-title">Agregar Profesor</h2>
+              <form id="teacher-form">
+                <input type="hidden" id="teacher-id" />
+                <label>
+                  Nombre:
+                  <input type="text" id="teacher-name" required />
+                </label>
+                <label>
+                  Correo:
+                  <input type="email" id="teacher-email" required />
+                </label>
+                
+                <label>
+                  Estado:
+                  <select id="teacher-status">
+                    <option value="Activo" selected>Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                  </select>
+                </label>
+                <label>
+                  Categoría:
+                  <select id="teacher-category" required>
+                    <option value="programming">Programación</option>
+                    <option value="languages">Idiomas</option>
+                    <option value="design">Diseño</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="business">Negocios</option>
+                  </select>
+                </label><label>
+                  Curso:
+                  <select id="teacher-course" required>
+                    <!-- Cursos dinámicos -->
+                  </select>
+                </label>
+                <label>
+                  Foto:
+                  <input type="file" id="teacher-photo" accept="image/*" />
+                </label>
+                <button
+                  type="button"
+                  class="teacher-save-button"
+                  onclick="saveTeacher()"
+                >
+                  Guardar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--CURSOSSSSSSSSSSSSSSSSSSSSSSSS CONTENEDOR -->
+        <div id="cursos" class="section">
+  <div id="filtros-container">
+    <select id="filtro-edad">
+      <option value="todos" disabled selected>Selecciona una edad</option>
+      <option value="niños">Niños</option>
+      <option value="adolescentes">Adolescentes</option>
+      <option value="adultos">Adultos</option>
+    </select>
+
+    <select id="filtro-categoria">
+      <option value="todas" disabled selected>Selecciona una categoría</option>
+      <option value="programacion">Programación</option>
+      <option value="idiomas">Idiomas</option>
+      <option value="diseño">Diseño</option>
+      <option value="arte">Arte</option>
+      <option value="matematicas">Matemáticas</option>
+    </select>
+
+    <button id="btn-agregar-curso">Agregar Nuevo Curso</button>
+  </div>
+
+  <!-- Modal para agregar un nuevo curso -->
+  <div id="modal-agregar-curso" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="cerrar-modal">×</span>
+      <h2>Agregar Nuevo Curso</h2>
+      <label for="nombre-curso-nuevo">Nombre del Curso:</label>
+      <input type="text" id="nombre-curso-nuevo" placeholder="Nombre del curso" required>
+
+      <label for="docente-curso-nuevo">Docente:</label>
+      <input type="text" id="docente-curso-nuevo" placeholder="Docente" required>
+
+      <label for="precio-curso-nuevo">Precio:</label>
+      <input type="number" id="precio-curso-nuevo" placeholder="Precio" required>
+
+      <label for="imagen-curso-nuevo">Imagen del Curso:</label>
+      <input type="file" id="imagen-curso-nuevo" accept="image/*" required>
+
+      <label for="ruta-curso-nuevo">Ruta del Curso:</label>
+      <select id="ruta-curso-nuevo">
+        <option value="ruta-1">Ruta 1: Frontend</option>
+        <option value="ruta-2">Ruta 2: Backend</option>
+        <option value="ruta-3">Ruta 3: Fullstack</option>
+      </select>
+
+      <label for="horas-curso-nuevo">Horas de Duración:</label>
+      <input type="number" id="horas-curso-nuevo" placeholder="Duración en horas" required>
+
+      <button id="guardar-curso-nuevo">Guardar Curso</button>
+    </div>
+  </div>
+
+  <!-- Modal para agregar videos al curso -->
+<div id="modal-agregar-videos" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" id="cerrar-modal-videos">×</span>
+    <h2>Agregar Módulos y Videos</h2>
+    
+    <div id="videos-container"></div> <!-- Contenedor para los videos agregados -->
+
+    <div class="video-form">
+      <label for="video-titulo">Título del Video:</label>
+      <input type="text" id="video-titulo" placeholder="Título del video">
+
+      <label for="video-url">URL del Video:</label>
+      <input type="url" id="video-url" placeholder="URL del video">
+
+      <button id="agregar-video">Agregar Video</button>
+    </div>
+
+    <button id="guardar-curso-final">Guardar Curso</button>
+  </div>
+</div>
+
+
+  <!-- Modal para editar un curso -->
+<div id="modal-editar-curso" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" id="cerrar-modal">×</span>
+    <h2>Editar Curso</h2>
+
+    <!-- Información del curso -->
+    <label for="nombre-curso">Nombre del Curso:</label>
+    <input type="text" id="nombre-curso" required>
+
+    <label for="docente-curso">Docente:</label>
+    <input type="text" id="docente-curso" required>
+
+    <label for="precio-curso">Precio:</label>
+    <input type="number" id="precio-curso" required>
+
+    <label for="ruta-curso">Ruta del Curso:</label>
+    <select id="ruta-curso">
+      <option value="ruta-1">Ruta 1: Frontend</option>
+      <option value="ruta-2">Ruta 2: Backend</option>
+      <option value="ruta-3">Ruta 3: Fullstack</option>
+    </select>
+
+    <label for="horas-curso">Horas de Duración:</label>
+    <input type="number" id="horas-curso" placeholder="Duración en horas" required>
+
+    <!-- Videos preestablecidos -->
+    <h3>Videos Preestablecidos</h3>
+    <div id="videos-container">
+      <!-- Los videos se mostrarán aquí -->
+      <p><strong>Video 1: </strong><input type="text" id="video1" value="https://www.youtube.com/watch?v=EvKm8yhM7V8&ab_channel=DotDager"></p>
+      <p><strong>Video 2: </strong><input type="text" id="video2" value="https://www.youtube.com/watch?v=10GHKjgQIR0&ab_channel=BitechStudio"></p>
+    </div>
+
+    <button type="button" id="guardar-editar">Guardar Cambios</button>
+  </div>
+</div>
+
+
+  <!-- Cursos -->
+  <div id="cursos-container">
+    <div class="curso-card" id="curso-1" data-edad="niños" data-categoria="programacion" data-ruta="ruta-1" data-horas="20">
+      <img src="/public/img/bannerH.jpg" alt="Imagen del curso">
+      <h3 class="nombre-curso-card">Curso de Programación en Html</h3>
+      <p class="descripcion-curso-card"><strong>Docente:</strong> Carlos Méndez</p>
+      <p><strong>Precio:</strong> S/3</p>
+      <p><strong>Ruta:</strong> Ruta 1: Frontend</p>
+      <p><strong>Duración:</strong> 20 horas</p>
+      
+      <!-- Videos preestablecidos -->
+      <div class="videos-preestablecidos">
+        <p><strong>Video 1: </strong><a href="https://www.youtube.com/watch?v=EvKm8yhM7V8&ab_channel=DotDager" target="_blank">Introducción a HTML</a></p>
+        <p><strong>Video 2: </strong><a href="https://www.youtube.com/watch?v=10GHKjgQIR0&ab_channel=BitechStudio" target="_blank">Estructura Básica HTML</a></p>
+      </div>
+  
+      <button class="btn-insertar" data-curso-id="1">Insertar</button>
+    </div>
+  
+    <!-- Otro curso -->
+    <div class="curso-card" id="curso-2" data-edad="adolescentes" data-categoria="programacion">
+      <img src="/public/img/bannerN.jpg" alt="Imagen del curso">
+      <h3 class="nombre-curso-card">Curso Gratis de Introducción a Node js</h3>
+      <p class="descripcion-curso-card"><strong>Docente:</strong> Luis Torres</p>
+      <p><strong>Precio:</strong> S/30</p>
+      <p><strong>Ruta:</strong> Ruta 2: Backend</p>
+      <p><strong>Duración:</strong> 20 horas</p>
+  
+      <!-- Videos preestablecidos -->
+      <div class="videos-preestablecidos">
+        <p><strong>Video 1: </strong><a href="https://video1-node.com" target="_blank">Introducción a Node</a></p>
+      </div>
+  
+      <button class="btn-insertar" data-curso-id="2">Insertar</button>
+    </div>
+  
+    <!-- Otro curso -->
+    <div class="curso-card" id="curso-3" data-edad="adultos" data-categoria="programacion">
+      <img src="/public/img/bannerJs.jpg" alt="Imagen del curso">
+      <h3 class="nombre-curso-card">Curso de Introducción a JavaScript</h3>
+      <p class="descripcion-curso-card"><strong>Docente:</strong> Luis Torres</p>
+      <p><strong>Precio:</strong> S/30</p>
+      <p><strong>Ruta:</strong> Ruta 3: Fullstack</p>
+      <p><strong>Duración:</strong> 20 horas</p>
+  
+      <!-- Videos preestablecidos -->
+      <div class="videos-preestablecidos">
+        <p><strong>Video 1: </strong><a href="https://video1-js.com" target="_blank">Introducción a JS</a></p>
+      </div>
+  
+      <button class="btn-insertar" data-curso-id="3">Insertar</button>
+    </div>
+  </div>
+
+</div>
+          <!-- Modal para editar nombre, docente y precio -->
+          <div id="modal-editar-curso-1" class="modal">
+            <div class="modal-content">
+              <h2>Editar Curso</h2>
+              <label for="nombre-curso">Nombre del Curso:</label>
+              <input type="text" id="nombre-curso" required />
+
+              <label for="docente-curso">Docente:</label>
+              <input type="text" id="docente-curso" required />
+
+              <label for="precio-curso">Precio:</label>
+              <input type="text" id="precio-curso" required />
+
+              <button type="button" id="guardar-editar-1">
+                Guardar Cambios
+              </button>
+              <button type="button" id="cerrar-modal-editar-1">Cerrar</button>
+            </div>
+          </div>
+
+          <!-- Modal para agregar descripción -->
+          <div id="modal-descripcion-curso-1" class="modal">
+            <div class="modal-content">
+              <h2>Agregar Descripción del Curso</h2>
+              <textarea
+                id="descripcion-curso"
+                placeholder="Descripción del curso"
+                required
+              ></textarea>
+
+              <button type="button" id="guardar-descripcion-1">
+                Guardar Descripción
+              </button>
+              <button type="button" id="cerrar-modal-editar-1">Cerrar</button>
+            </div>
+          </div>
+
+          <!-- Modal para agregar videos -->
+          <div id="modal-videos-curso-1" class="modal">
+            <div class="modal-content">
+              <h2>Subir Videos del Curso</h2>
+              <div id="video-modulos">
+                <div class="video-modulo">
+                  <label for="modulo-1">Módulo 1: Título</label>
+                  <input
+                    type="text"
+                    id="modulo-1"
+                    placeholder="Título del video"
+                    required
+                  />
+                  <label for="url-1">URL del Video</label>
+                  <input
+                    type="url"
+                    id="url-1"
+                    placeholder="URL del video"
+                    required
+                  />
+                </div>
+              </div>
+              <button type="button" id="add-modulo-1">Añadir Módulo</button>
+              <button type="button" id="guardar-videos-1">
+                Guardar Videos
+              </button>
+              <button type="button" id="cerrar-modal-editar-1">Cerrar</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--PARA RUTAAAAAAAAAAAAAAAAS-->
+         <div id="learning-paths" class="section">
+        <h1>Crear y Editar Rutas de Aprendizaje</h1>
+        <form id="form-ruta">
+            <label for="nombre-ruta">Nombre de la Ruta:</label>
+            <input type="text" id="nombre-ruta" name="nombre-ruta" placeholder="Introduce el nombre de la ruta" required>
+    
+            <label for="descripcion-ruta">Descripción de la Ruta:</label>
+            <textarea id="descripcion-ruta" name="descripcion-ruta" placeholder="Descripción de la ruta" required></textarea>
+    
+            <div id="seccion-container">
+                <label for="seccion-select">Curso a agregar:</label>
+                <select id="seccion-select" class="select-seccion" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="HTML">HTML</option>
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select>
+            </div>
+    
+            <button type="submit">Guardar Ruta</button>
+        </form>
+    
+        <table id="tabla-rutas">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Curso</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se mostrarán las rutas creadas -->
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+         <div id="certificates" class="section">
+      <h1>Certificados</h1>
+      <div class="estadisticas-certificados">
+          <table id="tabla-estadisticas">
+              <thead>
+                  <tr>
+                      <th>Nombre del Usuario</th>
+                      <th>Curso/Beca</th>
+                      <th>Fecha de Emision</th>
+                      <th>Acciones</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Aquí se agregarán las estadísticas dinámicamente -->
+              </tbody>
+          </table>
+
+           <!-- Sección para mostrar los detalles del certificado -->
+      <div id="detalles-certificado" class="detalles-certificado oculto">
+        <h3>Detalles del Certificado</h3>
+        <p><strong>Nombre del Usuario:</strong> <span id="detalle-usuario"></span></p>
+        <p><strong>Curso/Beca:</strong> <span id="detalle-curso"></span></p>
+        <p><strong>Fecha de Emisión:</strong> <span id="detalle-fecha"></span></p>
+    </div>
+
+          <div class="subir-plantilla">
+            <div class="contenido-flex">
+                <!-- Botones para seleccionar la categoría de edad -->
+                <div class="categorias">
+                    <button class="btn-categoria" data-categoria="ninos">Niños</button>
+                    <button class="btn-categoria" data-categoria="adolescentes">Adolescentes</button>
+                    <button class="btn-categoria" data-categoria="adultos">Adultos</button>
+                </div>
+        
+                <!-- Galería de imágenes pre-cargadas en el HTML -->
+                <div class="galeria-imagenes" id="galeria-imagenes">
+                    <div class="casillero ninos"><img src="/public/img/diplomaN1.jpg" alt="Imagen 1"></div>
+                    <div class="casillero adolescentes"><img src="/public/img/diplomaAd2.png" alt="Imagen 2"></div>
+                    <div class="casillero adultos"><img src="/public/img/diplomaA3.png" alt="Imagen 3"></div>
+                </div>
+            </div>
+        </div>  
+      </div>
+  </div>
+
+        <!-- Contenido para solicitudes de becas -->
+        <div id="becas" class="section">
+        <div class="atras_becas">
+          <h1 class="titulo_becas">Gestión de becas</h1>
+          <div class="filter-becas">
+            <div class="grupo_dni">
+              <input type="text" id="dni" placeholder="DNI" value="DNI">
+              <button class="butt_on2"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="grupo_nombre">
+              <input type="text" id="nombre" placeholder="Nombre" value="Nombre">
+              <button class="butt_on2"><i class="fas fa-search"></i></button>
+            </div>
+            <input type="date" id="fecha">
+
+            <div class="grupo_curso">
+              <input type="text" id="curso" placeholder="Curso" value="Curso">
+              <button class="butt_on2"><i class="fas fa-search"></i></button>
+            </div>
+            <select id="nivel">
+              <option value="nivel">Nivel</option>
+              <option value="niños">Niños</option>
+              <option value="adolescentes">Adolescentes</option>
+              <option value="adultos">Adultos</option>
+            </select>
+            <select id="estado_certificado">
+              <option value="estado">Estado del Certificado</option>
+              <option value="aprobado">Aprobado</option>
+              <option value="rechazado">Rechazado</option>
+              <option value="en_revision">En Revisión</option>
+            </select>
+
+          </div>
+          <div class="becas-container">
+            <table id="tabla-administradores" aria-labelledby="titulo-pagina">
+              <thead>
+                <tr>
+                  <th>DNI</th>
+                  <th>Nombre</th>
+                  <th>Fecha</th>
+                  <th>Curso</th>
+                  <th>Nivel</th>
+                  <th>Estado del certificado</th>
+                  <th>Descargar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>715561561</td>
+                  <td>Henry</td>
+                  <td>15/2/24</td>
+                  <td>Matematica</td>
+                  <td>Adulto</td>
+                  <td>Aprobado</td>
+                  <td>
+                    <button class="settings-btn">
+                      <i class="fa fa-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <!-- Puedes agregar más filas según sea necesario -->
+                <tr>
+                  <td>234234</td>
+                  <td>Ana</td>
+                  <td>16/3/24</td>
+                  <td>Python</td>
+                  <td>Niños</td>
+                  <td>En Revisión</td>
+                  <td>
+                    <button class="settings-btn">
+                      <i class="fa fa-download"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div id="messaging" class="section">
+          <h1>Mensajería</h1>
+        </div>
+           
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="pago" class="section">
+          <div class="Panel">
+            <div class="Panel-Presentacion-Pago">
+              <div class="titulo-Pago">
+                <div class="texto-pago">
+                  <h1>Gestionador de Pagos</h1>
+                </div>
+              </div>
+              <div class="linea"></div>
+              <div class="contenido-Pago">
+                <form action="">
+                  <div class="filtro">
+                    <div class="form-grupo1">
+                      <div class="input-container">
+                        <input type="text" id="alumno" placeholder="DNI">
+                        <button class="butt_on"><i class="fas fa-search"></i></button>
+                      </div>
+                    </div>
+                    <div class="form-grupo5">
+                      <input type="date" id="fecha-inscripcion" placeholder="Fecha de inscripion"
+                        name="fecha-inscripcion">
+                    </div>
+                    <div class="form-grupo2">
+                      <select name="inst" id="inst" required>
+                        <option value="">Metodo de Pago</option>
+                        <option value="Wallbot">Transaccion</option>
+                        <option value="Evabot">Yape/Plin</option>
+                      </select>
+                    </div>
+                    <div class="form-grupo3">
+  
+                      <select name="inst" id="inst" required>
+                        <option>Tipo</option>
+                        <option value="Wallbot">Becado</option>
+                        <option value="Evabot">No Becado</option>
+                      </select>
+                    </div>
+                    <div class="form-grupo4">
+                      <select name="inst" id="inst" required>
+                        <option>Nivel</option>
+                        <option value="Wallbot">Niño</option>
+                        <option value="Evabot">Joven</option>
+                        <option value="Evabot">Adulto</option>
+                      </select>
+  
+                    </div>
+                    <button class="btn-confirmacion" id="Agregar"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </form>
+                <div class="linea"></div>
+                <div class="fondo_tabla">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>DNI</th>
+                        <th>Alumno</th>
+                        <th>F. Pago</th>
+                        <th> Metodo de pago</th>
+                        <th>Monto total</th>
+                        <th>Nivel</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>Torres Astorga</td>
+                        <td>30/10/2024</td>
+                        <td>Transaccion</td>
+                        <td>$500</td>
+                        <td>Adulto</td>
+                        <td>Becado</td>
+                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
+                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
+  
+                      <tr>
+                        <td></td>
+                        <td>2</td>
+                        <td>Bonifacio Garcia</td>
+                        <td>30/10/2024</td>
+                        <td>Yape/Plin</td>
+                        <td>xxxxxxx</td>
+                        <td>Teens</td>
+                        <td>No Becado</td>
+                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
+                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>3</td>
+                        <td>Aquino Zegarra</td>
+                        <td>30/10/2024</td>
+                        <td>Yape/Plin</td>
+                        <td>xxxxxxx</td>
+                        <td>Junior</td>
+                        <td>Becado</td>
+                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
+                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>4</td>
+                        <td>Inga Quintana</td>
+                        <td>30/10/2024</td>
+                        <td>Transaccion</td>
+                        <td>xxxxxxx</td>
+                        <td>Adults</td>
+                        <td>Becado</td>
+                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
+                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>4</td>
+                        <td>Inga Quintana</td>
+                        <td>30/10/2024</td>
+                        <td>Transaccion</td>
+                        <td>xxxxxxx</td>
+                        <td>Adults</td>
+                        <td>Becado</td>
+                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
+                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>4</td>
+                        <td>Inga Quintana</td>
+                        <td>30/10/2024</td>
+                        <td>Transaccion</td>
+                        <td>xxxxxxx</td>
+                        <td>Adults</td>
+                        <td>Becado</td>
+                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
+                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>4</td>
+                        <td>Inga Quintana</td>
+                        <td>30/10/2024</td>
+                        <td>Transaccion</td>
+                        <td>xxxxxxx</td>
+                        <td>Adults</td>
+                        <td>Becado</td>
+                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
+                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="paginacion">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                  </div>
+                </div>
+                <div class="dropdow">
+                  <h2 class="historial"> Informacion</h2>
+                  <button class="sali">X</button>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>F. Pago</th>
+                        <th> Metodo de pago</th>
+                        <th>Monto</th>
+                        <th>Curso</th>
+                        <th>Nivel</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Torres Astorga</td>
+                        <td>30/10/2024</td>
+                        <td>Transaccion</td>
+                        <td>$500</td>
+                        <td>Programación</td>
+                        <td>Becado</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Torres Astorga</td>
+                        <td>30/10/2025</td>
+                        <td>Transaccion</td>
+                        <td>$500</td>
+                        <td>Matematica</td>
+                        <td>Becado</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Torres Astorga</td>
+                        <td>30/12/2024</td>
+                        <td>Transaccion</td>
+                        <td>$500</td>
+                        <td>Computo</td>
+                        <td>Becado</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Torres Astorga</td>
+                        <td>30/11/2024</td>
+                        <td>Transaccion</td>
+                        <td>$500</td>
+                        <td>Ingles</td>
+                        <td>Becado</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="dropdowagregar">
+                  <button class="saliagregar">X</button>
+                  <div class="form-container">
+                    <h2>Registrar Cliente</h2>
+                    <form>
+                      <label for="dni">DNI</label>
+                      <input type="text" id="dni" name="dni" placeholder="Ingrese el DNI" required>
+                      <label for="alumno">Alumno</label>
+                      <input type="text" id="alumno" name="alumno" placeholder="Nombre del Alumno" required>
+                      <label for="fecha-pago">F. Pago</label>
+                      <input type="date" id="fecha-pago" name="fecha-pago" required>
+                      <label for="metodo-pago">Método de Pago</label>
+                      <select id="metodo-pago" name="metodo-pago" required>
+                        <option value="transaccion">Transacción</option>
+                        <option value="yape-plin">Yape/Plin</option>
+                      </select>
+                      <label for="monto">Monto de Pago</label>
+                      <input type="text" id="monto" name="monto" placeholder="Ingrese el monto" required>
+                      <label for="nivel">Nivel</label>
+                      <select id="nivel" name="nivel" required>
+                        <option value="niño">Niño</option>
+                        <option value="joven">Joven</option>
+                        <option value="adulto">Adulto</option>
+                      </select>
+                      <label for="estado">Estado</label>
+                      <select id="estado" name="estado" required>
+                        <option value="becado">Becado</option>
+                        <option value="no-becado">No Becado</option>
+                      </select>
+                      <label for="curso">Curso</label>
+                      <select id="curso" name="curso" required>
+                        <option value="matematica">Matemática</option>
+                        <option value="python">Python</option>
+                        <option value="ingles">Inglés</option>
+                      </select>
+                      <button type="submit">Registrar</button>
+                    </form>
+                  </div>
+                </div>
+  
+                <div class="dropdoweditar">
+                  <button class="salieditar">X</button>
+                  <form class="form-container2">
+                    <h2>Editar Cliente</h2>
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" placeholder="12345" value="12345">
+  
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Nombre" value="Torres Astorga">
+  
+                    <label for="fecha_pago">Fecha de Pago</label>
+                    <input type="date" id="fecha_pago" value="2024-12-01">
+                    <label for="metodo_pago">Método de Pago</label>
+                    <select id="metodo_pago">
+                      <option value="transaccion" selected>Transacción</option>
+                      <option value="yape">Yape/Plin</option>
+                    </select>
+  
+                    <label for="monto">Monto</label>
+                    <input type="text" id="monto" placeholder="$500" value="$500">
+  
+                    <label for="curso">Curso</label>
+                    <input type="text" id="curso" placeholder="Programación" value="Programación">
+  
+                    <label for="nivel">Nivel</label>
+                    <select id="nivel">
+                      <option value="becas" selected>Becas</option>
+                      <option value="becado">Becado</option>
+                      <option value="no_becado">No Becado</option>
+                    </select>
+                    <button type="button" id="modificar">Modificar</button>
+                  </form>
+                </div>
+  
+  
+  
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </section>
+    <script src="/src/js/administradores.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/src/js/script.js"></script>
+    <script src="/src/js/mensajeria.js"></script>
+    <script src="/src/js/estudiantes.js"></script>
+    <script src="/src/js/beca.js"></script>
+    <script src="/src/js/pago.js"></script>
+    <script src="/src/js/certificados.js"></script>
+    <script src="/src/js/certificados.js"></script>
+    <script src="/src/js/rutas.js"></script>
+    <script src="/src/js/curso.js"></script>
+    <script src="/src/js/profesor.js"></script>
+    <script src="/src/js/graficos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="/src/js/pago.js"></script>
+  </body>
+</html>

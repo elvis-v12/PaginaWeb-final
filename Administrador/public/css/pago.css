@@ -1,0 +1,286 @@
+#pago {
+    width: 1300px;
+    height: 750px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+.linea {
+    border-top: 1px solid black;
+    margin: 20px 0;
+}
+
+.titulo-Pago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #020f25;
+}
+
+.titulo-Pago .texto-pago {
+    margin-left: 20px;
+}
+
+
+.input-container {
+    position: relative;
+    width: 250px;
+}
+
+.butt_on {
+    background-color: #fcfdff00;
+    height: 34px;
+    margin-left: -75px;
+    position: absolute;
+}
+
+
+.butt_on i {
+    position: relative;
+    font-size: 15px;
+    color: #020f25;
+}
+
+
+.titulo-Pago img {
+    max-width: 100px;
+    margin: -20px 0;
+    padding: 0;
+}
+
+.contenido-Pago {
+    text-align: left;
+}
+
+
+.filtro {
+    display: flex;
+}
+
+.form-grupo1,
+.form-grupo2,
+.form-grupo3,
+.form-grupo4,
+.form-grupo5 {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-grupo1 input,
+.form-grupo2 input,
+.form-grupo3 input,
+.form-grupo4 input,
+.form-grupo1 select,
+.form-grupo2 select,
+.form-grupo3 select,
+.form-grupo4 select,
+.form-grupo5 input[type="date"] {
+    width: 220px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-right: 30px;
+}
+
+.fondo_tabla {
+    background-color: white;
+    padding: 20px;
+}
+
+.paginacion {
+    margin-left: 550px;
+}
+
+#Info_p {
+    background-color: #099627;
+    margin-right: 20px;
+}
+
+#Confi_p {
+    background-color: #c58713;
+    margin-right: 20px;
+}
+
+#Ban_p {
+    background-color: rgb(180, 86, 69);
+}
+
+.contenido-Pago table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.contenido-Pago th,
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid#020f25;
+    ;
+}
+
+table th {
+    background-color: #020f25;
+    color: #e5f0f1;
+    font-weight: bold;
+}
+
+table tbody tr:hover {
+    background-color: #f4f4f9;
+}
+
+.btn-confirmacion,
+#btn-confirmacion {
+    height: 40px;
+    color: #FFF;
+    background: #11a030;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.btn-confirmacion:hover,
+#btn-confirmacion:hover {
+    background: #c58713;
+}
+
+.dropdow,
+.dropdowagregar,
+.dropdoweditar {
+    position: absolute;
+    /* Para permitir su posicionamiento */
+    top: 100px;
+    padding: 30px;
+    /* Ajusta la posición vertical según lo necesario */
+    left: 170px;
+    /* Ajusta la posición horizontal según lo necesario */
+    height: 800px;
+    width: 1400px;
+    background-color: rgb(233, 236, 236);
+    z-index: 1000;
+    /* Valor alto para sobreponerse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    /* Opcional: Agrega un efecto visual */
+    /* Oculto inicialmente */
+    display: none;
+}
+
+.form-container {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 400px;
+    margin-left: 400px;
+    margin-top: -30px;
+}
+
+
+.form-container h2,
+.form-container2 h2,
+.historial {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #007BFF;
+}
+
+.form-container button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.form-container2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-family: "Roboto", sans-serif;
+}
+
+.form-container2 label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-container2 input,
+.form-container2 select,
+.form-container2 button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.form-container2 input:focus,
+.form-container2 select:focus,
+.form-container2 button:hover {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.form-container2 button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+.form-container2 button:active {
+    background-color: #0056b3;
+}
+
+/* Mostrar el dropdown cuando sea necesario */
+.dropdow.show {
+    display: block;
+}
+
+.dropdow .sali,
+.dropdowagregar .saliagregar,
+.dropdoweditar .salieditar {
+    margin-left: 1300px;
+}
