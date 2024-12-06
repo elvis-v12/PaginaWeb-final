@@ -3,24 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="/admin/public/css/mensajeria.css" />
-    <link rel="stylesheet" href="/admin/public/css/style.css" />
-    <link rel="stylesheet" href="/admin/public/css/profesores.css" />
-    <link rel="stylesheet" href="/admin/public/css/curso.css" />
-    <link rel="stylesheet" href="/admin/public/css/pago.css" />
-    <link rel="stylesheet" href="/admin/public/css/estudiantes.css" />
-    <link rel="stylesheet" href="/admin/public/css/becas.css" />
-    <link rel="stylesheet" href="/admin/public/css/rutas.css" />
-    <link rel="stylesheet" href="/admin/public/css/certificado.css" />
-    <link rel="stylesheet" href="/admin/public/css/admin.css" />
-    <link rel="stylesheet" href="/admin/public/css/graficos.css" />
+    <link rel="stylesheet" href="/public/css/mensajeria.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/profesores.css" />
+    <link rel="stylesheet" href="/public/css/curso.css" />
+    <link rel="stylesheet" href="/public/css/pago.css" />
+    <link rel="stylesheet" href="/public/css/estudiantes.css" />
+    <link rel="stylesheet" href="/public/css/becas.css" />
+    <link rel="stylesheet" href="/public/css/rutas.css" />
+    <link rel="stylesheet" href="/public/css/certificado.css" />
+    <link rel="stylesheet" href="/public/css/admin.css" />
+    <link rel="stylesheet" href="/public/css/graficos.css" />
     <title>Admin</title>
   </head>
 
@@ -82,7 +89,7 @@
   </a>
 </li>
 
-        <li data-section="mensajeria" >
+        <li data-section="mensajeria">
           <a href="#">
             <i class="bx bxs-message-dots"></i>
             <span class="text">Mensajería</span>
@@ -128,7 +135,7 @@
           <span class="mejs">8</span>
         </a>
         <a href="#" class="profile">
-          <img src="/admin/public/img/people.jpg" />
+          <img src="/public/img/people.jpg" />
         </a>
       </nav>
       <!-- NAVBAR -->
@@ -138,11 +145,12 @@
         <div id="dashboard" class="section active">
           <div class="head-title">
             <h1>Dashboard</h1>
-
-            <a href="#" class="btn-download">
-              <i class="bx bxs-cloud-download"></i>
-              <span class="text">Descargar PDF</span>
-            </a>
+  
+              <button onclick="descargarGraficos()">
+                <i class="bx bxs-cloud-download"></i>
+                Descargar Gráfico
+              </button>
+ 
           </div>
 
           <div class="graficos">
@@ -392,19 +400,12 @@
                 </form>
               </div>
             </div>
-            <div id="modal-mensaje">
-              <div class="modal-content">
-                <span class="icono" id="modal-mensaje-icono"></span>
-                <h2 id="modal-mensaje-titulo">Título del Mensaje</h2>
-                <p id="modal-mensaje-texto">Contenido del mensaje aquí.</p>
-                <button onclick="cerrarModalMensaje()">Aceptar</button>
-              </div>
-            </div>
           </div>
         </div>
 
-         <!-- Contenido para la gestión de estudiantes -->
-         <div id="student-management" class="section">
+        <!-- Contenido para la gestión de estudiantes -->
+        <!-- Contenido para la gestión de estudiantes -->
+        <div id="student-management" class="section">
           <h1>Gestión de Estudiantes</h1>
           <div class="student-header">
             <div class="estudiantes-filter-container">
@@ -465,8 +466,8 @@
               </button>
               
               <div class="profile-header">
-                <img src="/admin/public/img/nino.png" alt="Foto de perfil masculino" class="profile-img" id="male-profile-img">
-                <img src="/admin/public/img/nina.png" alt="Foto de perfil femenino" class="profile-img hidden" id="female-profile-img">
+                <img src="/public/img/nino.png" alt="Foto de perfil masculino" class="profile-img" id="male-profile-img">
+                <img src="/public/img/nina.png" alt="Foto de perfil femenino" class="profile-img hidden" id="female-profile-img">
                 <div id="detail-names"></div>
               </div>
               
@@ -719,7 +720,7 @@
   <!-- Cursos -->
   <div id="cursos-container">
     <div class="curso-card" id="curso-1" data-edad="niños" data-categoria="programacion" data-ruta="ruta-1" data-horas="20">
-      <img src="/admin/public/img//bannerH.jpg" alt="Imagen del curso">
+      <img src="/public/img/bannerH.jpg" alt="Imagen del curso">
       <h3 class="nombre-curso-card">Curso de Programación en Html</h3>
       <p class="descripcion-curso-card"><strong>Docente:</strong> Carlos Méndez</p>
       <p><strong>Precio:</strong> S/3</p>
@@ -737,7 +738,7 @@
   
     <!-- Otro curso -->
     <div class="curso-card" id="curso-2" data-edad="adolescentes" data-categoria="programacion">
-      <img src="/admin/public/img/bannerN.jpg" alt="Imagen del curso">
+      <img src="/public/img/bannerN.jpg" alt="Imagen del curso">
       <h3 class="nombre-curso-card">Curso Gratis de Introducción a Node js</h3>
       <p class="descripcion-curso-card"><strong>Docente:</strong> Luis Torres</p>
       <p><strong>Precio:</strong> S/30</p>
@@ -754,7 +755,7 @@
   
     <!-- Otro curso -->
     <div class="curso-card" id="curso-3" data-edad="adultos" data-categoria="programacion">
-      <img src="/admin/public/img/bannerJs.jpg" alt="Imagen del curso">
+      <img src="/public/img/bannerJs.jpg" alt="Imagen del curso">
       <h3 class="nombre-curso-card">Curso de Introducción a JavaScript</h3>
       <p class="descripcion-curso-card"><strong>Docente:</strong> Luis Torres</p>
       <p><strong>Precio:</strong> S/30</p>
@@ -769,9 +770,7 @@
       <button class="btn-insertar" data-curso-id="3">Insertar</button>
     </div>
   </div>
-
-</div>
-          <!-- Modal para editar nombre, docente y precio -->
+   <!-- Modal para editar nombre, docente y precio -->
           <div id="modal-editar-curso-1" class="modal">
             <div class="modal-content">
               <h2>Editar Curso</h2>
@@ -838,6 +837,8 @@
             </div>
           </div>
         </div>
+ 
+       
 
 
 
@@ -931,9 +932,9 @@
         
                 <!-- Galería de imágenes pre-cargadas en el HTML -->
                 <div class="galeria-imagenes" id="galeria-imagenes">
-                    <div class="casillero ninos"><img src="/admin/public/img/diplomaN1.jpg" alt="Imagen 1"></div>
-                    <div class="casillero adolescentes"><img src="/admin/public/img/diplomaAd2.png" alt="Imagen 2"></div>
-                    <div class="casillero adultos"><img src="/admin/public/img/diplomaA3.png" alt="Imagen 3"></div>
+                    <div class="casillero ninos"><img src="/public/img/diplomaN1.jpg" alt="Imagen 1"></div>
+                    <div class="casillero adolescentes"><img src="/public/img/diplomaAd2.png" alt="Imagen 2"></div>
+                    <div class="casillero adultos"><img src="/public/img/diplomaA3.png" alt="Imagen 3"></div>
                 </div>
             </div>
         </div>  
@@ -942,495 +943,489 @@
 
         <!-- Contenido para solicitudes de becas -->
         <div id="becas" class="section">
-          <div class="atras_becas">
-            <h1 class="titulo_becas">Gestión de becas</h1>
-            <div class="filter-becas">
-              <div class="grupo_dni">
-                <input type="text" id="dni" placeholder="DNI" value="DNI">
-                <button class="butt_on2"><i class="fas fa-search"></i></button>
-              </div>
-              <div class="grupo_nombre">
-                <input type="text" id="nombre" placeholder="Nombre" value="Nombre">
-                <button class="butt_on2"><i class="fas fa-search"></i></button>
-              </div>
-              <input type="date" id="fecha">
-  
-              <div class="grupo_curso">
-                <input type="text" id="curso" placeholder="Curso" value="Curso">
-                <button class="butt_on2"><i class="fas fa-search"></i></button>
-              </div>
-              <select id="nivel">
-                <option value="nivel">Nivel</option>
-                <option value="niños">Niños</option>
-                <option value="adolescentes">Adolescentes</option>
-                <option value="adultos">Adultos</option>
-              </select>
-              <select id="estado_certificado">
-                <option value="estado">Estado del Certificado</option>
-                <option value="aprobado">Aprobado</option>
-                <option value="rechazado">Rechazado</option>
-                <option value="en_revision">En Revisión</option>
-              </select>
+        <div class="atras_becas">
+          <h1 class="titulo_becas">Gestión de becas</h1>
+          <div class="filter-becas">
+            <div class="grupo_dni">
+              <input type="text" id="dni" placeholder="DNI" value="DNI">
+              <button class="butt_on2"><i class="fas fa-search"></i></button>
             </div>
-            <div class="becas-container">
-              <table id="tabla-administradores" aria-labelledby="titulo-pagina">
+            <div class="grupo_nombre">
+              <input type="text" id="nombre" placeholder="Nombre" value="Nombre">
+              <button class="butt_on2"><i class="fas fa-search"></i></button>
+            </div>
+            <input type="date" id="fecha">
+
+            <div class="grupo_curso">
+              <input type="text" id="curso" placeholder="Curso" value="Curso">
+              <button class="butt_on2"><i class="fas fa-search"></i></button>
+            </div>
+            <select id="nivel">
+              <option value="nivel">Nivel</option>
+              <option value="niños">Niños</option>
+              <option value="adolescentes">Adolescentes</option>
+              <option value="adultos">Adultos</option>
+            </select>
+            <select id="estado_certificado">
+              <option value="estado">Estado del Certificado</option>
+              <option value="aprobado">Aprobado</option>
+              <option value="rechazado">Rechazado</option>
+              <option value="en_revision">En Revisión</option>
+            </select>
+
+          </div>
+          <div class="becas-container">
+            <table id="tabla-administradores" aria-labelledby="titulo-pagina">
+              <thead>
+                <tr>
+                  <th>DNI</th>
+                  <th>Nombre</th>
+                  <th>Fecha</th>
+                  <th>Curso</th>
+                  <th>Nivel</th>
+                  <th>Estado del certificado</th>
+                  <th>Descargar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>715561561</td>
+                  <td>Henry</td>
+                  <td>15/2/24</td>
+                  <td>Matematica</td>
+                  <td>Adulto</td>
+                  <td>Aprobado</td>
+                  <td>
+                    <button class="settings-btn">
+                      <i class="fa fa-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <!-- Puedes agregar más filas según sea necesario -->
+                <tr>
+                  <td>234234</td>
+                  <td>Ana</td>
+                  <td>16/3/24</td>
+                  <td>Python</td>
+                  <td>Niños</td>
+                  <td>En Revisión</td>
+                  <td>
+                    <button class="settings-btn">
+                      <i class="fa fa-download"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="mensajeria" class="section">
+        
+        <div class="botones">
+            <!-- Botones para mostrar Bandeja de Entrada y Redactar -->
+            <button class="tab-btn" onclick="mostrarBandeja()">Bandeja de Entrada</button>
+            <button class="tab-btn" onclick="mostrarRedactar()">Redactar</button>
+        </div>
+        
+        <!-- Bandeja de Entrada -->
+        <div id="bandeja">
+            <h2>Bandeja de Entrada</h2>
+            <table>
                 <thead>
-                  <tr>
-                    <th>DNI</th>
-                    <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Curso</th>
-                    <th>Nivel</th>
-                    <th>Estado del certificado</th>
-                    <th>Descargar</th>
-                  </tr>
+                    <tr>
+                        <th>Remitente</th>
+                        <th>Asunto</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>715561561</td>
-                    <td>Henry</td>
-                    <td>15/2/24</td>
-                    <td>Matematica</td>
-                    <td>Adulto</td>
-                    <td>Aprobado</td>
-                    <td>
-                      <button class="download-btn_be">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <!-- Puedes agregar más filas según sea necesario -->
-                  <tr>
-                    <td>234234</td>
-                    <td>Ana</td>
-                    <td>16/3/24</td>
-                    <td>Python</td>
-                    <td>Niños</td>
-                    <td>En Revisión</td>
-                    <td>
-                      <button class="download-btn_be">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </td>
-                  </tr>
+                    <tr>
+                        <td>Ana López</td>
+                        <td>Reunión</td>
+                        <td>2024-12-05</td>
+                        <td><button onclick="abrirMensaje()">Leer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>Informe</td>
+                        <td>2024-12-03</td>
+                        <td><button onclick="abrirMensaje()">Leer</button></td>
+                    </tr>
                 </tbody>
-              </table>
-              <div class="paginacion">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
+            </table>
+        </div>
+        
+        <!-- Redactar Mensaje -->
+        <div id="redactar" style="display:none;">
+          <h2>Redactar Nuevo Mensaje</h2>
+          <form id="form-redactar">
+            <label for="destinatario">Destinatario:</label>
+            <input type="email" id="destinatario" name="destinatario" placeholder="Escribe el correo del destinatario" required>
+        
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto del mensaje" required>
+        
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+        
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+      </div>
+
+        
+        <div id="mensaje-leido" style="display:none;">
+          <div class="mensaje-leido-container">
+              <h2 class="mensaje-titulo">MENSAJE: REUNIÓN</h2>
+              <p><strong>De:</strong> Ana López</p>
+              <p><strong>Correo:</strong> ana.lopez@example.com</p>
+              <p><strong>Fecha:</strong> 2024-12-05</p>
+              <div class="mensaje-contenido">
+                  <strong>Mensaje:</strong>
+                  <p>Vamos a reunirnos mañana a las 10 AM.</p>
+              </div>
+              <button onclick="cerrarMensaje()" class="btn-cerrar">Cerrar</button>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+
+<div id="pago" class="section">
+        <div class="Panel">
+          <div class="Panel-Presentacion-Pago">
+            <div class="titulo-Pago">
+              <div class="texto-pago">
+                <h1>Gestionador de Pagos</h1>
               </div>
             </div>
-            <button class="descargarreportebecas">Descargar datos</button>
-          </div>
-          <a id="download-linkss" href="/public/pdf/Informe de Solicitud de Beca.pdf"
-            download="Informe de Solicitud de Beca.pdf"></a>
-        </div>
+            <div class="linea"></div>
+            <div class="contenido-Pago">
+              <form action="">
+                <div class="filtro">
+                  <div class="form-grupo1">
+                    <div class="input-container">
+                      <input type="text" id="alumno" placeholder="DNI">
+                      <button class="butt_on"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                  <div class="form-grupo5">
+                    <input type="date" id="fecha-inscripcion" placeholder="Fecha de inscripion"
+                      name="fecha-inscripcion">
+                  </div>
+                  <div class="form-grupo2">
+                    <select name="inst" id="inst">
+                      <option value="">Metodo de Pago</option>
+                      <option value="Wallbot">Transaccion</option>
+                      <option value="Evabot">Yape/Plin</option>
+                    </select>
+                  </div>
+                  <div class="form-grupo3">
 
+                    <select name="inst" id="inst">
+                      <option>Tipo</option>
+                      <option value="Wallbot">Becado</option>
+                      <option value="Evabot">No Becado</option>
+                    </select>
+                  </div>
+                  <div class="form-grupo4">
+                    <select name="inst" id="inst">
+                      <option>Nivel</option>
+                      <option value="Wallbot">Niño</option>
+                      <option value="Evabot">Joven</option>
+                      <option value="Evabot">Adulto</option>
+                    </select>
 
-
-
-
-
-
-        <div id="mensajeria" class="section">
-        
-          <div class="botones">
-              <!-- Botones para mostrar Bandeja de Entrada y Redactar -->
-              <button class="tab-btn" onclick="mostrarBandeja()">Bandeja de Entrada</button>
-              <button class="tab-btn" onclick="mostrarRedactar()">Redactar</button>
-          </div>
-          
-          <!-- Bandeja de Entrada -->
-          <div id="bandeja">
-              <h2>Bandeja de Entrada</h2>
-              <table>
+                  </div>
+                  <button class="agregar-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </form>
+              <div class="linea"></div>
+              <div class="fondo_tabla">
+                <table>
                   <thead>
-                      <tr>
-                          <th>Remitente</th>
-                          <th>Asunto</th>
-                          <th>Fecha</th>
-                          <th>Acciones</th>
-                      </tr>
+                    <tr>
+                      <th></th>
+                      <th>DNI</th>
+                      <th>Alumno</th>
+                      <th>F. Pago</th>
+                      <th> Metodo de pago</th>
+                      <th>Monto total</th>
+                      <th>Nivel</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
                   </thead>
                   <tbody>
-                      <tr>
-                          <td>Ana López</td>
-                          <td>Reunión</td>
-                          <td>2024-12-05</td>
-                          <td><button onclick="abrirMensaje()">Leer</button></td>
-                      </tr>
-                      <tr>
-                          <td>Juan Pérez</td>
-                          <td>Informe</td>
-                          <td>2024-12-03</td>
-                          <td><button onclick="abrirMensaje()">Leer</button></td>
-                      </tr>
+                    <tr>
+                      <td></td>
+                      <td>1</td>
+                      <td>Torres Astorga</td>
+                      <td>30/10/2024</td>
+                      <td>Transaccion</td>
+                      <td>$500</td>
+                      <td>Adulto</td>
+                      <td>Becado</td>
+                      <td>
+                        <button class="btn-info_p"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="btn-edit_p"><i class="fa-solid fa-gear"></i></button>
+                        <button class="btn-ban_p"><i class="fas fa-ban"></i></button>
+                      </td>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td></td>
+                      <td>2</td>
+                      <td>Bonifacio Garcia</td>
+                      <td>30/10/2024</td>
+                      <td>Yape/Plin</td>
+                      <td>xxxxxxx</td>
+                      <td>Teens</td>
+                      <td>No Becado</td>
+                      <td>
+                        <button class="btn-info_p"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="btn-edit_p"><i class="fa-solid fa-gear"></i></button>
+                        <button class="btn-ban_p"><i class="fas fa-ban"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>3</td>
+                      <td>Aquino Zegarra</td>
+                      <td>30/10/2024</td>
+                      <td>Yape/Plin</td>
+                      <td>xxxxxxx</td>
+                      <td>Junior</td>
+                      <td>Becado</td>
+                      <td>
+                        <button class="btn-info_p"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="btn-edit_p"><i class="fa-solid fa-gear"></i></button>
+                        <button class="btn-ban_p"><i class="fas fa-ban"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>4</td>
+                      <td>Inga Quintana</td>
+                      <td>30/10/2024</td>
+                      <td>Transaccion</td>
+                      <td>xxxxxxx</td>
+                      <td>Adults</td>
+                      <td>Becado</td>
+                      <td>
+                        <button class="btn-info_p"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="btn-edit_p"><i class="fa-solid fa-gear"></i></button>
+                        <button class="btn-ban_p"><i class="fas fa-ban"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>4</td>
+                      <td>Inga Quintana</td>
+                      <td>30/10/2024</td>
+                      <td>Transaccion</td>
+                      <td>xxxxxxx</td>
+                      <td>Adults</td>
+                      <td>Becado</td>
+                      <td>
+                        <button class="btn-info_p"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="btn-edit_p"><i class="fa-solid fa-gear"></i></button>
+                        <button class="btn-ban_p"><i class="fas fa-ban"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>4</td>
+                      <td>Inga Quintana</td>
+                      <td>30/10/2024</td>
+                      <td>Transaccion</td>
+                      <td>xxxxxxx</td>
+                      <td>Adults</td>
+                      <td>Becado</td>
+                      <td>
+                        <button class="btn-info_p"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="btn-edit_p"><i class="fa-solid fa-gear"></i></button>
+                        <button class="btn-ban_p"><i class="fas fa-ban"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>4</td>
+                      <td>Inga Quintana</td>
+                      <td>30/10/2024</td>
+                      <td>Transaccion</td>
+                      <td>xxxxxxx</td>
+                      <td>Adults</td>
+                      <td>Becado</td>
+                      <td>
+                        <button class="btn-info_p"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="btn-edit_p"><i class="fa-solid fa-gear"></i></button>
+                        <button class="btn-ban_p"><i class="fas fa-ban"></i></button>
+                      </td>
+                    </tr>
                   </tbody>
-              </table>
-          </div>
-          
-          <!-- Redactar Mensaje -->
-          <div id="redactar" style="display:none;">
-            <h2>Redactar Nuevo Mensaje</h2>
-            <form id="form-redactar">
-              <label for="destinatario">Destinatario:</label>
-              <input type="email" id="destinatario" name="destinatario" placeholder="Escribe el correo del destinatario" required>
-          
-              <label for="asunto">Asunto:</label>
-              <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto del mensaje" required>
-          
-              <label for="mensaje">Mensaje:</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
-          
-              <button type="submit" class="btn-enviar">Enviar</button>
-          </form>
-        </div>
-  
-          
-          <div id="mensaje-leido" style="display:none;">
-            <div class="mensaje-leido-container">
-                <h2 class="mensaje-titulo">MENSAJE: REUNIÓN</h2>
-                <p><strong>De:</strong> Ana López</p>
-                <p><strong>Correo:</strong> ana.lopez@example.com</p>
-                <p><strong>Fecha:</strong> 2024-12-05</p>
-                <div class="mensaje-contenido">
-                    <strong>Mensaje:</strong>
-                    <p>Vamos a reunirnos mañana a las 10 AM.</p>
-                </div>
-                <button onclick="cerrarMensaje()" class="btn-cerrar">Cerrar</button>
-            </div>
-          </div> 
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        <div id="pago" class="section">
-          <div class="Panel">
-            <div class="Panel-Presentacion-Pago">
-              <div class="titulo-Pago">
-                <div class="texto-pago">
-                  <h1>Gestionador de Pagos</h1>
+                </table>
+                <div class="paginacion">
+                  <button>1</button>
+                  <button>2</button>
+                  <button>3</button>
                 </div>
               </div>
-              <div class="linea"></div>
-              <div class="contenido-Pago">
-                <form action="">
-                  <div class="filtro">
-                    <div class="form-grupo1">
-                      <div class="input-container">
-                        <input type="text" id="alumno" placeholder="DNI">
-                        <button class="butt_on"><i class="fas fa-search"></i></button>
-                      </div>
-                    </div>
-                    <div class="form-grupo5">
-                      <input type="date" id="fecha-inscripcion" placeholder="Fecha de inscripion"
-                        name="fecha-inscripcion">
-                    </div>
-                    <div class="form-grupo2">
-                      <select name="inst" id="inst" required>
-                        <option value="">Metodo de Pago</option>
-                        <option value="Wallbot">Transaccion</option>
-                        <option value="Evabot">Yape/Plin</option>
-                      </select>
-                    </div>
-                    <div class="form-grupo3">
-  
-                      <select name="inst" id="inst" required>
-                        <option>Tipo</option>
-                        <option value="Wallbot">Becado</option>
-                        <option value="Evabot">No Becado</option>
-                      </select>
-                    </div>
-                    <div class="form-grupo4">
-                      <select name="inst" id="inst" required>
-                        <option>Nivel</option>
-                        <option value="Wallbot">Niño</option>
-                        <option value="Evabot">Joven</option>
-                        <option value="Evabot">Adulto</option>
-                      </select>
-  
-                    </div>
-                    <button class="btn-confirmacion" id="Agregar"><i class="fa-solid fa-plus"></i></button>
-                  </div>
-                </form>
-                <div class="linea"></div>
-                <div class="fondo_tabla">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th>DNI</th>
-                        <th>Alumno</th>
-                        <th>F. Pago</th>
-                        <th> Metodo de pago</th>
-                        <th>Monto total</th>
-                        <th>Nivel</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td></td>
-                        <td>1</td>
-                        <td>Torres Astorga</td>
-                        <td>30/10/2024</td>
-                        <td>Transaccion</td>
-                        <td>$500</td>
-                        <td>Adulto</td>
-                        <td>Becado</td>
-                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
-                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
-                        </td>
-                      </tr>
-  
-                      <tr>
-                        <td></td>
-                        <td>2</td>
-                        <td>Bonifacio Garcia</td>
-                        <td>30/10/2024</td>
-                        <td>Yape/Plin</td>
-                        <td>xxxxxxx</td>
-                        <td>Teens</td>
-                        <td>No Becado</td>
-                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
-                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>3</td>
-                        <td>Aquino Zegarra</td>
-                        <td>30/10/2024</td>
-                        <td>Yape/Plin</td>
-                        <td>xxxxxxx</td>
-                        <td>Junior</td>
-                        <td>Becado</td>
-                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
-                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>4</td>
-                        <td>Inga Quintana</td>
-                        <td>30/10/2024</td>
-                        <td>Transaccion</td>
-                        <td>xxxxxxx</td>
-                        <td>Adults</td>
-                        <td>Becado</td>
-                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
-                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>4</td>
-                        <td>Inga Quintana</td>
-                        <td>30/10/2024</td>
-                        <td>Transaccion</td>
-                        <td>xxxxxxx</td>
-                        <td>Adults</td>
-                        <td>Becado</td>
-                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
-                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>4</td>
-                        <td>Inga Quintana</td>
-                        <td>30/10/2024</td>
-                        <td>Transaccion</td>
-                        <td>xxxxxxx</td>
-                        <td>Adults</td>
-                        <td>Becado</td>
-                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
-                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>4</td>
-                        <td>Inga Quintana</td>
-                        <td>30/10/2024</td>
-                        <td>Transaccion</td>
-                        <td>xxxxxxx</td>
-                        <td>Adults</td>
-                        <td>Becado</td>
-                        <td><button id="Info_p"><i class="fa-solid fa-circle-info"></i></button><button id="Confi_p"><i
-                              class="fa-solid fa-gear"></i></button><button id="Ban_p"><i class="fas fa-ban"></i></button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <div class="paginacion">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                  </div>
-                </div>
-                <div class="dropdow">
-                  <h2 class="historial"> Informacion</h2>
-                  <button class="sali">X</button>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>DNI</th>
-                        <th>Nombre</th>
-                        <th>F. Pago</th>
-                        <th> Metodo de pago</th>
-                        <th>Monto</th>
-                        <th>Curso</th>
-                        <th>Nivel</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Torres Astorga</td>
-                        <td>30/10/2024</td>
-                        <td>Transaccion</td>
-                        <td>$500</td>
-                        <td>Programación</td>
-                        <td>Becado</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Torres Astorga</td>
-                        <td>30/10/2025</td>
-                        <td>Transaccion</td>
-                        <td>$500</td>
-                        <td>Matematica</td>
-                        <td>Becado</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Torres Astorga</td>
-                        <td>30/12/2024</td>
-                        <td>Transaccion</td>
-                        <td>$500</td>
-                        <td>Computo</td>
-                        <td>Becado</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Torres Astorga</td>
-                        <td>30/11/2024</td>
-                        <td>Transaccion</td>
-                        <td>$500</td>
-                        <td>Ingles</td>
-                        <td>Becado</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="dropdowagregar">
-                  <button class="saliagregar">X</button>
-                  <div class="form-container">
-                    <h2>Registrar Cliente</h2>
-                    <form>
-                      <label for="dni">DNI</label>
-                      <input type="text" id="dni" name="dni" placeholder="Ingrese el DNI" required>
-                      <label for="alumno">Alumno</label>
-                      <input type="text" id="alumno" name="alumno" placeholder="Nombre del Alumno" required>
-                      <label for="fecha-pago">F. Pago</label>
-                      <input type="date" id="fecha-pago" name="fecha-pago" required>
-                      <label for="metodo-pago">Método de Pago</label>
-                      <select id="metodo-pago" name="metodo-pago" required>
-                        <option value="transaccion">Transacción</option>
-                        <option value="yape-plin">Yape/Plin</option>
-                      </select>
-                      <label for="monto">Monto de Pago</label>
-                      <input type="text" id="monto" name="monto" placeholder="Ingrese el monto" required>
-                      <label for="nivel">Nivel</label>
-                      <select id="nivel" name="nivel" required>
-                        <option value="niño">Niño</option>
-                        <option value="joven">Joven</option>
-                        <option value="adulto">Adulto</option>
-                      </select>
-                      <label for="estado">Estado</label>
-                      <select id="estado" name="estado" required>
-                        <option value="becado">Becado</option>
-                        <option value="no-becado">No Becado</option>
-                      </select>
-                      <label for="curso">Curso</label>
-                      <select id="curso" name="curso" required>
-                        <option value="matematica">Matemática</option>
-                        <option value="python">Python</option>
-                        <option value="ingles">Inglés</option>
-                      </select>
-                      <button type="submit">Registrar</button>
-                    </form>
-                  </div>
-                </div>
-  
-                <div class="dropdoweditar">
-                  <button class="salieditar">X</button>
-                  <form class="form-container2">
-                    <h2>Editar Cliente</h2>
+              <div class="dropdow">
+                <h2 class="historial"> Informacion</h2>
+                <button class="close-info_p">X</button>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>DNI</th>
+                      <th>Nombre</th>
+                      <th>F. Pago</th>
+                      <th> Metodo de pago</th>
+                      <th>Monto</th>
+                      <th>Curso</th>
+                      <th>Nivel</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Torres Astorga</td>
+                      <td>30/10/2024</td>
+                      <td>Transaccion</td>
+                      <td>$500</td>
+                      <td>Programación</td>
+                      <td>Becado</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Torres Astorga</td>
+                      <td>30/10/2025</td>
+                      <td>Transaccion</td>
+                      <td>$500</td>
+                      <td>Matematica</td>
+                      <td>Becado</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Torres Astorga</td>
+                      <td>30/12/2024</td>
+                      <td>Transaccion</td>
+                      <td>$500</td>
+                      <td>Computo</td>
+                      <td>Becado</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Torres Astorga</td>
+                      <td>30/11/2024</td>
+                      <td>Transaccion</td>
+                      <td>$500</td>
+                      <td>Ingles</td>
+                      <td>Becado</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="dropdowagregar">
+                <button class="close-add_p">X</button>
+                <div class="form-container">
+                  <h2>Registrar Cliente</h2>
+                  <form>
                     <label for="dni">DNI</label>
-                    <input type="text" id="dni" placeholder="12345" value="12345">
-  
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" placeholder="Nombre" value="Torres Astorga">
-  
-                    <label for="fecha_pago">Fecha de Pago</label>
-                    <input type="date" id="fecha_pago" value="2024-12-01">
-                    <label for="metodo_pago">Método de Pago</label>
-                    <select id="metodo_pago">
-                      <option value="transaccion" selected>Transacción</option>
-                      <option value="yape">Yape/Plin</option>
+                    <input type="text" id="dni" name="dni" placeholder="Ingrese el DNI" required>
+                    <label for="alumno">Alumno</label>
+                    <input type="text" id="alumno" name="alumno" placeholder="Nombre del Alumno" required>
+                    <label for="fecha-pago">F. Pago</label>
+                    <input type="date" id="fecha-pago" name="fecha-pago" required>
+                    <label for="metodo-pago">Método de Pago</label>
+                    <select id="metodo-pago" name="metodo-pago" required>
+                      <option value="transaccion">Transacción</option>
+                      <option value="yape-plin">Yape/Plin</option>
                     </select>
-  
-                    <label for="monto">Monto</label>
-                    <input type="text" id="monto" placeholder="$500" value="$500">
-  
-                    <label for="curso">Curso</label>
-                    <input type="text" id="curso" placeholder="Programación" value="Programación">
-  
+                    <label for="monto">Monto de Pago</label>
+                    <input type="text" id="monto" name="monto" placeholder="Ingrese el monto" required>
                     <label for="nivel">Nivel</label>
-                    <select id="nivel">
-                      <option value="becas" selected>Becas</option>
-                      <option value="becado">Becado</option>
-                      <option value="no_becado">No Becado</option>
+                    <select id="nivel" name="nivel" required>
+                      <option value="niño">Niño</option>
+                      <option value="joven">Joven</option>
+                      <option value="adulto">Adulto</option>
                     </select>
-                    <button type="button" id="modificar">Modificar</button>
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado" required>
+                      <option value="becado">Becado</option>
+                      <option value="no-becado">No Becado</option>
+                    </select>
+                    <label for="curso">Curso</label>
+                    <select id="curso" name="curso" required>
+                      <option value="matematica">Matemática</option>
+                      <option value="python">Python</option>
+                      <option value="ingles">Inglés</option>
+                    </select>
+                    <button type="submit">Registrar</button>
                   </form>
                 </div>
-  
-  
-  
+              </div>
+              <div class="dropdoweditar">
+                <button class="close-edit_p">X</button>
+                <form class="form-container2">
+                  <h2>Editar Cliente</h2>
+                  <label for="dni">DNI</label>
+                  <input type="text" id="dni" placeholder="12345" value="12345">
+
+                  <label for="nombre">Nombre</label>
+                  <input type="text" id="nombre" placeholder="Nombre" value="Torres Astorga">
+
+                  <label for="fecha_pago">Fecha de Pago</label>
+                  <input type="date" id="fecha_pago" value="2024-12-01">
+                  <label for="metodo_pago">Método de Pago</label>
+                  <select id="metodo_pago">
+                    <option value="transaccion" selected>Transacción</option>
+                    <option value="yape">Yape/Plin</option>
+                  </select>
+
+                  <label for="monto">Monto</label>
+                  <input type="text" id="monto" placeholder="$500" value="$500">
+
+                  <label for="curso">Curso</label>
+                  <input type="text" id="curso" placeholder="Programación" value="Programación">
+
+                  <label for="nivel">Nivel</label>
+                  <select id="nivel">
+                    <option value="becas" selected>Becas</option>
+                    <option value="becado">Becado</option>
+                    <option value="no_becado">No Becado</option>
+                  </select>
+                  <button type="button" id="modificar">Modificar</button>
+                </form>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
       </main>
     </section>
-    <script src="/admin/src/js/administradores.js"></script>
+    <script src="/src/js/administradores.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/admin/src/js/script.js"></script>
-    <script src="/admin/src/js/mensajeria.js"></script>
-    <script src="/admin/src/js/estudiantes.js"></script>
-    <script src="/admin/src/js/beca.js"></script>
-    <script src="/admin/src/js//pago.js"></script>
-    <script src="/admin/src/js/certificados.js"></script>
-    <script src="/admin/src/js/certificados.js"></script>
-    <script src="/admin/src/js/rutas.js"></script>
-    <script src="/admin/src/js/curso.js"></script>
-    <script src="/admin/src/js/profesor.js"></script>
-    <script src="/admin/src/js/graficos.js"></script>
+    <script src="/src/js/script.js"></script>
+    <script src="/src/js/mensajeria.js"></script>
+    <script src="/src/js/estudiantes.js"></script>
+    <script src="/src/js/beca.js"></script>
+    <script src="/src/js//pago.js"></script>
+    <script src="/src/js/certificados.js"></script>
+    <script src="/src/js/certificados.js"></script>
+    <script src="/src/js/rutas.js"></script>
+    <script src="/src/js/curso.js"></script>
+    <script src="/src/js/profesor.js"></script>
+    <script src="/src/js/graficos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="/admin/src/js/pago.js"></script>
-    <script src="/admin/src/js/EnvioCursos.js"></script>
+    <script src="/src/js/pago.js"></script>
+    <script src="/src/js/EnvioCursos.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.24/jspdf.plugin.autotable.min.js"></script>

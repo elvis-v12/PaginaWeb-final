@@ -1,226 +1,619 @@
-.tab-btn {
-  background-color: #1c1f38;
-  color: white;
-  padding: 10px 20px;
-  margin-right: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  font-size: 16px;
+* {
+  box-sizing: border-box;
+  /* Incluye el padding y el borde en el ancho total */
 }
 
-.tab-btn:hover {
-  background-color: #151620;
+html,
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('/public/img/ninos/burbuja.jpg')no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 
-/* Tabla de bandeja de entrada */
-table {
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2em;
+}
+
+.bg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* Mantiene la altura completa */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.title {
+  margin-top: 80px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 3px 3px 0px #ffffff;
+  position: fixed;
+  left: 0;
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background-color: #ffffff;
+  text-align: center;
+  z-index: 20;
+  font-family: 'Coiny', cursive;
+  top: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.176), rgba(255, 255, 255, 0.025));
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
+  animation: bounce 2s infinite;
 }
 
-th, td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  font-size: 14px;
-  background-color: #ffffff;
-}
+@keyframes bounce {
 
-button {
-  background-color: #191f30;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #191f30;
-}
-
-/* Estilos para el contenedor del mensaje leído */
-#mensaje-leido {
-  display: none; /* Se oculta hasta que se haga clic en 'Leer' */
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.mensaje-leido-container {
-  background-color: #f9f9f9;  /* Color de fondo suave */
-  border: 1px solid #e0e0e0;  /* Borde sutil */
-  border-radius: 12px;         /* Bordes redondeados */
-  padding: 30px;               /* Espaciado interno */
-  max-width: 800px;            /* Máximo ancho del contenedor */
-  margin: 0 auto;              /* Centrado en la pantalla */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
-  font-family: 'Arial', sans-serif;  /* Tipografía moderna */
-  
-  /* Animación para el contenedor */
-  animation: aparecer 1s ease-out, rebote 0.5s 1s ease-in-out infinite;  /* Primero aparece, luego rebota */
-}
-
-/* Animación para el contenedor */
-@keyframes aparecer {
-  0% {
-    opacity: 0;           /* Empieza invisible */
-    transform: translateY(20px);  /* Empieza desde abajo */
-  }
+  0%,
+  20%,
+  50%,
+  80%,
   100% {
-    opacity: 1;           /* Se vuelve visible */
-    transform: translateY(0);     /* Se coloca en su posición original */
+      transform: translateY(0);
   }
-}
 
-/* Efecto de rebote */
-@keyframes rebote {
-  0% {
-    transform: translateY(0);  /* En su posición inicial */
+  40% {
+      transform: translateY(-10px);
   }
-  30% {
-    transform: translateY(-10px);  /* Subir ligeramente */
-  }
-  50% {
-    transform: translateY(5px);   /* Bajar un poco */
-  }
-  70% {
-    transform: translateY(-5px);  /* Subir un poco más */
-  }
-  100% {
-    transform: translateY(0);   /* Regresar a la posición original */
+
+  60% {
+      transform: translateY(-5px);
   }
 }
 
 
-.mensaje-titulo {
-  font-size: 28px;
-  color: #333;
-  font-weight: 600;
-  margin-bottom: 15px;
+.water-stain {
+  background-color: #58abefee;
+  width: 750px;
+  height: 500px;
+  border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
+
+  animation: morph 6s ease-in-out infinite;
+  margin-right: 5rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 100px;
+  flex: 90%;
+}
+
+.subtitle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+  padding-right: 0.4rem;
+}
+
+.subtitle {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Satisfy', cursive;
+  margin-left: 130px;
+  margin-bottom: 10px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.stars {
+  color: gold;
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.level {
+  background-color: #FFC107;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-right: 80px;
+  font-weight: bold;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.mensaje-leido-container p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #555;
-  margin: 10px 0;
-  font-family: "Martian Mono", monospace;
+.description {
+  font-size: 1.1rem;
+  /* Tamaño de fuente */
+  font-family: 'Nanum Gothic Coding', monospace;
+  /* Fuente */
+  color: #ffffff;
+  /* Color del texto */
+  text-align: justify;
+  /* Justificar el texto */
+  line-height: 1.5;
+  /* Espaciado entre líneas */
+  padding: 0 1rem;
+  /* Espaciado interior */
+  margin-top: 0.5rem;
+  /* Margen superior */
+  margin-right: 50px;
+  /* Margen derecho */
+  margin-left: 50px;
+  /* Ajustado a 50px para ser consistente */
 }
 
-.mensaje-leido-container strong {
-  color: #333;
+@keyframes morph {
+  0% {
+      border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
+  }
+
+  50% {
+      border-radius: 60% 40% 50% 30% / 60% 50% 30% 60%;
+  }
+
+  100% {
+      border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
+  }
+}
+
+
+.image-container img {
+  max-width: 400px;
+  max-height: 3000px;
+  margin-top: 8rem;
+  z-index: 1;
+  margin-right: 90px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+      transform: translateY(0);
+  }
+
+  40% {
+      transform: translateY(-10px);
+  }
+
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.button-primary {
+  background-color: #f858c8;
+  font-size: 18px;
+  color: white;
   font-weight: bold;
+  border:none;
+  margin: 5px;
+  padding: 10px 15px;
+  /* Asegura espacio adecuado dentro del botón */
+  border-radius: 0.25rem;
+  outline: none;
+  transition: background-color 0.3s;
+  display: flex;
+  /* Hace que el contenido interno esté en un mismo eje */
+  align-items: center;
+  /* Alinea el SVG y el texto verticalmente */
+  justify-content: center;
+  /* Centra el contenido en horizontal */
+  cursor: pointer;
+
 }
 
-.mensaje-contenido {
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+.button-primary:hover {
+  background-color: #206da7;
+}
+
+.button-primary svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  /* Espacio entre el icono y el texto */
+}
+
+@media (max-width: 768px) {
+  .water-stain {
+      width: 250px;
+      height: 250px;
+  }
+
+  .title {
+      font-size: 2.5rem;
+  }
+
+  .image-container img {
+      max-width: 200px;
+  }
+}
+
+/* SEGUNDO APARTADO NUEVO - TEMARIO */
+
+.temario {
+  background-color: #7AD9FF;
+  color: white;
+  border-radius: 8px;
+  padding: 1.5em;
+}
+
+.temario h2{
+  margin-top: 35px;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 3.8em;
+  color: rgb(255, 214, 48);
+  text-shadow: 2px 5px 0 rgb(149, 123, 37); /* Sombra sólida */
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  animation: reboteFrente 2s ease-in-out infinite; /* Llama a la animación */
+}
+
+.temario-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 1em;
+}
+
+/* Estilo personalizado para los videos */
+/* Contenedor general */
+.contenedor-recursos {
+  background-color: #7ed7ff;
+  /* Fondo del contenedor principal */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.columna-derecha {
+  flex: 1;
+  min-width: 250px;
+}
+
+.recurso-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Tarjeta de curso */
+.content-card {
+  background-color: #37748a;
+  /* Fondo de cada tarjeta */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra */
+  color: #ffef6f;
+  /* Color del texto */
+  font-family: Arial, sans-serif;
+}
+
+/* Imagen del curso */
+.content-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+/* Contenedor del texto y progreso */
+.course-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título del curso */
+.course-title {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Duración del curso */
+.duration {
+  color: #e0e0e0;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Barra de progreso */
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #2f3e47;
+  /* Fondo de la barra de progreso */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #2bffb5;
+  /* Color de la barra de progreso */
+  width: 80%;
+  /* Cambia este valor según el progreso de cada curso */
+}
+
+
+/* Botón de inscripción */
+button {
+  background-color: #4299E1;
+  /* Azul */
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3182CE;
+  /* Azul más oscuro al pasar el mouse */
+}
+
+
+
+
+
+/* Estilo personalizado para el contenedor principal */
+.bg-gray-900 {
+  background-color: hsl(197, 100%, 74%);
+  /* Cambia este valor al color que desees */
+  border-radius: 8px;
+  /* Bordes redondeados para todo el contenedor */
+  padding: 20px;
+  /* Espaciado interno para que los elementos no estén pegados al borde */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  /* Sombra para darle un efecto de elevación */
+
+}
+
+.temario-iz {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contenedor-requisitos {
+  background-color: #cc6dc9c9;
+  padding: 10px;
+  /* Espaciado interno para que los elementos no estén pegados al borde */
+  border: 2px solid #84377e;
+
+}
+
+.contenedor-requisitos h3 {
+  font-size: 1.2em;
+}
+
+.contenedor-requisitos ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.contenedor-requisitos li {
+  margin-bottom: 10px;
+}
+
+.contenedor-requisitos i {
+  margin-right: 5px;
+}
+
+.icono-reloj {
+  color: #ffffff;
+  /* Ejemplo: rojo tomate */
+}
+
+.icono-ejercicio {
+  color: #ffffff;
+  /* Ejemplo: azul claro */
+}
+
+.font-bold {
+  margin-top: 35px;
+  font-family: 'Rammetto One', sans-serif;
+  font-size: 2.7em;
+  color: rgb(213, 231, 252);
+  /* Color azul */
+  text-shadow: 2px 5px 0 rgb(80, 143, 219);
+  /* Sombra sólida */
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  animation: reboteFrente 2s ease-in-out infinite;
+  /* Llama a la animación */
+}
+
+@keyframes reboteFrente {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+      transform: translateX(0);
+      /* Sin movimiento horizontal */
+  }
+
+  40% {
+      transform: translateX(10px);
+      /* Mueve hacia adelante 10 píxeles */
+  }
+
+  60% {
+      transform: translateX(5px);
+      /* Mueve hacia adelante 5 píxeles */
+  }
+}
+
+
+.textito {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+
+
+.gif-container {
+  display: flex;
+  /* Alinea los elementos en fila */
+  justify-content: space-around;
+  /* Espacio igual entre los elementos */
+  margin-top: 0.5rem;
+  /* Espacio superior del contenedor */
+}
+
+.gif-container img {
+  width: 30%;
+  /* Ajusta el tamaño de las imágenes */
+  display: block;
+  /* Alinea las imágenes al inicio de cada línea */
+  margin: 0;
+  /* Elimina cualquier margen para alinear a la izquierda */
+}
+
+.gif-mediano {
+  width: 100%;
+  /* Hace que el GIF se ajuste al ancho del contenedor */
+  max-width: 200px;
+  /* Limita el tamaño máximo del GIF a 200px (ajusta según lo necesites) */
+  display: block;
+  /* Asegura que el GIF se alinee correctamente */
+  margin: 0;
+  /* Elimina el margen automático para mejor alineación */
+  margin-top: 1px;
+  /* Margen superior */
+}
+
+.info-box {
+  border: 2px solid #84377e;
+  /* Borde negro */
   padding: 15px;
-  margin-top: 20px;
-  font-size: 16px;
-  color: #333;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Espacio interno */
+  border-radius: 8px;
+  /* Esquinas redondeadas */
+
+  background-color: #cc6dc9c9;
+  animation: agarrarCaja 6s ease-in-out infinite;
+  /* Llama a la animación */
 }
 
-.mensaje-contenido p {
+@keyframes agarrarCaja {
+  0% {
+      transform: scale(1) rotate(0deg);
+      /* Sin escala ni rotación */
+  }
+
+  25% {
+      transform: scale(1.05) rotate(2deg);
+      /* Aumenta al 105% y rota 2 grados */
+  }
+
+  50% {
+      transform: scale(1.1) rotate(-2deg);
+      /* Aumenta al 110% y rota -2 grados */
+  }
+
+  75% {
+      transform: scale(1.05) rotate(2deg);
+      /* Vuelve al 105% y rota 2 grados */
+  }
+
+  100% {
+      transform: scale(1) rotate(0deg);
+      /* Vuelve al tamaño original */
+  }
+}
+
+
+
+.flex-1 {
+  color: #ffe23c;
+}
+
+.bg-gray-800 {
+  background-color: #2e5c82cf;
+  /* Cambia este valor al color que desees */
+  border-radius: 0.5rem;
+  /* Esquinas redondeadas */
+  padding: 1rem;
+  /* Espacio interno */
+  margin-top: 1rem;
+  /* Espacio superior */
+}
+
+.info-box p {
+  font-size: 1.1rem;
+  font-family: 'Nanum Gothic Coding', monospace;
+
+}
+
+.textito1 {
+  font-family: 'Satisfy', cursive;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.temario-iz h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 37px;
   margin: 0;
 }
 
-.btn-cerrar {
-  background-color: #ff2626;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-  margin-top: 20px;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
+.temario-iz ul li {
+  font-family: 'Nanum Gothic Coding', monospace;
+  font-size: 18px;
 }
 
-.btn-cerrar:hover {
-  background-color: #b52222;
-}
+@keyframes transformarRectangulo {
+  0% {
+      width: 200px;
+      height: 100px;
+      transform: skew(0deg);
+  }
 
+  50% {
+      width: 150px;
+      height: 150px;
+      transform: skew(10deg);
+  }
 
-
-/*FORMM*/
-/* Estilos para el formulario de redacción */
-#form-redactar {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 700px;
-  margin: 30px auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-}
-
-h2 {
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  font-size: 13px;
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 8px;
-  font-family: "Martian Mono", monospace;
-}
-
-input[type="email"],
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  background-color: #f1f1f1;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-input[type="email"]:focus,
-input[type="text"]:focus,
-textarea:focus {
-  border-color: #191f26;
-  background-color: #fff;
-  outline: none;
-}
-
-textarea {
-  height: 150px;
-  resize: vertical;
-  box-sizing: border-box;
-}
-
-.btn-enviar {
-  background-color: #203041;
-  color: white;
-  padding: 12px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s;
-}
-
-.btn-enviar:hover {
-  background-color: #11161c;
+  100% {
+      width: 200px;
+      height: 100px;
+      transform: skew(0deg);
+  }
 }
