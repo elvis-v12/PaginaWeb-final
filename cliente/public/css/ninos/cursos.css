@@ -277,45 +277,12 @@ p {
 }
 
 .button-container {
-  margin-top: 10px;
+
   display: flex; /* Flexbox para alinear en paralelo */
-  gap: 10px; /* Espacio entre botones */
+  gap: 5px; /* Espacio entre botones */
   margin-right: 300px;
 }
 
-.btn-add-route,
-.btn-add-cart {
-    padding: 15px 30px; /* Más espacio interno */
-    font-size: 10px; /* Aumenta el tamaño del texto */
-    color: white;
-    border: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    flex: none; /* Evita que los botones crezcan desproporcionadamente */
-    width: 134px; /* Ancho fijo para hacerlos más grandes horizontalmente */
-    max-width: 300px; /* Límite opcional del ancho */
-    margin-right: 3px;
-
-}
-
-
-.btn-add-route {
-  background-color: #51b2ef; /* Azul */
-}
-
-.btn-add-route:hover {
-  background-color: #49a0d6; /* Azul oscuro */
-}
-
-.btn-add-cart {
-  background-color: #3bcff0; /* Verde */
-}
-
-.btn-add-cart:hover {
-  background-color: #38b0cb; /* Verde oscuro */
-}
 
 
 
@@ -329,19 +296,61 @@ h1 {
   font-size: 30px; /* Cambia este valor para ajustar el tamaño del título de cada tarjeta */
 }
 
-/* Subtítulos */
-h2, .instructor-name, .modal-body p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2em;
-  color: #555;
-  margin-right: 40px;
+
+/* Contenedor del nombre y precio */
+.instructor-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: -9;
 }
-.instructor-name{
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2em;
-  color: #555;
-  margin-right: 18rem;
+
+/* Contenedor para el nombre del docente y el precio */
+.name-price-info {
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 18px;
+  line-height: -4;
+  
 }
+
+/* Clase común para el nombre del docente y el precio */
+.name-price {
+  font-size: 19px;
+  font-weight: bold;
+  color: #131f3081;
+  text-align: left; /* Alinea el texto a la izquierda */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: -4;
+}
+
+
+/* Contenedor de los botones */
+.button-container {
+  display: flex;
+  gap: 10px;
+  
+}
+
+/* Estilo común para ambos botones */
+.btn-common {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  border: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 150px;
+  background-color: #51b2ef; 
+}
+
+/* Estilo de hover para los botones */
+.btn-common:hover {
+  background-color: #4a9dd1; /* Cambia el color de fondo cuando el botón está en hover */
+}
+
 
 
 /* Detalles del curso e instructores */
