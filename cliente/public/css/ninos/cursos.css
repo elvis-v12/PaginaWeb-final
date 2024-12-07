@@ -279,15 +279,14 @@ p {
 .button-container {
   margin-top: 10px;
   display: flex; /* Flexbox para alinear en paralelo */
-  justify-content: center; /* Centrar botones horizontalmente */
-  gap: 15px; /* Espacio entre botones */
-  margin-right: 20px;
+  gap: 10px; /* Espacio entre botones */
+  margin-right: 300px;
 }
 
 .btn-add-route,
 .btn-add-cart {
     padding: 15px 30px; /* Más espacio interno */
-    font-size: 1.2rem; /* Aumenta el tamaño del texto */
+    font-size: 10px; /* Aumenta el tamaño del texto */
     color: white;
     border: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -295,8 +294,10 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease;
     flex: none; /* Evita que los botones crezcan desproporcionadamente */
-    width: 250px; /* Ancho fijo para hacerlos más grandes horizontalmente */
+    width: 134px; /* Ancho fijo para hacerlos más grandes horizontalmente */
     max-width: 300px; /* Límite opcional del ancho */
+    margin-right: 3px;
+
 }
 
 
@@ -335,6 +336,13 @@ h2, .instructor-name, .modal-body p {
   color: #555;
   margin-right: 40px;
 }
+.instructor-name{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  color: #555;
+  margin-right: 18rem;
+}
+
 
 /* Detalles del curso e instructores */
 .course-details, .instructors-list {
