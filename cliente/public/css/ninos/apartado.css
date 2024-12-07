@@ -62,19 +62,22 @@ body {
     }
 }
 
-.water-stain { 
+.water-stain {
     background-color: #58abefee;
     width: 750px;
     height: 500px;
     border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
     animation: morph 6s ease-in-out infinite;
-    margin: 0; /* Elimina márgenes */
+    margin-top: -100px; /* Ajusta este valor para mover el fondo hacia arriba */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 0; /* Reduce el padding interno a cero si no es necesario */
+    justify-content: flex-start; /* Mueve el contenido hacia la parte superior */
+    padding: 20px; /* Si necesitas espacio interno para el contenido */
+    margin-bottom: 10px;
 }
+
+
 
 
 .subtitle-container {
@@ -91,6 +94,7 @@ body {
     color: #ffffff;
     font-family: 'Satisfy', cursive;
     margin-left: 130px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -159,7 +163,9 @@ body {
     z-index: 1;
     margin-right: 80px;
     animation: shake-and-rotate 2s ease-in-out infinite; /* Animación con menor intensidad */
+    margin-top: -50px; /* Ajusta este valor para mover la imagen hacia arriba */
 }
+
 
 @keyframes shake-and-rotate {
   0% {
