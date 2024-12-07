@@ -482,33 +482,12 @@ button:hover {
     border: 2px solid #84377e; /* Borde de color púrpura */
     padding: 20px; /* Espacio interno */
     border-radius: 20px; /* Esquinas redondeadas */
-    background-color: #e472d2; /* Fondo con transparencia */
+    background-color:  #e472d2;/* Fondo con transparencia */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
-    margin: 0 auto; /* Centra el contenedor */
-    width: 80%; /* Puedes ajustar el ancho según tu preferencia */
-    text-align: center; /* Centra el texto dentro del contenedor */
-    display: flex; /* Para poder centrar contenido interno */
-    flex-direction: column; /* Alinea los elementos de arriba a abajo */
-    align-items: center; /* Alinea todo el contenido dentro del info-box */
-    justify-content: center; /* Centra el contenido verticalmente */
-}
-
-.info-container {
-    display: flex; /* Elementos en línea */
-    flex-wrap: wrap; /* Permite filas adicionales si es necesario */
-    gap: 1rem; /* Espacio entre elementos */
-    list-style: none; /* Sin puntos de lista */
-    padding: 0;
-    margin: 0;
-    justify-content: center; /* Centra los elementos horizontalmente */
-}
-
-.info-container li {
-    display: flex; /* Ícono y texto en línea */
-    align-items: center; /* Centra verticalmente */
-    flex: 1 1 calc(50% - 1rem); /* Dos columnas */
-    max-width: 300px; /* Limita el ancho máximo */
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .archivo-item {
@@ -518,31 +497,50 @@ button:hover {
     justify-content: center;
     margin: 10px; /* Espaciado entre los botones */
     padding: 10px 20px;
+    
     border-radius: 10px;
     width: 150px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    text-align: center; /* Centra el texto dentro del archivo-item */
-}
-
-.archivo-item:hover {
+  }
+  
+  .archivo-item:hover {
     transform: scale(1.05); /* Efecto de zoom */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.icono-archivo {
+  }
+  
+  .icono-archivo {
     font-size: 2rem; /* Tamaño del icono */
     color: #333;
     margin-bottom: 5px; /* Espaciado entre icono y texto */
-}
-
-.archivo-item span {
+    text-align: center;
+  }
+  
+  .archivo-item span {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1rem;
     color: #333;
     font-weight: bold;
-}
+    text-align: center;
+  }
 
+
+.info-container {
+    display: flex; /* Elementos en línea */
+    flex-wrap: wrap; /* Permite filas adicionales si es necesario */
+    gap: 1rem; /* Espacio entre elementos */
+    list-style: none; /* Sin puntos de lista */
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* Centra los elementos horizontalmente */
+  }
+
+  .info-container li {
+    display: flex; /* Ícono y texto en línea */
+    align-items: center; /* Centra verticalmente */
+    flex: 1 1 calc(50% - 1rem); /* Dos columnas */
+    max-width: 300px; /* Limita el ancho máximo */
+  }
 
 
 
