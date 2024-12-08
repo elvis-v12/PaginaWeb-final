@@ -4,7 +4,7 @@
       "subtitulo": "Curso de Cinema\n4D básico para niños",
       "nivel": "BÁSICO",
       "descripcion": "En este emocionante curso de Cinema 4D para niños, aprenderás a hacer tus propias animaciones en 3D como las que ves en tus películas y videojuegos favoritos. ¡No necesitas experiencia previa! Aquí te enseñaremos desde lo más básico, usando explicaciones claras y fáciles de seguir. Al finalizar, podrás guardar y compartir tus creaciones. ¡Este curso es para ti!",
-      "imagen": "/public/img/ninos/programador.jpg",
+      "imagen": "/public/img/ninos/programador.png",
       "recursos": [
         {
           "titulo": "¡Bienvenido al Mundo 3D! – Introducción a Cinema 4D",
@@ -38,7 +38,7 @@
       "subtitulo": "Curso de Cinema\n4D Intermedio",
       "nivel": "INTERMEDIO",
       "descripcion": "Lleva tus habilidades de Cinema 4D al siguiente nivel. Aprende técnicas intermedias como texturización, iluminación avanzada y animación de objetos. Este curso está diseñado para quienes ya tienen una base y quieren ampliar sus conocimientos.",
-      "imagen": "/public/img/ninos/programador.jpg",
+      "imagen": "/public/img/ninos/programador.png",
       "recursos": [
         {
           "titulo": "Iluminación Creativa en Cinema 4D",
@@ -72,7 +72,7 @@
       "subtitulo": "Curso de Cinema\n4D Avanzado",
       "nivel": "AVANZADO",
       "descripcion": "Este curso avanzado está diseñado para expertos que desean dominar Cinema 4D. Aprende sobre simulaciones físicas, partículas, modelado avanzado y renderizado profesional. Ideal para quienes buscan crear animaciones de calidad profesional.",
-      "imagen": "/public/img/ninos/programador.jpg",
+      "imagen": "/public/img/ninos/programador.png",
       "recursos": [
         {
           "titulo": "Simulaciones Físicas en Cinema 4D",

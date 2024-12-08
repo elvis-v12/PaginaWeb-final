@@ -4,7 +4,7 @@
         "subtitulo": "Curso de SQL Server\nbásico para niños",
         "nivel": "BÁSICO",
         "descripcion": "En este emocionante y creativo curso de SQL Server para niños, aprenderás a hacer tus propias páginas dinámicas como las que ves en tus redes y videos favoritos. ¡No necesitas experiencia previa! Aquí te enseñaremos desde lo más básico, usando explicaciones claras y fáciles de seguir, para que te diviertas mientras aprendes a crear increíbles mundos digitales. Al finalizar, podrás guardar y compartir tus creaciones con tus amigos, familiares o profesores. ¡Este curso es para ti!",
-        "imagen": "/public/img/ninos/bannerS.jpg",
+        "imagen": "/public/img/ninos/bannerS.png",
         "recursos": [
             {
                 "titulo": "Introducción a SQL Server",
@@ -38,7 +38,7 @@
         "subtitulo": "Curso de SQL Server\nintermedio",
         "nivel": "INTERMEDIO",
         "descripcion": "En este emocionante y desafiante curso de SQL Server intermedio, aprenderás a trabajar con relaciones entre tablas, funciones avanzadas y procedimientos almacenados para gestionar datos de forma eficiente. Usaremos ejemplos prácticos que te permitirán comprender y aplicar cada concepto de manera efectiva. Además, te enseñaremos a optimizar consultas para mejorar el rendimiento de tus bases de datos. Al finalizar, tendrás un dominio intermedio de SQL Server y estarás listo para proyectos más complejos.",
-        "imagen": "/public/img/ninos/bannerS3.jpg",
+        "imagen": "/public/img/ninos/bannerS3.png",
         "recursos": [
             {
                 "titulo": "Relaciones entre Tablas",
@@ -72,7 +72,7 @@
         "subtitulo": "Curso de SQL Server\navanzado",
         "nivel": "AVANZADO",
         "descripcion": "En este curso avanzado de SQL Server, aprenderás a utilizar herramientas como triggers, vistas y replicación para gestionar grandes volúmenes de datos. Profundizaremos en técnicas avanzadas de seguridad y optimización, asegurándonos de que tus bases de datos sean robustas y de alto rendimiento. Usaremos casos prácticos para que puedas aplicar tus conocimientos en situaciones reales. Al finalizar, tendrás las habilidades necesarias para convertirte en un experto en SQL Server.",
-        "imagen": "/public/img/ninos/bannerS2.jpg",
+        "imagen": "/public/img/ninos/bannerS2.png",
         "recursos": [
             {
                 "titulo": "Implementación de Vistas",

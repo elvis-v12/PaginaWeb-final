@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             datosCurso.recursos.forEach((recurso) => {
                 const recursoHTML = `
                     <div class="content-card">
-                        <img src="/public/img/ninos/apartadoH.jpg" alt="${recurso.titulo}">
+                        <img src="/public/img/ninos/programador.jpg" alt="${recurso.titulo}">
                         <div class="course-details">
                             <div class="course-title">${recurso.titulo || "Título no disponible"}</div>
                             <div class="duration">

@@ -4,7 +4,7 @@
     "subtitulo": "Curso de HTML\nbásico para niños",
     "nivel": "BÁSICO",
     "descripcion": "En este curso, los niños aprenderán HTML de una manera divertida y fácil de entender, utilizando proyectos creativos que estimulan su imaginación. Desde crear sus propias páginas web hasta diseñar elementos visuales, los estudiantes desarrollarán habilidades básicas de programación mientras se sumergen en el emocionante mundo del diseño web. Con un enfoque práctico y actividades interactivas, los niños no solo aprenderán a estructurar contenido en línea, sino que también adquirirán confianza para expresar sus ideas y compartirlas con el mundo.",
-    "imagen": "/public/img/ninos/programador.jpg",
+    "imagen": "/public/img/ninos/programador.png",
     "recursos": [
       {
         "titulo": "HTML desde Cero: Tu Primer Sitio Web",
@@ -38,7 +38,7 @@
     "subtitulo": "Curso de HTML\nIntermedio",
     "nivel": "INTERMEDIO",
     "descripcion": "En este curso intermedio, aprenderás conceptos avanzados de HTML, como la semántica, formularios y multimedia, para construir sitios web más dinámicos y funcionales. Este curso está diseñado para quienes ya tienen una base sólida y desean profundizar sus conocimientos para enfrentar proyectos más complejos.",
-    "imagen": "/public/img/ninos/programador.jpg",
+    "imagen": "/public/img/ninos/programador.png",
     "recursos": [
       {
         "titulo": "Formularios en HTML",
@@ -72,7 +72,7 @@
     "subtitulo": "Curso de HTML\nAvanzado",
     "nivel": "AVANZADO",
     "descripcion": "Este curso avanzado está diseñado para quienes desean dominar HTML en profundidad, explorando temas como accesibilidad, optimización para SEO y rendimiento web. Además, aprenderás a trabajar con APIs y otras herramientas avanzadas que te permitirán construir sitios web de última generación.",
-    "imagen": "/public/img/ninos/programador.jpg",
+    "imagen": "/public/img/ninos/programador.png",
     "recursos": [
       {
         "titulo": "Accesibilidad Web: Haciendo Sitios Inclusivos",

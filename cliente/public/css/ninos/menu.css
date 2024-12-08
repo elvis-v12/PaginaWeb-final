@@ -5,6 +5,11 @@ body {
     background-color: #F5F5F5;
 }
 
+body {
+  cursor: url('/public/img/ninos/cursor2.png'), auto;
+
+}
+
 /* Encapsulamiento del menú */
 .mi-menu {
     margin: 0 auto; /* Centra el menú */
@@ -126,6 +131,7 @@ body {
 }
 
 /* Botón del carrito de compras */
+/* Botón del carrito de compras */
 .mi-menu .login .btn-cart {
   position: relative; /* Base para posicionar el span relativo al carrito */
   background-color: transparent;
@@ -168,6 +174,21 @@ body {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra opcional */
 }
 
+/* Estilos para el menú hamburguesa */
+.mi-menu .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.mi-menu .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: 0.4s;
+}
 
 /* Mostrar el menú hamburguesa en pantallas pequeñas */
 @media (max-width: 768px) {

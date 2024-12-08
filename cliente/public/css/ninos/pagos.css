@@ -13,6 +13,11 @@ body {
     min-height: 100vh;
 }
 
+body {
+    cursor: url('/public/img/ninos/cursor2.png'), auto;
+ 
+}
+
 /* Ajustes en el contenedor de pago */
 .payment-container {
     display: flex;

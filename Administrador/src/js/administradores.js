@@ -5,7 +5,14 @@ let administradorSeleccionado = null; // ID del administrador seleccionado para 
 
 // Cargar todos los administradores en la tabla
 function cargarAdministradores() {
-  fetch(`${BASE_URL}/administradores`)
+  const rol = document.querySelector(".filter-container select:nth-child(1)").value;
+  const estado = document.querySelector(".filter-container select:nth-child(2)").value;
+
+  const url = new URL(`${BASE_URL}/administradores`);
+  if (rol !== "all") url.searchParams.append("rol", rol);
+  if (estado !== "all") url.searchParams.append("estado", estado);
+
+  fetch(url)
     .then((response) => {
       if (!response.ok) throw new Error("Error al cargar los administradores");
       return response.json();
@@ -39,6 +46,12 @@ function cargarAdministradores() {
       mostrarModalMensaje("Error", error.message, "error");
     });
 }
+
+// Actualiza la tabla cuando cambian los filtros
+document.querySelectorAll(".filter-container select").forEach((select) => {
+  select.addEventListener("change", cargarAdministradores);
+});
+
 
 // Abrir modal para insertar administrador
 function abrirModalInsertar() {
@@ -240,7 +253,92 @@ function actualizarPaginacion() {
   }
 }
 
+async function descargarReporte() {
+  const { jsPDF } = window.jspdf;
 
+  // Crear instancia de jsPDF
+  const doc = new jsPDF();
+
+  const fechaActual = new Date();
+  const fecha = fechaActual.toLocaleDateString(); // Ejemplo: 05/12/2024
+  const hora = fechaActual.toLocaleTimeString(); // Ejemplo: 14:35:00
+
+  const title = "LEARNLY";
+
+  doc.setFont("Helvetica", "bold");
+  doc.setFontSize(22);
+  doc.text(title, 105, 20, { align: "center" });
+
+  // Subtítulo con fecha y hora
+  doc.setFontSize(12);
+  doc.setFont("Helvetica", "italic");
+  doc.setTextColor(100);
+  doc.text(`Reporte generado el ${fecha} a las ${hora}`, 105, 30, {
+    align: "center",
+  });
+
+  // Línea secundaria
+  doc.setLineWidth(0.5);
+  doc.setDrawColor(200, 200, 200);
+  doc.line(20, 35, 190, 35);
+
+  try {
+    // Asegúrate de definir BASE_URL o remplazarlo con la URL real
+    const response = await fetch(`${BASE_URL}/administradores`);
+    const administradores = await response.json();
+
+    const encabezados = [
+      ["ID", "Nombres", "Correo", "Rol", "Estado", "Fecha de Registro"],
+    ];
+    const filas = administradores.map((admin) => [
+      admin.id,
+      admin.nombres,
+      admin.correo,
+      admin.rol,
+      admin.estado,
+      new Date(admin.fecha_registro).toLocaleDateString(),
+    ]);
+
+    // Verifica que autoTable esté disponible
+    if (doc.autoTable) {
+      doc.autoTable({
+        head: encabezados,
+        body: filas,
+        startY: 40,
+        styles: {
+          fontSize: 10,
+          font: "Helvetica",
+          cellPadding: 5,
+        },
+        headStyles: {
+          fillColor: [5, 14, 26], // Color de fondo encabezado de tabla
+          textColor: [255, 255, 255],
+          fontSize: 11,
+          fontStyle: "bold",
+        },
+        alternateRowStyles: { fillColor: [240, 240, 240] },
+        margin: { top: 40 },
+      });
+    } else {
+      throw new Error("El plugin autoTable no está disponible.");
+    }
+
+    // Pie de página
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      doc.setFontSize(10);
+      doc.setTextColor(150);
+      doc.text(`Página ${i} de ${pageCount}`, 105, 290, { align: "center" });
+    }
+
+    // Descargar el PDF
+    doc.save("reporte_administradores_corporativo.pdf");
+  } catch (error) {
+    console.error("Error al generar el PDF:", error);
+    mostrarModalMensaje("Error", "No se pudo descargar el reporte", "error");
+  }
+}
 
 
 

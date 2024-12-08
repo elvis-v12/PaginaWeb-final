@@ -10,6 +10,11 @@ body {
     align-items: center; /* Centra verticalmente */
 }
 
+body {
+    cursor: url('/public/img/ninos/cursor2.png'), auto;
+ 
+}
+
 .header {
     background-color: #648dfd; /* Color de fondo de la franja */
     background-image: url('/public/img/ninos/brillo.gif');

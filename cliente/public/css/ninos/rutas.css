@@ -1,5 +1,8 @@
+/* Aplicar el cursor personalizado en todo el sitio */
+
 * {
     box-sizing: border-box;
+   
 }
 
 body {
@@ -9,6 +12,13 @@ body {
     padding: 0;
     overflow-x: hidden;
     text-align: center;
+    cursor: url('/public/img/ninos/profe.png'), auto;
+ 
+}
+
+body {
+    cursor: url('/public/img/ninos/cursor2.png'), auto;
+ 
 }
 
 .container {
@@ -18,24 +28,78 @@ body {
     justify-content: center;
     align-items: flex-start; /* Alineación al inicio para organizar varias filas */
     min-height: 100vh;
-    padding: 80px 20px;
+    padding: 80px 70px;
 }
 
 /* Título principal */
 .main-title {
     width: 100%;
     text-align: center;
-    font-size: 5rem;
-    font-family: 'Spicy Rice', cursive;
+    font-size: 5.5rem;
+    font-family: 'Fredoka One', sans-serif;
     color: #ffcc00;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    text-shadow: 2px 2px 0px #b8a430;
+    margin-top: 75px;
+    text-shadow: 2px 5px 0px #b8a430;
     padding: 20px 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.176), rgba(255, 255, 255, 0.025));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.377), rgba(255, 255, 255, 0.025));
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
+    display: inline-flex;
+    align-items: center; /* Alinea el texto y las imágenes verticalmente */
+    justify-content: center;
+    animation: bubble2 3s infinite ease-in-out;
 }
+@keyframes bubble2 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+        /* Sube el texto */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Vuelve a la posición original */
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Comienza desde abajo */
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0); /* Llega a su posición normal */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px); /* Desaparece subiendo */
+    }
+}
+
+.side-image {
+    width: 190px; /* Ajusta el tamaño de las imágenes */
+    height: 125px; /* Ajusta el tamaño de las imágenes */
+    margin: 0 10px; /* Espacio entre el título y las imágenes */
+    animation: slide-up 2s ease-in-out infinite; /* Aparece desde abajo, sube y desaparece en bucle */
+}
+
+.left {
+    margin-right: 10px; /* Espacio entre la imagen de la izquierda y el título */
+}
+
+.right {
+    margin-left: 10px; /* Espacio entre la imagen de la derecha y el título */
+}
+
+
+
+
+
+
 
 /* Tarjeta individual de curso */
 .ruta-container {
@@ -49,7 +113,9 @@ body {
     text-align: center;
     position: relative;
     transition: transform 0.3s;
+    top: -80px; /* Mueve el contenedor más arriba */
 }
+
 
 /* Animación de hover en la tarjeta */
 .ruta-container:hover {
@@ -81,6 +147,7 @@ body {
     font-size: 17px;
     color: #000000;
     text-align: left;
+    line-height: -100;
 }
 
 /* Título del curso */
@@ -102,7 +169,7 @@ body {
 
 /* Contenedor de la lista de cursos */
 .course-list-clear {
-    background-color: rgba(70, 154, 180, 0.692);
+    background-color:  rgba(138, 202, 254, 0.753);
     padding: 10px;
     border-radius: 8px;
 }
@@ -110,11 +177,11 @@ body {
 /* Estilos del botón */
 .btn {
     display: block;
-    background-color: rgba(20, 149, 255, 0.8);
+    background-color: rgba(85, 178, 255, 0.8);
     border: none;
     color: #fff;
     padding: 12px;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 8px;
     font-family: 'Coiny', cursive;
     width: calc(100% - 0); /* Ajuste para el ancho completo del contenedor */

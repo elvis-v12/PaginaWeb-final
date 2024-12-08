@@ -10,6 +10,11 @@ body {
     padding: 0;
 }
 
+body {
+    cursor: url('/public/img/ninos/cursor2.png'), auto;
+ 
+}
+
 .contenedor-ajustes-cuenta {
     display: flex;
     justify-content: space-between;

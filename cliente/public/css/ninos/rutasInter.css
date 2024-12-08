@@ -6,8 +6,13 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('/public/img/ninos/oceano.png');
+  background-image: url('/public/img/ninos/burbuja.jpg');
   color: #c9d1d9;
+}
+
+body {
+  cursor: url('/public/img/ninos/cursor2.png'), auto;
+
 }
 
 .search-container {

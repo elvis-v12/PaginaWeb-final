@@ -2,19 +2,38 @@ import pool from "../models/dbConnection.js";
 
 // Obtener todos los administradores
 export const getAdministradores = async (req, res) => {
+  const { rol, estado } = req.query;
+
+  let query = `
+    SELECT a.id, a.nombres, a.correo, r.nombre AS rol, a.estado, a.fecha_registro
+    FROM administradores AS a
+    JOIN roles AS r ON a.rol_id = r.id_rol
+    WHERE 1=1
+  `;
+
+  const queryParams = [];
+
+  // Filtro por rol
+  if (rol && rol !== "all") {
+    query += " AND r.nombre= ?";
+    queryParams.push(rol);
+  }
+
+  // Filtro por estado
+  if (estado && estado !== "all") {
+    query += " AND a.estado = ?";
+    queryParams.push(estado);
+  }
+
   try {
-    // Consulta con la relación correcta
-    const [rows] = await pool.query(`
-      SELECT a.id, a.nombres, a.correo, r.nombre_rol AS rol, a.estado, a.fecha_registro
-      FROM administradores AS a
-      JOIN roles AS r ON a.rol_id = r.id_rol; -- Verifica que 'id_rol' exista en 'roles'
-    `);
+    const [rows] = await pool.query(query, queryParams);
     res.json(rows);
   } catch (error) {
     console.error("Error en la consulta:", error.message);
     res.status(500).json({ error: "Error al obtener los administradores" });
   }
 };
+
 
 // Insertar un administrador
 export const createAdministrador = async (req, res) => {

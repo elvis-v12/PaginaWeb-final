@@ -58,7 +58,7 @@ button:hover {
 }
 
 /* Modal */
-.modaladmin {
+#admin-management .modaladmin {
   display: none;
   position: fixed;
   top: 50%;
