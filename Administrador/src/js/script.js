@@ -48,6 +48,49 @@ const searchButtonIcon = document.querySelector(
   "#content nav form .form-input button .bx"
 );
 const searchForm = document.querySelector("#content nav form");
+const searchInput = document.querySelector("#content nav form .form-input input");
+
+// Agregar funcionalidad de filtrado
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const query = searchInput.value.trim().toLowerCase();
+
+  if (query === "") {
+    alert("Por favor, escribe un término para buscar.");
+    return;
+  }
+
+  let found = false;
+
+  allSideMenu.forEach((item) => {
+    const text = item.textContent.trim().toLowerCase();
+    const li = item.parentElement;
+
+    if (text.includes(query)) {
+      // Quitar 'active' de todos los elementos
+      allSideMenu.forEach((i) => i.parentElement.classList.remove("active"));
+
+      // Resaltar el elemento encontrado
+      li.classList.add("active");
+
+      const sectionId = li.getAttribute("data-section");
+      sections.forEach((section) => section.classList.remove("active"));
+
+      if (sectionId) {
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add("active");
+          found = true;
+        }
+      }
+    }
+  });
+
+  if (!found) {
+    alert("No se encontró ninguna sección con ese término.");
+  }
+});
 
 searchButton.addEventListener("click", function (e) {
   if (window.innerWidth < 576) {

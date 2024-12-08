@@ -57,3 +57,45 @@ document.querySelector('.input-submit').addEventListener('click', async (e) => {
         submitButton.disabled = false; // Rehabilitar botón
     }
 });
+
+
+//cambiar contraseña 
+document.querySelector('.input_us').addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('regEmail').value.trim();
+    const newPassword = document.getElementById('newPassword').value.trim();
+    const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+    if (!email || !newPassword || !confirmPassword) {
+        alert('Por favor, complete todos los campos.');
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+        alert('Las contraseñas no coinciden.');
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/api/admin/change-password', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, newPassword }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert(data.message); // Mensaje de éxito
+            window.location.href = '/src/html/loginadmin.html'; // Redirige al login
+        } else {
+            alert(`Error: ${data.message}`);
+        }
+    } catch (error) {
+        console.error('Error al cambiar la contraseña:', error);
+        alert('Error al conectar con el servidor.');
+    }
+});
