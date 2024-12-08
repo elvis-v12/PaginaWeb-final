@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrador perfil</title>
+    <link rel="stylesheet" href="/public/css/perfilFrm.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container light-style flex-grow-1 container-p-y">
+      <h4 class="font-weight-bold py-3 mb-4">Perfil de Administrador</h4>
+      <div class="card overflow-hidden">
+        <div class="row no-gutters row-bordered row-border-light">
+          <div class="col-md-3 pt-0">
+            <div class="list-group list-group-flush account-settings-links">
+              <a
+                class="list-group-item list-group-item-action active"
+                data-toggle="list"
+                href="#account-general"
+              >
+                <i class="fa-solid fa-user-circle mr-2"></i> General
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                data-toggle="list"
+                href="#account-info"
+              >
+                <i class="fa-solid fa-info-circle mr-2"></i> Información
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                data-toggle="list"
+                href="#account-links"
+              >
+                <i class="fa-solid fa-link mr-2"></i> Enlaces
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                data-toggle="list"
+                href="#account-support"
+              >
+                <i class="fa-solid fa-life-ring mr-2"></i> Soporte
+              </a>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="tab-content">
+              <!-- General Section -->
+              <div class="tab-pane fade active show" id="account-general">
+                <div class="card-body media align-items-center">
+                  <div class="position-relative">
+                    <img
+                      id="profile-photo"
+                      src="../img/TAE.webp"
+                      alt="Avatar del Administrador"
+                      class="d-block ui-w-80 shadow-sm"
+                    />
+                    <label
+                      for="upload-photo"
+                      class="btn btn-sm btn-outline-secondary rounded-circle position-absolute"
+                      style="bottom: 5px; right: 5px"
+                    >
+                      <i class="fa-solid fa-camera"></i>
+                    </label>
+                    <input
+                      type="file"
+                      id="upload-photo"
+                      class="d-none"
+                      accept="image/*"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    id="reset-photo"
+                    class="btn btn-link text-danger ml-3 reset-photo"
+                  >
+                    Restablecer
+                  </button>
+                </div>
+
+                <hr class="border-light m-0" />
+                <div class="card-body">
+                  <div class="form-group">
+                    <label class="form-label">Nombre de usuario</label>
+                    <input
+                      type="text"
+                      class="form-control mb-1"
+                      value="admin_user"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="Admin Nombre"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Correo electrónico</label>
+                    <input
+                      type="email"
+                      class="form-control mb-1"
+                      value="admin@mail.com"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Información Section -->
+              <div class="tab-pane fade" id="account-info">
+                <div class="card-body pb-2">
+                  <div class="form-group">
+                    <label class="form-label">Biografía</label>
+                    <textarea class="form-control" rows="5">
+Breve descripción del administrador...</textarea
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Cumpleaños</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      value="1995-05-03"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">País</label>
+                    <select class="custom-select">
+                      <option>USA</option>
+                      <option selected>Canadá</option>
+                      <option>México</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enlaces Section -->
+              <div class="tab-pane fade" id="account-links">
+                <div class="card-body pb-2">
+                  <div class="form-group">
+                    <label class="form-label">Sitio web</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="https://mi-sitio.com"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Twitter</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="https://twitter.com/admin"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">LinkedIn</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="https://linkedin.com/in/admin"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Soporte Section -->
+              <div class="tab-pane fade" id="account-support">
+                <div class="card-body pb-2">
+                  <div class="form-group">
+                    <label class="form-label">Nueva contraseña</label>
+                    <input type="password" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Repetir nueva contraseña</label>
+                    <input type="password" class="form-control" />
+                  </div>
+                  <hr class="border-light" />
+                  <div class="form-group">
+                    <label class="form-label">Correo de soporte</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      value="soporte@mail.com"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-right mt-3">
+        <button type="button" class="btn btn-primary">
+          <i class="fa-solid fa-floppy-disk"></i> Guardar cambios
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="window.location.href='/src/html/Dashboard.html'"
+        >
+          <i class="fa-solid fa-arrow-left"></i> Volver al dashboard
+        </button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <script>
+    // Obtener referencias a los elementos
+    const profilePhoto = document.getElementById("profile-photo");
+    const uploadPhotoInput = document.getElementById("upload-photo");
+    const resetPhotoButton = document.getElementById("reset-photo");
+
+    // Guardar la URL original de la imagen
+    const originalPhotoSrc = profilePhoto.src;
+
+    // Cambiar la foto al seleccionar un archivo
+    uploadPhotoInput.addEventListener("change", function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          profilePhoto.src = e.target.result; // Actualizar la imagen con la vista previa
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Restablecer la foto original al hacer clic en "Restablecer"
+    resetPhotoButton.addEventListener("click", function () {
+      profilePhoto.src = originalPhotoSrc; // Restaurar la imagen original
+      uploadPhotoInput.value = ""; // Limpiar el campo de archivo
+    });
+  </script>
+</html>

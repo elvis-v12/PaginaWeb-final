@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="/public/css/certificado.css" />
     <link rel="stylesheet" href="/public/css/admin.css" />
     <link rel="stylesheet" href="/public/css/graficos.css" />
+    <link rel="stylesheet" href="/public/css/perfil.css" />
     <title>Admin</title>
   </head>
 
@@ -134,9 +135,47 @@
           <i class="bx bxs-message-dots"></i>
           <span class="mejs">8</span>
         </a>
-        <a href="#" class="profile">
-          <img src="/public/img/people.jpg" />
-        </a>
+        <div class="profile-dropdown">
+          <div onclick="toggle()" class="profile-dropdown-btn">
+            <div class="profile-img">
+              <img src="/public/img/people.jpg" alt="Avatar del administrador" />
+            </div>
+            <span id="Nombre" class="Cndtsaafas">
+              Victoria
+              <i class="fa-solid fa-angle-down"></i>
+            </span>
+          </div>
+          <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item">
+            <a href="/src/html/Perfil.html#account-general">
+              <i class="fa-regular fa-user"></i> Editar Perfil
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="/src/html/Perfil.html#account-info">
+              <i class="fa-solid fa-info-circle"></i> Información
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="/src/html/Perfil.html#account-links">
+              <i class="fa-solid fa-link"></i> Enlaces
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="/src/html/Perfil.html#account-support">
+              <i class="fa-regular fa-circle-question"></i> Soporte
+            </a>
+          </li>
+          <hr />
+          <li class="profile-dropdown-list-item">
+            <a href="" class="regd">
+              <i class="fa-solid fa-arrow-right-from-bracket "></i> Cerrar Sesión
+            </a>
+          </li>
+        </ul>
+        
+        </div>
+        
       </nav>
       <!-- NAVBAR -->
 
@@ -1426,10 +1465,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="/src/js/pago.js"></script>
     <script src="/src/js/EnvioCursos.js"></script>
-
+    <script src="/src/js/desplegarPerfil.js"></script>   
+    <script src="/src/js/RequesName.js"></script>     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.24/jspdf.plugin.autotable.min.js"></script>
+    
 
+    
 
   </body>
 </html>

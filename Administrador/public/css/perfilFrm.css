@@ -1,0 +1,189 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/paisaje.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Hereda el fondo del body */
+    filter: blur(10px); /* Aplica el desenfoque */
+    z-index: -1; /* Envía el pseudo-elemento al fondo */
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.9); 
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  .card:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Navigation Links */
+  .account-settings-links .list-group-item {
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #6c757d;
+    border: none;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .account-settings-links .list-group-item:hover {
+    background-color: #f4f7fc;
+    color: #227c70;
+    border-left: 3px solid #227c70;
+  }
+  
+  .account-settings-links .list-group-item.active {
+    color: #227c70;
+    background-color: #e7f3ef;
+    border-left: 3px solid #227c70;
+    font-weight: bold;
+  }
+  
+  /* Imagen de perfil */
+  .ui-w-80 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #e9ecef;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .ui-w-80:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Botón de subir foto */
+  .upload-photo {
+    font-size: 14px;
+    color: #6c757d;
+    text-decoration: none;
+    border: none;
+    background: none;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .upload-photo i {
+    margin-right: 5px;
+  }
+  
+  .upload-photo:hover {
+    color: #227c70;
+  }
+  
+  /* Botón de restablecer */
+  .reset-photo {
+    font-size: 14px;
+    color: #dc3545;
+    text-decoration: none;
+    border: none;
+    background: none;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .reset-photo:hover {
+    color: #a71d2a;
+  }
+  
+  /* Ocultar input file */
+  .d-none {
+    display: none !important;
+  }
+  
+  /* Texto de ayuda */
+  .text-muted {
+    font-size: 12px;
+    color: #6c757d !important;
+  }
+  
+  /* Inputs and Forms */
+  input,
+  textarea,
+  select {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #227c70;
+    box-shadow: 0 0 5px rgba(34, 124, 112, 0.3);
+    outline: none;
+  }
+  
+  /* Form Labels */
+  .form-label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #495057;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #227c70;
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1e6d61;
+    box-shadow: 0 4px 6px rgba(34, 124, 112, 0.2);
+  }
+  
+  .btn-secondary {
+    background-color: #2a853d;
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #39b620;
+    box-shadow: 0 4px 6px rgba(108, 125, 109, 0.2);
+  }
+  
+  /* Text Details */
+  .text-right {
+    margin-top: 20px;
+  }
+  
+  .text-light {
+    color: #a9a9a9 !important;
+  }

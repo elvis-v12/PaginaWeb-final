@@ -37,11 +37,19 @@ document.querySelector('.input-submit').addEventListener('click', async (e) => {
         console.log('Respuesta del servidor:', data); // Para depurar
 
         if (data.redirectUrl) {
-            console.log('Redirigiendo a:', data.redirectUrl); // Para depurar
+            // Guarda el nombre del usuario en localStorage
+            if (data.data && data.data.nombre) {
+                console.log('Nombre del usuario recibido:', data.data.nombre);
+                localStorage.setItem('userName', data.data.nombre); // Guardar en localStorage
+            }            
+            
+            console.log('Redirigiendo a:', data.redirectUrl); // Depuración
             window.location.href = data.redirectUrl;
         } else {
             alert('No se proporcionó una URL de redirección.');
         }
+        
+        
     } catch (error) {
         console.error('Error en el inicio de sesión:', error);
         alert('Error al conectar con el servidor.');
