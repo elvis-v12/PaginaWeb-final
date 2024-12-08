@@ -1,6 +1,5 @@
- 
-.head-estudiante {
-  display:flex;
+#student-management .head-estudiante {
+  display: flex;
   justify-content: end;
   align-items: center;
   grid-gap: 16px;
@@ -8,27 +7,27 @@
   min-width: 420px;
 }
 
-.head-estudiante h3 {
+#student-management .head-estudiante h3 {
   margin-right: auto;
   font-size: 24px;
   font-weight: 700;
   color: #4a4a4a;
 }
 
-.head-estudiante .bx-filter-estudiante {
+#student-management .head-estudiante .bx-filter-estudiante {
   cursor: pointer;
   color: #6c757d;
 }
 
 /* Estilo del buscador */
-.form-input-estudiante {
+#student-management .form-input-estudiante {
   display: flex;
   align-items: center;
   height: 36px;
   transition: all 0.3s ease;
 }
 
-.form-input-estudiante input {
+#student-management .form-input-estudiante input {
   flex-grow: 1;
   padding: 0 16px;
   height: 100%;
@@ -38,14 +37,14 @@
   border-radius: 36px 0 0 36px;
   outline: none;
   width: 100%;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
-.form-input-estudiante input:focus {
-  width: 110%; /* Expande el input */
-  border-color: #1c2835; /* Cambia a borde azul celeste */
+#student-management .form-input-estudiante input:focus {
+  width: 110%;
+  border-color: #1c2835;
 }
 
-.form-input-estudiante button {
+#student-management .form-input-estudiante button {
   width: 36px;
   height: 100%;
   display: flex;
@@ -60,22 +59,23 @@
   cursor: pointer;
 }
 
-.search-btn-estudiante {
-   background-color: #6c757d;
+#student-management .search-btn-estudiante {
+  background-color: #6c757d;
   padding: 8px 12px;
   border-radius: 5px;
 }
-.search-btn-estudiante:hover {
-  background-color:white;
+
+#student-management .search-btn-estudiante:hover {
+  background-color: white;
 }
 
 /* Estilos responsivos */
 @media screen and (max-width: 576px) {
-  .form-input-estudiante input {
+  #student-management .form-input-estudiante input {
     display: none;
   }
 
-  .form-input-estudiante button {
+  #student-management .form-input-estudiante button {
     width: auto;
     height: auto;
     background: transparent;
@@ -83,12 +83,12 @@
     color: var(--dark);
   }
 
-  .form-input-estudiante.show input {
+  #student-management .form-input-estudiante.show input {
     display: block;
     width: 100%;
   }
 
-  .form-input-estudiante.show button {
+  #student-management .form-input-estudiante.show button {
     width: 36px;
     height: 100%;
     border-radius: 0 36px 36px 0;
@@ -98,25 +98,24 @@
 }
 
 /* Otros estilos ya definidos */
-.student-header {
+#student-management .student-header {
   display: flex;
-  justify-content: right;  
-  margin-bottom: 20px;
+  justify-content: right;
   margin-bottom: 25px;
 }
 
-.student-controls {
+#student-management .student-controls {
   display: flex;
   gap: 10px;
 }
 
-.student-content {
+#student-management .student-content {
   display: flex;
   gap: 20px;
   transition: margin-left 0.3s ease;
 }
 
-.student-table {
+#student-management .student-table {
   flex: 3;
   overflow-x: auto;
   padding: 15px;
@@ -132,13 +131,13 @@
   color: #ece2e1;
   font-size: 1.2em;
   width: auto;
-  height: 30%x;
+  height: 30%;
   text-align: center;
 }
 
-.student-details {
+#student-management .student-details {
   padding: 20px;
-  background-color:#ffffffc9;
+  background-color: #ffffffc9;
   border-radius: 10px;
   border: none;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -147,100 +146,80 @@
   color: rgb(24, 27, 41);
   max-width: 300px;
   font-size: 14px;
-
- 
-}
-.student-details-info p {
-  margin: 5px 0; /* Espaciado entre párrafos */
 }
 
-.student-details-info strong {
+#student-management .student-details-info p {
+  margin: 5px 0;
+}
 
-  color: #262b40; 
+#student-management .student-details-info strong {
+  color: #262b40;
   font-family: "Martian Mono", monospace;
   font-size: 12px;
   font-weight: 800;
 }
 
-.student-details-info span {
-  color: #262b40; 
+#student-management .student-details-info span {
+  color: #2c3e50;
   font-size: 13px;
-  color: #2c3e50; 
 }
 
-
-.student-details.hidden {
+#student-management .student-details.hidden {
   transform: translateX(100%);
   opacity: 0;
 }
 
-
-
-/*nuevo*/
-.profile-header {
+/* Nuevo */
+#student-management .profile-header {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.profile-img {
+#student-management .profile-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 15px;
-  animation: shake-and-rotate 2s ease-in-out infinite; /* Animación con menor intensidad */
+  animation: shake-and-rotate 2s ease-in-out infinite;
 }
 
 @keyframes shake-and-rotate {
   0% {
-    transform: translateX(0) rotate(0deg); /* Posición inicial sin rotación */
+    transform: translateX(0) rotate(0deg);
   }
   25% {
-    transform: translateX(-5px) rotate(-5deg); /* Movimiento a la izquierda con rotación reducida */
+    transform: translateX(-5px) rotate(-5deg);
   }
   50% {
-    transform: translateX(5px) rotate(5deg); /* Movimiento a la derecha con rotación reducida */
+    transform: translateX(5px) rotate(5deg);
   }
   75% {
-    transform: translateX(-5px) rotate(-5deg); /* Movimiento a la izquierda con rotación reducida */
+    transform: translateX(-5px) rotate(-5deg);
   }
   100% {
-    transform: translateX(0) rotate(0deg); /* Regreso a la posición inicial */
+    transform: translateX(0) rotate(0deg);
   }
 }
 
-
-.profile-info {
+#student-management .profile-info {
   flex: 1;
 }
 
-#detail-names {
-  font-size: 1.3rem; /* Tamaño de fuente aumentado */
-  font-weight: bold; /* Hacer el texto en negrita */
-  color:#bbcae7;
-  text-shadow:
-      
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-       ;
-
-  letter-spacing: 1px; /* Espaciado entre letras */
-  transition: text-shadow 0.3s ease-in-out, color 0.3s ease; /* Transición suave para efecto de hover */
+#student-management #detail-names {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #bbcae7;
+  text-shadow: 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 2px 2px 0 #ffffff;
+  letter-spacing: 1px;
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease;
 }
 
-.separator-line {
+#student-management .separator-line {
   height: 2px;
-  background-color: #181c2a; /* Gris claro */
-  margin: 20px 0; /* Espaciado arriba y abajo */
+  background-color: #181c2a;
+  margin: 20px 0;
 }
-
-
-
-
-
-
-/**/
 
 #sidebar.hide ~ #content .student-content {
   gap: 10px;
@@ -260,10 +239,10 @@
   justify-content: flex-end;
 }
 
-.btn-close:hover {
+#student-management .btn-close:hover {
   color: #3a0503;
 }
 
-.btn-close i {
+#student-management .btn-close i {
   pointer-events: none;
 }
