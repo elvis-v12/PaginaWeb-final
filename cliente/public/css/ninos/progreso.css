@@ -7,11 +7,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-body {
-    cursor: url('/public/img/ninos/cursor2.png'), auto;
- 
-}
-
 .container {
     max-width: 1200px;
     margin: 15px auto;

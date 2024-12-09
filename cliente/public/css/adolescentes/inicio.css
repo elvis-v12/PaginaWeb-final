@@ -8,17 +8,42 @@ body.hidden {
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
+    background-image:  url('/public/img/adolescentes/fondo2.jpg');
     background-size: cover;
     margin: 0;
     padding: 0;
 }
 
+@font-face {
+    font-family: "RetroMario";
+    src: url("/public/css/adolescentes/fonts/RetroMario-Regular.otf");
+  }
+
+  body {
+    font-family: "RetroMario", sans-serif;
+  }
 
 /* Estilo del encabezado */
 .header {
     padding: 90px;
     text-align: center;
+    background: 
+    url('/public/img/adolescentes/arbol.png') left bottom no-repeat, /* Imagen del árbol en la parte inferior izquierda */
+    url('/public/img/adolescentes/persona.png') right bottom no-repeat, /* Imagen del niño en la parte inferior derecha */
+    url('/public/img/adolescentes/nube.png') left top no-repeat, /* Imagen del nube en la parte superior izquierda */
+    url('/public/img/adolescentes/nube.png') right top no-repeat, /* Imagen del nube en la parte superior derecha */
+    url('/public/img/adolescentes/suelo2.png') center bottom repeat-x, /* Imagen del suelo repitiéndose horizontalmente */
+    #2E004B; /* Fondo morado oscuro */
+  background-size: auto 200px, auto 200px, auto 180px, auto 180px, auto 80px, cover; /* Ajusta el tamaño de las imágenes */
+  background-position: left bottom 65px, right bottom 65px, left top 65px, right top 65px, center bottom; /* Ajusta las posiciones para que queden encima del suelo */
+  margin-top: 50px;
+  padding: 50px;
+  color: #FF7523;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  text-align: center; /* Centra el texto */
 }
 
 .header-content {
@@ -51,9 +76,13 @@ body {
 /* Títulos Estilo Baby Shark */
 .phrase {
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 4.2rem;
+    font-size: 1.5rem;
+    font-family: 'Press start 2P';
+    line-height: 1.6;
     background: none;
+    letter-spacing: 4px;
+
+    margin-top: 2rem;
 
     /* Propiedades para compatibilidad */
     background-clip: text;
@@ -62,10 +91,8 @@ body {
 
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #a97c3a,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
+        -2px -2px 0 #ffffff,
+        
         6px 6px 10px rgba(0, 0, 0, 0.3);
     /* Sombra para dar profundidad */
 
@@ -75,8 +102,14 @@ body {
 
 /* Estilo específico para "¡Programa tu éxito!" */
 .highlight-exito {
-    font-size: 6.5rem;
+    font-family: 'RetroMario', sans-serif;
+    font-size: 7.3rem;
     color: #FF4081;
+    line-height: 1.1; /* Aumenta el espacio entre líneas */
+    letter-spacing: 1;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
 
     /* Propiedades para compatibilidad */
     background-clip: text;
@@ -84,7 +117,7 @@ body {
     -webkit-text-fill-color: transparent;
 
     text-shadow:
-        -2px -2px 0 #6fb94d,
+        -2px -2px 0 #b692e9,
         2px -2px 0 #ffffff,
         -2px 2px 0 #ffffff,
         2px 2px 0 #ffffff,
@@ -108,11 +141,11 @@ body {
 
 /* Ajustes para el logo */
 .imagen-fondo {
-    width: 550px; /* Ancho del contenedor */
-    height: 350px; /* Altura del contenedor */
+    width: 700px; /* Ancho del contenedor */
+    height: 500px; /* Altura del contenedor */
     margin-left: 10px; 
     
-    background-image: url('/public/img/adolescentes/minecraftlogo.gif');
+    background-image: url('/public/img/adolescentes/mor.gif');
     background-size: contain; 
     background-repeat: no-repeat; 
     background-position: center; 
@@ -276,7 +309,7 @@ body {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(224, 247, 250, 0.9);
+    background-color: rgba(253, 217, 183, 0.9);
 }
 
 /* Estilo para las diapositivas del carrusel */
@@ -330,27 +363,28 @@ body {
 .title-quality,
 .title-programming,
 .title-exclusive {
-    font-family: 'Bubblegum Sans', cursive;
-    color: #45c5f8;
-    font-size: 2.5rem;
+    font-family: 'Press start 2P';
+    color: #c25e24;
+    font-size: 2rem;
     /* Ajuste de tamaño de fuente */
     margin-bottom: 10px;
 }
 
 .fade-text {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-size: 1.2rem;
-    color: #333;
+    color: #333333cd;
     margin-bottom: 50px;
+    letter-spacing: 1;
 }
 
 .fade-text2 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    ;
-    font-size: 1.2rem;
-    color: #333;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.3rem;
+    color: #333333cd;
     margin-bottom: 50px;
     text-align: justify;
+    letter-spacing: 1;
 }
 
 /* Estilo para los botones del carrusel */
@@ -401,10 +435,10 @@ body {
     justify-content: center; /* centrar horizontal */
     align-items: center; /* centrar vertical */
     padding: 40px; /* Espaciado en la sección */
-    background-image: url('/public/img/adolescentes/cesped.jpg'); /* Textura de burbujas */
+    background-image:  url('/public/img/adolescentes/fondo3.jpeg');
     background-size: cover; /* Asegúrate de que la imagen cubra el área */
     background-position: center; /* Centra la imagen */
-    border-radius: 15px; /* Bordes redondeados */
+ 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     margin: 0 10%; /* Reduce los bordes laterales */
     
@@ -418,8 +452,7 @@ body {
     left: -10px; /* Ajusta el borde izquierdo */
     right: -10px; /* Ajusta el borde derecho */
     bottom: -10px; /* Ajusta el borde inferior */
-    border: 10px solid #fff; /* Cambia el color según lo necesites */
-    border-radius: 25px; /* Bordes más redondeados para el borde exterior */
+    border: 10px solid #ffffff; /* Cambia el color según lo necesites */
     z-index: -1; /* Coloca el borde detrás del contenedor */
     background-color: #fff; /* Color del fondo del borde para ocultar el hueco */
 }
@@ -436,8 +469,9 @@ body {
 
 .title {
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 2.7rem;
+    align-items: center;
+    font-family: 'Press start 2P';
+    font-size: 2rem;
     /* Color del texto del título */
     margin-bottom: 20px;
     /* Espaciado inferior del título */
@@ -446,10 +480,10 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
+    color: #441b71;
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #6fb94d,
+        -2px -2px 0 #441b71,
         2px -2px 0 #ffffff,
         -2px 2px 0 #ffffff,
         2px 2px 0 #ffffff,
@@ -483,7 +517,7 @@ body {
 .option:hover {
     transform: scale(1.05);
     /* Efecto de zoom al pasar el mouse */
-    background-color: #A7A8AA;
+    background-color: #ff9e2c;
     /* Cambia el color de fondo al pasar el mouse */
     color: white;
     /* Cambia el color del texto al pasar el mouse */
@@ -531,7 +565,7 @@ body {
 /* Estilo para cada recuadro */
 .recuadro {
     background-color: #ffffff;
-    border: 2px solid #6fb94d;
+    border: 2px solid #f98e13;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 300px; /* Ancho fijo para cada plan */
@@ -570,21 +604,22 @@ body {
 /* Estilo para el título */
 .anual {
     font-size: 1.5rem;
-    color: #6fb94d;
+    color: #ff9e2c;
     margin-bottom: 10px;
 }
 
 /* Estilo para el texto principal */
 .texto-principal {
     font-size: 2rem;
-    color: #333;
+    color: #2a1345;
     margin: 15px 0;
+    font-family: "Orbitron", sans-serif;
 }
 
 /* Estilo para el precio */
 .pago {
     font-size: 1.8rem;
-    color: #6fb94d;
+    color: #e18316;
     margin: 15px 0;
 }
 
@@ -601,7 +636,7 @@ body {
 
 /* Estilo para el botón */
 .boton-plan {
-    background-color: #6fb94d;
+    background-color:#ff8800;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -614,7 +649,7 @@ body {
 
 /* Efecto de hover en el botón */
 .boton-plan:hover {
-    background-color: #30e1e7;
+    background-color: #cd720b;
 }
 
 .bandera {
@@ -662,6 +697,33 @@ body {
 .box:hover {
     transform: translateY(-10px); /* Efecto de "levitación" al pasar el mouse */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para un efecto más destacado */
+}
+
+.titulo-cuadros {
+    text-align: center;
+    font-family: 'Press start 2P';
+    font-size: 2.4rem;
+    background: none;
+
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Sombra para crear el borde grueso blanco y la curvatura */
+    text-shadow:
+        -2px -2px 0 #f5911e,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+        6px 6px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidad */
+
+    margin-top: 20px;
+    display: block;
+
+    /* Animación de burbuja */
+    animation: bubble 3s infinite ease-in-out;
 }
 
 /* Estilo para la imagen circular */

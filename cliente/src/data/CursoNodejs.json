@@ -1,0 +1,105 @@
+{
+    "basico": {
+      "titulo": "Curso de Node.js para Niños",
+      "subtitulo": "Curso Básico de Node.js para Niños",
+      "nivel": "BÁSICO",
+      "descripcion": "En este curso divertido, los niños aprenderán lo básico de Node.js mientras crean proyectos emocionantes. Desde construir su propio servidor web hasta gestionar archivos, se adentrarán en la programación y la creación de aplicaciones web de manera sencilla y creativa. ¡Aprende y juega mientras creas cosas geniales con Node.js!",
+      "imagen": "/public/img/ninos/info.png",
+      "recursos": [
+        {
+          "titulo": "Introducción a Node.js: ¿Qué es y para qué sirve?",
+          "duracion": "01:50 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Instalación y Configuración de Node.js en tu Computadora",
+          "duracion": "01:02 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Trabajando con el Sistema de Archivos (FS) en Node.js",
+          "duracion": "01:50 min",
+          "progreso": "80%"
+        },
+        {
+          "titulo": "Creación de un Servidor Básico con Node.js y HTTP",
+          "duracion": "01:50 min",
+          "progreso": "10%"
+        },
+        {
+          "titulo": "Manejo de Paquetes y Dependencias con npm",
+          "duracion": "01:50 min",
+          "progreso": "50%"
+        }
+      ]
+    },
+    "intermedio": {
+      "titulo": "Curso de Node.js para Adolescentes",
+      "subtitulo": "Curso Intermedio de Node.js para Adolescentes",
+      "nivel": "INTERMEDIO",
+      "descripcion": "Este curso está diseñado para adolescentes que ya han aprendido lo básico de Node.js y quieren dar un paso más. Aquí aprenderán a trabajar con eventos, Streams y cómo crear APIs RESTful. Además, abordaremos temas como manejo de errores y bases de datos, todo con ejemplos prácticos que refuercen lo aprendido.",
+      "imagen": "/public/img/ninos/info.png",
+      "recursos": [
+        {
+          "titulo": "Conceptos Avanzados de Eventos y Streams",
+          "duracion": "02:00 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Creación de una API RESTful con Node.js",
+          "duracion": "02:30 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Manejo de Errores y Debugging en Node.js",
+          "duracion": "01:45 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Bases de Datos con Node.js y MongoDB",
+          "duracion": "02:15 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Autenticación y Autorización con JWT",
+          "duracion": "02:10 min",
+          "progreso": "80%"
+        }
+      ]
+    },
+    "avanzado": {
+      "titulo": "Curso de Node.js para Adultos",
+      "subtitulo": "Curso Avanzado de Node.js para Adultos",
+      "nivel": "AVANZADO",
+      "descripcion": "Este curso avanzado está dirigido a adultos que buscan perfeccionar sus habilidades en Node.js. Aprenderás sobre arquitectura escalable, optimización de rendimiento, implementación de WebSockets, microservicios y más. Ideal para quienes desean trabajar en aplicaciones de alto rendimiento y aprender las mejores prácticas para desarrollar sistemas modernos.",
+      "imagen": "/public/img/ninos/info.png",
+      "recursos": [
+        {
+          "titulo": "Patrones de Diseño y Buenas Prácticas",
+          "duracion": "03:00 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Implementación de WebSockets para Comunicación en Tiempo Real",
+          "duracion": "02:45 min",
+          "progreso": "90%"
+        },
+        {
+          "titulo": "Optimización de Rendimiento en Aplicaciones Node.js",
+          "duracion": "02:30 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Microservicios y Arquitectura Distribuida con Node.js",
+          "duracion": "02:50 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Despliegue de Aplicaciones Node.js en Servidores Cloud",
+          "duracion": "03:10 min",
+          "progreso": "80%"
+        }
+      ]
+    }
+  }
+  

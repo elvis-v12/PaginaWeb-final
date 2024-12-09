@@ -1,0 +1,94 @@
+{
+    "basico": {
+        "titulo": "Curso de MySQL para niños",
+        "subtitulo": "Curso de MySQL\nbásico para niños",
+        "nivel": "BÁSICO",
+        "descripcion": "En este emocionante y creativo curso de MySQL para niños, aprenderás los fundamentos para diseñar y gestionar bases de datos dinámicas. No necesitas experiencia previa. Aquí te enseñaremos paso a paso, con explicaciones simples, para que aprendas mientras te diviertes. ¡Comienza tu aventura en el mundo de las bases de datos!",
+        "imagen": "/public/img/ninos/bannerMS.jpg",
+        "recursos": [
+            {
+                "titulo": "Introducción a MySQL",
+                "duracion": "01:50 min",
+                "progreso": "40%"
+            },
+            {
+                "titulo": "Creación de Tablas",
+                "duracion": "01:02 min",
+                "progreso": "60%"
+            },
+            {
+                "titulo": "Consultas Básicas",
+                "duracion": "01:50 min",
+                "progreso": "80%"
+            },
+            {
+                "titulo": "Inserción de Datos",
+                "duracion": "01:50 min",
+                "progreso": "10%"
+            },
+            {
+                "titulo": "Modificación de Datos",
+                "duracion": "01:50 min",
+                "progreso": "50%"
+            }
+        ]
+    },
+    "intermedio": {
+        "titulo": "Curso de MySQL intermedio",
+        "subtitulo": "Curso de MySQL\nintermedio",
+        "nivel": "INTERMEDIO",
+        "descripcion": "Este curso intermedio de MySQL está diseñado para quienes ya tienen bases sólidas y desean profundizar en relaciones entre tablas, funciones avanzadas y optimización de consultas. Aprenderás a gestionar datos de manera eficiente, utilizando técnicas y herramientas prácticas.",
+        "imagen": "/public/img/ninos/bannerMS3.jpg",
+        "recursos": [
+            {
+                "titulo": "Relaciones entre Tablas",
+                "duracion": "02:00 min",
+                "progreso": "40%"
+            },
+            {
+                "titulo": "Consultas Avanzadas",
+                "duracion": "01:45 min",
+                "progreso": "70%"
+            },
+            {
+                "titulo": "Funciones y Cálculos",
+                "duracion": "02:30 min",
+                "progreso": "50%"
+            },
+            {
+                "titulo": "Optimización Básica",
+                "duracion": "03:00 min",
+                "progreso": "80%"
+            }
+        ]
+    },
+    "avanzado": {
+        "titulo": "Curso de MySQL avanzado",
+        "subtitulo": "Curso de MySQL\navanzado",
+        "nivel": "AVANZADO",
+        "descripcion": "Domina las herramientas avanzadas de MySQL. Aprende sobre vistas, triggers y replicación para gestionar grandes bases de datos. Este curso avanzado te prepara para manejar sistemas complejos y optimizar su rendimiento.",
+        "imagen": "/public/img/ninos/bannerMS2.jpg",
+        "recursos": [
+            {
+                "titulo": "Implementación de Vistas",
+                "duracion": "03:00 min",
+                "progreso": "50%"
+            },
+            {
+                "titulo": "Uso de Triggers",
+                "duracion": "04:00 min",
+                "progreso": "70%"
+            },
+            {
+                "titulo": "Replicación de Datos",
+                "duracion": "03:30 min",
+                "progreso": "60%"
+            },
+            {
+                "titulo": "Optimización Avanzada",
+                "duracion": "03:30 min",
+                "progreso": "80%"
+            }
+        ]
+    }
+}

@@ -11,11 +11,6 @@ body {
     padding: 0;
 }
 
-body {
-    cursor: url('/public/img/ninos/cursor2.png'), auto;
- 
-}
-
 .soporte {
     max-width: 1200px;
     margin: 50px auto;

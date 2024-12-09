@@ -1,0 +1,95 @@
+{
+    "basico": {
+      "titulo": "Curso de MySQL para Niños",
+      "subtitulo": "Curso Básico de MySQL para Niños",
+      "nivel": "BÁSICO",
+      "descripcion": "En este curso divertido de MySQL, aprenderás a crear bases de datos para guardar y organizar información de manera sencilla. No necesitas experiencia previa. Te enseñaremos paso a paso con ejemplos fáciles de entender. Al final, podrás crear tus propias bases de datos y hacer consultas para encontrar lo que necesites. ¡Este curso te ayudará a dar tus primeros pasos en el mundo de la programación y las bases de datos!",
+      "imagen": "/public/img/ninos/bannerMS.jpg",
+      "recursos": [
+        {
+          "titulo": "Introducción a MySQL",
+          "duracion": "01:50 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Creación de Tablas",
+          "duracion": "01:02 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Consultas Básicas",
+          "duracion": "01:50 min",
+          "progreso": "80%"
+        },
+        {
+          "titulo": "Inserción de Datos",
+          "duracion": "01:50 min",
+          "progreso": "10%"
+        },
+        {
+          "titulo": "Modificación de Datos",
+          "duracion": "01:50 min",
+          "progreso": "50%"
+        }
+      ]
+    },
+    "intermedio": {
+      "titulo": "Curso de MySQL para Adolescentes",
+      "subtitulo": "Curso Intermedio de MySQL para Adolescentes",
+      "nivel": "INTERMEDIO",
+      "descripcion": "Este curso está pensado para adolescentes que ya saben lo básico de MySQL y quieren profundizar en temas como las relaciones entre tablas, consultas más complejas y cómo optimizar el rendimiento de las bases de datos. Aprenderás a manejar mejor los datos y a trabajar con herramientas avanzadas para hacer que tus bases de datos funcionen más rápido. Si ya tienes una buena base, este curso te llevará al siguiente nivel.",
+      "imagen": "/public/img/adolescentes/bannerMS3.jpg",
+      "recursos": [
+        {
+          "titulo": "Relaciones entre Tablas",
+          "duracion": "02:00 min",
+          "progreso": "40%"
+        },
+        {
+          "titulo": "Consultas Avanzadas",
+          "duracion": "01:45 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Funciones y Cálculos",
+          "duracion": "02:30 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Optimización Básica",
+          "duracion": "03:00 min",
+          "progreso": "80%"
+        }
+      ]
+    },
+    "avanzado": {
+      "titulo": "Curso de MySQL para Adultos",
+      "subtitulo": "Curso Avanzado de MySQL para Adultos",
+      "nivel": "AVANZADO",
+      "descripcion": "Este curso avanzado está diseñado para adultos que quieren dominar MySQL y trabajar con bases de datos complejas. Aprenderás a gestionar grandes volúmenes de datos utilizando vistas, triggers y replicación, además de cómo optimizar el rendimiento para que tus bases de datos sean rápidas y eficientes. Si quieres convertirte en un experto en bases de datos, este curso te ayudará a adquirir las habilidades necesarias.",
+      "imagen": "/public/img/adultos/bannerMS2.jpg",
+      "recursos": [
+        {
+          "titulo": "Implementación de Vistas",
+          "duracion": "03:00 min",
+          "progreso": "50%"
+        },
+        {
+          "titulo": "Uso de Triggers",
+          "duracion": "04:00 min",
+          "progreso": "70%"
+        },
+        {
+          "titulo": "Replicación de Datos",
+          "duracion": "03:30 min",
+          "progreso": "60%"
+        },
+        {
+          "titulo": "Optimización Avanzada",
+          "duracion": "03:30 min",
+          "progreso": "80%"
+        }
+      ]
+    }
+  }
+  

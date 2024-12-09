@@ -1,0 +1,104 @@
+{
+  "basico": {
+    "titulo": "Curso de Cinema 4D para Niños",
+    "subtitulo": "Curso Básico de Cinema 4D para Niños",
+    "nivel": "BÁSICO",
+    "descripcion": "En este curso emocionante, los niños aprenderán a crear sus propias animaciones en 3D, como las que ven en sus películas y videojuegos favoritos. ¡No necesitas experiencia previa! Te enseñaremos desde lo más básico, de manera clara y divertida. Al finalizar el curso, podrás crear tus propios personajes y animaciones en 3D para compartirlas con tus amigos y familiares. ¡Este curso es perfecto para comenzar a explorar el mundo de la animación digital!",
+    "imagen": "/public/img/ninos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "¡Bienvenido al Mundo 3D! – Introducción a Cinema 4D",
+        "duracion": "01:50 min",
+        "progreso": "40%"
+      },
+      {
+        "titulo": "Conoce la Herramienta: Navegando en Cinema 4D",
+        "duracion": "01:02 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "¡Manos a la Obra! Cómo Crear tu Primer Objeto en 3D",
+        "duracion": "01:50 min",
+        "progreso": "80%"
+      },
+      {
+        "titulo": "Dando Vida a tus Creaciones: Modelado Básico",
+        "duracion": "01:50 min",
+        "progreso": "10%"
+      },
+      {
+        "titulo": "Personajes Divertidos: Diseñando tu Primer Personaje en 3D",
+        "duracion": "01:50 min",
+        "progreso": "50%"
+      }
+    ]
+  },
+  "intermedio": {
+    "titulo": "Curso de Cinema 4D para Adolescentes",
+    "subtitulo": "Curso Intermedio de Cinema 4D para Adolescentes",
+    "nivel": "INTERMEDIO",
+    "descripcion": "Este curso intermedio está diseñado para adolescentes que ya conocen lo básico y quieren llevar sus habilidades de Cinema 4D al siguiente nivel. Aprenderán a agregar texturas, crear iluminación avanzada y animar objetos de forma natural. Además, explorarán la creación de escenarios en 3D para dar vida a sus proyectos de manera más profesional. Es el curso ideal para aquellos que desean aprender más sobre el diseño y la animación en 3D.",
+    "imagen": "/public/img/adolescentes/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Iluminación Creativa en Cinema 4D",
+        "duracion": "02:00 min",
+        "progreso": "40%"
+      },
+      {
+        "titulo": "Creando Texturas Realistas",
+        "duracion": "01:45 min",
+        "progreso": "70%"
+      },
+      {
+        "titulo": "Animación de Objetos: Movimientos Naturales",
+        "duracion": "02:30 min",
+        "progreso": "50%"
+      },
+      {
+        "titulo": "Renderizado Básico: Da Vida a tus Escenas",
+        "duracion": "01:30 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Diseño de Escenarios en 3D",
+        "duracion": "03:00 min",
+        "progreso": "80%"
+      }
+    ]
+  },
+  "avanzado": {
+    "titulo": "Curso de Cinema 4D para Adultos",
+    "subtitulo": "Curso Avanzado de Cinema 4D para Adultos",
+    "nivel": "AVANZADO",
+    "descripcion": "Este curso avanzado está diseñado para profesionales o entusiastas del 3D que desean dominar Cinema 4D. Aprenderás técnicas avanzadas como simulaciones físicas, creación de partículas, modelado avanzado y renderizado de alta calidad. Este curso está orientado a quienes buscan producir animaciones y escenas de calidad profesional, optimizando su flujo de trabajo y habilidades técnicas para proyectos complejos.",
+    "imagen": "/public/img/adultos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Simulaciones Físicas en Cinema 4D",
+        "duracion": "03:00 min",
+        "progreso": "50%"
+      },
+      {
+        "titulo": "Trabajando con Partículas",
+        "duracion": "04:00 min",
+        "progreso": "70%"
+      },
+      {
+        "titulo": "Modelado Avanzado: Técnicas Profesionales",
+        "duracion": "03:30 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Renderizado de Alta Calidad",
+        "duracion": "02:45 min",
+        "progreso": "90%"
+      },
+      {
+        "titulo": "Creando Animaciones Complejas",
+        "duracion": "03:30 min",
+        "progreso": "80%"
+      }
+    ]
+  }
+}

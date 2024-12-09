@@ -6,11 +6,6 @@ body {
     padding: 20px;
 }
 
-body {
-    cursor: url('/public/img/ninos/cursor2.png'), auto;
- 
-}
-
 .container {
     max-width: 800px;
     margin: auto;

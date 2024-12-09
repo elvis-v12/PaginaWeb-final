@@ -1,0 +1,104 @@
+{
+  "basico": {
+    "titulo": "Curso de JavaScript para Niños",
+    "subtitulo": "Curso Básico de JavaScript para Niños",
+    "nivel": "BÁSICO",
+    "descripcion": "En este curso emocionante de JavaScript, aprenderás a crear páginas web interactivas como las que ves en tus redes favoritas. ¡No necesitas experiencia previa! Te enseñaremos desde lo más básico, usando ejemplos simples y divertidos. Aprenderás a hacer que las cosas en la pantalla se muevan, a responder cuando alguien haga clic y a guardar información. Al finalizar, podrás crear tus propias aplicaciones para compartir con amigos y familiares. ¡Este curso es perfecto para comenzar a programar!",
+    "imagen": "/public/img/ninos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Introducción a JavaScript: ¡Hola, Mundo!",
+        "duracion": "01:50 min",
+        "progreso": "40%"
+      },
+      {
+        "titulo": "Variables y Tipos de Datos: Guardando Información",
+        "duracion": "01:02 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Condicionales: Tomando Decisiones",
+        "duracion": "01:50 min",
+        "progreso": "80%"
+      },
+      {
+        "titulo": "Bucles: Repetir y Repetir",
+        "duracion": "01:50 min",
+        "progreso": "10%"
+      },
+      {
+        "titulo": "Funciones: Reutilizando Código",
+        "duracion": "01:50 min",
+        "progreso": "50%"
+      }
+    ]
+  },
+  "intermedio": {
+    "titulo": "Curso de JavaScript para Adolescentes",
+    "subtitulo": "Curso Intermedio de JavaScript para Adolescentes",
+    "nivel": "INTERMEDIO",
+    "descripcion": "Este curso está diseñado para adolescentes que ya tienen una base de JavaScript y quieren llevar sus habilidades al siguiente nivel. Aprenderán a manipular los elementos de una página web usando el DOM y responder a eventos interactivos como hacer clic en botones o mover el mouse. Además, explorarán el uso de arrays, objetos y aprenderán a trabajar con asincronía. Si estás listo para crear proyectos web más dinámicos, este curso es para ti.",
+    "imagen": "/public/img/adolescentes/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Manipulación del DOM",
+        "duracion": "02:00 min",
+        "progreso": "40%"
+      },
+      {
+        "titulo": "Eventos en JavaScript",
+        "duracion": "01:45 min",
+        "progreso": "70%"
+      },
+      {
+        "titulo": "Manejo de Arrays y Objetos",
+        "duracion": "02:30 min",
+        "progreso": "50%"
+      },
+      {
+        "titulo": "Promesas y Asincronía",
+        "duracion": "01:30 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Introducción a APIs",
+        "duracion": "03:00 min",
+        "progreso": "80%"
+      }
+    ]
+  },
+  "avanzado": {
+    "titulo": "Curso de JavaScript para Adultos",
+    "subtitulo": "Curso Avanzado de JavaScript para Adultos",
+    "nivel": "AVANZADO",
+    "descripcion": "Este curso avanzado está diseñado para desarrolladores que desean llevar sus habilidades de JavaScript a un nivel profesional. Aprenderás patrones de diseño, optimización de rendimiento y cómo estructurar tu código de manera modular. Además, te introducirás a frameworks modernos como React, que te permitirán crear aplicaciones web escalables y profesionales. Si estás listo para construir aplicaciones web de alta calidad, este curso es para ti.",
+    "imagen": "/public/img/adultos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Patrones de Diseño en JavaScript",
+        "duracion": "03:00 min",
+        "progreso": "50%"
+      },
+      {
+        "titulo": "Optimización y Rendimiento",
+        "duracion": "04:00 min",
+        "progreso": "70%"
+      },
+      {
+        "titulo": "JavaScript Modular",
+        "duracion": "03:30 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Frameworks: Introducción a React",
+        "duracion": "02:45 min",
+        "progreso": "90%"
+      },
+      {
+        "titulo": "Creación de Librerías Personalizadas",
+        "duracion": "03:30 min",
+        "progreso": "80%"
+      }
+    ]
+  }
+}

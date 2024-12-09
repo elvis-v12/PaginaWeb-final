@@ -1,0 +1,104 @@
+{
+  "basico": {
+    "titulo": "Curso de HTML para Niños",
+    "subtitulo": "Curso Básico de HTML para Niños",
+    "nivel": "BÁSICO",
+    "descripcion": "En este curso, los niños aprenderán los fundamentos de HTML de una manera divertida y fácil de entender. A través de proyectos creativos, como crear su propia página web y diseñar contenido visual, los estudiantes descubrirán cómo estructurar información en línea y expresarse de forma digital. Este curso les proporcionará una introducción básica al desarrollo web, con actividades interactivas y ejemplos visuales que estimularán su imaginación y curiosidad.",
+    "imagen": "/public/img/ninos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "¡Crea tu Primer Sitio Web con HTML!",
+        "duracion": "01:50 min",
+        "progreso": "40%"
+      },
+      {
+        "titulo": "Conoce las Etiquetas Básicas de HTML",
+        "duracion": "01:02 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Proyectos Divertidos: Diseña tu Propia Página Web",
+        "duracion": "01:50 min",
+        "progreso": "80%"
+      },
+      {
+        "titulo": "Aprendiendo a Organizar el Contenido con HTML",
+        "duracion": "01:50 min",
+        "progreso": "10%"
+      },
+      {
+        "titulo": "¡Explora el Mundo del Desarrollo Web!",
+        "duracion": "01:50 min",
+        "progreso": "50%"
+      }
+    ]
+  },
+  "intermedio": {
+    "titulo": "Curso de HTML para Adolescentes",
+    "subtitulo": "Curso Intermedio de HTML para Adolescentes",
+    "nivel": "INTERMEDIO",
+    "descripcion": "Este curso intermedio está diseñado para adolescentes que ya tienen conocimientos básicos de HTML y desean aprender a construir sitios web más dinámicos. Aquí, explorarán conceptos como formularios, multimedia, y la creación de páginas web más interactivas. Además, aprenderán a mejorar la estructura y accesibilidad de sus sitios web, convirtiéndose en desarrolladores más capacitados para proyectos personales o escolares.",
+    "imagen": "/public/img/adolescentes/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Formularios Interactivos en HTML",
+        "duracion": "02:00 min",
+        "progreso": "40%"
+      },
+      {
+        "titulo": "Añadiendo Multimedia a tus Páginas Web",
+        "duracion": "01:45 min",
+        "progreso": "70%"
+      },
+      {
+        "titulo": "HTML Semántico: Mejorando la Estructura",
+        "duracion": "02:30 min",
+        "progreso": "50%"
+      },
+      {
+        "titulo": "Crear Páginas Web Responsivas",
+        "duracion": "01:30 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Optimiza tus Sitios Web para Todos los Dispositivos",
+        "duracion": "03:00 min",
+        "progreso": "80%"
+      }
+    ]
+  },
+  "avanzado": {
+    "titulo": "Curso Avanzado de HTML para Adultos",
+    "subtitulo": "HTML Avanzado: Optimización y Buenas Prácticas para Profesionales",
+    "nivel": "AVANZADO",
+    "descripcion": "Este curso avanzado está dirigido a adultos que desean perfeccionar sus habilidades en HTML, con un enfoque en la creación de sitios web profesionales. Aprenderás sobre accesibilidad, SEO, y rendimiento web, además de trabajar con APIs y herramientas modernas. A lo largo del curso, descubrirás cómo construir sitios web más rápidos, accesibles y optimizados, aplicando prácticas avanzadas que te ayudarán a destacarte en el mundo del desarrollo web profesional.",
+    "imagen": "/public/img/adultos/programador.jpg",
+    "recursos": [
+      {
+        "titulo": "Accesibilidad Web: Mejores Prácticas para Todos",
+        "duracion": "03:00 min",
+        "progreso": "50%"
+      },
+      {
+        "titulo": "SEO con HTML: Optimización para Motores de Búsqueda",
+        "duracion": "04:00 min",
+        "progreso": "70%"
+      },
+      {
+        "titulo": "Integrando APIs en tus Proyectos Web",
+        "duracion": "03:30 min",
+        "progreso": "60%"
+      },
+      {
+        "titulo": "Mejorando el Rendimiento Web: Optimiza tu Sitio",
+        "duracion": "02:45 min",
+        "progreso": "90%"
+      },
+      {
+        "titulo": "Prácticas Avanzadas: Desarrolla Webs Rápidas y Eficientes",
+        "duracion": "03:30 min",
+        "progreso": "80%"
+      }
+    ]
+  }
+}

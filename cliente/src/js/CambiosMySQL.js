@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const curso = urlParams.get("curso");
-    const nivel = urlParams.get("nivel");
+    const curso = urlParams.get("curso"); // ejemplo: "mysql"
+    const nivel = urlParams.get("nivel"); // ejemplo: "basico"
 
     if (!curso || !nivel) {
         console.error("Faltan parámetros en la URL.");
@@ -24,26 +24,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        // Actualizar elementos del DOM
-        const titleElement = document.querySelector(".title");
-        if (titleElement) {
-            titleElement.textContent = datosCurso.titulo || "Título no disponible";
-        }
-
-        const subtitleElement = document.querySelector(".subtitle");
-        if (subtitleElement) {
-            subtitleElement.textContent = datosCurso.subtitulo || "Subtítulo no disponible";
-        }
-
-        const levelElement = document.querySelector(".level");
-        if (levelElement) {
-            levelElement.textContent = datosCurso.nivel || "Nivel no especificado";
-        }
-
-        const descriptionElement = document.querySelector(".description");
-        if (descriptionElement) {
-            descriptionElement.textContent = datosCurso.descripcion || "Descripción no disponible";
-        }
+        document.querySelector(".title").textContent = datosCurso.titulo || "Título no disponible";
+        document.querySelector(".subtitle").textContent = datosCurso.subtitulo || "Subtítulo no disponible";
+        document.querySelector(".level").textContent = datosCurso.nivel || "Nivel no especificado";
+        document.querySelector(".description").textContent = datosCurso.descripcion || "Descripción no disponible";
 
         const imageElement = document.querySelector(".image-container img");
         if (imageElement) {
@@ -53,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const recursosContainer = document.querySelector(".recurso-lista");
         if (recursosContainer) {
-            recursosContainer.innerHTML = ""; // Limpia los recursos previos
+            recursosContainer.innerHTML = "";
             datosCurso.recursos.forEach((recurso) => {
                 const recursoHTML = `
                     <div class="content-card">
@@ -64,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 <i class="fas fa-clock mr-1"></i> ${recurso.duracion}
                             </div>
                             <div class="progress-bar">
-                                <div class="progress-bar-fill" style="width: ${recurso.progreso || 0}%;"></div>
+                                <div class="progress-bar-fill" style="width: ${recurso.progreso};"></div>
                             </div>
                         </div>
                     </div>`;
@@ -73,10 +57,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     } catch (error) {
         console.error("Error al procesar el archivo JSON:", error);
-        const errorContainer = document.querySelector(".error-container");
-        if (errorContainer) {
-            errorContainer.textContent = "Hubo un error al cargar el curso. Por favor, inténtalo de nuevo más tarde.";
-            errorContainer.style.display = "block";
-        }
     }
 });

@@ -5,60 +5,11 @@
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/ninos/burbuja.jpg') no-repeat center center fixed;
+    background: url('/public/img/ninos/oceano.png') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
     padding-top: 80px;
-}
-
-body {
-    cursor: url('/public/img/ninos/cursor2.png'), auto;
- 
-}
-
-@keyframes bubble {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-        /* Sube el texto */
-    }
-
-    100% {
-        transform: translateY(0);
-        /* Vuelve a la posición original */
-    }
-}
-
-
-.titulo-cuadros {
-    text-align: center;
-    font-family: 'Coiny';
-    font-size: 4.2rem;
-    background: none;
-
-    /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* Sombra para crear el borde grueso blanco y la curvatura */
-    text-shadow:
-        -2px -2px 0 #FFC107,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra para dar profundidad */
-
-    margin-top: 20px;
-    display: block;
-
-    /* Animación de burbuja */
-    animation: bubble 3s infinite ease-in-out;
 }
 
 @keyframes bubble {

@@ -4,7 +4,7 @@
     "subtitulo": "Curso de JavaScript\nbásico para niños",
     "nivel": "BÁSICO",
     "descripcion": "En este emocionante curso de JavaScript para niños, aprenderás a hacer tus propias páginas dinámicas como las que ves en tus redes favoritas. ¡No necesitas experiencia previa! Aquí te enseñaremos desde lo más básico, usando explicaciones claras y fáciles de seguir, para que te diviertas mientras aprendes. Al finalizar, podrás guardar y compartir tus creaciones con tus amigos, familiares o profesores. ¡Este curso es para ti!",
-    "imagen": "/public/img/ninos/programador.png",
+    "imagen": "/public/img/ninos/programador.jpg",
     "recursos": [
       {
         "titulo": "Introducción a JavaScript: ¡Hola, Mundo!",
@@ -38,7 +38,7 @@
     "subtitulo": "Curso de JavaScript\nIntermedio",
     "nivel": "INTERMEDIO",
     "descripcion": "Lleva tus conocimientos de JavaScript al siguiente nivel. Aprende a manipular elementos de una página web usando el DOM y a responder a eventos interactivos. Desarrolla habilidades avanzadas para crear experiencias web dinámicas, manejando arrays, objetos y asincronía. ¡Explora cómo integrar APIs y más! Este curso es perfecto para quienes buscan profundizar en programación web.",
-    "imagen": "/public/img/ninos/programador.png",
+    "imagen": "/public/img/ninos/programador.jpg",
     "recursos": [
       {
         "titulo": "Manipulación del DOM",
@@ -72,7 +72,7 @@
     "subtitulo": "Curso de JavaScript\nAvanzado",
     "nivel": "AVANZADO",
     "descripcion": "Este curso avanzado te ayudará a dominar JavaScript y llevar tus habilidades a un nivel profesional. Aprende patrones de diseño, optimización de rendimiento y cómo estructurar código modular. Además, explora el mundo de los frameworks modernos como React, para desarrollar aplicaciones web escalables. Este curso está diseñado para desarrolladores que desean sobresalir.",
-    "imagen": "/public/img/ninos/programador.png",
+    "imagen": "/public/img/ninos/programador.jpg",
     "recursos": [
       {
         "titulo": "Patrones de Diseño en JavaScript",

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen Cinema</title>
     <link rel="stylesheet" href="/public/css/ninos/examen.css">
-    <link rel="stylesheet" href="/public/css/ninos/preloader.css">
+    <link rel="stylesheet" href="/public/css/ninos/postloader.css">
     <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -40,6 +40,47 @@
             <button id="nextButton" class="footer-button">Siguiente ➔</button>
         </div>
     </div>
+
+    <!-- Script para cargar el menú y aplicar las opciones de usuario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
+            const cssType = localStorage.getItem('cssType') || 'ninos';
+
+            // Función para cargar un archivo CSS
+            function loadCss(filePath) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = filePath;
+                document.head.appendChild(link);
+            }
+
+            // Cargar los CSS necesarios
+            const cssFiles = [
+                `/public/css/${cssType}/examen.css`,
+                `/public/css/${cssType}/menu.css`,
+                `/public/css/${cssType}/preloader.css`,
+            ];
+
+            // Ocultar el contenido mientras se cargan los estilos
+            document.body.classList.add('hidden');
+
+            // Cargar cada CSS en el orden definido
+            cssFiles.forEach(loadCss);
+
+            // Detectar cuando el último CSS ha cargado y mostrar el contenido
+            const lastCssLink = cssFiles[cssFiles.length - 1];
+            const checkCssLoaded = () => {
+                const link = document.querySelector(`link[href='${lastCssLink}']`);
+                if (link && link.sheet) {
+                    document.body.classList.remove('hidden'); // Mostrar contenido
+                } else {
+                    setTimeout(checkCssLoaded, 50); // Reintentar hasta que el CSS esté cargado
+                }
+            };
+            checkCssLoaded();
+        });
+    </script>
 
     <!-- Script para el preloader -->
     <script>

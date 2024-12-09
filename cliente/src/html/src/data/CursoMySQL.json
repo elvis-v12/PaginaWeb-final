@@ -4,7 +4,7 @@
         "subtitulo": "Curso de MySQL\nbásico para niños",
         "nivel": "BÁSICO",
         "descripcion": "En este emocionante y creativo curso de MySQL para niños, aprenderás los fundamentos para diseñar y gestionar bases de datos dinámicas. No necesitas experiencia previa. Aquí te enseñaremos paso a paso, con explicaciones simples, para que aprendas mientras te diviertes. ¡Comienza tu aventura en el mundo de las bases de datos!",
-        "imagen": "/public/img/ninos/bannerMS.png",
+        "imagen": "/public/img/ninos/bannerMS.jpg",
         "recursos": [
             {
                 "titulo": "Introducción a MySQL",
@@ -38,7 +38,7 @@
         "subtitulo": "Curso de MySQL\nintermedio",
         "nivel": "INTERMEDIO",
         "descripcion": "Este curso intermedio de MySQL está diseñado para quienes ya tienen bases sólidas y desean profundizar en relaciones entre tablas, funciones avanzadas y optimización de consultas. Aprenderás a gestionar datos de manera eficiente, utilizando técnicas y herramientas prácticas.",
-        "imagen": "/public/img/ninos/bannerMS3.png",
+        "imagen": "/public/img/ninos/bannerMS3.jpg",
         "recursos": [
             {
                 "titulo": "Relaciones entre Tablas",
@@ -67,7 +67,7 @@
         "subtitulo": "Curso de MySQL\navanzado",
         "nivel": "AVANZADO",
         "descripcion": "Domina las herramientas avanzadas de MySQL. Aprende sobre vistas, triggers y replicación para gestionar grandes bases de datos. Este curso avanzado te prepara para manejar sistemas complejos y optimizar su rendimiento.",
-        "imagen": "/public/img/ninos/bannerMS2.png",
+        "imagen": "/public/img/ninos/bannerMS2.jpg",
         "recursos": [
             {
                 "titulo": "Implementación de Vistas",

@@ -36,8 +36,10 @@
                 <li><a href="informacion.html">Acerca de</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="becas.html">Becas</a></li>
                 <li><a href="planes.html">Planes</a></li>
                 <li><a href="soporte.html">Soporte</a></li>
+               
             </ul>
             <div class="login">
                 <div class="dropdown">
@@ -59,189 +61,106 @@
         </nav>
     </div>
 
-    <!-- Ventana emergente para la racha -->
-    <div class="streak-popup" id="streakPopup" style="display: none;">
-        <div class="streak-header">
-            <h3>2 días de racha</h3>
-            <img src="/public/img/ninos/feliz.gif" alt="Icono de fuego" class="streak-image">
-        </div>
-        <p>¡Has alcanzado tu racha más extensa!</p>
-        <div class="streak-calendar">
-            <span class="day-circle">Dom</span>
-            <span class="day-circle">Lun</span>
-            <span class="day-circle">Mar</span>
-            <span class="day-circle">Mié</span>
-            <span class="day-circle">Jue</span>
-            <span class="day-circle">Vie</span>
-            <span class="day-circle">Sáb</span>
-        </div>
-        <button class="streak-button" onclick="startStreak()">Comenzar racha</button>
-    </div>
-
-    <!-- Ventana emergente para el cuestionario -->
-    <div class="questionnaire-popup" id="questionnairePopup" style="display: none;">
-        <div class="questionnaire-content">
-            <h2>¡Completa la racha de hoy!</h2>
-            <div class="question">
-                <p id="questionText">Pregunta 1: ¿Qué significa HTML?</p>
-                <div class="options">
-                    <button onclick="checkAnswer(0)">Hyperlinks and Text Markup Language</button>
-                    <button onclick="checkAnswer(1)">Hyper Text Markup Language</button>
-                    <button onclick="checkAnswer(2)">Home Tool Markup Language</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Ventana emergente de finalización del cuestionario -->
-    <div class="completion-popup" id="completionMessage" style="display: none; text-align: center;">
-        <img class="success-image" src="/public/img/ninos/bob1.gif" alt="Imagen de éxito">
-        <h2>¡COMPLETASTE LA LECCIÓN!</h2>
-        <div>
-            <div class="exp-box">
-                <p>PUNTAJE TOTAL</p>
-                <p><strong>⚡ <span id="expPoints">100</span></strong></p>
-            </div>
-            <div class="score-box">
-                <p>¡MUY BIEN!</p>
-                <p><strong><span id="scorePercentage">100</span>%</strong></p>
-            </div>
-        </div>
-        <button class="streak-button" onclick="closeCompletionMessage()">Continuar</button>
-    </div>
-
-    <!-- Nueva ventana de "Día de Racha" -->
-    <div class="streak-popup" id="streakMessage" style="display: none;">
-        <div class="streak-icon" id="icono">
-            <img src="/public/img/ninos/fuego.png" alt="Icono de fuego" style="width: 80px; height: auto;">
-            <span class="streak-number" id="streakDayNumber">2</span>
-        </div>
-        <div class="streak-calendar">
-            <div class="day-circle">Dom</div>
-            <div class="day-circle">Lun</div>
-            <div class="day-circle">Mar</div>
-            <div class="day-circle">Mié</div>
-            <div class="day-circle">Jue</div>
-            <div class="day-circle">Vie</div>
-            <div class="day-circle">Sáb</div>
-        </div>
-        <p class="mt-4">¡Practica cada día para que tu racha no vuelva a cero!</p>
-        <div style="display: flex; gap: 10px;">
-            <button class="streak-button" onclick="closeStreakMessage()">Continuar</button>
-            <button class="streak-button" onclick="viewRanking()" data-toggle="modal"
-                data-target="#clasificacionModal">Ver mi
-                ranking</button>
-        </div>
-    </div>
-
-    <!-- Ajustes de la cuenta" -->
+    <!-- Ajustes de cuenta -->
     <div class="contenedor-ajustes-cuenta">
         <h1 class="titulo-Edit">Editar perfil</h1>
-    
+
         <div class="seccion-perfil">
             <div class="foto-perfil">
                 <div class="imagen-perfil">
-                    <p class="iniciales" id="iniciales">B</p>
+                    <p class="iniciales">B</p>
                 </div>
                 <p class="texto-subir">Arrastra aquí tu imagen de perfil o <a href="#">sube una foto</a></p>
             </div>
-    
+
             <div class="opciones-inicio-sesion">
                 <h3>Iniciar sesión</h3>
                 <button class="btn-social btn-twitter">Conecta con Twitter</button>
                 <button class="btn-social btn-facebook">Conecta con Facebook</button>
-    
+
                 <div class="cambiar-contra">
                     <p>¿Desea cambiar su Contraseña?</p>
-                    <input type="password" id="nueva-contra" placeholder="Ingresar contraseña actual">
-                    <input type="password" id="confirmar-contra" placeholder="Ingresar nueva contraseña">
+                    <input type="password" placeholder="Ingrese contraseña actual">
+                    <input type="password" placeholder="Ingrese nueva contraseña">
                 </div>
             </div>
-    
+
             <div class="seccion-planes">
                 <button class="btn-renovar">Cambiar contraseña</button>
-                <p>¿Olvidaste tu contraseña?</p>
+                <p> ¿Olvidaste tu contraseña? </p>
             </div>
         </div>
-    
+
+
         <div class="seccion-formulario">
             <h2>Tus Datos</h2>
             <form class="formulario-datos-usuario">
+                <!-- Información de perfil -->
                 <div class="grupo-input">
                     <label for="nombres">Nombres</label>
                     <input type="text" id="nombres" placeholder="Ingrese sus nombres">
                 </div>
-    
+
                 <div class="grupo-input">
                     <label for="apellidos">Apellidos</label>
                     <input type="text" id="apellidos" placeholder="Ingrese sus apellidos">
                 </div>
-    
+
                 <div class="grupo-input">
                     <label for="direccion">Direccion</label>
                     <input type="text" id="direccion" placeholder="Ingrese una direccion">
                 </div>
-    
+
                 <div class="grupo-input">
                     <label for="correo">Correo electrónico</label>
                     <input type="email" id="correo" placeholder="Ingrese un correo electrónico">
                 </div>
-    
+
                 <div class="grupo-input">
                     <label for="telefono">Teléfono Móvil</label>
-                    <input type="text" id="telefono" placeholder="Número">
+                    <input type="text" id="numero-telefono" placeholder="Número">
                 </div>
-    
+
                 <div class="grupo-input">
                     <label for="biografia">Biografía</label>
                     <textarea id="biografia" placeholder="Escribe una breve descripción..."></textarea>
                 </div>
-    
+
                 <div class="grupo-input">
                     <label>Género</label>
                     <div class="opciones-genero">
-                        <input type="radio" id="masculino" name="genero" value="masculino">
+                        <input type="radio" id="masculino" name="genero">
                         <label for="masculino">Masculino</label>
-                        <input type="radio" id="femenino" name="genero" value="femenino">
+                        <input type="radio" id="femenino" name="genero">
                         <label for="femenino">Femenino</label>
                     </div>
                 </div>
-    
+
                 <div class="grupo-input">
-                    <label for="cumpleaños">Cumpleaños</label>
-                    <input type="date" id="cumpleaños">
+                    <label for="cumpleaños">Fecha de nacimiento</label>
+                    <input type="date" id="fecha de nacimiento">
                 </div>
-    
+
+                <!-- Educación e intereses -->
                 <div class="grupo-input">
                     <label>Temas de interés</label>
                     <div class="opciones-interes">
                         <input type="checkbox" id="audiovisual">
                         <label for="audiovisual">Audiovisual</label>
                         <input type="checkbox" id="frontend">
-                        <label for="frontend">Desarrollador Frontend</label>
-                        <input type="checkbox" id="backend">
-                        <label for="backend">Desarrollador Backend</label>
-                        <input type="checkbox" id="marketing">
-                        <label for="marketing">Marketing</label>
-                        <input type="checkbox" id="diseno-grafico">
-                        <label for="diseno-grafico">Diseñador Gráfico</label>
-                        <input type="checkbox" id="diseno-ux">
-                        <label for="diseno-ux">Diseño UX</label>
-                        <input type="checkbox" id="ingles">
-                        <label for="ingles">Inglés</label>
-                        <input type="checkbox" id="negocios">
-                        <label for="negocios">Negocios</label>
+                        <label for="frontend">Programación</label>
                     </div>
                 </div>
-    
+
+                <!-- Botones de acción -->
                 <div class="botones-accion">
-                    <button type="button" class="btn-guardar">Guardar cambios</button>
+                    <button class="btn-guardar">Guardar cambios</button>
                     <a href="#" class="btn-volver">Volver al perfil</a>
                 </div>
             </form>
         </div>
     </div>
-    
+
     <!-- Script para cargar el menú y aplicar las opciones de usuario -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {

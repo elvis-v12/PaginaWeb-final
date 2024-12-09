@@ -9,15 +9,10 @@ body.hidden {
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/ninos/burbuja.jpg') no-repeat center center fixed;
+    background: url('/public/img/ninos/oceano.png') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
-}
-
-body {
-    cursor: url('/public/img/ninos/cursor2.png'), auto;
- 
 }
 
 /* Estilo del encabezado */
@@ -80,9 +75,8 @@ body {
 
 /* Estilo específico para "¡Programa tu éxito!" */
 .highlight-exito {
-    font-size: 8rem;
+    font-size: 6.5rem;
     color: #FF4081;
-    font-family: 'Coiny', cursive;
 
     /* Propiedades para compatibilidad */
     background-clip: text;
@@ -90,18 +84,13 @@ body {
     -webkit-text-fill-color: transparent;
 
     text-shadow:
-        -2px -2px 0 #FF4081,
+        -2px -2px 0 #401eeb,
         2px -2px 0 #ffffff,
         -2px 2px 0 #ffffff,
         2px 2px 0 #ffffff,
         6px 6px 10px rgba(0, 0, 0, 0.3);
-
-    /* Ajuste para juntar el texto */
-    letter-spacing: -2px; /* Reducción del espaciado entre letras */
-    line-height: 1.1; /* Ajuste de la altura de las líneas (si es texto multilinea) */
-    margin-top: 3.5rem;
+    /* Sombra para dar profundidad */
 }
-
 
 /* Aplicar el efecto "pop" a las letras en bucle */
 .phrase span {
@@ -340,27 +329,27 @@ body {
 .title-quality,
 .title-programming,
 .title-exclusive {
-    font-family: 'Coiny';
+    font-family: 'Bubblegum Sans', cursive;
     color: #FF4081;
-    font-size: 2.9rem;
+    font-size: 2.5rem;
     /* Ajuste de tamaño de fuente */
     margin-bottom: 10px;
 }
 
 .fade-text {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.3rem;
-    color: #333333a0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
     margin-bottom: 50px;
-    
 }
 
 .fade-text2 {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    ;
     font-size: 1.2rem;
-    color: #333333a0;
+    color: #333;
     margin-bottom: 50px;
-   
+    text-align: justify;
 }
 
 /* Estilo para los botones del carrusel */
@@ -411,7 +400,7 @@ body {
     justify-content: center; /* centrar horizontal */
     align-items: center; /* centrar vertical */
     padding: 40px; /* Espaciado en la sección */
-    background-color:#81e8fa ;/* Textura de burbujas */
+    background-image: url('/public/img/ninos/bob.png'); /* Textura de burbujas */
     background-size: cover; /* Asegúrate de que la imagen cubra el área */
     background-position: center; /* Centra la imagen */
     border-radius: 15px; /* Bordes redondeados */
@@ -699,7 +688,7 @@ body {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 10px;
-    font-family: 'Coiny';
+    font-family: 'Bubblegum Sans', cursive; /* Fuente divertida */
 }
 
 .box-subtitle {
@@ -708,48 +697,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.titulo-cuadros {
-    text-align: center;
-    font-family: 'Coiny';
-    font-size: 4.2rem;
-    background: none;
-
-    /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* Sombra para crear el borde grueso blanco y la curvatura */
-    text-shadow:
-        -2px -2px 0 #ff0777,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra para dar profundidad */
-
-    margin-top: 20px;
-    display: block;
-
-    /* Animación de burbuja */
-    animation: bubble 3s infinite ease-in-out;
-}
-
-@keyframes bubble {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-        /* Sube el texto */
-    }
-
-    100% {
-        transform: translateY(0);
-        /* Vuelve a la posición original */
-    }
-}
 /* Responsivo */
 @media screen and (max-width: 768px) {
     .box {
@@ -762,7 +709,7 @@ body {
 .image-carousel {
     width: 100%; /* Extremo a extremo */
     overflow: hidden; /* Ocultar las imágenes que no están en el viewport */
-    background-color: rgba(117, 206, 233, 0.7);
+    background-color: rgba(27, 26, 26, 0.7);
     padding: 20px 0; /* Espaciado en la parte superior e inferior */
 }
 
@@ -775,16 +722,14 @@ body {
 }
 
 .carousel-container img {
-    width: 50px; /* Ajusta el ancho de las imágenes */
+    width: 30px; /* Ajusta el ancho de las imágenes */
     height: auto; /* Mantiene la proporción de las imágenes */
     margin: 0 10px; /* Espacio entre imágenes */
     transition: transform 0.3s ease;
-    filter: grayscale(100%) brightness(100%); /* Convierte la imagen a blanco y negro */
 }
 
-
 .carousel-container img:hover {
-    transform: scale(1.09); /* Efecto de zoom al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
 }
 
 /* Animación que hace que el carrusel se mueva */
