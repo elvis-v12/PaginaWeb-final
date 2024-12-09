@@ -8,8 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/ninos/preloader.css">
-    <link rel="stylesheet" href="/public/css/ninos/cuenta.css">
+    <link rel="stylesheet" href="/public/css/ninos/postloader.css">
 </head>
 
 <body>
@@ -20,92 +19,199 @@
         <div class="loading-text">Cargando...</div>
     </div>
 
-    <!-- Cargamos el menú -->
-    <div id="menu-container"></div>
+    <!-- Cargar el menú -->
+    <!-- Menú -->
+    <div class="mi-menu">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/public/img/ninos/logoo.gif" alt="Guíma">
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links" id="menu-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="informacion.html">Acerca de</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
+            </ul>
+            <div class="login">
+                <div class="dropdown">
+                    <button class="btn-login" id="login-button">Acceder</button>
+                    <div class="dropdown-content" id="login-dropdown">
+                        <a href="iniciar-sesion.html" id="login-link">Iniciar sesión</a>
+                        <a href="crear-cuenta.html" id="register-link">Crear cuenta</a>
+                    </div>
+                </div>
+                <a href="pagos.html" class="btn-cart">
+                    <img src="/public/img/ninos/carrito.png" alt="Carrito" class="cart-icon">
+                </a>
+                <!-- Icono para activar la racha -->
+                <div class="streak-icon" id="streakIcon" onmouseover="showStreakPopup()" style="display: none;">
+                    <img src="/public/img/ninos/fuego1.png" alt="Racha" class="fire-icon">
+                    <span class="streak-number">2</span>
+                </div>
+            </div>
+        </nav>
+    </div>
 
+    <!-- Ventana emergente para la racha -->
+    <div class="streak-popup" id="streakPopup" style="display: none;">
+        <div class="streak-header">
+            <h3>2 días de racha</h3>
+            <img src="/public/img/ninos/feliz.gif" alt="Icono de fuego" class="streak-image">
+        </div>
+        <p>¡Has alcanzado tu racha más extensa!</p>
+        <div class="streak-calendar">
+            <span class="day-circle">Dom</span>
+            <span class="day-circle">Lun</span>
+            <span class="day-circle">Mar</span>
+            <span class="day-circle">Mié</span>
+            <span class="day-circle">Jue</span>
+            <span class="day-circle">Vie</span>
+            <span class="day-circle">Sáb</span>
+        </div>
+        <button class="streak-button" onclick="startStreak()">Comenzar racha</button>
+    </div>
+
+    <!-- Ventana emergente para el cuestionario -->
+    <div class="questionnaire-popup" id="questionnairePopup" style="display: none;">
+        <div class="questionnaire-content">
+            <h2>¡Completa la racha de hoy!</h2>
+            <div class="question">
+                <p id="questionText">Pregunta 1: ¿Qué significa HTML?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(0)">Hyperlinks and Text Markup Language</button>
+                    <button onclick="checkAnswer(1)">Hyper Text Markup Language</button>
+                    <button onclick="checkAnswer(2)">Home Tool Markup Language</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente de finalización del cuestionario -->
+    <div class="completion-popup" id="completionMessage" style="display: none; text-align: center;">
+        <img class="success-image" src="/public/img/ninos/bob1.gif" alt="Imagen de éxito">
+        <h2>¡COMPLETASTE LA LECCIÓN!</h2>
+        <div>
+            <div class="exp-box">
+                <p>PUNTAJE TOTAL</p>
+                <p><strong>⚡ <span id="expPoints">100</span></strong></p>
+            </div>
+            <div class="score-box">
+                <p>¡MUY BIEN!</p>
+                <p><strong><span id="scorePercentage">100</span>%</strong></p>
+            </div>
+        </div>
+        <button class="streak-button" onclick="closeCompletionMessage()">Continuar</button>
+    </div>
+
+    <!-- Nueva ventana de "Día de Racha" -->
+    <div class="streak-popup" id="streakMessage" style="display: none;">
+        <div class="streak-icon" id="icono">
+            <img src="/public/img/ninos/fuego.png" alt="Icono de fuego" style="width: 80px; height: auto;">
+            <span class="streak-number" id="streakDayNumber">2</span>
+        </div>
+        <div class="streak-calendar">
+            <div class="day-circle">Dom</div>
+            <div class="day-circle">Lun</div>
+            <div class="day-circle">Mar</div>
+            <div class="day-circle">Mié</div>
+            <div class="day-circle">Jue</div>
+            <div class="day-circle">Vie</div>
+            <div class="day-circle">Sáb</div>
+        </div>
+        <p class="mt-4">¡Practica cada día para que tu racha no vuelva a cero!</p>
+        <div style="display: flex; gap: 10px;">
+            <button class="streak-button" onclick="closeStreakMessage()">Continuar</button>
+            <button class="streak-button" onclick="viewRanking()" data-toggle="modal"
+                data-target="#clasificacionModal">Ver mi
+                ranking</button>
+        </div>
+    </div>
+
+    <!-- Ajustes de la cuenta" -->
     <div class="contenedor-ajustes-cuenta">
         <h1 class="titulo-Edit">Editar perfil</h1>
-
+    
         <div class="seccion-perfil">
             <div class="foto-perfil">
                 <div class="imagen-perfil">
-                    <p class="iniciales">B</p>
+                    <p class="iniciales" id="iniciales">B</p>
                 </div>
                 <p class="texto-subir">Arrastra aquí tu imagen de perfil o <a href="#">sube una foto</a></p>
             </div>
-
+    
             <div class="opciones-inicio-sesion">
                 <h3>Iniciar sesión</h3>
                 <button class="btn-social btn-twitter">Conecta con Twitter</button>
                 <button class="btn-social btn-facebook">Conecta con Facebook</button>
-
+    
                 <div class="cambiar-contra">
                     <p>¿Desea cambiar su Contraseña?</p>
-                    <input type="email" placeholder="Ingresar contraseña">
-                    <input type="password" placeholder="Confirmar contraseña">
+                    <input type="password" id="nueva-contra" placeholder="Ingresar contraseña actual">
+                    <input type="password" id="confirmar-contra" placeholder="Ingresar nueva contraseña">
                 </div>
             </div>
-
+    
             <div class="seccion-planes">
-                <p>Te quedan <strong>10 días</strong> de tu suscripción.</p>
-                <button class="btn-renovar">Renovar ahora</button>
+                <button class="btn-renovar">Cambiar contraseña</button>
+                <p>¿Olvidaste tu contraseña?</p>
             </div>
         </div>
-
-
+    
         <div class="seccion-formulario">
             <h2>Tus Datos</h2>
             <form class="formulario-datos-usuario">
-                <!-- Información de perfil -->
                 <div class="grupo-input">
                     <label for="nombres">Nombres</label>
                     <input type="text" id="nombres" placeholder="Ingrese sus nombres">
                 </div>
-
+    
                 <div class="grupo-input">
                     <label for="apellidos">Apellidos</label>
                     <input type="text" id="apellidos" placeholder="Ingrese sus apellidos">
                 </div>
-
+    
                 <div class="grupo-input">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" placeholder="Ingrese un usuario">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" id="direccion" placeholder="Ingrese una direccion">
                 </div>
-
+    
                 <div class="grupo-input">
                     <label for="correo">Correo electrónico</label>
                     <input type="email" id="correo" placeholder="Ingrese un correo electrónico">
                 </div>
-
+    
                 <div class="grupo-input">
                     <label for="telefono">Teléfono Móvil</label>
-                    <div class="input-telefono">
-                        <input type="text" class="codigo-pais" placeholder="+51">
-                        <input type="text" class="numero-telefono" placeholder="Número">
-                    </div>
+                    <input type="text" id="telefono" placeholder="Número">
                 </div>
-
+    
                 <div class="grupo-input">
                     <label for="biografia">Biografía</label>
                     <textarea id="biografia" placeholder="Escribe una breve descripción..."></textarea>
                 </div>
-
+    
                 <div class="grupo-input">
                     <label>Género</label>
                     <div class="opciones-genero">
-                        <input type="radio" id="masculino" name="genero">
+                        <input type="radio" id="masculino" name="genero" value="masculino">
                         <label for="masculino">Masculino</label>
-                        <input type="radio" id="femenino" name="genero">
+                        <input type="radio" id="femenino" name="genero" value="femenino">
                         <label for="femenino">Femenino</label>
                     </div>
                 </div>
-
+    
                 <div class="grupo-input">
                     <label for="cumpleaños">Cumpleaños</label>
                     <input type="date" id="cumpleaños">
                 </div>
-
-                <!-- Educación e intereses -->
+    
                 <div class="grupo-input">
                     <label>Temas de interés</label>
                     <div class="opciones-interes">
@@ -127,55 +233,54 @@
                         <label for="negocios">Negocios</label>
                     </div>
                 </div>
-
-                <!-- Botones de acción -->
+    
                 <div class="botones-accion">
-                    <button class="btn-guardar">Guardar cambios</button>
+                    <button type="button" class="btn-guardar">Guardar cambios</button>
                     <a href="#" class="btn-volver">Volver al perfil</a>
                 </div>
             </form>
         </div>
     </div>
-
+    
     <!-- Script para cargar el menú y aplicar las opciones de usuario -->
     <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
-                actualizarMenu(); // Actualiza el menú después de cargar
-            })
-            .catch(error => console.error("Error cargando el menú:", error));
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el tipo de CSS desde localStorage (por defecto "ninos" si no está definido)
+            const cssType = localStorage.getItem('cssType') || 'ninos';
 
-        function actualizarMenu() {
-            const loginButton = document.getElementById('login-button');
-            const loginDropdown = document.getElementById('login-dropdown');
-            const userName = localStorage.getItem('userName');
-
-            if (userName) {
-                loginButton.textContent = userName;
-                loginDropdown.innerHTML = `
-            <a href="cuenta.html">Editar perfil</a>
-            <a href="clasificacion.html">Clasificación</a>
-            <a href="progreso.html">Mi progreso</a>
-            <a href="mis-cursos.html">Mis cursos</a>
-            <a href="suscripciones.html">Suscripciones</a>
-            <a href="#" id="logout-link">Cerrar sesión</a>
-        `;
-
-                // Agregar evento para cerrar sesión
-                document.getElementById('logout-link').addEventListener('click', (e) => {
-                    e.preventDefault();
-                    cerrarSesion(); // Llama a la función de cerrar sesión
-                });
+            // Función para cargar un archivo CSS
+            function loadCss(filePath) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = filePath;
+                document.head.appendChild(link);
             }
-        }
 
-        function cerrarSesion() {
-            console.log("Cerrando sesión"); // Confirma que se está cerrando sesión
-            localStorage.removeItem('userName'); // Elimina el nombre del usuario
-            window.location.href = 'inicio.html'; // Redirige a la página de inicio
-        }
+            // Cargar los CSS necesarios
+            const cssFiles = [
+                `/public/css/${cssType}/cuenta.css`,
+                `/public/css/${cssType}/menu.css`,
+                `/public/css/${cssType}/preloader.css`,
+            ];
+
+            // Ocultar el contenido mientras se cargan los estilos
+            document.body.classList.add('hidden');
+
+            // Cargar cada CSS en el orden definido
+            cssFiles.forEach(loadCss);
+
+            // Detectar cuando el último CSS ha cargado y mostrar el contenido
+            const lastCssLink = cssFiles[cssFiles.length - 1];
+            const checkCssLoaded = () => {
+                const link = document.querySelector(`link[href='${lastCssLink}']`);
+                if (link && link.sheet) {
+                    document.body.classList.remove('hidden'); // Mostrar contenido
+                } else {
+                    setTimeout(checkCssLoaded, 50); // Reintentar hasta que el CSS esté cargado
+                }
+            };
+            checkCssLoaded();
+        });
     </script>
 
     <!-- Script para el preloader -->
