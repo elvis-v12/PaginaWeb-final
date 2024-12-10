@@ -1,623 +1,734 @@
 /* Estilos generales */
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #F5F5F5;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #F5F5F5;
 }
 
 /* Encapsulamiento del menú */
 .mi-menu {
-    margin: 0 auto; /* Centra el menú */
+  margin: 0 auto;
+  margin-left: -10px;
+  /* Centra el menú */
 }
 
 /* Navbar */
 .mi-menu .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #778c43;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 900;
-    flex-wrap: wrap;
-    max-width: 1980px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(15, 59, 90);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 900;
+  flex-wrap: wrap;
+  max-width: 1980px;
+  margin: 0 auto;
 }
 
 /* Ajustar margen para mantener los elementos dentro */
-.mi-menu .navbar > * {
-    margin-left: 10px;
-    margin-right: 20px;
+.mi-menu .navbar>* {
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 .mi-menu .logo img {
-    height: 50px;
-    flex-shrink: 0;
-    width: auto;
+  display: none;
+
 }
 
-.mi-menu .logo {
-    width: 50px; 
+.mi-menu .logo::after {
+  content: "Learning";
+  margin-left: 10px;
+  font-size: 3rem;
+  font-family: 'Fredoka One', sans-serif;
+  color: #109b94;
+
 }
+
 
 /* Links de navegación */
 .mi-menu .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-grow: 1;
-    margin-left: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-grow: 1;
+  margin-left: 20px;
 }
 
 .mi-menu .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding: 8px 15px;
-    transition: background-color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease;
 }
 
 .mi-menu .nav-links li a:hover {
-    background-color: #ffffff;
-    color: #d2b48c;
-    border-radius: 5px;
+  background-color: #ffffff;
+  color: #d2b48c;
+  border-radius: 5px;
 }
 
 /* Contenedor de login y carrito */
 .mi-menu .login {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* Dropdown */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 /* Mostrar dropdown al hacer hover */
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
 /* Botón de Acceder */
 .mi-menu .login .btn-login {
-    color: white;
-    background-color: #a97c3a;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-    margin-left: auto;
-    margin-right: 10px; /* Añadir un espacio entre el botón y el carrito */
+  color: white;
+  background-color: #42882d;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+  margin-right: 10px;
+  /* Añadir un espacio entre el botón y el carrito */
 }
 
 /* Estilo hover del botón de Acceder */
 .mi-menu .login .btn-login:hover {
-    background-color: #ffffff;
-    color: #d2b48c;
+  background-color: #ffffff;
+  color: #d2b48c;
 }
 
 /* Botón del carrito de compras */
 .mi-menu .login .btn-cart {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  position: relative; /* Base para posicionar el span relativo al carrito */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
+/* Ícono del carrito */
 .mi-menu .cart-icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
+/* Imagen del carrito con efecto hover */
 .mi-menu .btn-cart img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
 }
 
 .mi-menu .btn-cart:hover img {
-    transform: scale(1.1); /* Efecto de agrandar el carrito al pasar el mouse */
+  transform: scale(1.1); /* Efecto de agrandar el carrito al pasar el mouse */
 }
+
+/* Número del carrito (numerito) */
+.mi-menu .btn-cart .numerito {
+  position: absolute;
+  top: -5px; /* Posicionado en la parte superior del carrito */
+  right: -5px; /* Posicionado en la esquina superior derecha */
+  background-color: #FF4C4C;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%; /* Hace el span redondo */
+  width: 20px;
+  height: 20px;
+  display: flex; /* Habilita flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+}
+
 
 /* Estilos para el menú hamburguesa */
 .mi-menu .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin-left: auto;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
 }
 
 .mi-menu .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px;
-    transition: 0.4s;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+  transition: 0.4s;
 }
 
 /* Mostrar el menú hamburguesa en pantallas pequeñas */
 @media (max-width: 768px) {
-    .mi-menu .nav-links {
-        display: none; /* Oculta los enlaces de navegación */
-        flex-direction: column;
-        width: 100%;
-        background-color: #778c43;
-    }
+  .mi-menu .nav-links {
+    display: none;
+    /* Oculta los enlaces de navegación */
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .mi-menu .nav-links.active {
-        display: flex; /* Muestra los enlaces cuando el menú está activo */
-    }
+  .mi-menu .nav-links.active {
+    display: flex;
+    /* Muestra los enlaces cuando el menú está activo */
+  }
 
-    .mi-menu .hamburger {
-        display: flex;
-    }
+  .mi-menu .hamburger {
+    display: flex;
+  }
 }
 
 /* Mostrar el menú hamburguesa en pantallas pequeñas */
 @media (max-width: 480px) {
-    .mi-menu .nav-links {
-        display: none; /* Oculta los enlaces de navegación */
-        flex-direction: column;
-        width: 100%;
-        background-color: #778c43;
-    }
+  .mi-menu .nav-links {
+    display: none;
+    /* Oculta los enlaces de navegación */
+    flex-direction: column;
+    width: 100%;
+    background-color: #778c43;
+  }
 
-    .mi-menu .nav-links.active {
-        display: flex; /* Muestra los enlaces cuando el menú está activo */
-    }
+  .mi-menu .nav-links.active {
+    display: flex;
+    /* Muestra los enlaces cuando el menú está activo */
+  }
 
-    .mi-menu .hamburger {
-        display: flex;
-    }
-    
-    .mi-menu .logo img {
-        height: 35px;
-        flex-shrink: 0;
-    }
-    
-    .mi-menu .logo {
-        width: 50px; 
-    }
+  .mi-menu .hamburger {
+    display: flex;
+  }
+
+  .mi-menu .logo img {
+    height: 35px;
+    flex-shrink: 0;
+  }
+
+  .mi-menu .logo {
+    width: 50px;
+  }
 }
 
 /* RACHAAAAAAAAAAAAAAAAAAAAAAAAAAA  */
 /* Estilos de la imagen con el efecto */
 .fire-icon {
-    width: 24px;
-    height: 24px;
-    margin-left: 20px;
-    animation: zoomInOut 1.5s ease-in-out infinite; /* La animación durará 1.5 segundos y se repetirá infinitamente */
+  width: 24px;
+  height: 24px;
+  margin-left: 20px;
+  animation: zoomInOut 1.5s ease-in-out infinite;
+  /* La animación durará 1.5 segundos y se repetirá infinitamente */
+}
+
+/* Definir la animación de acercamiento */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+    /* Tamaño original de la imagen */
   }
-  
-  /* Definir la animación de acercamiento */
-  @keyframes zoomInOut {
-    0% {
-      transform: scale(1); /* Tamaño original de la imagen */
-    }
-    50% {
-      transform: scale(1.5); /* Aumenta el tamaño al 150% */
-    }
-    100% {
-      transform: scale(1); /* Vuelve al tamaño original */
-    }
+
+  50% {
+    transform: scale(1.5);
+    /* Aumenta el tamaño al 150% */
   }
-  
-  .streak-number {
-    font-size: 1.2em; /* Tamaño del número */
-    font-weight: bold; /* Poner el número en negrita */
-    color: #ffffff; /* Color del número */
-    font-family: 'Concert One', sans-serif;
-    animation: zoomInOut 1s ease-in-out infinite; /* Efecto de zoom continuo */
+
+  100% {
+    transform: scale(1);
+    /* Vuelve al tamaño original */
   }
-  
-  .streak-popup {
-    display: none; /* Oculto por defecto */
-    position: absolute;
-    top: 40px;
-    margin-top: 55px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #FFA500;
-    padding: 16px;
-    width: 500px; /* Ancho incrementado para hacerlo más grande */
-    border-radius: 16px; /* Bordes curvados más notables */
-    color: white;
-    text-align: left;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    animation: movimientoConMasDinamismo 3s ease-in-out infinite, resaltarSutil 3s ease-in-out infinite;
+}
+
+.streak-number {
+  font-size: 1.2em;
+  /* Tamaño del número */
+  font-weight: bold;
+  /* Poner el número en negrita */
+  color: #ffffff;
+  /* Color del número */
+  font-family: 'Concert One', sans-serif;
+  animation: zoomInOut 1s ease-in-out infinite;
+  /* Efecto de zoom continuo */
+}
+
+.streak-popup {
+  display: none;
+  /* Oculto por defecto */
+  position: absolute;
+  top: 40px;
+  margin-top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFA500;
+  padding: 16px;
+  width: 500px;
+  /* Ancho incrementado para hacerlo más grande */
+  border-radius: 16px;
+  /* Bordes curvados más notables */
+  color: white;
+  text-align: left;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  animation: movimientoConMasDinamismo 3s ease-in-out infinite, resaltarSutil 3s ease-in-out infinite;
+}
+
+@keyframes movimientoConMasDinamismo {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    /* Posición inicial */
   }
-  
-  @keyframes movimientoConMasDinamismo {
-    0% {
-      transform: translateX(-50%) translateY(0); /* Posición inicial */
-    }
-    20% {
-      transform: translateX(-50%) translateY(-10px); /* Se mueve hacia arriba un poco más */
-    }
-    40% {
-      transform: translateX(-50%) translateY(5px); /* Baja un poco más */
-    }
-    60% {
-      transform: translateX(-50%) translateY(-5px); /* Se mueve hacia arriba de nuevo */
-    }
-    80% {
-      transform: translateX(-50%) translateY(10px); /* Baja más */
-    }
-    100% {
-      transform: translateX(-50%) translateY(0); /* Regresa a la posición original */
-    }
+
+  20% {
+    transform: translateX(-50%) translateY(-10px);
+    /* Se mueve hacia arriba un poco más */
   }
-  
-  @keyframes resaltarSutil {
-    0% {
-      box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.1); /* Resplandor sutil */
-    }
-    50% {
-      box-shadow: 0 0 25px 15px rgba(255, 255, 255, 0.4); /* Resplandor más fuerte */
-    }
-    100% {
-      box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.1); /* Resplandor vuelve a ser suave */
-    }
+
+  40% {
+    transform: translateX(-50%) translateY(5px);
+    /* Baja un poco más */
   }
-  
-  .streak-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+    /* Se mueve hacia arriba de nuevo */
   }
-  
-  .streak-header h3 {
-    margin: 0;
-    font-size: 45px;
-    font-weight: bold;
-    font-family: 'Rubik Bubbles', sans-serif;
-    margin-left: 20px;
-    margin-bottom: 0; 
-    text-shadow: 2px 3px 0px #644c0d;
-    color: #ffffff; /* Color del texto */
-    animation: movimientoSutil 1.5s ease-in-out infinite, resplandorSutil 2s ease-in-out infinite;
+
+  80% {
+    transform: translateX(-50%) translateY(10px);
+    /* Baja más */
   }
-  
-  @keyframes movimientoSutil {
-    0% {
-      transform: translateY(0); /* Posición inicial */
-    }
-    25% {
-      transform: translateY(-5px); /* Sutil movimiento hacia arriba */
-    }
-    50% {
-      transform: translateY(2px); /* Sutil movimiento hacia abajo */
-    }
-    75% {
-      transform: translateY(-2px); /* Se mueve hacia arriba ligeramente */
-    }
-    100% {
-      transform: translateY(0); /* Regresa a la posición original */
-    }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+    /* Regresa a la posición original */
   }
-  
-  @keyframes resplandorSutil {
-    0% {
-      text-shadow: 2px 3px 0px #644c0d, 0 0 5px #ffcc00; /* Resplandor suave */
-    }
-    50% {
-      text-shadow: 2px 3px 0px #644c0d, 0 0 15px #ffcc00; /* Resplandor más ligero */
-    }
-    100% {
-      text-shadow: 2px 3px 0px #644c0d, 0 0 5px #ffcc00; /* Resplandor suave */
-    }
+}
+
+@keyframes resaltarSutil {
+  0% {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.1);
+    /* Resplandor sutil */
   }
-  
-  .streak-popup p {
-    font-size: 22px;
-    font-family: 'Concert One', sans-serif;
-    margin-left: 25px;
-    margin-top: 0; /* Eliminar margen superior */
-    line-height: 1.1; /* Ajuste de la altura de línea para reducir el espacio entre h3 y p */
+
+  50% {
+    box-shadow: 0 0 25px 15px rgba(255, 255, 255, 0.4);
+    /* Resplandor más fuerte */
   }
-  
-  .streak-image {
-    width: 80px; /* Tamaño más grande */
-    height: 90px;
-    display: block; 
-    margin: 0 auto;
+
+  100% {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.1);
+    /* Resplandor vuelve a ser suave */
   }
-  
-  /* CALENDARIO - RACHA */
-  .streak-calendar {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 12px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.streak-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.streak-header h3 {
+  margin: 0;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: 'Rubik Bubbles', sans-serif;
+  margin-left: 20px;
+  margin-bottom: 0;
+  text-shadow: 2px 3px 0px #644c0d;
+  color: #ffffff;
+  /* Color del texto */
+  animation: movimientoSutil 1.5s ease-in-out infinite, resplandorSutil 2s ease-in-out infinite;
+}
+
+@keyframes movimientoSutil {
+  0% {
+    transform: translateY(0);
+    /* Posición inicial */
   }
-  
-  .streak-calendar span {
-    padding: 4px;
-    font-size: 14px;
+
+  25% {
+    transform: translateY(-5px);
+    /* Sutil movimiento hacia arriba */
   }
-  
-  .day-marked {
-    background-color: white;
-    color: #FFA500;
-    border-radius: 50%;
-    padding: 4px 6px;
-    font-weight: bold;
+
+  50% {
+    transform: translateY(2px);
+    /* Sutil movimiento hacia abajo */
   }
-  
+
+  75% {
+    transform: translateY(-2px);
+    /* Se mueve hacia arriba ligeramente */
+  }
+
+  100% {
+    transform: translateY(0);
+    /* Regresa a la posición original */
+  }
+}
+
+@keyframes resplandorSutil {
+  0% {
+    text-shadow: 2px 3px 0px #644c0d, 0 0 5px #ffcc00;
+    /* Resplandor suave */
+  }
+
+  50% {
+    text-shadow: 2px 3px 0px #644c0d, 0 0 15px #ffcc00;
+    /* Resplandor más ligero */
+  }
+
+  100% {
+    text-shadow: 2px 3px 0px #644c0d, 0 0 5px #ffcc00;
+    /* Resplandor suave */
+  }
+}
+
+.streak-popup p {
+  font-size: 22px;
+  font-family: 'Concert One', sans-serif;
+  margin-left: 25px;
+  margin-top: 0;
+  /* Eliminar margen superior */
+  line-height: 1.1;
+  /* Ajuste de la altura de línea para reducir el espacio entre h3 y p */
+}
+
+.streak-image {
+  width: 80px;
+  /* Tamaño más grande */
+  height: 90px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* CALENDARIO - RACHA */
+.streak-calendar {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 12px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.streak-calendar span {
+  padding: 4px;
+  font-size: 14px;
+}
+
+.day-marked {
+  background-color: white;
+  color: #FFA500;
+  border-radius: 50%;
+  padding: 4px 6px;
+  font-weight: bold;
+}
+
 /* Estilo específico para el botón de racha */
 .streak-button {
-    background-color: white;
-    color: #FFA500;
-    border: none;
-    padding: 6px 39px; /* Aumentamos el tamaño del botón */
-    border-radius: 15px; /* Más redondeado */
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 15px; /* Aumentamos el tamaño de la fuente */
-    display: block; /* Para que se comporte como bloque */
-    margin: 0 auto; /* Centra el botón */
-    text-align: center; /* Asegura que el texto esté centrado */
-    width: auto; /* Ajusta el ancho automáticamente */
-    margin-top: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  .questionnaire-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
-    z-index: 1000; /* Asegura que esté sobre otros elementos */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-  }
-  
-  .question #questionText {
-    font-size: 18px; /* Ajusta el tamaño de la fuente según lo necesites */
-    color: #2d3034; /* Color del texto */
-    font-family: 'Concert One', sans-serif;
-    justify-content: center;
-  }
-  
-  .questionnaire-content {
-    background-color: rgb(255, 201, 253);
-    width: 600px;
-    max-width: 90%;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .questionnaire-content h2 {
-    margin-top: 0;
-    color: #d77bce;
-    font-family: 'Rubik Bubbles', sans-serif;
-    text-shadow: 2px 2px 0px #ffffff;
-    font-size: 33px;
-    animation: rebotePermanente 1s ease-in-out 2s infinite;
-  }
-  
+  background-color: white;
+  color: #FFA500;
+  border: none;
+  padding: 6px 39px;
+  /* Aumentamos el tamaño del botón */
+  border-radius: 15px;
+  /* Más redondeado */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  /* Aumentamos el tamaño de la fuente */
+  display: block;
+  /* Para que se comporte como bloque */
+  margin: 0 auto;
+  /* Centra el botón */
+  text-align: center;
+  /* Asegura que el texto esté centrado */
+  width: auto;
+  /* Ajusta el ancho automáticamente */
+  margin-top: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
-  .options-racha {
-    display: flex;
-    flex-direction: column; /* Alinea los botones verticalmente */
-    justify-content: center; /* Asegura que los botones estén centrados verticalmente */
-    align-items: center; /* Asegura que los botones estén centrados horizontalmente */
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-  }
-  
-  .options-racha button {
-    width: 80%; /* Controla el ancho de los botones, ajusta según tus necesidades */
-    margin: 8px 0;
-    padding: 10px;
-    background-color: #ffb81f; /* Color original */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center; /* Asegura que el texto dentro del botón esté centrado */
-  }
-  
-  
-  
-  .correct {
-    background-color: green !important;  /* Verde */
-  }
-  
-  .incorrect {
-    background-color: red !important;  /* Rojo */
-  }
-  
-  .options-racha button:hover {
-    background-color: #e59400;
-  }
-  
-  .options-racha button.correct:hover,
-  .options-racha button.incorrect:hover {
-    background-color: inherit;  /* Evitar que el hover cambie el color */
-  }
-  
+.questionnaire-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Fondo oscuro */
+  z-index: 1000;
+  /* Asegura que esté sobre otros elementos */
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+}
+
+.question #questionText {
+  font-size: 18px;
+  /* Ajusta el tamaño de la fuente según lo necesites */
+  color: #2d3034;
+  /* Color del texto */
+  font-family: 'Concert One', sans-serif;
+  justify-content: center;
+}
+
+.questionnaire-content {
+  background-color: rgb(255, 201, 253);
+  width: 600px;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.questionnaire-content h2 {
+  margin-top: 0;
+  color: #d77bce;
+  font-family: 'Rubik Bubbles', sans-serif;
+  text-shadow: 2px 2px 0px #ffffff;
+  font-size: 33px;
+  animation: rebotePermanente 1s ease-in-out 2s infinite;
+}
+
+
+.options-racha {
+  display: flex;
+  flex-direction: column;
+  /* Alinea los botones verticalmente */
+  justify-content: center;
+  /* Asegura que los botones estén centrados verticalmente */
+  align-items: center;
+  /* Asegura que los botones estén centrados horizontalmente */
+  width: 100%;
+  /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.options-racha button {
+  width: 80%;
+  /* Controla el ancho de los botones, ajusta según tus necesidades */
+  margin: 8px 0;
+  padding: 10px;
+  background-color: #ffb81f;
+  /* Color original */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  /* Asegura que el texto dentro del botón esté centrado */
+}
+
+
+
+.correct {
+  background-color: green !important;
+  /* Verde */
+}
+
+.incorrect {
+  background-color: red !important;
+  /* Rojo */
+}
+
+.options-racha button:hover {
+  background-color: #e59400;
+}
+
+.options-racha button.correct:hover,
+.options-racha button.incorrect:hover {
+  background-color: inherit;
+  /* Evitar que el hover cambie el color */
+}
+
 /* MENSAJE FINAL */
 .completion-popup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    padding: 30px 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    z-index: 10000;
-    width: 400px;
-    max-width: 90%;
-    animation: fadeIn 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  z-index: 10000;
+  width: 400px;
+  max-width: 90%;
+  animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -55%);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .completion-popup .success-image {
-    width: 120px;
-    height: auto;
-    margin-bottom: 20px;
-    animation: bounce 1.5s infinite ease-in-out;
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: bounce 1.5s infinite ease-in-out;
 }
 
 @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .completion-popup h2 {
-    color: #f0a500;
-    font-family: 'Rubik Bubbles', sans-serif;
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #f0a500;
+  font-family: 'Rubik Bubbles', sans-serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .completion-popup div {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .completion-popup .exp-box,
 .completion-popup .score-box {
-    background-color: #fdf3e6;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
-    min-width: 120px;
+  background-color: #fdf3e6;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
 }
 
 .completion-popup .exp-box p,
 .completion-popup .score-box p {
-    margin: 0;
-    color: #2d3034;
-    font-size: 16px;
-    font-family: 'Verdana', sans-serif;
-    font-weight: bold;
+  margin: 0;
+  color: #2d3034;
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+  font-weight: bold;
 }
 
 .completion-popup .exp-box strong,
 .completion-popup .score-box strong {
-    display: block;
-    font-size: 22px;
-    color: #f0a500;
-    margin-top: 5px;
+  display: block;
+  font-size: 22px;
+  color: #f0a500;
+  margin-top: 5px;
 }
 
 .completion-popup .streak-button {
-    padding: 12px 25px;
-    font-size: 18px;
-    font-family: 'Verdana', sans-serif;
-    font-weight: bold;
-    background-color: #f0a500;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-family: 'Verdana', sans-serif;
+  font-weight: bold;
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .completion-popup .streak-button:hover {
-    background-color: #e08f00;
-    transform: translateY(-2px);
+  background-color: #e08f00;
+  transform: translateY(-2px);
 }
 
 .completion-popup .streak-button:active {
-    transform: translateY(1px);
+  transform: translateY(1px);
 }
 
-  
-  @media (max-width: 768px) {
-    .streak-popup {
-      width: 90%; /* Ajusta el ancho del popup en pantallas pequeñas */
-      font-size: 16px; /* Ajuste en tamaño de texto */
-    }
+
+@media (max-width: 768px) {
+  .streak-popup {
+    width: 90%;
+    /* Ajusta el ancho del popup en pantallas pequeñas */
+    font-size: 16px;
+    /* Ajuste en tamaño de texto */
   }
-  
-  .day-circle {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    color: #FFA500;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para efecto calendario */
-    transition: transform 0.2s;
+}
+
+.day-circle {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #FFA500;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Sombra para efecto calendario */
+  transition: transform 0.2s;
 }
 
 .day-circle:hover {
-    transform: scale(1.1); /* Efecto al pasar el mouse */
+  transform: scale(1.1);
+  /* Efecto al pasar el mouse */
 }
 
 .streak-icon {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0; /* Separamos más de la imagen */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  /* Separamos más de la imagen */
 }
-

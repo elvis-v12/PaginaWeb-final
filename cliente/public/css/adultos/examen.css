@@ -1,0 +1,297 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/public/img/adultos/papel.jpg');
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.911);
+    /* Aumenta la transparencia */
+    padding: 80px;
+    margin-top: 100px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    /* Sombra más difusa para darle volumen */
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+}
+
+.container h1 {
+    font-size: 58px;
+    font-family: 'Coiny', cursive;
+    color: #222d8f;
+    text-shadow: 5px 1px 0px #b0bec0;
+    margin: 20px 0;
+    left: 25px;
+    display: inline-block;
+    /* Permite aplicar transformaciones */
+    /* Establece el origen de la transformación */
+    position: relative;
+    /* Permite ajustes de posición */
+    top: 10px;
+    /* Baja la altura del título */
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    /* Ajusta la posición vertical de la franja */
+    left: 25px;
+    right: 0;
+    height: 10px;
+    /* Altura de la franja */
+    background: rgba(255, 255, 255, 0.5);
+    /* Fondo de la franja */
+    border-radius: 50px;
+    /* Esquinas redondeadas */
+    transform: translateY(-50%) rotate(-5deg);
+    /* Efecto de arco */
+    z-index: -1;
+    /* Mantener la franja detrás del texto */
+}
+
+#questionText,
+#questionNumber {
+    margin: 20px 0;
+    color: #000000;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    background-color: #424747;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option:hover {
+    background-color: #47a6cc;
+}
+
+.input-wrapper {
+    display: inline-block;
+}
+
+.bounce {
+    animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+input[type="radio"]:checked+label {
+    background-color: #555;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type="radio"] {
+    display: none;
+    /* Oculta el botón de radio */
+}
+
+.footer {
+    display: flex;
+    /* Cambia a flex para alinear horizontalmente */
+    justify-content: space-between;
+    /* Espacio entre los elementos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    padding: 10px 20px;
+    color: rgb(199, 191, 119);
+    margin-top: 10px;
+}
+
+.footer-button {
+    background-color: #6da362;
+    /* Color del botón */
+    color: rgb(10, 1, 37);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    /* Botones ocupan el 100% del ancho */
+    max-width: 140px;
+    /* Ancho máximo para los botones */
+}
+
+.footer-button:hover {
+    background-color: #798dff;
+    /* Color del botón al pasar el mouse */
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.timer i {
+    margin-right: 8px;
+    /* Espacio entre el ícono y el tiempo */
+}
+
+/* Consultas de medios para mejorar la responsividad */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .container h1 {
+        font-size: 40px;
+        /* Reduce el tamaño del título */
+    }
+
+    .footer-button {
+        padding: 10px;
+        /* Ajusta el padding para botones pequeños */
+    }
+
+    .options {
+        flex-direction: column;
+        /* Asegura que las opciones se apilen */
+    }
+}
+
+
+/* RESPUESTASSS  - SEGUNDA VENTANA */
+.results-container {
+    padding: 20px;
+    margin-top: 10px;
+    font-size: 'Pacifico, cursive';
+    color: rgb(15, 15, 15);
+}
+
+.results-container h2 {
+    color: #000000;
+    text-shadow: 5px 1px 0px #c5c2ba;
+    font-size: 45px;
+    margin-top: 10px;
+    /* Espacio arriba */
+    margin-bottom: 5px;
+    /* Reducido el espacio abajo */
+    margin-left: 30px;
+    /* Desplazado a la derecha */
+    display: inline-block;
+    /* Permite aplicar transformaciones */
+    /* Reduce la inclinación */
+    transform-origin: bottom;
+    /* Establece el origen de la transformación */
+    position: relative;
+    /* Permite ajustes de posición */
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    /* Ajusta la posición vertical de la franja */
+    left: 25px;
+    right: 0;
+    height: 19px;
+    /* Altura de la franja */
+    background: rgba(255, 255, 255, 0.5);
+    /* Fondo de la franja */
+    border-radius: 50px;
+    /* Esquinas redondeadas */
+    transform: translateY(-60%) rotate(-3deg);
+    /* Efecto de arco */
+    z-index: -1;
+    /* Mantener la franja detrás del texto */
+}
+
+.results-list {
+    margin-top: 20px;
+}
+
+.question-result {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1b708596;
+    margin-top: 5px;
+}
+
+.response {
+    color: #ff5733;
+    /* Cambia este valor al color que desees */
+}
+
+.selected-answer {
+    margin-top: 6px;
+    color: #300a1f;
+}
+
+#gradeButton {
+    margin-top: 5px;
+    /* Reducido el espacio arriba */
+    margin-left: 100px;
+    /* Desplazado un poco a la derecha */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #94a8f8;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Lilita One', cursive;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#gradeButton:hover {
+    background-color: #376aa1;
+}
+
+/* TERCERA VENTANA - FINAL*/
+
+.results-list {
+    margin-top: 20px;
+}
+
+.correct {
+    border-left: 5px solid green;
+    background-color: #72c6d4be;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.incorrect {
+    border-left: 5px solid red;
+    background-color: #32699686;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.check-icon {
+    color: green;
+    font-weight: bold;
+}
+
+.cross-icon {
+    color: red;
+    font-weight: bold;
+}

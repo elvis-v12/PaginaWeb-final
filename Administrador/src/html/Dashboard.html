@@ -1036,84 +1036,141 @@
   </div>
 
         <!-- Contenido para solicitudes de becas -->
-        <div id="becas" class="section">
-        <div class="atras_becas">
-          <h1 class="titulo_becas">Gestión de becas</h1>
-          <div class="filter-becas">
-            <div class="grupo_dni">
-              <input type="text" id="dni" placeholder="DNI" value="DNI">
-              <button class="butt_on2"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="grupo_nombre">
-              <input type="text" id="nombre" placeholder="Nombre" value="Nombre">
-              <button class="butt_on2"><i class="fas fa-search"></i></button>
-            </div>
-            <input type="date" id="fecha">
-
-            <div class="grupo_curso">
-              <input type="text" id="curso" placeholder="Curso" value="Curso">
-              <button class="butt_on2"><i class="fas fa-search"></i></button>
-            </div>
-            <select id="nivel">
-              <option value="nivel">Nivel</option>
-              <option value="niños">Niños</option>
-              <option value="adolescentes">Adolescentes</option>
-              <option value="adultos">Adultos</option>
-            </select>
-            <select id="estado_certificado">
-              <option value="estado">Estado del Certificado</option>
-              <option value="aprobado">Aprobado</option>
-              <option value="rechazado">Rechazado</option>
-              <option value="en_revision">En Revisión</option>
-            </select>
-
-          </div>
-          <div class="becas-container">
-            <table id="tabla-administradores" aria-labelledby="titulo-pagina">
-              <thead>
-                <tr>
-                  <th>DNI</th>
-                  <th>Nombre</th>
-                  <th>Fecha</th>
-                  <th>Curso</th>
-                  <th>Nivel</th>
-                  <th>Estado del certificado</th>
-                  <th>Descargar</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>715561561</td>
-                  <td>Henry</td>
-                  <td>15/2/24</td>
-                  <td>Matematica</td>
-                  <td>Adulto</td>
-                  <td>Aprobado</td>
-                  <td>
-                    <button class="settings-btn">
-                      <i class="fa fa-download"></i>
-                    </button>
-                  </td>
-                </tr>
-                <!-- Puedes agregar más filas según sea necesario -->
-                <tr>
-                  <td>234234</td>
-                  <td>Ana</td>
-                  <td>16/3/24</td>
-                  <td>Python</td>
-                  <td>Niños</td>
-                  <td>En Revisión</td>
-                  <td>
-                    <button class="settings-btn">
-                      <i class="fa fa-download"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+<div id="becas" class="section">
+  <div class="atras_becas">
+    <h1 class="titulo_becas">Gestión de becas</h1>
+    <div class="filter-becas">
+      <!-- Filtro universal de búsqueda -->
+      <div class="grupo_busqueda">
+        <input type="text" id="busqueda_becas" placeholder="Buscar..." value="">
+        <button class="butt_on2"><i class="fas fa-search"></i></button>
       </div>
+
+      <!-- Filtro de nivel -->
+      <select id="nivel_becas">
+        <option value="nivel">Nivel</option>
+        <option value="niño">Niños</option>
+        <option value="adolescente">Adolescentes</option>
+        <option value="adulto">Adultos</option>
+      </select>
+
+      <!-- Filtro de estado del certificado -->
+      <select id="estado_certificado">
+        <option value="estado">Estado del Certificado</option>
+        <option value="aprobado">Aprobado</option>
+        <option value="rechazado">Rechazado</option>
+        <option value="en revisión">En Revisión</option>
+      </select>
+    </div>
+
+    <div class="becas-container">
+      <table id="tabla-becas" aria-labelledby="titulo-pagina">
+        <thead>
+          <tr>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Fecha</th>
+            <th>Categoría</th>
+            <th>Estado del certificado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>715561561</td>
+            <td>Henry</td>
+            <td>715561561</td>
+            <td>15/2/24</td>
+            <td>Matematica</td>
+            <td>Aprobado</td>
+            <td>
+              <button class="settings-btn" onclick="mostrarDetalles('715561561')">
+                <i class="fa fa-info-circle"></i> Más detalles
+              </button>
+              <button class="settings-btn" onclick="editarBeca('715561561')">
+                <i class="fa fa-edit"></i> Editar
+              </button>
+              <button class="settings-btn">
+                <i class="fa fa-download"></i> Descargar
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>234234</td>
+            <td>Ana</td>
+            <td>715561561</td>
+            <td>16/3/24</td>
+            <td>Python</td>
+            <td>En Revisión</td>
+            <td>
+              <button class="settings-btn" onclick="mostrarDetalles('234234')">
+                <i class="fa fa-info-circle"></i> Más detalles
+              </button>
+              <button class="settings-btn" onclick="editarBeca('234234')">
+                <i class="fa fa-edit"></i> Editar
+              </button>
+              <button class="settings-btn">
+                <i class="fa fa-download"></i> Descargar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Sección de detalles de beca -->
+    <div id="beca-details" class="beca-details hidden">
+      <button id="close-details" class="btn-close" onclick="cerrarDetalles()">
+        <i class="fa fa-times-circle"></i>
+      </button>
+
+      <div class="details-header">
+        <h3>Detalles de la Beca</h3>
+      </div>
+
+      <div class="beca-details-info">
+        <p><strong>DNI:</strong> <span id="detail-dni"></span></p>
+        <p><strong>Nombre:</strong> <span id="detail-nombre"></span></p>
+        <p><strong>Correo:</strong> <span id="detail-correo"></span></p>
+        <p><strong>Fecha:</strong> <span id="detail-fecha"></span></p>
+        <p><strong>Categoría:</strong> <span id="detail-categoria"></span></p>
+        <p><strong>Motivo:</strong> <span id="detail-motivo"></span></p>
+        <p><strong>Estado del Certificado:</strong> <span id="detail-estado-certificado"></span></p>
+        <p><strong>Nivel:</strong> <span id="detail-nivel"></span></p>
+      </div>
+    </div>
+
+    <!-- Ventana emergente de edición de beca -->
+    <div id="beca-edit-modal" class="beca-edit-modal hidden">
+      <div class="beca-edit-modal-content">
+        <button id="close-edit-modal" class="btn-close" onclick="cerrarEdicion()">
+          <i class="fa fa-times-circle"></i>
+        </button>
+
+        <h3>Editar Beca</h3>
+
+        <form id="beca-edit-form">
+          <label for="edit-nombre">Nombre:</label>
+          <input type="text" id="edit-nombre" value=""> <br>
+          
+          <label for="edit-correo">Correo:</label>
+          <input type="email" id="edit-correo" value=""> <br>
+          
+          <label for="edit-estado-certificado">Estado del Certificado:</label>
+          <select id="edit-estado-certificado"> <br>
+            <option value="aprobado">Aprobado</option>
+            <option value="rechazado">Rechazado</option>
+            <option value="en_revision">En Revisión</option>
+          </select> <br>
+          
+          <button type="submit" class="butt_edit">Guardar cambios</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
       <div id="mensajeria" class="section">

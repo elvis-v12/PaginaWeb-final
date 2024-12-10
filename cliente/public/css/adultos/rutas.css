@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('/public/img/adultos/adultos4.png');
+    background: #c99e8f;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -16,30 +16,31 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    align-items: flex-start; /* Alineación al inicio para organizar varias filas */
+    align-items: flex-start;
+    /* Alineación al inicio para organizar varias filas */
     min-height: 100vh;
     padding: 80px 20px;
 }
 
 /* Título principal */
+
 .main-title {
     width: 100%;
     text-align: center;
-    font-size: 5rem;
-    font-family: 'Spicy Rice', cursive;
-    color: #778c43;
+    font-size: 6rem;
+    color: rgb(15, 59, 95);
+    background-color: rgb(255, 255, 255);
     margin-bottom: 40px;
     margin-top: 20px;
-    text-shadow: 2px 2px 0px #1e1f1d;
+    text-shadow: 4px 4px 0px #ffffff;
     padding: 20px 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.176), rgba(255, 255, 255, 0.025));
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
 }
 
 /* Tarjeta individual de curso */
 .ruta-container {
-    background-color: #d2b48c9a;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -90,19 +91,19 @@ body {
     text-align: left;
     font-family: 'Concert One', cursive;
     font-weight: bold;
-    color: #778c43;
-    text-shadow: 3px 3px 0px #ffffff;
+    color: rgb(15, 59, 95);
+
 }
 
 /* Estilo del texto muted */
 .text-muted {
-    color: #778c43 !important;
+    color: #000000 !important;
     text-align: left;
 }
 
 /* Contenedor de la lista de cursos */
 .course-list-clear {
-    background-color: #778c4376;
+    background-color: rgb(123, 130, 143);
     padding: 10px;
     border-radius: 8px;
 }
@@ -110,17 +111,20 @@ body {
 /* Estilos del botón */
 .btn {
     display: block;
-    background-color: #778c43;
+    background-color: #336cad;
     border: none;
     color: #fff;
     padding: 12px;
     font-size: 16px;
     border-radius: 8px;
     font-family: 'Coiny', cursive;
-    width: calc(100% - 0); /* Ajuste para el ancho completo del contenedor */
-    margin-top: 20px; /* Espacio adicional para separarlo del contenedor */
+    width: calc(100% - 0);
+    /* Ajuste para el ancho completo del contenedor */
+    margin-top: 20px;
+    /* Espacio adicional para separarlo del contenedor */
     transition: transform 0.3s ease, background-color 0.3s ease;
-    text-decoration: none; /* Quita la decoración de enlace */
+    text-decoration: none;
+    /* Quita la decoración de enlace */
 }
 
 .btn:hover {

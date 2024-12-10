@@ -1,29 +1,7 @@
-* {
-    box-sizing: border-box;
-    /* Incluye el padding y el borde en el ancho total */
-}
-
-html,
-body {
-    font-family: 'Arial', sans-serif;
-    background: url('/public/img/adultos/adultos4.png') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-}
-
 .flex-container {
     display: flex;
     align-items: flex-start;
     margin-top: 2em;
-}
-
-.bg-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    /* Mantiene la altura completa */
 }
 
 .container {
@@ -35,59 +13,34 @@ body {
 }
 
 .title {
-    margin-top: 80px;
+
+    margin-top: 90px;
     font-size: 4rem;
     font-weight: bold;
-    color: #FFD700;
-    text-shadow: 3px 3px 0px #ffffff;
-    position: fixed;
-    left: 0;
+    color: rgb(15, 59, 90);
     width: 100%;
     text-align: center;
     z-index: 20;
-    font-family: 'Coiny', cursive;
-    top: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.176), rgba(255, 255, 255, 0.025));
-    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
-    animation: bounce 2s infinite;
+
 }
 
-@keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-10px);
-    }
-
-    60% {
-        transform: translateY(-5px);
-    }
-}
 
 
 .water-stain {
-    background-color: rgba(255, 20, 145, 0.623);
-    width: 750px;
-    height: 500px;
-    border-radius: 50% 30% 40% 60% / 50% 40% 60% 70%;
-    animation: morph 6s ease-in-out infinite;
-    margin-right: 5rem;
-    margin-top: 3rem;
+    background-color: #2598b4;
+    width: 720px;
+    height: 410px;
+    border-radius: 0;
+    /* Elimina las curvas para que sea un rectángulo */
+    animation: none;
+    /* Elimina la animación de cambio de forma */
+    margin-right: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    margin-top: 100px;
-    flex: 90%;
 }
 
 .subtitle-container {
@@ -101,40 +54,21 @@ body {
 .subtitle {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #fff;
-    font-family: 'Satisfy', cursive;
-    margin-left: 130px;
+    font-family: 'Fredoka One', sans-serif;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: #ffffff;
+    /* Ajuste de tamaño de fuente */
+
 }
 
-.rating {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
-
-.stars {
-    color: gold;
-    font-size: 1.5rem;
-    margin-right: 15px;
-}
-
-.level {
-    background-color: #FFC107;
-    color: #fff;
-    padding: 0.2rem 0.5rem;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    margin-right: 80px;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
 .description {
     font-size: 1rem;
     /* Tamaño de fuente */
     font-family: 'Nanum Gothic Coding', monospace;
     /* Fuente */
-    color: #ffe3f7;
+    color: #ffffff;
     /* Color del texto */
     text-align: justify;
     /* Justificar el texto */
@@ -169,37 +103,18 @@ body {
     justify-content: center;
     align-items: flex-start;
     position: relative;
-    margin-top: 6rem;
     flex: 1%;
 }
 
 .image-container img {
-    max-width: 310px;
-    max-height: 1000px;
+    max-width: 600px;
+    max-height: 500px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
     z-index: 1;
     margin-right: 90px;
 }
 
-.image-container::before,
-.image-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 15%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
-    z-index: 0;
-}
-
-.image-container::before {
-    left: 0;
-}
-
-.image-container::after {
-    right: 0;
-}
 
 .button-container {
     display: flex;
@@ -208,7 +123,7 @@ body {
 }
 
 .button-primary {
-    background-color: #6aa7f6;
+    background-color: #1d294b;
     font-size: 18px;
     color: white;
     border: none;
@@ -230,7 +145,7 @@ body {
 }
 
 .button-primary:hover {
-    background-color: #206da7;
+    background-color: #10519c;
 }
 
 .button-primary svg {
@@ -258,22 +173,22 @@ body {
 /* SEGUNDO APARTADO NUEVO - TEMARIO */
 
 .temario {
-    background-color: #7AD9FF;
-    color: white;
-    border-radius: 8px;
+    border-top: 1px solid rgb(255, 255, 255);
+    background: #f5f5f5;
     padding: 1.5em;
 }
 
-.temario h2{
-    margin-top: 35px;
-    font-family: 'Rammetto One', sans-serif;
-    font-size: 2.7em;
-    color: rgb(213, 231, 252); /* Color azul */
-    text-shadow: 2px 5px 0 rgb(80, 143, 219); /* Sombra sólida */
+.temario h2 {
+    margin-top: 28px;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 4em;
+    color: rgb(15, 59, 90);
+    /* Color azul */
     text-align: center;
     margin-left: 10px;
     margin-bottom: 20px;
-    animation: reboteFrente 2s ease-in-out infinite; /* Llama a la animación */
+
+    /* Llama a la animación */
 }
 
 .temario-div {
@@ -286,7 +201,7 @@ body {
 /* Estilo personalizado para los videos */
 /* Contenedor general */
 .contenedor-recursos {
-    background-color: #7ed7ff;
+    background-color: #f7f3ef;
     /* Fondo del contenedor principal */
     padding: 20px;
     border-radius: 10px;
@@ -308,7 +223,7 @@ body {
 
 /* Tarjeta de curso */
 .content-card {
-    background-color: #37748a;
+    background-color: #909699;
     /* Fondo de cada tarjeta */
     padding: 20px;
     margin: 10px;
@@ -319,7 +234,7 @@ body {
     gap: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     /* Sombra */
-    color: #ffef6f;
+    color: #161615;
     /* Color del texto */
     font-family: Arial, sans-serif;
 }
@@ -367,7 +282,7 @@ body {
 
 .progress-bar-fill {
     height: 100%;
-    background-color: #2bffb5;
+    background-color: #12b2da;
     /* Color de la barra de progreso */
     width: 80%;
     /* Cambia este valor según el progreso de cada curso */
@@ -412,22 +327,25 @@ button:hover {
 }
 
 .contenedor-requisitos {
-    background-color: #cc6dc9c9;
-    padding: 10px;
+    background-color: rgb(53, 89, 114);
+    padding: 20px;
     /* Espaciado interno para que los elementos no estén pegados al borde */
-    border: 2px solid #84377e;
     /* Borde negro */
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     /* Sombra */
+    margin-bottom: 2rem;
 }
 
 .contenedor-requisitos h3 {
     font-size: 1.2em;
+    color: #ffffff;
+    font-family: 'Fredoka One', sans-serif;
 }
 
 .contenedor-requisitos ul {
     list-style-type: disc;
     margin-left: 20px;
+    color: #dbd3d3;
 }
 
 .contenedor-requisitos li {
@@ -459,8 +377,7 @@ button:hover {
     text-align: center;
     margin-left: 10px;
     margin-bottom: 20px;
-    animation: reboteFrente 2s ease-in-out infinite;
-    /* Llama a la animación */
+
 }
 
 @keyframes reboteFrente {
@@ -487,55 +404,29 @@ button:hover {
 
 
 .textito {
-    font-family: 'Grand Hotel', cursive;
+    font-family: 'Fredoka One', sans-serif;
     font-size: 2.5rem;
     color: #ffffff;
 }
 
-
 .gif-container {
-    display: flex;
-    /* Alinea los elementos en fila */
-    justify-content: space-around;
-    /* Espacio igual entre los elementos */
-    margin-top: 0.5rem;
-    /* Espacio superior del contenedor */
+    display: none;
 }
 
-.gif-container img {
-    width: 30%;
-    /* Ajusta el tamaño de las imágenes */
-    display: block;
-    /* Alinea las imágenes al inicio de cada línea */
-    margin: 0;
-    /* Elimina cualquier margen para alinear a la izquierda */
-}
-
-.gif-mediano {
-    width: 100%;
-    /* Hace que el GIF se ajuste al ancho del contenedor */
-    max-width: 200px;
-    /* Limita el tamaño máximo del GIF a 200px (ajusta según lo necesites) */
-    display: block;
-    /* Asegura que el GIF se alinee correctamente */
-    margin: 0;
-    /* Elimina el margen automático para mejor alineación */
-    margin-top: 1px;
-    /* Margen superior */
+.image-container #ima {
+    display: none;
 }
 
 .info-box {
-    border: 2px solid #84377e;
     /* Borde negro */
-    padding: 15px;
+    padding: 20px;
     /* Espacio interno */
-    border-radius: 8px;
+
     /* Esquinas redondeadas */
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     /* Sombra */
-    background-color: #cc6dc9c9;
-    animation: agarrarCaja 6s ease-in-out infinite;
-    /* Llama a la animación */
+    background-color: rgb(53, 89, 114);
+
 }
 
 @keyframes agarrarCaja {
@@ -585,19 +476,22 @@ button:hover {
 .info-box p {
     font-size: 1rem;
     font-family: 'Nanum Gothic Coding', monospace;
+    color: #d4dde0;
 
 }
 
 .textito1 {
-    font-family: 'Satisfy', cursive;
-    font-size: 2rem;
-    color: #ffe0fc;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-left: 15px;
+    color: rgb(255, 255, 255)
 }
 
 .temario-iz h3 {
-    font-family: 'Pacifico', cursive;
-    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
     margin: 0;
+    margin-left: 15px;
 }
 
 .temario-iz ul li {

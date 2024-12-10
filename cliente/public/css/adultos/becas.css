@@ -6,48 +6,73 @@
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: #b69d94;
-    background-size: cover;
+    background-color: #dbd8d3;
     margin: 0;
     padding: 0;
 }
+
 
 .soporte {
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
     margin-top: 110px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background: #eee9e7;
     /* Fondo blanco translúcido */
+
+    border: 1px solid rgb(209, 209, 209);
     /* Textura de burbujas */
 }
 
 /* Títulos Estilo Baby Shark */
-.titulo-soporte,
-.titulo-faq,
-.titulo-mensaje {
+/* Títulos Estilo Baby Shark */
+.titulo-soporte {
     text-align: center;
     /* Fuente redondeada */
     font-size: 4rem;
     /* Tamaño grande como en la imagen */
+    /* Gradiente de color vibrante (rosado a amarillo) */
 
     /* Propiedades para compatibilidad */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     padding-bottom: 20px;
     margin-top: 20px;
     display: block;
-    /* Cambia inline-block a block para centrar */
-    border-radius: 25px;
     /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
-    background-color: #324168;
-    /* Fondo azul claro detrás del texto */
+    background-color: #124472;
+    margin: 20px auto;
+    /* Asegura el centrado horizontal */
+
+}
+
+.titulo-faq {
+    text-align: center;
+    /* Fuente redondeada */
+    font-size: 2.5rem;
+    /* Tamaño grande como en la imagen */
+    /* Gradiente de color vibrante (rosado a amarillo) */
+
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: #080909;
+    padding-bottom: 20px;
+    display: block;
+    /* Cambia inline-block a block para centrar */
+    /* Bordes redondeados del contenedor del texto */
+    padding: 10px 20px;
+
+    /* Sombra alrededor del título */
+
+    /* Centramos el bloque del título */
     margin: 20px auto;
     /* Asegura el centrado horizontal */
 }
+
 
 /* Preguntas Frecuentes */
 .preguntas-frecuentes {
@@ -55,72 +80,215 @@ body {
     padding: 20px;
     /* Fondo celeste translúcido */
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* Fuente moderna y redondeada */
 }
 
 /* Estilo de cada pregunta */
 .pregunta {
     margin-bottom: 20px;
     padding: 15px;
-    border-bottom: 2px solid #0a6792;
 }
 
 /* Título de la pregunta (interactuable) */
 .pregunta h3 {
     font-size: 1.8rem;
-    color: #000000;
+    /* Un poco más grande para mejor lectura */
+    color: #124472;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 /* Descripción de la respuesta */
 .pregunta p {
     font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
     /* Tipografía amigable y clara */
     color: #333;
     display: none;
     transition: all 0.3s ease;
 }
 
-/* Al pasar el cursor sobre la pregunta */
-
 
 /* Al pasar el cursor sobre la pregunta */
-.pregunta:hover h3 {
-    color: #217ca0;
-    transform: scale(1.05);
+.editable-line {
+    border-bottom: 1px solid #1a1b30;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    min-height: 5px !important;
 }
 
-/* Pregunta abierta (cuando se muestra la respuesta) */
-.pregunta.activa p {
-    display: block;
-    padding-top: 10px;
-    animation: fadeIn 0.5s ease-in-out;
-    /* Nueva animación para aparición */
-    opacity: 1;
+
+/* Cuando el campo es tocado */
+.editable-line:empty:before {
+    content: attr(placeholder);
+    color: #aaa;
 }
 
-/* Efectos de transición para preguntas */
-.pregunta h3:hover+p {
-    display: block;
-    padding-top: 10px;
-    animation: fadeIn 0.01s ease-in-out;
-    opacity: 1;
+.editable-line:focus {
+    border-color: #193552;
 }
 
-/* Animación de aparición */
+.pregunta-abierta h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/*CAMBIOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS*/
+/* Botones para subir documentos y certificados en paralelo */
+.subir-archivos {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.boton-subir {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label.btn-subir {
+    display: inline-block;
+    background-color: #20354a;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+}
+
+label.btn-subir:hover {
+    background-color: #0d2e51;
+}
+
+/* Estilo para el checkbox de aceptación de condiciones */
+.aceptar-condiciones {
+    margin: 20px 0;
+}
+
+.checkbox-label {
+    font-size: 20px;
+    color: #333;
+}
+
+.checkbox-label input {
+    margin-right: 10px;
+    transform: scale(1.5);
+    /* Hace el checkbox más grande */
+}
+
+/* Botón de "Enviar Postulación" */
+.btn-enviar {
+    background-color: #315530;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background-color: #0056b3;
+}
+
+.advertencia {
+    color: #ff0000;
+    font-size: 16px;
+    margin-top: 10px;
+    display: none;
+}
+
+/*ventana EMERGENTE para registro exitoso*/
+/* Estilo del modal */
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    /* Se coloca encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo oscuro */
+    overflow: auto;
+    padding-top: 60px;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    /* Ancho del modal */
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-body h2 {
+    font-size: 2.8rem;
+    /* Un poco más grande para mejor lectura */
+    font-family: 'Fredoka One', sans-serif;
+    color: #1c932e;
+}
+
+.modal-body p {
+    font-size: 18px;
+    /* Un poco más grande para mejor lectura */
+    font-family: 'Courier New', Courier, monospace;
+    color: #080909;
+}
+
+/* Estilo del encabezado del modal (GIF) */
+.modal-header img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Estilo del pie del modal */
+.modal-footer {
+    margin-top: 20px;
+}
+
+
+
+
+/* Efecto de entrada */
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
     }
 
-    100% {
+    to {
         opacity: 1;
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
 
+    to {
+        opacity: 1;
+    }
+}
 
 /* Formulario de Mensaje */
 .mensaje-admin {
@@ -139,7 +307,7 @@ body {
 /* Estilo de las etiquetas */
 form label {
     font-size: 1.3rem;
-    color: #000000;
+    color: #007BFF;
     /* Color azul vibrante */
     display: block;
     margin-bottom: 10px;
@@ -152,8 +320,8 @@ form textarea {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid #000000;
-    border-radius: 5px;
+    border: 2px solid #00BEFE;
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.95);
     font-size: 1.1rem;
     color: #333;
@@ -165,6 +333,9 @@ form textarea {
 /* Efecto al hacer foco en los campos */
 form input:focus,
 form textarea:focus {
+    border-color: #FF4081;
+    /* Cambia el borde al rosado cuando está enfocado */
+    box-shadow: 0 0 8px rgba(255, 64, 129, 0.5);
     /* Sombra vibrante */
     outline: none;
 }
@@ -174,7 +345,7 @@ form textarea:focus {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #134580;
+    background-color: #0c2c5c;
     color: white;
     font-size: 1.5rem;
     font-family: 'Fredoka One', sans-serif;
@@ -186,7 +357,7 @@ form textarea:focus {
 
 /* Efecto al pasar el mouse sobre el botón */
 .btn-enviar:hover {
-    background-color: #1990a0;
+    background-color: #0d426d;
     transform: scale(1.05);
     /* Agranda ligeramente el botón */
 }
@@ -205,6 +376,87 @@ form textarea:focus {
     }
 }
 
+/*CURSOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS*/
+/* Contenedor de las tarjetas */
+.contenedor-cursos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* Espacio entre las tarjetas */
+}
+
+/* Estilo para las tarjetas */
+.tarjeta-curso {
+    width: 300px;
+    /* Ancho */
+    height: 200px;
+    /* Alto */
+    border: 2px solid #000000;
+    /* Borde azul */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Espaciado entre elementos */
+    align-items: center;
+    /* Centrar contenido */
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* Fondo claro */
+    margin-bottom: 40px;
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta-curso:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título del curso */
+.tarjeta-curso h3 {
+    font-size: 32px;
+    color: #0d143d;
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    font-weight: 100px;
+    margin: 0 0 10px 10px;
+    /* Espacio extra desde los bordes */
+}
+
+/* Estilo para la imagen */
+.tarjeta-curso img {
+    display: none;
+}
+
+.btn-gratis {
+    display: inline-block;
+    background-color: #23394d;
+    /* Azul brillante */
+    color: #fff;
+    /* Texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+    /* Bordes redondeados */
+    text-align: center;
+    /* Espacio entre el título y la imagen */
+    cursor: pointer;
+}
+
+.btn-gratis:hover {
+    background-color: #2288b1;
+    /* Azul más oscuro */
+    transform: scale(1.05);
+    /* Ligero zoom al pasar el cursor */
+}
+
+
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo del pie de página */
 .footer {
@@ -220,7 +472,7 @@ form textarea:focus {
     /* Tamaño de fuente más pequeño */
     font-family: 'Arial', sans-serif;
     /* Tipografía simple y limpia */
-    border-top: 2px solid #778c43;
+    border-top: 2px solid #ff4081;
     /* Líneas de separación */
     position: relative;
 }

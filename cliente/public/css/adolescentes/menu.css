@@ -150,17 +150,19 @@ body {
 
 /* Botón del carrito de compras */
 .mi-menu .login .btn-cart {
+  position: relative; /* Base para posicionar el span relativo al carrito */
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin-left: 20px;
 }
 
+/* Ícono del carrito */
 .mi-menu .cart-icon {
   width: 30px;
   height: 30px;
 }
 
+/* Imagen del carrito con efecto hover */
 .mi-menu .btn-cart img {
   width: 30px;
   height: 30px;
@@ -170,6 +172,25 @@ body {
 .mi-menu .btn-cart:hover img {
   transform: scale(1.1); /* Efecto de agrandar el carrito al pasar el mouse */
 }
+
+/* Número del carrito (numerito) */
+.mi-menu .btn-cart .numerito {
+  position: absolute;
+  top: -5px; /* Posicionado en la parte superior del carrito */
+  right: -5px; /* Posicionado en la esquina superior derecha */
+  background-color: #FF4C4C;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%; /* Hace el span redondo */
+  width: 20px;
+  height: 20px;
+  display: flex; /* Habilita flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+}
+
 
 /* Estilos para el menú hamburguesa */
 .mi-menu .hamburger {
