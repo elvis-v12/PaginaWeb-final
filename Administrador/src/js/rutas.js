@@ -1,51 +1,67 @@
-document.getElementById("form-ruta").addEventListener("submit", function (e) {
-  e.preventDefault();
+(function () {
+  const BASE_URL = "http://localhost:3000/api/datosRutas";
+  let rutasSeleccionado = null;
 
-  // Capturar valores del formulario
-  const nombreRuta = document.getElementById("nombre-ruta").value;
-  const descripcionRuta = document.getElementById("descripcion-ruta").value;
-  const cursoSeleccionado = document.getElementById("seccion-select").value;
+  document.addEventListener("DOMContentLoaded", cargarRutas);
 
-  // Validar que se haya seleccionado un curso
-  if (!cursoSeleccionado) {
-    alert("Por favor, selecciona un curso.");
-    return;
+  function cargarRutas() {
+    fetch(`${BASE_URL}/rutas`)
+      .then((response) => {
+        if (!response.ok) throw new Error("Error al cargar las rutas");
+        return response.json();
+      })
+      .then((data) => {
+        const tbody = document.querySelector("#tabla-rutas tbody");
+        if (!tbody) {
+          console.error("Elemento con ID 'tabla-rutas' no encontrado");
+          return;
+        }
+        tbody.innerHTML = ""; // Limpiar tabla
+
+        data.forEach((rutas) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${rutas.id_ruta}</td>
+            <td>${rutas.nombre_ruta}</td>
+            <td>${rutas.descripcion}</td>
+            <td>
+              <button onclick="desactivarRutas(${rutas.id_ruta})">Eliminar</button>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch((error) => {
+        mostrarModalMensaje("Error", error.message, "error");
+      });
   }
 
-  // Crear una nueva fila para la tabla
-  const tableBody = document.querySelector("#tabla-rutas tbody");
-  const newRow = document.createElement("tr");
+  document.getElementById("form-ruta")?.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  // Crear celdas
-  const nombreCell = document.createElement("td");
-  nombreCell.textContent = nombreRuta;
+    const nombreRuta = document.getElementById("nombre-ruta").value.trim();
+    const descripcion = document.getElementById("descripcion-ruta").value.trim();
 
-  const descripcionCell = document.createElement("td");
-  descripcionCell.textContent = descripcionRuta;
+    if (!nombreRuta || !descripcion) {
+      alert("Por favor, llene los campos.");
+      return;
+    }
 
-  const cursoCell = document.createElement("td");
-  cursoCell.textContent = cursoSeleccionado;
-
-  const accionesCell = document.createElement("td");
-  const deleteButton = document.createElement("button");
-  deleteButton.textContent = "Eliminar";
-  deleteButton.className = "btn-eliminar";
-  accionesCell.appendChild(deleteButton);
-
-  // Agregar celdas a la fila
-  newRow.appendChild(nombreCell);
-  newRow.appendChild(descripcionCell);
-  newRow.appendChild(cursoCell);
-  newRow.appendChild(accionesCell);
-
-  // Agregar fila a la tabla
-  tableBody.appendChild(newRow);
-
-  // Limpiar formulario
-  document.getElementById("form-ruta").reset();
-
-  // Evento para eliminar una fila
-  deleteButton.addEventListener("click", function () {
-    tableBody.removeChild(newRow);
+    fetch(`${BASE_URL}/rutas`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nombre_ruta: nombreRuta, descripcion }),
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Error al guardar ruta");
+        return response.json();
+      })
+      .then(() => {
+        mostrarModalMensaje("Éxito", "Ruta guardada", "success");
+        cargarRutas();
+      })
+      .catch((error) => {
+        mostrarModalMensaje("Error", error.message, "error");
+      });
   });
-});
+})();

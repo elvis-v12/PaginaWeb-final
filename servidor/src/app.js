@@ -12,6 +12,9 @@ import adminRoutes from "./routes/admin.routes.js";
 import cursoRoutes  from "./routes/curso.routes.js";
 import cursoCliente  from "./routes/CursosCliente.routes.js";
 import profesoresRoutes from "./routes/profesores.routes.js";
+import estudiantesRoutes from "./routes/estudiantes.routes.js";
+import rutasRoutes from "./routes/rutas.routes.js";
+
 
 // Cargar variables de entorno desde el archivo .env
 dotenv.config({ path: path.resolve('./.env') });
@@ -57,6 +60,11 @@ app.use('/api/client/cursos', cursoCliente); // Acceso público a los cursos
 
 //acceeso a traer datos de los profesores
 app.use("/api/profesores", profesoresRoutes);
+//api para manejar datos de estudiantes
+app.use("/api/estudiantes", estudiantesRoutes);
+
+//api para traer datos de rutas
+app.use("/api/datosRutas",rutasRoutes);
 
 app.get('/admin/test', (req, res) => {
     res.send('<h1>El módulo Administrador está funcionando correctamente</h1>');

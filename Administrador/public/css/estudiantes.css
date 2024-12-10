@@ -97,7 +97,7 @@
   }
 }
 
-/* Otros estilos ya definidos */
+/* General */
 #student-management .student-header {
   display: flex;
   justify-content: right;
@@ -111,16 +111,19 @@
 
 #student-management .student-content {
   display: flex;
-  gap: 20px;
-  transition: margin-left 0.3s ease;
+  gap: 10px; /* Ajuste del espacio */
+  transition: all 0.3s ease; /* Transición suave */
+  width: 100%;
+  margin-right: 0%;
 }
 
 #student-management .student-table {
-  flex: 3;
+  flex: 1; /* Por defecto, ocupa todo el espacio */
   overflow-x: auto;
   padding: 15px;
   border-radius: 25px;
   background: rgb(255, 255, 255);
+  transition: all 0.3s ease; /* Suaviza cambios de tamaño */
 }
 
 #student-management .btn-view {
@@ -136,16 +139,22 @@
 }
 
 #student-management .student-details {
-  padding: 20px;
+  flex: 0; /* Inicialmente no ocupa espacio */
+  opacity: 0;
+  overflow: hidden;
   background-color: #ffffffc9;
   border-radius: 10px;
-  border: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  justify-content: space-between;
-  justify-content: flex-start;
-  color: rgb(24, 27, 41);
+  overflow: hidden;
+  transition: all 0.3s ease; /* Suaviza la transición */
+  max-width: 0;
+}
+
+#student-management .student-details.visible {
+  flex: 0.3; /* Cuando está visible, ocupa el 30% */
+  opacity: 1; /* Se vuelve visible */
   max-width: 300px;
-  font-size: 14px;
+  padding: 15px;
+  margin-right: -15%;
 }
 
 #student-management .student-details-info p {
@@ -162,11 +171,6 @@
 #student-management .student-details-info span {
   color: #2c3e50;
   font-size: 13px;
-}
-
-#student-management .student-details.hidden {
-  transform: translateX(100%);
-  opacity: 0;
 }
 
 /* Nuevo */
@@ -219,14 +223,6 @@
   height: 2px;
   background-color: #181c2a;
   margin: 20px 0;
-}
-
-#sidebar.hide ~ #content .student-content {
-  gap: 10px;
-}
-
-#sidebar.hide ~ #content .student-details {
-  flex: 0.8;
 }
 
 #student-management .btn-close {

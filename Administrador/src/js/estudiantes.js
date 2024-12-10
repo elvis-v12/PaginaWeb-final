@@ -1,139 +1,114 @@
-// Datos simulados
-const students = [
-  {
-    id: 1,
-    nombres: "Brandon Roque",
-    correo: "brandon@example.com",
-    fechaRegistro: "2024-11-01",
-    cursosInscritos: ["JavaScript", "CSS Avanzado"],
-    estado: "Activo",
-    fechaNacimiento: "2000-05-18",
-    telefono: "123456789",
-    direccion: "Calle 123",
-    biografia: "Estudiante avanzado de tecnología",
-    genero: "Masculino",
-    rangoEdad: "Adultos",
-  },
-  {
-    id: 2,
-    nombres: "Fernanda Torres",
-    correo: "ferd@example.com",
-    fechaRegistro: "2024-11-01",
-    cursosInscritos: ["JavaScript", "CSS Avanzado", "Html"],
-    estado: "Activo",
-    fechaNacimiento: "2000-08-10",
-    telefono: "923456789",
-    direccion: "Calle 103",
-    biografia: "Estudiante",
-    genero: "Femenino",
-    rangoEdad: "Niños",
-  }
-];
+const STUDENTS_API_URL = "http://localhost:3000/api/estudiantes"; // Cambiar el nombre de la constante
 
-// Renderizar tabla
-const renderTable = () => {
+// Función principal para cargar estudiantes
+document.addEventListener("DOMContentLoaded", () => {
+  cargarEstudiantes();
+});
+
+// Función para cargar estudiantes desde la API
+function cargarEstudiantes() {
+  fetch(STUDENTS_API_URL)
+    .then((response) => {
+      if (!response.ok) throw new Error("Error al cargar estudiantes");
+      return response.json();
+    })
+    .then((data) => {
+      renderTable(data); // Renderizar la tabla con los datos obtenidos
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+    });
+}
+
+// Función para renderizar la tabla de estudiantes
+function renderTable(students) {
   const tbody = document.querySelector("#students-table tbody");
+
+  // Si no hay estudiantes, mostrar mensaje en la tabla
+  if (!students || students.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7">No hay estudiantes registrados.</td></tr>`;
+    return;
+  }
+
+  // Generar las filas de la tabla
   tbody.innerHTML = students
     .map(
       (student) => `
-            <tr>
-                <td>${student.id}</td>
-                <td>${student.nombres}</td>
-                <td>${student.correo}</td>
-                <td>${student.fechaRegistro}</td>
-                <td>${student.cursosInscritos.length}</td>
-                <td><span class="status ${
-                  student.estado === "Activo" ? "active" : "inactive"
-                }">${student.estado}</span></td>
-                <td><button class="btn-view" onclick="showDetails(${
-                  student.id
-                })"><i class="fa fa-eye"></i></button></td>
-            </tr>`
+        <tr>
+          <td>${student.id_estudiante}</td>
+          <td>${student.nombres}</td>
+          <td>${student.correo}</td>
+          <td>${new Date(student.fecha_registro).toLocaleDateString()}</td>
+          <td>${student.cursos_inscritos || "N/A"}</td>
+          <td><span class="status ${
+            student.estado === "Activo" ? "active" : "inactive"
+          }">${student.estado || "N/A"}</span></td>
+          <td>
+            <button class="btn-view" onclick="showDetails(${
+              student.id_estudiante
+            })">
+              <i class="fa fa-eye"></i>
+            </button>
+          </td>
+        </tr>`
     )
-    .join("");
-};
+    .join(""); // Añadir las filas generadas al cuerpo de la tabla
+}
 
-const searchButtonEstudiante = document.querySelector(
-  ".form-input-estudiante button"
-);
-const searchButtonIconEstudiante = document.querySelector(
-  ".form-input-estudiante button .bx"
-);
-const searchFormEstudiante = document.querySelector(".form-input-estudiante");
-const searchInputEstudiante = document.querySelector(
-  ".form-input-estudiante input"
-);
+// Función para mostrar los detalles del estudiante en el modal
+function showDetails(id) {
+  fetch(`${STUDENTS_API_URL}/${id}`) // Cambiar a STUDENTS_API_URL
+    .then((response) => {
+      if (!response.ok)
+        throw new Error("Error al obtener detalles del estudiante");
+      return response.json();
+    })
+    .then((student) => {
+      // Actualizar los datos en el modal
+      document.getElementById("detail-id").innerText = student.id_estudiante;
+      document.getElementById("detail-names").innerText = student.nombres;
+      document.getElementById("detail-email").innerText = student.correo;
+      document.getElementById("detail-birthdate").innerText =
+        student.fecha_nacimiento || "N/A";
+      document.getElementById("detail-phone").innerText =
+        student.telefono || "N/A";
+      document.getElementById("detail-address").innerText =
+        student.direccion || "N/A";
+      document.getElementById("detail-biography").innerText =
+        student.biografia || "N/A";
+      document.getElementById("detail-gender").innerText =
+        student.genero || "N/A";
+      document.getElementById("detail-age-range").innerText =
+        student.rango_edad || "N/A";
+      document.getElementById("detail-courses").innerHTML =
+        student.cursos_inscritos
+          ?.split(",")
+          .map((curso) => `<li>${curso}</li>`)
+          .join("") || "N/A";
 
-// Expansión del input al enfocarse
-searchInputEstudiante.addEventListener("focus", () => {
-  searchInputEstudiante.style.transition = "all 0.3s ease";
-  searchInputEstudiante.style.width = "130%"; // Expande hacia la izquierda
-  searchInputEstudiante.style.marginLeft = "-10%"; // Movimiento hacia la izquierda
-  searchInputEstudiante.style.borderColor = "#007bff"; // Cambia el borde a azul celeste
-});
+      // Mostrar la imagen según el género
+      const maleImg = document.getElementById("male-profile-img");
+      const femaleImg = document.getElementById("female-profile-img");
 
-// Contracción del input al desenfocarse o al presionar el botón buscar
-const resetInput = () => {
-  searchInputEstudiante.style.transition = "all 0.3s ease";
-  searchInputEstudiante.style.width = "100%"; // Regresa a su tamaño original
-  searchInputEstudiante.style.marginLeft = "0"; // Regresa a su posición original
-  searchInputEstudiante.style.borderColor = "transparent"; // Elimina el color del borde
-};
+      if (student.genero === "Masculino") {
+        maleImg.classList.remove("hidden");
+        femaleImg.classList.add("hidden");
+      } else if (student.genero === "Femenino") {
+        femaleImg.classList.remove("hidden");
+        maleImg.classList.add("hidden");
+      }
 
-// Contracción al hacer clic en el botón de buscar
-searchButtonEstudiante.addEventListener("click", (e) => {
-  e.preventDefault(); // Prevenir envío del formulario
-  resetInput();
-});
+      // Mostrar el modal
+      const details = document.querySelector(".student-details");
+      details.classList.add("visible");
+      details.classList.remove("hidden");
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+    });
+}
 
-// Contracción al presionar "Enter"
-searchInputEstudiante.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault(); // Prevenir envío del formulario
-    resetInput();
-  }
-});
-
-// Mostrar detalles
-const showDetails = (id) => {
-  const student = students.find((s) => s.id === id);
-  if (!student) return;
-
-  // Actualizar los detalles
-  document.getElementById("detail-id").innerText = student.id;
-  document.getElementById("detail-names").innerText = student.nombres;
-  document.getElementById("detail-email").innerText = student.correo;
-  document.getElementById("detail-birthdate").innerText = student.fechaNacimiento;
-  document.getElementById("detail-phone").innerText = student.telefono || "N/A";
-  document.getElementById("detail-address").innerText = student.direccion || "N/A";
-  document.getElementById("detail-biography").innerText = student.biografia || "N/A";
-  document.getElementById("detail-gender").innerText = student.genero || "N/A";
-  document.getElementById("detail-age-range").innerText = student.rangoEdad || "N/A";
-  document.getElementById("detail-courses").innerHTML = student.cursosInscritos
-    .map((curso) => `<li>${curso}</li>`)
-    .join("");
-
-  // Mostrar imagen según género
-  const maleImg = document.getElementById("male-profile-img");
-  const femaleImg = document.getElementById("female-profile-img");
-
-  if (student.genero === "Masculino") {
-    maleImg.classList.remove("hidden");
-    femaleImg.classList.add("hidden");
-  } else if (student.genero === "Femenino") {
-    femaleImg.classList.remove("hidden");
-    maleImg.classList.add("hidden");
-  }
-
-  // Mostrar el contenedor de detalles
-  document.getElementById("student-details").classList.remove("hidden");
-};
-
-// Cerrar detalles
+// Cerrar el modal de detalles
 document.getElementById("close-details").addEventListener("click", () => {
-  document.getElementById("student-details").classList.add("hidden");
+  document.querySelector(".student-details").classList.add("hidden");
 });
-
-// Inicializar
-renderTable();
-
