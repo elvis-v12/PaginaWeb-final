@@ -19,7 +19,7 @@ body {
     margin-top: 110px;
     background: #eee9e7;
     /* Fondo blanco translúcido */
-    border-radius: 15px;
+
     border: 1px solid rgb(209, 209, 209);
     /* Textura de burbujas */
 }
@@ -28,7 +28,6 @@ body {
 /* Títulos Estilo Baby Shark */
 .titulo-soporte {
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
     /* Fuente redondeada */
     font-size: 4rem;
     /* Tamaño grande como en la imagen */
@@ -41,16 +40,9 @@ body {
     padding-bottom: 20px;
     margin-top: 20px;
     display: block;
-    /* Cambia inline-block a block para centrar */
-    border-radius: 25px;
     /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
     background-color: #124472;
-    /* Fondo azul claro detrás del texto */
-    border: 1px solid black;
-    /* Sombra alrededor del título */
-
-    /* Centramos el bloque del título */
     margin: 20px auto;
     /* Asegura el centrado horizontal */
 
@@ -58,7 +50,6 @@ body {
 
 .titulo-faq {
     text-align: center;
-    font-family: "Fredoka One", sans-serif;
     /* Fuente redondeada */
     font-size: 2.5rem;
     /* Tamaño grande como en la imagen */
@@ -69,11 +60,9 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-color: #080909;
-    border: 1px solid black;
     padding-bottom: 20px;
     display: block;
     /* Cambia inline-block a block para centrar */
-    border-radius: 25px;
     /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
 
@@ -91,9 +80,6 @@ body {
     padding: 20px;
     /* Fondo celeste translúcido */
     border-radius: 10px;
-
-    /* Sombra interna */
-    font-family: 'Poppins', sans-serif;
     /* Fuente moderna y redondeada */
 }
 
@@ -107,16 +93,13 @@ body {
 .pregunta h3 {
     font-size: 1.8rem;
     /* Un poco más grande para mejor lectura */
-    font-family: 'Fredoka One', sans-serif;
     color: #124472;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 /* Descripción de la respuesta */
 .pregunta p {
     font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
     /* Tipografía amigable y clara */
     color: #333;
     display: none;
@@ -125,22 +108,14 @@ body {
 
 
 /* Al pasar el cursor sobre la pregunta */
-.pregunta:hover h3 {
-    color: #a5bc6b;
-    transform: scale(1.05);/
-}
-
 .editable-line {
-    border: 1px solid #1a1b30;
-    padding: 10px;
+    border-bottom: 1px solid #1a1b30;
     font-size: 16px;
     color: #333;
     outline: none;
-    width: 100%;
-    border-radius: 5px;
-    min-height: 40px;
-    transition: border-color 0.3s ease-in-out;
+    min-height: 5px !important;
 }
+
 
 /* Cuando el campo es tocado */
 .editable-line:empty:before {
@@ -370,7 +345,7 @@ form textarea:focus {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #15b115;
+    background-color: #0c2c5c;
     color: white;
     font-size: 1.5rem;
     font-family: 'Fredoka One', sans-serif;
@@ -415,11 +390,11 @@ form textarea:focus {
 .tarjeta-curso {
     width: 300px;
     /* Ancho */
-    height: 300px;
+    height: 200px;
     /* Alto */
-    border: 2px solid #3c5e43;
+    border: 2px solid #000000;
     /* Borde azul */
-    border-radius: 20px;
+    border-radius: 5px;
     /* Bordes redondeados */
     display: flex;
     flex-direction: column;
@@ -430,9 +405,6 @@ form textarea:focus {
     padding: 20px;
     background-color: #f9f9f9;
     /* Fondo claro */
-    /* Sombra */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Animación */
     margin-bottom: 40px;
 }
 
@@ -445,47 +417,39 @@ form textarea:focus {
 /* Estilo para el título del curso */
 .tarjeta-curso h3 {
     font-size: 32px;
-    color: #a5bc6b;
+    color: #0d143d;
     text-align: left;
     /* Alinea el texto a la izquierda */
-    font-family: "Sour Gummy", sans-serif;
-    font-weight: 900;
+    font-weight: 100px;
     margin: 0 0 10px 10px;
     /* Espacio extra desde los bordes */
 }
 
-
 /* Estilo para la imagen */
 .tarjeta-curso img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 10px;
+    display: none;
 }
 
 .btn-gratis {
     display: inline-block;
-    background-color: #6fb317;
+    background-color: #23394d;
     /* Azul brillante */
     color: #fff;
     /* Texto blanco */
     font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     padding: 10px 20px;
-    /* Tamaño del botón */
+
     border: none;
     border-radius: 8px;
     /* Bordes redondeados */
     text-align: center;
-    margin: 10px 0;
     /* Espacio entre el título y la imagen */
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-gratis:hover {
-    background-color: #0056b3;
+    background-color: #2288b1;
     /* Azul más oscuro */
     transform: scale(1.05);
     /* Ligero zoom al pasar el cursor */

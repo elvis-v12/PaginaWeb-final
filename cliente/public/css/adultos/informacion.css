@@ -83,7 +83,7 @@ body {
     /* Fuente redondeada */
     font-size: 2.5rem;
     /* Tamaño grande */
-    background: linear-gradient(90deg, #FF4081, #FFC107);
+    background-color: #1175a3;
     /* Gradiente vibrante */
 
     /* Propiedades para compatibilidad */
@@ -91,23 +91,11 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    /* Sombra para dar profundidad */
-    text-shadow:
-        -2px -2px 0 #778c43,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-
     padding-bottom: 20px;
     margin-top: 0;
     /* Sin margen superior */
     margin-bottom: 10px;
     /* Margen inferior para espacio */
-
-    /* Animación de burbuja */
-    animation: bubble 3s infinite ease-in-out;
-    margin-top: 50px;
 }
 
 /* Estilo del párrafo */
@@ -117,11 +105,8 @@ body {
     font-size: 2rem;
     /* Tamaño más pequeño */
     text-shadow:
-        -2px -2px 0 #d2b48c,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
+        -2px -2px 0 #27abbd;
+    background-color: #F5F5F5;
 }
 
 /* GIF Derecha */
@@ -191,7 +176,7 @@ body {
 
 /* Destacado en el Título */
 .highlight {
-    color: #d2b48c;
+    color: #323392;
 }
 
 /* Estilo del Párrafo */
@@ -269,34 +254,32 @@ body {
 /* Estilos para la imagen */
 .image-container {
     flex: 0 0 40%;
-    /* Ajusta el tamaño de la imagen */
+    /* Ajusta el tamaño del contenedor */
+    position: relative;
+    /* Necesario para posicionar el pseudo-elemento */
 }
 
 .image-container img {
-    width: 100%;
-    /* Mantiene la proporción */
-    height: auto;
-    border-radius: 10px;
-    /* Bordes redondeados */
+    display: none;
+    /* Oculta la imagen original */
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    50% {
-        transform: scale(1.02);
-        /* Aumenta ligeramente el tamaño */
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        /* Sombra más intensa */
-    }
-
-    100% {
-        transform: scale(1);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
+.image-container::after {
+    content: "";
+    /* Necesario para que el pseudo-elemento funcione */
+    display: block;
+    /* Asegura que sea visible */
+    width: 500px;
+    /* Ajusta al ancho del contenedor */
+    height: 500px;
+    margin-left: 50px;
+    /* Relación de aspecto (ajústalo si es necesario) */
+    background-image: url('../../img/adultos/guimar.png');
+    /* Imagen de reemplazo */
+    background-size: cover;
+    /* Escala la imagen para cubrir el área */
+    background-position: center;
+    /* Centra la imagen */
 }
 
 .section-container {

@@ -19,7 +19,7 @@ body {
   margin-top: 50px;
   padding: 50px;
   color: white;
-  background: #d6d0cd;
+  background: #F5F5F5;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -69,8 +69,8 @@ body {
   font-family: 'Fredoka One', sans-serif;
   /* Fuente redondeada */
   font-size: 5rem;
+  background: #1175a3;
   /* Tamaño grande */
-  background: linear-gradient(90deg, #FF4081, #FFC107);
   /* Gradiente vibrante */
 
   /* Propiedades para compatibilidad */
@@ -79,21 +79,11 @@ body {
   -webkit-text-fill-color: transparent;
 
   /* Sombra para dar profundidad */
-  text-shadow:
-    -2px -2px 0 #778c43,
-    2px -2px 0 #ffffff,
-    -2px 2px 0 #ffffff,
-    2px 2px 0 #ffffff,
-    6px 6px 10px rgba(0, 0, 0, 0.3);
-
   padding-bottom: 20px;
   margin-top: 0;
   /* Sin margen superior */
   margin-bottom: 10px;
   /* Margen inferior para espacio */
-
-  /* Animación de burbuja */
-  animation: bubble2 3s infinite ease-in-out;
 }
 
 @keyframes bubble2 {
@@ -121,7 +111,6 @@ body {
   /* Fuente redondeada */
   font-size: 3rem;
   /* Tamaño grande */
-  background: linear-gradient(90deg, #FF4081, #FFC107);
   /* Gradiente vibrante */
 
   /* Propiedades para compatibilidad */
@@ -131,20 +120,13 @@ body {
 
   /* Sombra para dar profundidad */
   text-shadow:
-    -2px -2px 0 #d2b48c,
-    2px -2px 0 #ffffff,
-    -2px 2px 0 #ffffff,
-    2px 2px 0 #ffffff,
-    6px 6px 10px rgba(0, 0, 0, 0.3);
+    -2px -2px 0 #27abbd;
 
   padding-bottom: 20px;
   margin-top: 0;
   /* Sin margen superior */
   margin-bottom: 10px;
   /* Margen inferior para espacio */
-
-  /* Animación de burbuja */
-  animation: bubble2 3s infinite ease-in-out;
 }
 
 
@@ -258,7 +240,7 @@ p {
 .fondoprov {
   margin-top: -80px;
   height: 3150px;
-  background: #d6d0cd;
+  background: #F5F5F5;
 }
 
 /* Contenedor de contenido */
@@ -316,7 +298,7 @@ h1,
 .modal-title,
 .modal-body h4 {
   font-family: 'Fredoka One', cursive;
-  color: #778c43;
+  color: #1175a3;
 }
 
 h1 {
@@ -417,39 +399,11 @@ a {
   /* Cursor de máquina de escribir más delgado */
   white-space: nowrap;
   /* Evita que el texto se divida en varias líneas */
-  width: 0;
-  /* Comienza con el ancho en 0 */
-  animation: typing 3.5s steps(40, end) 1s infinite alternate, blink-caret 0.75s step-end infinite;
-  /* Animaciones */
+  width: 900px;
+
 }
 
-/* Animación de escritura */
-@keyframes typing {
-  from {
-    width: 0;
-    /* Comienza con el ancho en 0 */
-  }
 
-  to {
-    width: 100%;
-    /* Aumenta al 100% */
-  }
-}
-
-/* Animación del cursor parpadeante */
-@keyframes blink-caret {
-
-  from,
-  to {
-    border-color: rgba(255, 255, 255, 0.9);
-    /* Cursor visible */
-  }
-
-  50% {
-    border-color: transparent;
-    /* Parpadeo del cursor */
-  }
-}
 
 /* Estilo general del buscador */
 .search-container {

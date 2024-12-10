@@ -70,81 +70,9 @@ body {
     }
 }
 
-/* Títulos Estilo Baby Shark */
-.phrase {
-    text-align: left;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 4.6rem;
-    background: none;
-
-    /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* Sombra para crear el borde grueso blanco y la curvatura */
-    text-shadow:
-        -2px -2px 0 #a5bc6b,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra para dar profundidad */
-
-    margin-top: 20px;
-    display: block;
-}
-
-
-/* Estilo específico para "¡Programa tu éxito!" */
-.highlight-exito {
-    font-size: 6rem;
-    color: #FF4081;
-    font-family: "Bowlby One", sans-serif;
-    line-height: 1.2;
-    margin-top: 40px;
-
-    /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        -2px -2px 0 #778c43,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra para dar profundidad */
-}
-
-/* Aplicar el efecto "pop" a las letras en bucle */
-.phrase span {
-    animation: pop-effect 1s ease forwards;
-    /* Aplica la animación */
-    opacity: 0;
-    /* Comienza invisible */
-    display: inline-block;
-    /* Permite animar cada letra individualmente */
-    animation-delay: 0s;
-    /* Sin retraso para la primera letra */
-    animation-iteration-count: infinite;
-    /* Ejecuta la animación indefinidamente */
-}
 
 /* Ajustes para el logo */
-.imagen-fondo {
-    width: 550px;
-    /* Ancho del contenedor */
-    height: 350px;
-    /* Altura del contenedor */
-    margin-left: 10px;
 
-    background-image: url('/public/img/adultos/logocafe.gif');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Contenedor del buscador */
@@ -178,45 +106,14 @@ body {
     /* Aumenta el tamaño de la fuente */
     color: rgba(255, 255, 255, 0.9);
     /* Color del texto más vibrante */
-    overflow: hidden;
     /* Oculta el texto que no se ha escrito */
     border-right: 3px solid rgba(255, 255, 255, 0.9);
     /* Cursor de máquina de escribir más delgado */
-    white-space: nowrap;
-    /* Evita que el texto se divida en varias líneas */
-    width: 0;
-    /* Comienza con el ancho en 0 */
-    animation: typing 3.5s steps(40, end) 1s infinite alternate, blink-caret 0.75s step-end infinite;
-    /* Animaciones */
+
+
 }
 
-/* Animación de escritura */
-@keyframes typing {
-    from {
-        width: 0;
-        /* Comienza con el ancho en 0 */
-    }
 
-    to {
-        width: 100%;
-        /* Aumenta al 100% */
-    }
-}
-
-/* Animación del cursor parpadeante */
-@keyframes blink-caret {
-
-    from,
-    to {
-        border-color: rgba(255, 255, 255, 0.9);
-        /* Cursor visible */
-    }
-
-    50% {
-        border-color: transparent;
-        /* Parpadeo del cursor */
-    }
-}
 
 /* Estilo general del buscador */
 .search-container {
@@ -357,23 +254,6 @@ body {
     /* Efecto de zoom al pasar el mouse */
 }
 
-.title-kids,
-.title-quality,
-.title-programming,
-.title-exclusive {
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 3.5rem;
-    color: #ffffff;
-    /* Ajuste de tamaño de fuente */
-    margin-bottom: 10px;
-    text-shadow:
-        -2px -2px 0 #99a86e,
-        2px -2px 0 #a5bc6b,
-        -2px 2px 0 #a5bc6b,
-        2px 2px 0 #a5bc6b,
-        6px 6px 10px rgb(63, 106, 54);
-}
-
 .fade-text {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2.7rem;
@@ -387,27 +267,6 @@ body {
     color: #ffffff;
     margin-bottom: 50px;
     text-align: justify;
-}
-
-/* Estilo para los botones del carrusel */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 2rem;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-    z-index: 10;
-    /* Asegura que los botones estén sobre las diapositivas */
-}
-
-.carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev {
@@ -432,30 +291,7 @@ body {
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo general para la sección de datos */
-.main-container {
-    display: flex;
-    justify-content: center;
-    /* centrar horizontal */
-    align-items: center;
-    /* centrar vertical */
-    padding: 40px;
-    /* Espaciado en la sección */
-    background-color: #99b684;
-    /* Textura de burbujas */
-    background-size: cover;
-    /* Asegúrate de que la imagen cubra el área */
-    background-position: center;
-    /* Centra la imagen */
-    border-radius: 15px;
-    /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-    margin: 0 10%;
-    /* Reduce los bordes laterales */
 
-    position: relative;
-    /* Necesario para el borde decorativo */
-}
 
 .main-container::before {
     content: '';
@@ -488,31 +324,7 @@ body {
     /* Ancho de las opciones */
 }
 
-.title {
-    text-align: center;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 2.7rem;
-    /* Color del texto del título */
-    margin-bottom: 20px;
-    /* Espaciado inferior del título */
-    color: #ffffff;
-    /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 
-    /* Sombra para crear el borde grueso blanco y la curvatura */
-    text-shadow:
-        -2px -2px 0 #ffffff,
-        2px -2px 0 #a5bc6b,
-        -2px 2px 0 #a5bc6b,
-        2px 2px 0 #a5bc6b,
-        6px 6px 10px rgb(63, 106, 54);
-    /* Sombra para dar profundidad */
-
-    margin-top: 20px;
-    display: block;
-}
 
 .option {
     display: flex;
@@ -588,26 +400,6 @@ body {
 }
 
 /* Estilo para cada recuadro */
-.recuadro {
-    background-color: #ffffff;
-    border: 2px solid #1d2536;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    /* Ancho fijo para cada plan */
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    /* Configura el recuadro en columnas para el contenido */
-    justify-content: space-between;
-    /* Distribuye el contenido dentro del recuadro */
-    height: 100%;
-    /* Asegura que todos los recuadros tengan la misma altura */
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: pulse 2s infinite;
-}
 
 @keyframes pulse {
     0% {
@@ -635,25 +427,8 @@ body {
 }
 
 /* Estilo para el título */
-.anual {
-    font-size: 1.5rem;
-    color: #778c43;
-    margin-bottom: 10px;
-}
 
-/* Estilo para el texto principal */
-.texto-principal {
-    font-size: 2rem;
-    color: #333;
-    margin: 15px 0;
-}
 
-/* Estilo para el precio */
-.pago {
-    font-size: 1.8rem;
-    color: #778c43;
-    margin: 15px 0;
-}
 
 /* Estilo para los iconos de verificación y error */
 .check {
@@ -719,19 +494,11 @@ body {
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Cajas de redes sociales */
-.boxes {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 40px 0;
-    flex-wrap: wrap;
-    /* Permite que las cajas se ajusten en pantallas más pequeñas */
-}
 
 /* Estilo general de cada caja */
 .box {
-    width: 300px;
-    padding: 20px;
+    width: 80px;
+    height: 70px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -755,16 +522,9 @@ body {
     overflow: hidden;
 }
 
-.imagen-redes {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ajusta la imagen para que llene el contenedor */
-    transition: transform 0.3s ease;
-}
 
 .box:hover .imagen-redes {
-    transform: scale(1.1);
+    transform: scale(0.5);
     /* Efecto de zoom en la imagen */
 }
 
@@ -777,12 +537,6 @@ body {
     /* Fuente divertida */
 }
 
-.box-subtitle {
-    font-size: 1rem;
-    color: #666;
-    font-family: 'Roboto', sans-serif;
-}
-
 /* Responsivo */
 @media screen and (max-width: 768px) {
     .box {
@@ -793,39 +547,11 @@ body {
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo general del carrusel en el pie de página */
-.image-carousel {
-    width: 100%;
-    /* Extremo a extremo */
-    overflow: hidden;
-    /* Ocultar las imágenes que no están en el viewport */
-    background-color: rgba(27, 26, 26, 0.7);
-    padding: 20px 0;
-    /* Espaciado en la parte superior e inferior */
-}
+
+
 
 .carousel-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: calc(200px * 26);
-    /* Ajusta el ancho según el número de imágenes */
-    animation: scroll 30s linear infinite;
-    /* Animación continua */
-}
-
-.carousel-container img {
-    width: 30px;
-    /* Ajusta el ancho de las imágenes */
-    height: auto;
-    /* Mantiene la proporción de las imágenes */
-    margin: 0 10px;
-    /* Espacio entre imágenes */
-    transition: transform 0.3s ease;
-}
-
-.carousel-container img:hover {
-    transform: scale(1.05);
-    /* Efecto de zoom al pasar el mouse */
+    display: none;
 }
 
 /* Animación que hace que el carrusel se mueva */
@@ -1208,10 +934,8 @@ body {
 
 /* Títulos Estilo Baby Shark */
 .phrase {
-    text-align: left;
     font-family: 'Fredoka One', sans-serif;
     font-size: 4.6rem;
-    background: none;
 
     /* Propiedades para compatibilidad */
     background-clip: text;
@@ -1220,11 +944,8 @@ body {
 
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #a5bc6b,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
+        -2px -2px 0 #27abbd,
+        -2px -2px 0 #27abbd;
     /* Sombra para dar profundidad */
 
     margin-top: 20px;
@@ -1234,56 +955,26 @@ body {
 /* Estilo específico para "¡Programa tu éxito!" */
 .highlight-exito {
     font-size: 6rem;
-    color: #FF4081;
-    font-family: "Bowlby One", sans-serif;
+    height: 20px;
     line-height: 1.2;
     margin-top: 40px;
-
-    /* Propiedades para compatibilidad */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     text-shadow:
-        -2px -2px 0 #778c43,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
+        -2px -2px 0 #1175a3,
+        -2px -2px 0 #27abbd;
     /* Sombra para dar profundidad */
-}
-
-/* Aplicar el efecto "pop" a las letras en bucle */
-.phrase span {
-    animation: pop-effect 1s ease forwards;
-    /* Aplica la animación */
-    opacity: 0;
-    /* Comienza invisible */
-    display: inline-block;
-    /* Permite animar cada letra individualmente */
-    animation-delay: 0s;
-    /* Sin retraso para la primera letra */
-    animation-iteration-count: infinite;
-    /* Ejecuta la animación indefinidamente */
 }
 
 /* Ajustes para el logo */
 .imagen-fondo {
-    width: 550px;
-    /* Ancho del contenedor */
-    height: 350px;
-    /* Altura del contenedor */
-    margin-left: 10px;
-
-    background-image: url('/public/img/adultos/logocafe.gif');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    display: none;
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* Contenedor del buscador */
-/* Contenedor del buscador */
+
 .search-box-container {
     background-color: rgba(27, 26, 26, 0.7);
     /* Fondo oscuro translúcido */
@@ -1313,30 +1004,13 @@ body {
     /* Aumenta el tamaño de la fuente */
     color: rgba(255, 255, 255, 0.9);
     /* Color del texto más vibrante */
-    overflow: hidden;
     /* Oculta el texto que no se ha escrito */
     border-right: 3px solid rgba(255, 255, 255, 0.9);
     /* Cursor de máquina de escribir más delgado */
-    white-space: nowrap;
-    /* Evita que el texto se divida en varias líneas */
-    width: 0;
     /* Comienza con el ancho en 0 */
-    animation: typing 3.5s steps(40, end) 1s infinite alternate, blink-caret 0.75s step-end infinite;
-    /* Animaciones */
 }
 
-/* Animación de escritura */
-@keyframes typing {
-    from {
-        width: 0;
-        /* Comienza con el ancho en 0 */
-    }
 
-    to {
-        width: 100%;
-        /* Aumenta al 100% */
-    }
-}
 
 /* Animación del cursor parpadeante */
 @keyframes blink-caret {
@@ -1445,7 +1119,7 @@ body {
 /* Estilo para las diapositivas del carrusel */
 .carousel-slide {
     display: none;
-    background-color: #81a176;
+    background-color: #a6aab0;
     /* Esconde todas las diapositivas inicialmente */
     text-align: center;
     padding: 20px 40px;
@@ -1498,15 +1172,10 @@ body {
 .title-exclusive {
     font-family: 'Fredoka One', sans-serif;
     font-size: 3.5rem;
-    color: #ffffff;
+    color: rgb(91 123 151 / 70%);
     /* Ajuste de tamaño de fuente */
     margin-bottom: 10px;
-    text-shadow:
-        -2px -2px 0 #99a86e,
-        2px -2px 0 #a5bc6b,
-        -2px 2px 0 #a5bc6b,
-        2px 2px 0 #a5bc6b,
-        6px 6px 10px rgb(63, 106, 54);
+
 }
 
 .fade-text {
@@ -1529,7 +1198,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(51 113 143 / 51%);
     color: white;
     font-size: 2rem;
     padding: 10px;
@@ -1574,9 +1243,8 @@ body {
     align-items: center;
     /* centrar vertical */
     padding: 40px;
-    padding-left: 220px;
     /* Espaciado en la sección */
-    background-color: #99b684;
+    background-color: #a6aab0;
     /* Textura de burbujas */
     background-size: cover;
     /* Asegúrate de que la imagen cubra el área */
@@ -1631,20 +1299,11 @@ body {
     /* Color del texto del título */
     margin-bottom: 20px;
     /* Espaciado inferior del título */
-    color: #ffffff;
+    background-color: rgb(91 123 151 / 70%);
     /* Propiedades para compatibilidad */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    /* Sombra para crear el borde grueso blanco y la curvatura */
-    text-shadow:
-        -2px -2px 0 #ffffff,
-        2px -2px 0 #a5bc6b,
-        -2px 2px 0 #a5bc6b,
-        2px 2px 0 #a5bc6b,
-        6px 6px 10px rgb(63, 106, 54);
-    /* Sombra para dar profundidad */
 
     margin-top: 20px;
     display: block;
@@ -1673,7 +1332,7 @@ body {
 .option:hover {
     transform: scale(1.05);
     /* Efecto de zoom al pasar el mouse */
-    background-color: #a6b0aa;
+    background-color: rgb(91 123 151 / 70%);
     /* Cambia el color de fondo al pasar el mouse */
     color: white;
     /* Cambia el color del texto al pasar el mouse */
@@ -1746,9 +1405,6 @@ body {
     justify-content: space-between;
     /* Distribuye el contenido dentro del recuadro */
     height: 100%;
-    /* Asegura que todos los recuadros tengan la misma altura */
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -1779,7 +1435,7 @@ body {
 /* Estilo para el título */
 .anual {
     font-size: 1.5rem;
-    color: #778c43;
+    color: #4e50a9;
     margin-bottom: 10px;
 }
 
@@ -1793,7 +1449,7 @@ body {
 /* Estilo para el precio */
 .pago {
     font-size: 1.8rem;
-    color: #778c43;
+    color: #101b3f;
     margin: 15px 0;
 }
 
@@ -1867,19 +1523,10 @@ body {
     gap: 20px;
     padding: 40px 0;
     flex-wrap: wrap;
+    margin-bottom: 210px;
     /* Permite que las cajas se ajusten en pantallas más pequeñas */
 }
 
-/* Estilo general de cada caja */
-.box {
-    width: 300px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
 
 .box:hover {
     transform: translateY(-10px);
@@ -1894,13 +1541,15 @@ body {
     height: 100px;
     margin: 0 auto 15px;
     border-radius: 50%;
-    overflow: hidden;
 }
 
 .imagen-redes {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: -20px;
+
+
     /* Ajusta la imagen para que llene el contenedor */
     transition: transform 0.3s ease;
 }
@@ -1935,35 +1584,7 @@ body {
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo general del carrusel en el pie de página */
-.image-carousel {
-    width: 100%;
-    /* Extremo a extremo */
-    overflow: hidden;
-    /* Ocultar las imágenes que no están en el viewport */
-    background-color: rgba(27, 26, 26, 0.7);
-    padding: 20px 0;
-    /* Espaciado en la parte superior e inferior */
-}
 
-.carousel-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: calc(200px * 26);
-    /* Ajusta el ancho según el número de imágenes */
-    animation: scroll 30s linear infinite;
-    /* Animación continua */
-}
-
-.carousel-container img {
-    width: 30px;
-    /* Ajusta el ancho de las imágenes */
-    height: auto;
-    /* Mantiene la proporción de las imágenes */
-    margin: 0 10px;
-    /* Espacio entre imágenes */
-    transition: transform 0.3s ease;
-}
 
 .header-image {
     display: none;
@@ -1998,28 +1619,7 @@ body {
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo del pie de página */
 .footer {
-    background-color: #333;
-    /* Color de fondo oscuro */
-    color: #fff;
-    /* Color de texto blanco */
-    text-align: center;
-    /* Centrar el texto */
-    padding: 20px;
-    /* Espaciado interior */
-    font-size: 0.9rem;
-    /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif;
-    /* Tipografía simple y limpia */
-    border-top: 2px solid #778c43;
-    /* Líneas de separación */
-    position: relative;
-}
-
-.footer p {
-    margin: 0;
-    /* Elimina los márgenes de los párrafos */
-    line-height: 1.5;
-    /* Espaciado de línea */
+    display: none;
 }
 
 /* Responsivo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -2095,18 +1695,6 @@ body {
 
     .search-bar {
         width: 90%;
-    }
-
-    .carousel {
-        height: 300px;
-    }
-
-    .carousel-content {
-        padding: 10px;
-    }
-
-    .carousel-container img {
-        width: 100px;
     }
 
     .title-kids,

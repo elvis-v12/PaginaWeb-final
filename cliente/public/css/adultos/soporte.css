@@ -19,8 +19,6 @@ body {
     margin-top: 110px;
     background-color: rgba(255, 255, 255, 0.9);
     /* Fondo blanco translúcido */
-    border-radius: 15px;
-    border: 1px solid black;
     /* Textura de burbujas */
 }
 
@@ -29,26 +27,14 @@ body {
 .titulo-faq,
 .titulo-mensaje {
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
     /* Fuente redondeada */
     font-size: 4rem;
     /* Tamaño grande como en la imagen */
-    background: linear-gradient(90deg, #FF4081, #FFC107);
-    /* Gradiente de color vibrante (rosado a amarillo) */
 
     /* Propiedades para compatibilidad */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    /* Sombra para crear el borde grueso blanco y la curvatura */
-    text-shadow:
-        -2px -2px 0 #000000,
-        2px -2px 0 #0ca19a,
-        -2px 2px 0 #0ca19a,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra para dar profundidad */
 
     padding-bottom: 20px;
     margin-top: 20px;
@@ -57,12 +43,8 @@ body {
     border-radius: 25px;
     /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
-    background-color: #00BFFF;
+    background-color: #324168;
     /* Fondo azul claro detrás del texto */
-    border: 1px solid black;
-    /* Sombra alrededor del título */
-
-    /* Centramos el bloque del título */
     margin: 20px auto;
     /* Asegura el centrado horizontal */
 }
@@ -73,25 +55,20 @@ body {
     padding: 20px;
     /* Fondo celeste translúcido */
     border-radius: 10px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-    /* Sombra interna */
-    font-family: 'Poppins', sans-serif;
-    /* Fuente moderna y redondeada */
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Estilo de cada pregunta */
 .pregunta {
     margin-bottom: 20px;
     padding: 15px;
-    border-bottom: 2px solid #d2b48c;
+    border-bottom: 2px solid #0a6792;
 }
 
 /* Título de la pregunta (interactuable) */
 .pregunta h3 {
     font-size: 1.8rem;
-    /* Un poco más grande para mejor lectura */
-    font-family: 'Fredoka One', sans-serif;
-    color: #0d6e6a;
+    color: #000000;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -107,9 +84,12 @@ body {
 }
 
 /* Al pasar el cursor sobre la pregunta */
+
+
+/* Al pasar el cursor sobre la pregunta */
 .pregunta:hover h3 {
-    color: #eac071;
-    transform: scale(1.05);/
+    color: #217ca0;
+    transform: scale(1.05);
 }
 
 /* Pregunta abierta (cuando se muestra la respuesta) */
@@ -117,24 +97,30 @@ body {
     display: block;
     padding-top: 10px;
     animation: fadeIn 0.5s ease-in-out;
+    /* Nueva animación para aparición */
+    opacity: 1;
 }
 
 /* Efectos de transición para preguntas */
 .pregunta h3:hover+p {
     display: block;
     padding-top: 10px;
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.01s ease-in-out;
+    opacity: 1;
 }
 
+/* Animación de aparición */
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
     }
 
-    to {
+    100% {
         opacity: 1;
     }
 }
+
+
 
 /* Formulario de Mensaje */
 .mensaje-admin {
@@ -166,8 +152,8 @@ form textarea {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 2px solid #d2b48c;
-    border-radius: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.95);
     font-size: 1.1rem;
     color: #333;
@@ -179,9 +165,6 @@ form textarea {
 /* Efecto al hacer foco en los campos */
 form input:focus,
 form textarea:focus {
-    border-color: #FF4081;
-    /* Cambia el borde al rosado cuando está enfocado */
-    box-shadow: 0 0 8px rgba(255, 64, 129, 0.5);
     /* Sombra vibrante */
     outline: none;
 }
@@ -191,7 +174,7 @@ form textarea:focus {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #778c43;
+    background-color: #134580;
     color: white;
     font-size: 1.5rem;
     font-family: 'Fredoka One', sans-serif;
@@ -203,7 +186,7 @@ form textarea:focus {
 
 /* Efecto al pasar el mouse sobre el botón */
 .btn-enviar:hover {
-    background-color: #FFC107;
+    background-color: #1990a0;
     transform: scale(1.05);
     /* Agranda ligeramente el botón */
 }

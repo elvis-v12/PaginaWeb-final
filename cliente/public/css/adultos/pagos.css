@@ -45,7 +45,7 @@ body {
     /* Tamaño más grande */
     font-weight: 700;
     /* Asegura que el título sea más visible */
-    color: #008080;
+    color: #13305c;
     /* Conserva el color azul del diseño */
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -74,7 +74,7 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #008080;
+    border: 2px solid #000000;
     border-radius: 5px;
     font-size: 1rem;
 }
@@ -121,7 +121,7 @@ body {
 }
 
 .order-summary h3 {
-    color: #d2b48c;
+    color: #000000;
 }
 
 /* Ajuste para separar elementos */
@@ -176,7 +176,7 @@ h3 {
     justify-content: space-between;
     padding: 15px;
     margin-bottom: 15px;
-    background-color: rgba(224, 247, 250, 0.9);
+    background-color: rgba(148, 217, 226, 0.171);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -194,7 +194,7 @@ h3 {
 
 /* Botón de Eliminar */
 .btn-eliminar {
-    background-color: #d2b48c;
+    background-color: #1966a5;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -205,7 +205,7 @@ h3 {
 }
 
 .btn-eliminar:hover {
-    background-color: #ae6b49;
+    background-color: #153f61;
 }
 
 /* Botón de Pagar */
@@ -215,7 +215,7 @@ h3 {
     padding: 15px;
     font-size: 1.2rem;
     color: white;
-    background-color: #008080;
+    background-color: #285879;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -224,5 +224,5 @@ h3 {
 }
 
 .submit-btn:hover {
-    background-color: #198036;
+    background-color: #1d7480;
 }

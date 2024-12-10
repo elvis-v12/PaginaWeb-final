@@ -21,13 +21,12 @@ body {
 }
 
 .header {
-    background-color: #2b4280;
+    background-color: rgb(15, 59, 90);
     /* Color de fondo de la franja */
     color: white;
     /* Color del texto */
     width: 100%;
     /* Ancho total */
-    font-family: 'Vibur', cursive;
     font-size: 50px;
     /* Tamaño de fuente */
     text-align: center;
@@ -56,7 +55,7 @@ body {
     border: 2px solid gray;
     border-radius: 20px;
     padding: 150px;
-    background-color: rgb(120, 177, 67);
+    background-color: rgb(15, 59, 90);
 }
 
 .zigzag {
@@ -74,7 +73,7 @@ body {
 .level-button {
     width: 80px;
     height: 80px;
-    background-color: #5e8a35;
+    background-color: rgb(15, 59, 90);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -98,12 +97,11 @@ body {
 
 .level-button i {
     font-size: 35px;
-    color: #ffffff;
+    color: #228394;
 }
 
 .level-button i:hover {
     font-size: 35px;
-    color: #259e2b;
 }
 
 
@@ -130,7 +128,7 @@ body {
 
 .message {
     display: none;
-    background-color: #7ed321;
+    background-color: #17bec4;
     color: white;
     padding: 10px;
     /* Padding reducido */
@@ -250,7 +248,7 @@ body {
 .option-button {
     display: block;
     /* Cada botón en una nueva línea */
-    background-color: #7ed321;
+    background-color: #1a718b;
     /* Color de fondo */
     color: white;
     /* Color del texto */
@@ -440,7 +438,7 @@ button {
     margin: 10px 5px;
     padding: 10px 20px;
     font-size: 1em;
-    background-color: #4CAF50;
+    background-color: #648fb8;
     /* Color verde */
     color: white;
     border: none;
@@ -449,7 +447,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #36678f;
     /* Color verde más oscuro */
 }
 

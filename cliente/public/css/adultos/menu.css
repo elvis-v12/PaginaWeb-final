@@ -36,14 +36,19 @@ body {
 }
 
 .mi-menu .logo img {
-  height: 50px;
-  flex-shrink: 0;
-  width: auto;
+  display: none;
+
 }
 
-.mi-menu .logo {
-  width: 50px;
+.mi-menu .logo::after {
+  content: "Learning";
+  margin-left: 10px;
+  font-size: 3rem;
+  font-family: 'Fredoka One', sans-serif;
+  color: #109b94;
+
 }
+
 
 /* Links de navegación */
 .mi-menu .nav-links {

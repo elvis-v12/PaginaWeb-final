@@ -31,10 +31,8 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
-    background-color: #a1afc5;
+    background-color: rgb(15, 59, 90);
     color: #fefeff;
-
-
     font-size: .95rem;
     padding: 15px;
     margin: 20px 10px;
@@ -50,7 +48,6 @@ body {
 
         .curso__name {
             font-size: 1.1rem;
-            font-family: 'Fredoka One', sans-serif;
 
         }
 
@@ -122,7 +119,7 @@ body {
             }
 
             span {
-                background-color: #a5bc6b;
+                background-color: #ccd3e2;
                 border: none;
                 height: 40px;
                 border-radius: .5rem;
@@ -131,7 +128,6 @@ body {
                 justify-content: center;
                 align-items: center;
                 width: 40px;
-                outline: #244e2b solid 1px;
             }
         }
 
@@ -203,7 +199,7 @@ body {
                 font-family: "Bowlby One", sans-serif;
                 text-shadow: 2px 4px 0 rgb(17, 18, 33);
                 /* Sombra blanca */
-                color: #a5bc6b;
+                color: #6da9b8;
             }
 
             .session__fecha {
@@ -235,7 +231,7 @@ body {
     /*comentarios */
 
     .main__right {
-        background-color: #9ec18a;
+        background-color: #6da9b8;
         border-radius: 10px;
         overflow: auto;
         scrollbar-width: thin;
@@ -253,7 +249,7 @@ body {
                 background-color: #081520;
 
                 .active {
-                    background-color: #718d61;
+                    background-color: #6da9b8;
                     color: #ffffff;
                 }
             }

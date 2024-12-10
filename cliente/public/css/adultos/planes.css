@@ -79,7 +79,7 @@ body {
 /* Estilo para cada recuadro */
 .recuadro {
     background-color: #ffffff;
-    border: 2px solid #778c43;
+    border: 2px solid #1d2536;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 300px;
@@ -126,7 +126,7 @@ body {
 /* Estilo para el título */
 .anual {
     font-size: 1.5rem;
-    color: #778c43;
+    color: #4e50a9;
     margin-bottom: 10px;
 }
 
@@ -140,7 +140,7 @@ body {
 /* Estilo para el precio */
 .pago {
     font-size: 1.8rem;
-    color: #778c43;
+    color: #101b3f;
     margin: 15px 0;
 }
 
@@ -157,7 +157,7 @@ body {
 
 /* Estilo para el botón */
 .boton-plan {
-    background-color: #778c43;
+    background-color: #182339;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -218,7 +218,7 @@ body {
 
 .titulo-recomendaciones {
     font-size: 2rem;
-    color: #778c43;
+    color: #101b3f;
     margin-bottom: 20px;
 }
 
@@ -231,7 +231,7 @@ body {
 
 .tweet {
     background: #fff;
-    border: 1px solid #778c43;
+    border: 1px solid #196f85;
     border-radius: 10px;
     padding: 15px;
     margin: 10px 0;
@@ -254,7 +254,7 @@ body {
     /* Centra los elementos verticalmente */
     background-color: #ffffff;
     /* Fondo blanco para la caja */
-    border: 2px solid #778c43;
+    border: 2px solid #1f5899;
     /* Borde color vibrante */
     border-radius: 15px;
     /* Esquinas redondeadas */
@@ -290,7 +290,7 @@ body {
 .caja-regalo h1 {
     font-size: 2.5rem;
     /* Tamaño de fuente aumentado */
-    color: #778c43;
+    color: #16175c;
     /* Color vibrante */
     margin: 0 0 10px 0;
     /* Margen inferior */
@@ -329,7 +329,7 @@ body {
 
 /* Estilo para el botón */
 .boton-regalo {
-    background-color: #778c43;
+    background-color: #205477;
     /* Fondo color vibrante */
     color: white;
     /* Texto blanco */
@@ -350,7 +350,7 @@ body {
 }
 
 .boton-regalo:hover {
-    background-color: #30e1e7;
+    background-color: #208185;
     /* Color al pasar el mouse */
 }
 

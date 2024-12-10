@@ -27,8 +27,7 @@ body {
 .main-title {
     width: 100%;
     text-align: center;
-    font-size: 5rem;
-    font-family: 'Spicy Rice', cursive;
+    font-size: 6rem;
     color: rgb(15, 59, 95);
     background-color: rgb(255, 255, 255);
     margin-bottom: 40px;
@@ -104,7 +103,7 @@ body {
 
 /* Contenedor de la lista de cursos */
 .course-list-clear {
-    background-color: rgb(165, 204, 170);
+    background-color: rgb(123, 130, 143);
     padding: 10px;
     border-radius: 8px;
 }
@@ -112,7 +111,7 @@ body {
 /* Estilos del botón */
 .btn {
     display: block;
-    background-color: #17ad51;
+    background-color: #336cad;
     border: none;
     color: #fff;
     padding: 12px;

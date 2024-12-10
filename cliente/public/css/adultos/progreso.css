@@ -19,8 +19,7 @@ body {
 h1 {
     font-size: 3.5em;
     margin-bottom: 15px;
-    font-family: 'Coiny', cursive;
-    color: #12206d;
+    color: #000000;
     margin-left: 20px;
 }
 
@@ -30,7 +29,7 @@ h1 {
 }
 
 .stat {
-    background-color: #d3b716;
+    background-color: #1c799e;
     padding: 10px;
     border-radius: 10px;
     text-align: center;

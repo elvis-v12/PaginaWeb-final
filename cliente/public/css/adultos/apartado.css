@@ -13,17 +13,14 @@
 }
 
 .title {
-    margin-top: 80px;
+
+    margin-top: 90px;
     font-size: 4rem;
     font-weight: bold;
-    color: #a5bc6b;
-    text-shadow: 3px 5px 0px #2b3f29;
-    left: 0;
+    color: rgb(15, 59, 90);
     width: 100%;
     text-align: center;
     z-index: 20;
-    font-family: "Bowlby One", sans-serif;
-    top: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
 
 }
@@ -31,7 +28,7 @@
 
 
 .water-stain {
-    background-color: #83a27a;
+    background-color: #2598b4;
     width: 720px;
     height: 410px;
     border-radius: 0;
@@ -62,12 +59,6 @@
     margin-top: 1rem;
     color: #ffffff;
     /* Ajuste de tamaño de fuente */
-    text-shadow:
-        -2px -2px 0 #99a86e,
-        2px -2px 0 #a5bc6b,
-        -2px 2px 0 #a5bc6b,
-        2px 2px 0 #a5bc6b,
-        6px 3px 10px rgb(77, 101, 78);
 
 }
 
@@ -154,7 +145,7 @@
 }
 
 .button-primary:hover {
-    background-color: #2b8012;
+    background-color: #10519c;
 }
 
 .button-primary svg {
@@ -183,7 +174,7 @@
 
 .temario {
     border-top: 1px solid rgb(255, 255, 255);
-    background: #eee9e7;
+    background: #f5f5f5;
     padding: 1.5em;
 }
 
@@ -191,10 +182,8 @@
     margin-top: 28px;
     font-family: 'Fredoka One', sans-serif;
     font-size: 4em;
-    color: #abb984;
+    color: rgb(15, 59, 90);
     /* Color azul */
-    text-shadow: 2px 3px 0 rgb(47, 79, 49);
-    /* Sombra sólida */
     text-align: center;
     margin-left: 10px;
     margin-bottom: 20px;
@@ -234,7 +223,7 @@
 
 /* Tarjeta de curso */
 .content-card {
-    background-color: #85af8a;
+    background-color: #909699;
     /* Fondo de cada tarjeta */
     padding: 20px;
     margin: 10px;
@@ -293,7 +282,7 @@
 
 .progress-bar-fill {
     height: 100%;
-    background-color: #008d21;
+    background-color: #12b2da;
     /* Color de la barra de progreso */
     width: 80%;
     /* Cambia este valor según el progreso de cada curso */
