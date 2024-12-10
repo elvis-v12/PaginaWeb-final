@@ -14,6 +14,8 @@ import cursoCliente  from "./routes/CursosCliente.routes.js";
 import profesoresRoutes from "./routes/profesores.routes.js";
 import estudiantesRoutes from "./routes/estudiantes.routes.js";
 import rutasRoutes from "./routes/rutas.routes.js";
+import becasRoutes from './routes/becas.routes.js';
+import cuentaRoutes from './routes/perfil.routes.js';
 
 
 // Cargar variables de entorno desde el archivo .env
@@ -65,6 +67,12 @@ app.use("/api/estudiantes", estudiantesRoutes);
 
 //api para traer datos de rutas
 app.use("/api/datosRutas",rutasRoutes);
+
+// Rutas de becas
+app.use("/api/becas", becasRoutes);
+
+// Rutas de becas
+app.use("/api/cuenta", cuentaRoutes);
 
 app.get('/admin/test', (req, res) => {
     res.send('<h1>El módulo Administrador está funcionando correctamente</h1>');

@@ -583,3 +583,22 @@ form input:focus, form textarea:focus {
         font-size: 0.9rem; /* Reduce el tamaño del texto */
     }
 }
+
+
+/* Estilo para la lista desplegable */
+.categoria {
+    margin: 10px 0;
+}
+
+#categorias {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+label {
+    font-weight: bold;
+}
+

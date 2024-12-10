@@ -275,3 +275,13 @@ h2 {
         opacity: 1;
     }
 }
+
+#tramite-beca {
+    text-align: center;  /* Centra el texto horizontalmente */
+    font-size: 16px;     /* Ajusta el tamaño de la fuente si es necesario */
+    font-weight: bold;   /* Hace que el texto sea más destacado, si lo deseas */
+}
+
+.seccion-beca h3{
+    text-align: center;  /* Centra el texto horizontalmente */
+}
