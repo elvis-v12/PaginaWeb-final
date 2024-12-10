@@ -84,7 +84,11 @@ button:hover {
   flex-direction: column;
   gap: 15px;
 }
-
+#admin-management .admin-container {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 30px;
+}
 .modaladmin input {
   padding: 10px;
   border: 1px solid #ccc;

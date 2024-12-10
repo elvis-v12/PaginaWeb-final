@@ -150,13 +150,15 @@
 }
 
 #student-management .student-details.visible {
-  flex: 0.3; /* Cuando está visible, ocupa el 30% */
-  opacity: 1; /* Se vuelve visible */
+  flex: 0.3;  
+  opacity: 1;  
   max-width: 300px;
   padding: 15px;
-  margin-right: -15%;
+  margin-right: auto;
 }
-
+.hidden {
+  display: none;
+}
 #student-management .student-details-info p {
   margin: 5px 0;
 }
@@ -241,4 +243,75 @@
 
 #student-management .btn-close i {
   pointer-events: none;
+}
+#student-header .estudiantes-filter-container {
+  display: flex;
+  gap: 15px;
+  align-items: center; /* Alinea verticalmente los elementos */
+}
+
+#student-header .download-pdf-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #041427;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#student-header .download-pdf-button i {
+  font-size: 18px;
+}
+
+#student-header .download-pdf-button:hover {
+  background-color: #218618;
+}
+
+#student-header #filtros-nivel-estudiantes,
+#student-header #filtros-suscripcion-estudiantes {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px 12px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#student-header #filtros-nivel-estudiantes:hover,
+#student-header #filtros-suscripcion-estudiantes:hover {
+  border-color: #041427;
+}
+
+#student-header #filtros-nivel-estudiantes:focus,
+#student-header #filtros-suscripcion-estudiantes:focus {
+  border-color: #041427;
+  box-shadow: 0 0 5px rgba(4, 20, 39, 0.5);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #student-header .estudiantes-filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #student-header #filtros-nivel-estudiantes,
+  #student-header #filtros-suscripcion-estudiantes {
+    width: 100%;
+  }
+
+  #student-header .download-pdf-button {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -445,7 +445,7 @@
         <!-- Contenido para la gestión de estudiantes -->
         <div id="student-management" class="section">
           <h1>Gestión de Estudiantes</h1>
-          <div class="student-header">
+          <div id="student-header" class="student-header">
             <div class="estudiantes-filter-container">
               <select id="filtros-nivel-estudiantes" class="styled-select">
                 <option value="all">Todos los niveles</option>
@@ -453,17 +453,16 @@
                 <option value="teens">Adolescentes</option>
                 <option value="adults">Adultos</option>
               </select>
-              <select
-                id="filtros-suscripcion-estudiantes"
-                class="styled-select"
-              >
+              <select id="filtros-suscripcion-estudiantes" class="styled-select">
                 <option value="all">Todas las suscripciones</option>
                 <option value="basic">Básico</option>
                 <option value="intermediate">Intermedio</option>
                 <option value="expert">Experto</option>
               </select>
             </div>
-
+            <button id="download-pdf-button" class="download-pdf-button">
+              <i class="fa fa-file-pdf"></i> Descargar PDF
+            </button>
           </div>
 
           <div class="student-content">
@@ -708,6 +707,9 @@
     </select>
 
     <button id="btn-agregar-curso">Agregar Nuevo Curso</button>
+    <button id="btn-actualizarDT-curso">Actualizar datos</button>
+<button id="btn-descrip-curso">Descripción curso</button>
+<button id="btn-sesiones-curso">Agregar Sesiones</button>
   </div>
 
   <!-- Modal para agregar un nuevo curso -->
@@ -717,15 +719,25 @@
       <h2>Agregar Nuevo Curso</h2>
       <label for="nombre-curso-nuevo">Nombre del Curso:</label>
       <input type="text" id="nombre-curso-nuevo" placeholder="Nombre del curso" required>
-
-      <label for="docente-curso-nuevo">Docente:</label>
-      <input type="text" id="docente-curso-nuevo" placeholder="Docente" required>
+      <label for="docente-profesores">Profesores:</label>
+      <select id="docente-curso-nuevo">
+    <option value="1">Profesor 1</option>
+    <option value="2">Profesor 2</option>
+    <!-- Agregar más opciones -->
+   </select>
 
       <label for="precio-curso-nuevo">Precio:</label>
       <input type="number" id="precio-curso-nuevo" placeholder="Precio" required>
 
       <label for="imagen-curso-nuevo">Imagen del Curso:</label>
       <input type="file" id="imagen-curso-nuevo" accept="image/*" required>
+
+      <label for="categoria-curso-nuevo">Categorías Curso:</label>
+      <select id="categorias-curso-nuevo">
+          <option value="1">Programación</option>
+          <option value="2">Diseño</option>
+          <!-- Agregar más opciones -->
+      </select>
 
       <label for="ruta-curso-nuevo">Ruta del Curso:</label>
       <select id="ruta-curso-nuevo">
@@ -741,27 +753,6 @@
     </div>
   </div>
 
-  <!-- Modal para agregar videos al curso -->
-<div id="modal-agregar-videos" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" id="cerrar-modal-videos">×</span>
-    <h2>Agregar Módulos y Videos</h2>
-    
-    <div id="videos-container"></div> <!-- Contenedor para los videos agregados -->
-
-    <div class="video-form">
-      <label for="video-titulo">Título del Video:</label>
-      <input type="text" id="video-titulo" placeholder="Título del video">
-
-      <label for="video-url">URL del Video:</label>
-      <input type="url" id="video-url" placeholder="URL del video">
-
-      <button id="agregar-video">Agregar Video</button>
-    </div>
-
-    <button id="guardar-curso-final">Guardar Curso</button>
-  </div>
-</div>
 
 
   <!-- Modal para editar un curso -->
@@ -774,14 +765,25 @@
     <label for="nombre-curso">Nombre del Curso:</label>
     <input type="text" id="nombre-curso" required>
 
-    <label for="docente-curso">Docente:</label>
-    <input type="text" id="docente-curso" required>
+    <label for="docente-profesores">Profesores:</label>
+    <select id="docente-curso-nuevo">
+  <option value="1">Profesor 1</option>
+  <option value="2">Profesor 2</option>
+  <!-- Agregar más opciones -->
+ </select>
 
     <label for="precio-curso">Precio:</label>
     <input type="number" id="precio-curso" required>
 
-    <label for="ruta-curso">Ruta del Curso:</label>
-    <select id="ruta-curso">
+    <label for="categoria-curso-nuevo">Categorías Curso:</label>
+    <select id="categorias-curso-nuevo">
+        <option value="1">Programación</option>
+        <option value="2">Diseño</option>
+        <!-- Agregar más opciones -->
+    </select>
+
+    <label for="ruta-curso-nuevo">Ruta del Curso:</label>
+    <select id="ruta-curso-nuevo">
       <option value="ruta-1">Ruta 1: Frontend</option>
       <option value="ruta-2">Ruta 2: Backend</option>
       <option value="ruta-3">Ruta 3: Fullstack</option>
@@ -863,8 +865,12 @@
               <label for="nombre-curso">Nombre del Curso:</label>
               <input type="text" id="nombre-curso" required />
 
-              <label for="docente-curso">Docente:</label>
-              <input type="text" id="docente-curso" required />
+              <label for="docente-profesores">Profesores:</label>
+              <select id="docente-curso-nuevo">
+            <option value="1">Profesor 1</option>
+            <option value="2">Profesor 2</option>
+            <!-- Agregar más opciones -->
+           </select>
 
               <label for="precio-curso">Precio:</label>
               <input type="text" id="precio-curso" required />
@@ -879,6 +885,12 @@
           <!-- Modal para agregar descripción -->
           <div id="modal-descripcion-curso-1" class="modal">
             <div class="modal-content">
+              <label for="ruta-nombresCur-nuevo">Nombre del Curso:</label>
+    <select id="ruta-nombresCur-nuevo">
+      <option value="nombresCur-1">Ruta 1: Frontend</option>
+      <option value="nombresCur-2">Ruta 2: Backend</option>
+      <option value="nombresCur-3">Ruta 3: Fullstack</option>
+    </select>
               <h2>Agregar Descripción del Curso</h2>
               <textarea
                 id="descripcion-curso"
@@ -897,31 +909,33 @@
           <div id="modal-videos-curso-1" class="modal">
             <div class="modal-content">
               <h2>Subir Videos del Curso</h2>
-              <div id="video-modulos">
-                <div class="video-modulo">
-                  <label for="modulo-1">Módulo 1: Título</label>
-                  <input
-                    type="text"
-                    id="modulo-1"
-                    placeholder="Título del video"
-                    required
-                  />
-                  <label for="url-1">URL del Video</label>
-                  <input
-                    type="url"
-                    id="url-1"
-                    placeholder="URL del video"
-                    required
-                  />
-                </div>
+              <div id="videos-container2">
+                <!-- Aquí se agregarán los módulos temporalmente -->
               </div>
+          
+              <div class="video-form">
+                <label for="ruta-nombresCur-nuevo">Nombre del Curso:</label>
+                <select id="ruta-nombresCur-nuevo">
+                  <!-- Aquí se cargan los nombres de los cursos -->
+                </select>
+          
+                <label for="modulo-1">Módulo 1: Título</label>
+                <input type="text" id="modulo-1" placeholder="Título del video" required />
+          
+                <label for="nombre-1">Nombre del Video:</label>
+                <input type="text" id="nombre-1" placeholder="Nombre del video" required />
+          
+                <label for="url-1">URL del Video:</label>
+                <input type="url" id="url-1" placeholder="URL del video" required />
+              </div>
+          
               <button type="button" id="add-modulo-1">Añadir Módulo</button>
-              <button type="button" id="guardar-videos-1">
-                Guardar Videos
-              </button>
+              <button type="button" id="guardar-videos-1">Guardar Videos</button>
               <button type="button" id="cerrar-modal-editar-1">Cerrar</button>
             </div>
           </div>
+          
+          
         </div>
  
        
@@ -1499,7 +1513,6 @@
     <script src="/src/js/certificados.js"></script>
     <script src="/src/js/certificados.js"></script>
     <script src="/src/js/rutas.js"></script>
-    <script src="/src/js/curso.js"></script>
     <script src="/src/js/graficos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>

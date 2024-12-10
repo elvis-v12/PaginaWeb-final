@@ -74,6 +74,8 @@
     padding: 20px;
     border-radius: 10px;
     width: 50%;
+    margin-left: 25%;
+    margin-top:5%;
 }
 
 #cursos .modal-content button {
