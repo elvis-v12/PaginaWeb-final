@@ -5,11 +5,15 @@
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-color: #2E1B5B !important; /* Puedes cambiar este color */
     margin: 0;
     padding: 0;
 }
+
+body {
+    cursor: url('/public/img/adolescentes/cursor1.png'), auto;
+  
+  }
 
 .soporte {
     max-width: 1200px;
@@ -20,14 +24,20 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transform: rotate(1deg);
     animation: zoomIn 1s ease-out;
-    background-image: url('/public/img/adolescentes/cesped.jpg'); /* Textura de burbujas */
+    background-image:url('/public/img/adolescentes/fondo1.jpeg');
 }
 
+
+@font-face {
+    font-family: "RetroMario";
+    src: url("/public/css/adolescentes/fonts/RetroMario-Regular.otf");
+  }
+  
 /* Títulos Estilo Baby Shark */
-.titulo-soporte, .titulo-faq, .titulo-mensaje {
-    text-align: center;
-    font-family: 'Fredoka One', sans-serif;  /* Fuente redondeada */
-    font-size: 4rem;  /* Tamaño grande como en la imagen */
+.titulo-soporte, .titulo-mensaje {
+    text-align: center; 
+    font-family: "RetroMario", sans-serif;
+    font-size: 5.1rem;  /* Tamaño grande como en la imagen */
     background: linear-gradient(90deg, #FF4081, #FFC107); /* Gradiente de color vibrante (rosado a amarillo) */
     
     /* Propiedades para compatibilidad */
@@ -37,7 +47,39 @@ body {
     
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #a97c3a,  
+        -2px -2px 0 #b692e9,  
+        2px -2px 0 #ffffff,   
+        -2px 2px 0 #ffffff,   
+        2px 2px 0 #ffffff,    
+        6px 6px 10px rgba(0, 0, 0, 0.3);  /* Sombra para dar profundidad */
+        
+    padding-bottom: 20px;
+    margin-top: 20px;
+    display: block; /* Cambia inline-block a block para centrar */
+    border-radius: 25px; /* Bordes redondeados del contenedor del texto */
+    padding: 10px 20px;
+    background-color: #00BFFF; /* Fondo azul claro detrás del texto */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor del título */
+
+    /* Centramos el bloque del título */
+    margin: 20px auto; /* Asegura el centrado horizontal */
+}
+
+.titulo-faq{
+
+    text-align: center; 
+    font-family: 'Press start 2P';
+    font-size: 3rem;  /* Tamaño grande como en la imagen */
+    background: linear-gradient(90deg, #FF4081, #FFC107); /* Gradiente de color vibrante (rosado a amarillo) */
+    
+    /* Propiedades para compatibilidad */
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    
+    /* Sombra para crear el borde grueso blanco y la curvatura */
+    text-shadow:
+        -2px -2px 0 #b692e9,  
         2px -2px 0 #ffffff,   
         -2px 2px 0 #ffffff,   
         2px 2px 0 #ffffff,    
@@ -59,7 +101,7 @@ body {
 .preguntas-frecuentes {
     margin-top: 30px;
     padding: 20px;
-    background-color: rgba(224, 247, 250, 0.9); /* Fondo celeste translúcido */
+    background-color: #ffe6ca; /* Fondo celeste translúcido */
     border-radius: 10px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra interna */
     font-family: 'Poppins', sans-serif; /* Fuente moderna y redondeada */
@@ -74,9 +116,9 @@ body {
 
 /* Título de la pregunta (interactuable) */
 .pregunta h3 {
-    font-size: 1.8rem; /* Un poco más grande para mejor lectura */
-    font-family: 'Fredoka One', sans-serif; 
-    color: #6fb94d;
+    font-size: 1.4rem; /* Un poco más grande para mejor lectura */
+    font-family: "Orbitron", sans-serif;
+    color: #58276e;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -92,7 +134,7 @@ body {
 
 /* Al pasar el cursor sobre la pregunta */
 .pregunta:hover h3 {
-    color: #A7A8AA;
+    color: #393242;
     transform: scale(1.05); /
 }
 
@@ -123,7 +165,7 @@ body {
 .mensaje-admin {
     margin-top: 40px;
     padding: 60px;
-    background-color: rgba(224, 247, 250, 0.9); 
+    background-color: #ffe6ca;
     border-radius: 20px; /* Bordes más redondeados */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     background-image: url(''); 
@@ -135,10 +177,11 @@ body {
 /* Estilo de las etiquetas */
 form label {
     font-size: 1.3rem;
-    color: #6fb94d; /* Color azul vibrante */
+    color: #ffae00; /* Color azul vibrante */
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    font-family: "Orbitron", sans-serif;
 }
 
 /* Estilo de los campos de texto */
@@ -146,7 +189,7 @@ form input, form textarea {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 2px solid #6fb94d; 
+    border: 2px solid #ffae00; 
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.95); 
     font-size: 1.1rem;
@@ -157,8 +200,8 @@ form input, form textarea {
 
 /* Efecto al hacer foco en los campos */
 form input:focus, form textarea:focus {
-    border-color: #FF4081; /* Cambia el borde al rosado cuando está enfocado */
-    box-shadow: 0 0 8px rgba(255, 64, 129, 0.5); /* Sombra vibrante */
+    border-color: #ffae00; /* Cambia el borde al rosado cuando está enfocado */
+    box-shadow: 0 0 8px #ffae00; /* Sombra vibrante */
     outline: none; 
 }
 
@@ -167,10 +210,10 @@ form input:focus, form textarea:focus {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #A7A8AA; 
+    background-color: #ffae00; 
     color: white;
     font-size: 1.5rem;
-    font-family: 'Fredoka One', sans-serif; 
+    font-family: "Orbitron", sans-serif;
     border: none;
     border-radius: 50px; 
     cursor: pointer;

@@ -1,178 +1,217 @@
 * {
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
-}
-/* Estilos generales */
-body {
-  font-family: 'Arial', sans-serif;
-    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
-    margin-top: 0;
-    padding: 0;
-    overflow-x: hidden;
-    text-align: center;
+  box-sizing: border-box;
+  /* Incluye el padding y el borde en el ancho total */
 }
 
+/* Estilos generales */
+
+body {
+  background-color: #2E1B5B !important; /* Puedes cambiar este color */
+}
+
+body {
+
+  background: #c99e8f;
+  margin-top: 0;
+  padding: 0;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+body {
+  cursor: url('/public/img/adolescentes/cursor1.png'), auto;
+
+}
+.btn-common {
+  background-color: #ff9e2c; /* Naranja */
+  color: white;
+  border: 4px solid #56290F; /* Borde oscuro */
+  box-shadow: 0 4px 0 0 #56290F; /* Sombra inferior fija */
+  border-radius: 20px; /* Bordes medio rectangulares */
+  font-family: 'RetroMario', sans-serif;
+  font-size: 17px;
+  line-height: 0.9;
+  padding: 12px;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  opacity: 0.9;
+}
 /* Decoración del encabezado */
 .header-decorated {
-    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
-    background-size: cover;
-    padding: 50px;
-    color: white;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    position: relative;
-    display: flex;
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: center; /* Centra horizontalmente */
-    text-align: center; /* Centra el texto */
+  background: 
+    url('/public/img/adolescentes/arbol.png') left bottom no-repeat, /* Imagen del árbol en la parte inferior izquierda */
+    url('/public/img/adolescentes/persona.png') right bottom no-repeat, /* Imagen del niño en la parte inferior derecha */
+    url('/public/img/adolescentes/nube.png') left top no-repeat, /* Imagen del nube en la parte superior izquierda */
+    url('/public/img/adolescentes/nube.png') right top no-repeat, /* Imagen del nube en la parte superior derecha */
+    url('/public/img/adolescentes/suelo2.png') center bottom repeat-x, /* Imagen del suelo repitiéndose horizontalmente */
+    #2E004B; /* Fondo morado oscuro */
+  background-size: auto 200px, auto 200px, auto 180px, auto 180px, auto 80px, cover; /* Ajusta el tamaño de las imágenes */
+  background-position: left bottom 65px, right bottom 65px, left top 65px, right top 65px, center bottom; /* Ajusta las posiciones para que queden encima del suelo */
+  margin-top: 50px;
+  padding: 50px;
+  color: #FF7523;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  text-align: center; /* Centra el texto */
 }
 
 .header-decorated:before,
 .header-decorated:after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    animation: bubble 10s infinite;
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: bubble 10s infinite;
 }
 
 .header-decorated:before {
-    top: -50px;
-    left: -50px;
+  top: -50px;
+  left: -50px;
 }
 
 .header-decorated:after {
-    bottom: -50px;
-    right: -50px;
+  bottom: -50px;
+  right: -50px;
 }
 
 .logoCurso {
-    padding-top: 50px;
-    max-width: 230px; /* Tamaño del gif*/
-    margin-bottom: 20px;
-    border-radius: 50%;
-    animation: bounce 2s infinite ease-in-out;
+  display: none;
 }
 
 .logoCurso-large {
-    width: 150px; /* Ajusta el tamaño del logo aquí */
-    height: auto; /* Mantiene la proporción */
+  width: 150px;
+  /* Ajusta el tamaño del logo aquí */
+  height: auto;
+  /* Mantiene la proporción */
 }
 
 /* Estilo del Título */
-.titulo {
-    text-align: center;
-    /* Alinea el texto a la izquierda */
-    font-family: 'Fredoka One', sans-serif;
-    /* Fuente redondeada */
-    font-size: 5rem;
-    /* Tamaño grande */
-    background: linear-gradient(90deg, #FF4081, #FFC107);
-    /* Gradiente vibrante */
-
-    /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* Sombra para dar profundidad */
-    text-shadow:
-        -2px -2px 0 #6fb94d,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-
-    padding-bottom: 20px;
-    margin-top: 0;
-    /* Sin margen superior */
-    margin-bottom: 10px;
-    /* Margen inferior para espacio */
-
-    /* Animación de burbuja */
-    animation: bubble2 3s infinite ease-in-out;
+:root {
+ 
+  --titulo-color: #B16CCD; /* Blanco puro */
+  --titulo-fondo: #ff6a0000; /* Naranja vibrante similar al ejemplo */
 }
+
+
+@font-face {
+  font-family: "RetroMario";
+  src: url("/public/css/adolescentes/fonts/RetroMario-Regular.otf");
+}
+
+
+.titulo {
+  text-align: center;
+  font-family: var(--titulo-fuente);
+  font-weight: bold;
+  color: var(--titulo-color);
+  font-family: "RetroMario", sans-serif;
+  text-shadow:
+  -2px -2px 0 #b692e9,
+  2px -2px 0 #ffffff,
+  -2px 2px 0 #ffffff,
+  2px 2px 0 #ffffff,
+  6px 6px 10px rgba(0, 0, 0, 0.3);
+  background-color: var(--titulo-fondo);
+  padding: 20px 10px; /* Espaciado interno */
+  margin-top: 10px;
+  margin: 0;
+  border-radius: 10px; /* Bordes ligeramente redondeados */
+  
+  /* Tamaños dinámicos */
+  font-size: 1.6rem; /* text-4xl */
+  @media (min-width: 768px) {
+    font-size: 2.5rem; /* text-6xl */
+  }
+  @media (min-width: 1280px) {
+    font-size: 7rem; /* text-8xl */
+  }
+
+}
+
 @keyframes bubble2 {
-    0% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
 
-    50% {
-        transform: translateY(-15px);
-        /* Sube el texto */
-    }
+  50% {
+    transform: translateY(-15px);
+    /* Sube el texto */
+  }
 
-    100% {
-        transform: translateY(0);
-        /* Vuelve a la posición original */
-    }
+  100% {
+    transform: translateY(0);
+    /* Vuelve a la posición original */
+  }
 }
 
 /* Estilo del sub titulo */
-.subtitu {
-    text-align: center;
-    /* Alinea el texto a la izquierda */
-    font-family: 'Fredoka One', sans-serif;
-    /* Fuente redondeada */
-    font-size: 3rem;
-    /* Tamaño grande */
-    background: linear-gradient(90deg, #FF4081, #FFC107);
-    /* Gradiente vibrante */
-
-    /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* Sombra para dar profundidad */
-    text-shadow:
-        -2px -2px 0 #a97c3a,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-
-    padding-bottom: 20px;
-    margin-top: 0;
-    /* Sin margen superior */
-    margin-bottom: 10px;
-    /* Margen inferior para espacio */
-
-    /* Animación de burbuja */
-    animation: bubble2 3s infinite ease-in-out;
+:root {
+  --subtitulo-fuente: 'Gaegu', cursive; /* Fuente ligera y amigable */
+  --subtitulo-color: #ffffff; /* Blanco puro */
+  --subtitulo-tamano-base: 1.25rem; /* text-xl */
 }
 
+.subtitulo {
+  text-align: center;
+  font-family: var(--subtitulo-fuente);
+  font-weight: normal; /* Fuente más ligera que el título */
+  color: var(--subtitulo-color);
+  font-family: 'Press start 2P';
+  padding-left: 0.5rem; /* pl-2 */
+  margin: 10px auto; /* Centrado con margen */
+  
+  /* Tamaños responsivos */
+  font-size: var(--subtitulo-tamano-base); /* text-xl */
+  @media (min-width: 768px) {
+    font-size: 1.5rem; /* md:text-2xl */
+  }
+  @media (min-width: 1280px) {
+    font-size: 1.6rem; /* xl:text-3xl */
+  }
 
-p {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    color: #f9f9f9;
+  /* Ajuste de espaciado entre caracteres */
+  letter-spacing: -0.5px; /* tracking-tighter */
+
+  /* Efecto sombra sutil */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Animaciones generales */
 @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes bubble {
-    0% {
-        transform: scale(0.8);
-        opacity: 0.7;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0.8);
-        opacity: 0.7;
-    }
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
 }
 
 /* Decoración de los cursos */
@@ -183,10 +222,11 @@ p {
 }
 
 /* Estilo del título */
-.modal-title, .modal-body h4 {
+.modal-title,
+.modal-body h4 {
   font-family: 'Fredoka One', cursive;
   font-size: 30px;
-  color: #f68fffea;
+  color: #778c43;
   text-shadow: -1px -1px 0 #fff700, 1px -1px 0 #fff700, -1px 1px 0 #fff700, 1px 1px 0 #fff700 !important;
   animation: bounce 1s infinite;
   text-align: center;
@@ -203,17 +243,31 @@ p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   width: 200px;
-  color: #0eb7ff;
+  color: #ff8f0e;
 }
+
 .user-name.active .dropdown-modal {
   display: block;
 }
 
 /* Animación de rebote */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Estilo del texto en el modal */
@@ -230,242 +284,436 @@ p {
   color: #333;
 }
 
-/* Contenedor de contenido */
-#content {
-  margin-top: 80px;
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  max-width: 1200px;
-  margin: 80px auto;
-  border-radius: 10px;
-}
-
-/* Estilos para los cursos */
-.info-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  color: #7c898d8e;
-}
-.course-card {
-  background: rgba(150, 253, 189, 0.468);
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  flex: 1 1 30%;
-  max-width: 30%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-.course-card:hover {
-  transform: scale(1.05);
-}
-
-.image-container {
-  overflow: hidden;
-  border-radius: 8px 8px 0 0;
-}
-.course-image {
-  width: 100%;
-  height: auto;
-}
-.content-container {
-  padding: 15px;
-}
-
-/* Título del curso */
-h1, .modal-title, .modal-body h4 {
-  font-family: 'Fredoka One', cursive;
-  color: #a97c3a;
-}
-
-h1 {
-  font-size: 30px; /* Cambia este valor para ajustar el tamaño del título de cada tarjeta */
-}
-
-/* Subtítulos */
-h2, .instructor-name, .modal-body p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2em;
-  color: #555;
-}
-
-/* Detalles del curso e instructores */
-.course-details, .instructors-list {
-  margin-top: 10px;
-}
-.detail-item, .instructor-item {
-  display: flex;
-  align-items: center;
-  margin-top: 6px;
-  font-family: 'Poppins', sans-serif;
-}
-.instructor-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-/* Miembros destacados */
-.modal-horizontal {
-  display: flex;
-  align-items: center;
-  width: 50em;
-  height: 25em;
-}
-.top-3-members {
-  display: flex;
-  justify-content: space-around;
-}
-.member-card {
-  text-align: center;
-}
-.member-card img {
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-}
-
-a {
-  text-decoration: none;
+.fondoprov {
+  margin-top: -80px;
+  height: 3150px;
+  background: #d6d0cd;
 }
 
 /* Contenedor del buscador */
 .search-box-container {
-    background-color: rgba(27, 26, 26, 0.7);
-    /* Fondo oscuro translúcido */
-    padding: 30px;
-    /* Espacio interno */
-    border-radius: 20px;
-    /* Bordes redondeados */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    /* Sombra alrededor de la caja */
-    max-width: 80%;
-    /* Limita el ancho del contenedor */
-    margin: 40px auto;
-    /* Centra el contenedor horizontalmente */
-    text-align: center;
-    /* Centra el contenido dentro */
+  background-color: rgba(27, 26, 26, 0.7);
+  /* Fondo oscuro translúcido */
+  padding: 30px;
+  /* Espacio interno */
+  border-radius: 20px;
+  /* Bordes redondeados */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  /* Sombra alrededor de la caja */
+  max-width: 80%;
+  /* Limita el ancho del contenedor */
+  margin: 40px auto;
+  /* Centra el contenedor horizontalmente */
+  text-align: center;
+  /* Centra el contenido dentro */
 }
 
 /* Ajustes para el texto dentro de la caja */
 .text-above-search {
-    text-align: center;
-    /* Centra el texto */
-    margin-bottom: 20px;
-    /* Espacio debajo del texto */
-    font-family: 'Courier Prime', monospace;
-    /* Fuente Courier Prime */
-    font-size: 1.8em;
-    /* Aumenta el tamaño de la fuente */
-    color: rgba(255, 255, 255, 0.9);
-    /* Color del texto más vibrante */
-    overflow: hidden;
-    /* Oculta el texto que no se ha escrito */
-    border-right: 3px solid rgba(255, 255, 255, 0.9);
-    /* Cursor de máquina de escribir más delgado */
-    white-space: nowrap;
-    /* Evita que el texto se divida en varias líneas */
-    width: 0;
-    /* Comienza con el ancho en 0 */
-    animation: typing 3.5s steps(40, end) 1s infinite alternate, blink-caret 0.75s step-end infinite;
-    /* Animaciones */
+  text-align: center;
+  /* Centra el texto */
+  margin-bottom: 20px;
+  /* Espacio debajo del texto */
+  font-family: 'Courier Prime', monospace;
+  /* Fuente Courier Prime */
+  font-size: 1.8em;
+  /* Aumenta el tamaño de la fuente */
+  color: rgba(255, 255, 255, 0.9);
+  /* Color del texto más vibrante */
+  overflow: hidden;
+  /* Oculta el texto que no se ha escrito */
+  border-right: 3px solid rgba(255, 255, 255, 0.9);
+  /* Cursor de máquina de escribir más delgado */
+  white-space: nowrap;
+  /* Evita que el texto se divida en varias líneas */
+  width: 0;
+  /* Comienza con el ancho en 0 */
+  animation: typing 3.5s steps(40, end) 1s infinite alternate, blink-caret 0.75s step-end infinite;
+  /* Animaciones */
 }
 
 /* Animación de escritura */
 @keyframes typing {
-    from {
-        width: 0;
-        /* Comienza con el ancho en 0 */
-    }
+  from {
+    width: 0;
+    /* Comienza con el ancho en 0 */
+  }
 
-    to {
-        width: 100%;
-        /* Aumenta al 100% */
-    }
+  to {
+    width: 100%;
+    /* Aumenta al 100% */
+  }
 }
 
 /* Animación del cursor parpadeante */
 @keyframes blink-caret {
 
-    from,
-    to {
-        border-color: rgba(255, 255, 255, 0.9);
-        /* Cursor visible */
-    }
+  from,
+  to {
+    border-color: rgba(255, 255, 255, 0.9);
+    /* Cursor visible */
+  }
 
-    50% {
-        border-color: transparent;
-        /* Parpadeo del cursor */
-    }
+  50% {
+    border-color: transparent;
+    /* Parpadeo del cursor */
+  }
 }
 
 /* Estilo general del buscador */
 .search-container {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .search-bar {
-    width: 60%;
-    padding: 15px;
-    border: 2px solid #00BEFE;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    outline: none;
-    transition: all 0.3s ease;
+  width: 60%;
+  padding: 15px;
+  border: 2px solid #FF7523;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
 .search-bar:focus {
-    border-color: #FF4081;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-color: #FF4081;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Resultados del buscador */
 .search-results {
-    margin-top: 10px;
-    max-width: 60%;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: left;
+  margin-top: 10px;
+  max-width: 60%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: left;
 }
 
 .search-results div {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .search-results div:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .search-results div:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 /* Animaciones y transiciones */
 .search-bar,
 .search-results div {
-    animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* CONTENIDO DE CURSOS */
+
+/* Contenedor de contenido */
+#content {
+  margin-top: 80px;
+  padding: 20px;
+  background-color: #2a1b5b;
+
+  max-width: 1500px;
+  margin: 80px auto;
+  border-radius: 10px;
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.course-card {
+  background-image:  url('/public/img/adolescentes/fondo1.jpeg');
+  width: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen del curso ocupando todo el ancho */
+.image-container {
+  width: 100%;
+  height: 150px;
+}
+
+.course-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Imagen proporcional y sin margen */
+}
+
+/* Contenido de la tarjeta */
+.content-container {
+  padding: 15px 10px;
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Títulos del curso e instructores */
+/* Títulos del curso */
+.course-card h1 {
+  font-size: 1.3rem; /* Reducido el tamaño */
+  font-weight: 900; /* Negrita máxima */
+  color: #ecc3fd; /* Naranja brillante */
+  text-align: center;
+  margin-bottom: 4px; /* Sin margen inferior */
+  font-family: 'Press start 2P';
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  line-height: 1.3;
+  position: relative; /* Para aplicar subrayado animado */
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+.course-card h1:hover {
+  color: #ffc107; /* Cambia el color a amarillo brillante */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+.course-card h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ff9e2c; /* Subrayado naranja */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.course-card h1:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.name-price {
+  font-size: 15px;
+  color: #fffffffb;
+  text-align: left;
+  font-family: "Orbitron", sans-serif;
+  line-height: 0.5; /* Espaciado interno */
+  margin-top: 10px; /* Margen superior negativo para reducir espacio */
+  margin-left: 1rem;
+}
+
+
+/* Estilos para la lista de instructores */
+.instructors-list {
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Estilo individual de cada instructor */
+.instructor-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem; /* Aumentar tamaño para mayor visibilidad */
+  font-weight: 700; /* Negrita para destacar el texto */
+  color: #fff; /* Texto blanco para contraste con el fondo oscuro */
+  text-align: left; /* Eliminada inclinación en el texto */
+  transition: all 0.3s ease;
+  position: relative; /* Para añadir efectos */
+}
+
+/* Efecto hover para los nombres de los instructores */
+.instructor-item:hover {
+  color: #ff9e2c; /* Naranja brillante al pasar el ratón */
+  transform: translateX(5px); /* Efecto de movimiento hacia la derecha */
+}
+
+/* Resaltar el nombre del instructor */
+.instructor-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ff9e2c; /* Subrayado en naranja */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto de subrayado animado */
+.instructor-item:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+/* Input de cantidad y botones */
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: nowrap; /* Evita que los elementos se salten de línea */
+}
+
+.input-group input[type="number"] {
+  width: 60px; /* Ajustado para mayor espacio a los botones */
+  padding: 8px;
+  border: 2px solid rgba(128, 90, 213, 0.5); /* Borde púrpura claro */
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo translúcido */
+  color: white;
+  text-align: center;
+  font-family: 'Fredoka One', sans-serif; /* Fuente divertida */
+  font-weight: bold;
+  transition: border-color 0.3s ease;
+  flex-shrink: 0; /* Evita que el input se reduzca */
+}
+
+.input-group input[type="number"]::placeholder {
+  color: rgba(128, 90, 213, 0.5); /* Placeholder púrpura */
+}
+
+.input-group input[type="number"]:focus {
+  border-color: rgba(128, 90, 213, 1); /* Borde púrpura intenso al foco */
+  outline: none;
+}
+
+/* Botones pequeños */
+.input-group button {
+  background-color: rgba(128, 90, 213, 0.8); /* Morado translúcido */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0; /* Evita que los botones cambien de tamaño */
+}
+
+.input-group button:hover {
+  background-color: #ffc107; /* Amarillo dorado al pasar el mouse */
+  transform: scale(1.1); /* Efecto de zoom */
+}
+
+/* Botón principal */
+.custom-button {
+  background-color: #ff9e2c; /* Naranja */
+  color: white;
+  border: 4px solid #56290F; /* Borde oscuro */
+  box-shadow: 0 4px 0 0 #56290F; /* Sombra inferior fija */
+  border-radius: 20px; /* Bordes medio rectangulares */
+  font-family: 'RetroMario', sans-serif;
+  font-size: 17px;
+  line-height: 0.9;
+  padding: 12px;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.custom-button:hover {
+  background-color: #ff7f00; /* Naranja más oscuro */
+  opacity: 1;
+}
+
+.custom-button:active {
+  box-shadow: 0 0 0 0 #56290F; /* Quita la sombra al presionar */
+  transform: translateY(4px); /* Efecto hundimiento */
+}
+
+/* Ajuste en márgenes */
+.course-card h1, .instructor-info, .button-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: nowrap; /* Evita que los botones se desborden y vayan a otra línea */
+}
+
+/* Botones dentro del contenedor */
+.button-container .btn-add-route {
+  background-color: rgba(128, 90, 213, 0.8); /* Morado translúcido */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0; /* Evita que los botones cambien de tamaño */
+}
+
+.custom-button{
+  justify-content: center;
+}
+
+.button-container .btn-add-route:hover {
+  background-color: #ffc107; /* Amarillo dorado al pasar el mouse */
+  transform: scale(1.1); /* Efecto de zoom */
+}
+
+
+.clickable-text {
+  text-decoration: none;  /* Elimina el subrayado del enlace */
+  color: inherit;         /* Hereda el color del texto */
+}
+
+.clickable-text:hover {
+  cursor: pointer;       /* Cambia el cursor al pasar sobre el texto */
 }

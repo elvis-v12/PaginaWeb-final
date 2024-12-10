@@ -4,30 +4,40 @@
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
+    background-color: #2E1B5B !important;
+ 
 }
+
+body {
+    cursor: url('/public/img/adolescentes/cursor1.png'), auto;
+  
+  }
 
 /* Encabezado */
 .header {
-    max-width: 1200px;
-    /* Controla el ancho máximo del encabezado */
-    margin: 0 auto;
-    /* Centra el encabezado horizontalmente */
-    padding: 50px;
-    /* Espacio alrededor del encabezado */
-    display: flex;
-    /* Flexbox para alinear elementos */
-    align-items: center;
-    /* Centra verticalmente los elementos */
-    justify-content: space-between;
-    /* Espacio entre los elementos */
-    background: none;
-    /* Sin color de fondo */
-    position: relative;
-    /* Para posicionar elementos absolutas dentro */
+    padding: 90px;
+    text-align: center;
+    background: 
+    url('/public/img/adolescentes/arbol.png') left bottom no-repeat, /* Imagen del árbol en la parte inferior izquierda */
+    url('/public/img/adolescentes/persona.png') right bottom no-repeat, /* Imagen del niño en la parte inferior derecha */
+    url('/public/img/adolescentes/nube.png') left top no-repeat, /* Imagen del nube en la parte superior izquierda */
+    url('/public/img/adolescentes/nube.png') right top no-repeat, /* Imagen del nube en la parte superior derecha */
+    url('/public/img/adolescentes/suelo2.png') center bottom repeat-x, /* Imagen del suelo repitiéndose horizontalmente */
+    #2E004B; /* Fondo morado oscuro */
+  background-size: auto 200px, auto 200px, auto 180px, auto 180px, auto 80px, cover; /* Ajusta el tamaño de las imágenes */
+  background-position: left bottom 65px, right bottom 65px, left top 65px, right top 65px, center bottom; /* Ajusta las posiciones para que queden encima del suelo */
+  margin-top: 50px;
+  padding: 50px;
+  color: #FF7523;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  text-align: center; /* Centra el texto */
+  
 }
 
 /* Fondo del GIF */
@@ -68,13 +78,19 @@ body {
     }
 }
 
+
+@font-face {
+    font-family: "RetroMario";
+    src: url("/public/css/adolescentes/fonts/RetroMario-Regular.otf");
+  }
 /* Estilo del Título */
 .titulo {
     text-align: center;
     /* Alinea el texto a la izquierda */
-    font-family: 'Fredoka One', sans-serif;
+    font-family: "RetroMario", sans-serif;
+    margin-top: 45px;
     /* Fuente redondeada */
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     /* Tamaño grande */
     background: linear-gradient(90deg, #FF4081, #FFC107);
     /* Gradiente vibrante */
@@ -86,14 +102,13 @@ body {
 
     /* Sombra para dar profundidad */
     text-shadow:
-        -2px -2px 0 #6fb94d,
+        -2px -2px 0 #ffab10,
         2px -2px 0 #ffffff,
         -2px 2px 0 #ffffff,
         2px 2px 0 #ffffff,
         6px 6px 10px rgba(0, 0, 0, 0.3);
 
     padding-bottom: 20px;
-    margin-top: 0;
     /* Sin margen superior */
     margin-bottom: 10px;
     /* Margen inferior para espacio */
@@ -104,15 +119,13 @@ body {
 
 /* Estilo del párrafo */
 .titulo p {
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Press start 2P';
     /* Fuente moderna */
-    font-size: 2rem;
+    color: #fff;
+    font-size: 1.5rem;
     /* Tamaño más pequeño */
     text-shadow:
-        -2px -2px 0 #a97c3a,
-        2px -2px 0 #ffffff,
-        -2px 2px 0 #ffffff,
-        2px 2px 0 #ffffff,
+        -2px -2px 0 #ffffff,
         6px 6px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -170,23 +183,23 @@ body {
 
 /* Estilo del Título */
 .somos-text h1 {
-    font-family: 'Fredoka One', sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-size: 3rem;
     margin-bottom: 20px;
     text-align: left;
-    color: #333;
+    color: #26133d;
 }
 
 /* Destacado en el Título */
 .highlight {
-    color: #6fb94d;
+    color: #ff9100;
 }
 
 /* Estilo del Párrafo */
 .somos-text p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #555;
+    color: #26133dd3;
     margin-bottom: 20px;
     text-align: justify; /* Justificado para el párrafo */
 }
@@ -211,6 +224,7 @@ body {
 
 .vision-text h1 {
     color: #FF5733; /* Color del título de la misión */
+    font-family: "Orbitron", sans-serif;
 }
 
 /* Estilos específicos para "Nuestros Servicios" */
@@ -230,7 +244,7 @@ body {
 }
 
 .section-text h1 {
-    font-family: 'Fredoka One', sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-size: 3rem;
     margin-bottom: 20px;
     text-align: left;

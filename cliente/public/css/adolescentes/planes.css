@@ -5,7 +5,7 @@
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/adolescentes/minecraft.jpg') no-repeat center center fixed;
+    background-color: #2E1B5B !important;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -28,6 +28,37 @@ body {
     }
 }
 
+@font-face {
+    font-family: "RetroMario";
+    src: url("/public/css/adolescentes/fonts/RetroMario-Regular.otf");
+  }
+.titulo-cuadros {
+    text-align: center;
+    font-family: "RetroMario", sans-serif;
+    font-size: 5.2rem;
+    background: none;
+
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Sombra para crear el borde grueso blanco y la curvatura */
+    text-shadow:
+        -2px -2px 0 #b692e9,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff,
+        2px 2px 0 #ffffff,
+        6px 6px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar profundidad */
+
+    margin-top: 40px;
+    margin-bottom: 0;
+    display: block;
+
+    /* Animación de burbuja */
+    animation: bubble 3s infinite ease-in-out;
+}
 
 .titulo-seccion {
     text-align: center;
@@ -78,7 +109,7 @@ body {
 /* Estilo para cada recuadro */
 .recuadro {
     background-color: #ffffff;
-    border: 2px solid #6fb94d;
+    border: 2px solid #ff9d00;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 300px;
@@ -125,21 +156,23 @@ body {
 /* Estilo para el título */
 .anual {
     font-size: 1.5rem;
-    color: #6fb94d;
+    color: #db8700;
     margin-bottom: 10px;
+     
 }
 
 /* Estilo para el texto principal */
 .texto-principal {
     font-size: 2rem;
-    color: #333;
+    color: #241a2e;
     margin: 15px 0;
+    font-family: "Orbitron", sans-serif;
 }
 
 /* Estilo para el precio */
 .pago {
     font-size: 1.8rem;
-    color: #6fb94d;
+    color: #db8700;
     margin: 15px 0;
 }
 
@@ -156,7 +189,7 @@ body {
 
 /* Estilo para el botón */
 .boton-plan {
-    background-color: #6fb94d;
+    background-color: #ff9d00;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -170,7 +203,7 @@ body {
 
 /* Efecto de hover en el botón */
 .boton-plan:hover {
-    background-color: #30e1e7;
+    background-color: #db8700;
 }
 
 .bandera {
@@ -207,7 +240,7 @@ body {
 
 /* Sección de recomendaciones +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .recomendaciones {
-    background-color: #e0f7fade;
+    background-image:  url('/public/img/adolescentes/fondo1.jpeg');
     /* Fondo claro para las recomendaciones */
     padding: 30px;
     border-radius: 10px;
@@ -217,9 +250,16 @@ body {
 }
 
 .titulo-recomendaciones {
-    font-size: 2rem;
-    color: #6fb94d;
+    font-size: 2.1rem;
+    color: #b692e9;
+    text-shadow:
+    -2px -2px 0 #b692e9,
+    2px -2px 0 #ffffff,
+    -2px 2px 0 #ffffff,
+    2px 2px 0 #ffffff,
+    6px 6px 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 20px;
+    font-family: 'Press start 2P';
 }
 
 .tweets {
@@ -288,13 +328,13 @@ body {
 
 /* Estilo del título */
 .caja-regalo h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     /* Tamaño de fuente aumentado */
-    color: #6fb94d;
+    color: #db8700;
     /* Color vibrante */
     margin: 0 0 10px 0;
     /* Margen inferior */
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Press start 2P';
     /* Cambiar a la fuente deseada */
 }
 
@@ -329,7 +369,7 @@ body {
 
 /* Estilo para el botón */
 .boton-regalo {
-    background-color: #6fb94d;
+    background-color: #ff9e03;
     /* Fondo color vibrante */
     color: white;
     /* Texto blanco */
@@ -350,7 +390,7 @@ body {
 }
 
 .boton-regalo:hover {
-    background-color: #30e1e7;
+    background-color: #d58300;
     /* Color al pasar el mouse */
 }
 
