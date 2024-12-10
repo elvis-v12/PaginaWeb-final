@@ -179,7 +179,6 @@ body {
     /* Oculta los enlaces de navegación */
     flex-direction: column;
     width: 100%;
-    background-color: #778c43;
   }
 
   .mi-menu .nav-links.active {
