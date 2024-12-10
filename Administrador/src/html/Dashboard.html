@@ -535,20 +535,7 @@
         <div id="teacher-management" class="section">
           <h1>Gestión de Profesores</h1>
           <div class="profesor-filter-container">
-            <select id="profesor-role-filter" class="styled-select">
-              <option value="all">Todos los roles</option>
-              <option value="programming">Programación</option>
-              <option value="languages">Idiomas</option>
-              <option value="design">Diseño</option>
-              <option value="marketing">Marketing</option>
-              <option value="business">Negocios</option>
-            </select>
-            <select id="profesor-status-filter" class="styled-select">
-              <option value="all">Todos los estados</option>
-              <option value="active">Activo</option>
-              <option value="inactive">Inactivo</option>
-            </select>
-        
+            
             <button id="profesor-add-btn" class="btn-add-profesor">
               Agregar Profesor
             </button>
@@ -575,73 +562,83 @@
           </div>
         
           <!-- Modal para agregar profesor -->
-          <div id="teacher-modal" class="teacher-modal hidden">
-            <div class="teacher-modal-content">
-              <i class="fas fa-times-circle close-icon" onclick="closeModal()"></i>
-              <h2 id="teacher-modal-title">Agregar Profesor</h2>
-              <form id="teacher-form">
-                <div class="form-columns">
-                  <div class="form-column">
-                    <div class="form-row">
-                      <label for="teacher-name">Nombre:</label>
-                      <input type="text" id="teacher-name" placeholder="Ingrese el nombre" required />
-                    </div>
-                    <div class="form-row">
-                      <label for="teacher-email">Correo:</label>
-                      <input type="email" id="teacher-email" placeholder="Ingrese el correo" required />
-                    </div>
-                    <div class="form-row">
-                      <label for="teacher-status">Estado:</label>
-                      <select id="teacher-status">
-                        <option value="Activo" selected>Activo</option>
-                        <option value="Inactivo">Inactivo</option>
-                      </select>
-                    </div>
-                    <div class="form-row">
-                      <label for="teacher-photo">Foto:</label>
-                      <input type="file" id="teacher-photo" accept="image/*" />
-                    </div>
-                  </div>
-                  <div class="form-column">
-                    <div class="form-row">
-                      <label for="teacher-category">Categoría:</label>
-                      <select id="teacher-category" required>
-                        <option value="Programación">Programación</option>
-                        <option value="Diseño">Diseño</option>
-                        <option value="Idiomas">Idiomas</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Negocios">Negocios</option>
-                      </select>
-                    </div>
-                    <div class="form-row">
-                      <label for="teacher-course">Curso:</label>
-                      <select id="teacher-course" required>
-                        <!-- Cursos dinámicos -->
-                      </select>
-                    </div>
-                    <div class="form-row">
-                      <label for="teacher-bio">Biografía:</label>
-                      <textarea id="teacher-bio" placeholder="Ingrese la biografía"></textarea>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row submit-row">
-                  <button type="button" class="teacher-save-button" onclick="saveTeacher()">
-                    Guardar
-                  </button>
-                </div>
-              </form>
-            </div>
+<div id="teacher-modal" class="teacher-modal hidden">
+  <div class="teacher-modal-content">
+    <i class="fas fa-times-circle close-icon" onclick="closeModal()"></i>
+    <h2 id="teacher-modal-title">Agregar Profesor</h2>
+    <form id="teacher-form">
+      <div class="form-columns">
+        <div class="form-column">
+          <div class="form-row">
+            <label for="edit-teacher-id">ID:</label>
+            <input type="hidden" id="edit-teacher-id" name="teacher-id" />
           </div>
+          <div class="form-row">
+            <label for="teacher-name">Nombre:</label>
+            <input type="text" id="teacher-name" name="teacher-name" placeholder="Ingrese el nombre" required />
+          </div>
+          <div class="form-row">
+            <label for="teacher-email">Correo:</label>
+            <input type="email" id="teacher-email" name="teacher-email" placeholder="Ingrese el correo" required />
+          </div>
+          <div class="form-row">
+            <label for="teacher-status">Estado:</label>
+            <select id="teacher-status" name="teacher-status">
+              <option value="Activo" selected>Activo</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="teacher-photo">Foto:</label>
+            <input type="file" id="teacher-photo" name="teacher-photo" accept="image/*" />
+          </div>
+        </div>
+        <div class="form-column">
+          <div class="form-row">
+            <label for="teacher-category">Categoría:</label>
+            <select id="teacher-category" name="teacher-category" required>
+              <option value="Programación">Programación</option>
+              <option value="Diseño">Diseño</option>
+              <option value="Idiomas">Idiomas</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Negocios">Negocios</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="teacher-course">Curso:</label>
+            <select id="teacher-course" name="teacher-course" required>
+              <!-- Cursos dinámicos -->
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="teacher-bio">Biografía:</label>
+            <textarea id="teacher-bio" name="teacher-bio" placeholder="Ingrese la biografía"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-row submit-row">
+        <button type="button" class="teacher-save-button" onclick="saveTeacher()">
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
         
           <!-- Modal para editar profesor -->
           <div id="edit-teacher-modal" class="teacher-modal hidden">
             <div class="teacher-modal-content">
               <i class="fas fa-times-circle close-icon" onclick="closeEditModal()"></i>
               <h2 id="edit-teacher-modal-title">Editar Profesor</h2>
+
               <form id="edit-teacher-form">
                 <div class="form-columns">
                   <div class="form-column">
+                    <div class="form-row">
+                      <label for="edit-teacher-name">ID:</label>
+                      <input type="hidden" id="edit-teacher-id" />
+                    </div>
                     <div class="form-row">
                       <label for="edit-teacher-name">Nombre:</label>
                       <input type="text" id="edit-teacher-name" required />
@@ -1513,7 +1510,6 @@
     <script src="/src/js/certificados.js"></script>
     <script src="/src/js/rutas.js"></script>
     <script src="/src/js/curso.js"></script>
-    <script src="/src/js/profesor.js"></script>
     <script src="/src/js/graficos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
@@ -1521,6 +1517,7 @@
     <script src="/src/js/EnvioCursos.js"></script>
     <script src="/src/js/desplegarPerfil.js"></script>   
     <script src="/src/js/RequesName.js"></script>  
+    <script src="/src/js/ProfesoresDatos.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.24/jspdf.plugin.autotable.min.js"></script>
     
