@@ -23,22 +23,36 @@ const obtenerCategorias = async (req, res) => {
 };
 // Agregar un curso
 const agregarCurso = async (req, res) => {
-    const { id_ruta, id_categoria, nombre_curso, id_profesor, precio, duracion_horas } = req.body;
-
-    if (!id_ruta || !id_categoria || !nombre_curso || !id_profesor || !precio || !duracion_horas) {
-        return res.status(400).json({ error: 'Campos requeridos faltantes' });
-    }
-
     try {
+        // Logs para depuración
+        console.log("Archivo subido:", req.file);
+        console.log("Datos del formulario:", req.body);
+
+        const { id_ruta, id_categoria, nombre_curso, id_profesor, precio, duracion_horas } = req.body;
+        const imagen_url = req.file ? `/uploads/${req.file.filename}` : null;
+
+        if (!id_ruta || !id_categoria || !nombre_curso || !id_profesor || !precio || !duracion_horas || !imagen_url) {
+            return res.status(400).json({ error: "Campos requeridos faltantes o imagen no subida" });
+        }
+
         const query = `
-            INSERT INTO cursos (id_ruta, id_categoria, nombre_curso, id_profesor, precio, duracion_horas)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO cursos (id_ruta, id_categoria, nombre_curso, id_profesor, precio, duracion_horas, imagen_url)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
         `;
-        const [result] = await pool.execute(query, [id_ruta, id_categoria, nombre_curso, id_profesor, precio, duracion_horas]);
-        res.status(201).json({ message: 'Curso agregado correctamente', id: result.insertId });
+        const [result] = await pool.execute(query, [
+            id_ruta,
+            id_categoria,
+            nombre_curso,
+            id_profesor,
+            precio,
+            duracion_horas,
+            imagen_url,
+        ]);
+
+        res.status(201).json({ message: "Curso agregado correctamente", id: result.insertId });
     } catch (error) {
-        console.error('Error al agregar curso:', error);
-        res.status(500).json({ error: 'Error al agregar curso' });
+        console.error("Error al agregar curso:", error.message);
+        res.status(500).json({ error: "Error al agregar curso" });
     }
 };
 
@@ -56,13 +70,29 @@ const obtenerProfesores = async (req, res) => {
 // Listar cursos
 const listarCursos = async (req, res) => {
     try {
-        const [cursos] = await pool.query('SELECT * FROM cursos');
-        res.status(200).json(cursos);
+        const query = `
+            SELECT 
+                c.id_curso, 
+                c.nombre_curso, 
+                c.descripcion, 
+                c.nivel_edad, 
+                c.precio, 
+                c.duracion_horas, 
+                c.imagen_url, 
+                p.nombres AS docente
+            FROM cursos c
+            LEFT JOIN profesores p ON c.id_profesor = p.id_profesor
+        `;
+        const [cursos] = await pool.query(query);
+        console.log("Cursos enviados:", cursos); // Asegúrate de que este log muestra un array
+        res.status(200).json(cursos); // Asegúrate de enviar correctamente la respuesta como JSON
     } catch (error) {
         console.error('Error al listar cursos:', error);
         res.status(500).json({ error: 'Error al listar cursos' });
     }
 };
+
+
 
 // Agregar sesión a un curso
 const agregarSesion = async (req, res) => {

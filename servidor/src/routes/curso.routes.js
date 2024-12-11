@@ -1,36 +1,26 @@
-import express from 'express';
-import CursoController from '../controllers/Curso.Controller.js';
+import multer from "multer";
+import express from "express";
+import CursoController from "../controllers/Curso.Controller.js";
 
 const router = express.Router();
 
-// Ruta para obtener rutas
-router.get('/rutas', CursoController.obtenerRutas);
+// Configuración básica de multer
+const upload = multer({
+    dest: "uploads/", // Carpeta donde se guardarán las imágenes
+});
 
-// Ruta para obtener categorías
-router.get('/categorias', CursoController.obtenerCategorias);
-
-// Ruta para agregar un curso
-router.post('/agregar', CursoController.agregarCurso);
-
-// Ruta para obtener todos los cursos
-router.get('/listar', CursoController.listarCursos);
-
-// Ruta para agregar sesiones a un curso
-router.post('/sesiones/agregar', CursoController.agregarSesion);
-
-router.get('/profesores', CursoController.obtenerProfesores); // Nueva ruta para profesores
-
-// Ruta para actualizar curso
-router.put('/actualizar', CursoController.actualizarCurso);
-
-// Ruta para actualizar descripción
-router.put('/descripcion', CursoController.actualizarDescripcion);
-
-// Ruta para agregar video
+// Rutas
+router.get("/rutas", CursoController.obtenerRutas);
+router.get("/categorias", CursoController.obtenerCategorias);
+router.get("/listar", CursoController.listarCursos);
+router.post("/sesiones/agregar", CursoController.agregarSesion);
+router.get("/profesores", CursoController.obtenerProfesores);
+router.put("/actualizar", CursoController.actualizarCurso);
+router.put("/descripcion", CursoController.actualizarDescripcion);
 router.post("/videos/agregar", CursoController.agregarVideo);
+router.get("/nombres-cursos", CursoController.obtenerNombresCursos);
 
-// Ruta para obtener nombres de los cursos
-router.get('/nombres-cursos', CursoController.obtenerNombresCursos);
-
+// Ruta para agregar curso con multer
+router.post("/agregar", upload.single("imagen"), CursoController.agregarCurso);
 
 export default router;

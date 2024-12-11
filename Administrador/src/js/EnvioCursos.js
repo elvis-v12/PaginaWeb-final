@@ -9,6 +9,9 @@ const API_ACTUALIZAR_CURSO_URL = `${API_BASE_URL}/actualizar`;
 const API_DESCRIPCION_CURSO_URL = `${API_BASE_URL}/descripcion`;
 const API_AGREGAR_VIDEO_URL = `${API_BASE_URL}/videos/agregar`;
 const API_NOMBRES_CURSOS_URL = `${API_BASE_URL}/nombres-cursos`;
+// Variables globales
+let modulosTemp = [];
+
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarCursos();
@@ -19,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarModales();
     configurarBotonesGenerales();
 });
+
 
 // Cargar y renderizar nombres de los cursos
 async function cargarNombresCursos() {
@@ -31,6 +35,8 @@ async function cargarNombresCursos() {
         console.error("Error:", error.message);
     }
 }
+
+
 function renderNombresCursos(nombresCursos) {
     const selects = document.querySelectorAll("#ruta-nombresCur-nuevo");
     selects.forEach((select) => {
@@ -45,41 +51,69 @@ async function cargarCursos() {
     try {
         const response = await fetch(API_CURSOS_URL);
         if (!response.ok) throw new Error("Error al cargar los cursos");
-        const cursos = await response.json();
+        const data = await response.json();
+
+        // Validar que data.cursos sea un array
+        const cursos = Array.isArray(data) ? data : data.cursos || [];
         renderCursos(cursos);
     } catch (error) {
-        console.error("Error:", error.message);
+        console.error("Error al cargar los cursos:", error.message);
+    }
+}
+
+async function cargarCursos() {
+    try {
+        const response = await fetch(API_CURSOS_URL);
+        if (!response.ok) throw new Error("Error al cargar los cursos");
+        const data = await response.json();
+        const cursos = Array.isArray(data) ? data : data.cursos || []; // Manejo flexible de datos
+        renderCursos(cursos); // Asegúrate de pasar "cursos"
+    } catch (error) {
+        console.error("Error al cargar los cursos:", error.message);
     }
 }
 
 function renderCursos(cursos) {
+    // Validar que cursos sea un array
+    if (!Array.isArray(cursos)) {
+        console.error("Error: cursos no es un array", cursos);
+        return;
+    }
+
     const cursosContainer = document.getElementById("cursos-container");
-    if (!cursos || cursos.length === 0) {
+    if (cursos.length === 0) {
         cursosContainer.innerHTML = "<p>No hay cursos registrados.</p>";
         return;
     }
 
     cursosContainer.innerHTML = cursos
-        .map(
-            (curso) => `
-            <div class="curso-card" data-edad="${curso.nivel_edad || "todos"}" data-categoria="${curso.id_categoria}">
-                <h3>${curso.nombre_curso}</h3>
-                <p><strong>Docente:</strong> ${curso.docente}</p>
-                <p><strong>Precio:</strong> S/${curso.precio}</p>
-                <p><strong>Duración:</strong> ${curso.duracion_horas} horas</p>
-                <button class="btn-insertar" data-curso-id="${curso.id_curso}">Insertar</button>
-            </div>`
-        )
+        .map((curso) => {
+            const imagenUrl = curso.imagen_url
+                ? `http://localhost:3000${curso.imagen_url}`
+                : "default-image-path";
+            return `
+                <div class="curso-card" data-edad="${curso.nivel_edad || "todos"}" data-categoria="${curso.id_categoria}">
+                    <img src="${imagenUrl}" alt="Imagen del curso" />
+                    <h3>${curso.nombre_curso}</h3>
+                    <p><strong>Docente:</strong> ${curso.docente || "No asignado"}</p>
+                    <p><strong>Precio:</strong> S/${parseFloat(curso.precio).toFixed(2)}</p>
+                    <p><strong>Duración:</strong> ${curso.duracion_horas} horas</p>
+                    <button class="btn-insertar" data-curso-id="${curso.id_curso}">Insertar</button>
+                </div>`;
+        })
         .join("");
-
-    // Agregar evento a los botones "Insertar"
-    document.querySelectorAll(".btn-insertar").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            const cursoId = e.target.getAttribute("data-curso-id");
-            abrirModalInsertar(cursoId);
-        });
-    });
 }
+
+if (Array.isArray(cursos)) {
+    cursos.forEach((curso) => {
+        console.log(`Imagen URL: ${curso.imagen_url}`);
+    });
+} else {
+    console.error("Error: cursos no es un array", cursos);
+}
+
+
+
 
 // Cargar y renderizar rutas
 async function cargarRutas() {
@@ -170,9 +204,15 @@ function abrirModalInsertar(cursoId) {
     const modalEditar = document.getElementById("modal-editar-curso");
     modalEditar.style.display = "flex";
 }
+for (let [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+}
 
 // Agregar un nuevo curso
-document.getElementById("guardar-curso-nuevo").addEventListener("click", async function () {
+// Definimos la función agregarCurso correctamente
+async function agregarCurso() {
+    const formData = new FormData();
+    const imagen = document.getElementById("imagen-curso-nuevo").files[0];
     const nombreCurso = document.getElementById("nombre-curso-nuevo")?.value.trim();
     const idProfesor = document.getElementById("docente-curso-nuevo")?.value.trim();
     const precioCurso = document.getElementById("precio-curso-nuevo")?.value.trim();
@@ -180,96 +220,164 @@ document.getElementById("guardar-curso-nuevo").addEventListener("click", async f
     const categoriaCurso = document.getElementById("categorias-curso-nuevo")?.value.trim();
     const duracionCurso = document.getElementById("horas-curso-nuevo")?.value.trim();
 
-    if (!nombreCurso || !idProfesor || !precioCurso || !rutaCurso || !categoriaCurso || !duracionCurso) {
+    if (!nombreCurso || !idProfesor || !precioCurso || !rutaCurso || !categoriaCurso || !duracionCurso || !imagen) {
         alert("Por favor, complete todos los campos.");
         return;
     }
 
-    const nuevoCurso = {
-        id_ruta: parseInt(rutaCurso),
-        id_categoria: parseInt(categoriaCurso),
-        nombre_curso: nombreCurso,
-        id_profesor: parseInt(idProfesor),
-        precio: parseFloat(precioCurso),
-        duracion_horas: parseInt(duracionCurso),
-    };
+    // Agregar los datos al FormData
+    formData.append("imagen", imagen);
+    formData.append("nombre_curso", nombreCurso);
+    formData.append("id_profesor", parseInt(idProfesor));
+    formData.append("precio", parseFloat(precioCurso));
+    formData.append("id_ruta", parseInt(rutaCurso));
+    formData.append("id_categoria", parseInt(categoriaCurso));
+    formData.append("duracion_horas", parseInt(duracionCurso));
+
+    // Debugging: Mostrar los datos en consola
+    for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+    }
 
     try {
         const response = await fetch(API_AGREGAR_CURSO_URL, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(nuevoCurso),
+            body: formData, // Enviar el FormData directamente
         });
 
-        if (!response.ok) throw new Error("Error al agregar el curso");
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Error al agregar el curso:", errorData.error);
+            throw new Error(errorData.error || "Error desconocido");
+        }
 
         alert("Curso agregado correctamente");
         cargarCursos(); // Recargar los cursos
         document.getElementById("modal-agregar-curso").style.display = "none"; // Cerrar el modal
     } catch (error) {
-        console.error("Error:", error.message);
-        alert("Error al agregar el curso");
+        console.error("Error al agregar el curso:", error.message);
+        alert("Error al agregar el curso: " + error.message);
     }
-});
+}
 
-// Configuración de los botones generales
+
 // Configuración de los botones generales
 function configurarBotonesGenerales() {
-    document.getElementById("btn-actualizarDT-curso").addEventListener("click", () => {
-        abrirModalActualizarCurso();
-    });
+    const btnActualizar = document.getElementById("btn-actualizarDT-curso");
+    if (btnActualizar) {
+        btnActualizar.addEventListener("click", abrirModalActualizarCurso);
+    } else {
+        console.error("Error: 'btn-actualizarDT-curso' no existe en el DOM");
+    }
 
-    document.getElementById("btn-descrip-curso").addEventListener("click", () => {
-        abrirModalDescripcionCurso();
-    });
+    const btnDescripcion = document.getElementById("btn-descrip-curso");
+    if (btnDescripcion) {
+        btnDescripcion.addEventListener("click", abrirModalDescripcionCurso);
+    } else {
+        console.error("Error: 'btn-descrip-curso' no existe en el DOM");
+    }
 
-    document.getElementById("btn-sesiones-curso").addEventListener("click", () => {
-        abrirModalAgregarSesiones();
-    });
+    const btnSesiones = document.getElementById("btn-sesiones-curso");
+    if (btnSesiones) {
+        btnSesiones.addEventListener("click", abrirModalAgregarSesiones);
+    } else {
+        console.error("Error: 'btn-sesiones-curso' no existe en el DOM");
+    }
+
+    const btnAddModulo = document.getElementById("add-modulo-1");
+    if (btnAddModulo) {
+        btnAddModulo.addEventListener("click", agregarModulo);
+    } else {
+        console.error("Error: 'add-modulo-1' no existe en el DOM");
+    }
+
+    const btnGuardarVideos = document.getElementById("guardar-videos-1");
+    if (btnGuardarVideos) {
+        btnGuardarVideos.addEventListener("click", guardarModulos);
+    } else {
+        console.error("Error: 'guardar-videos-1' no existe en el DOM");
+    }
+}
+
+// Función para añadir un módulo temporalmente
+function agregarModulo() {
+    const cursoId = document.querySelector("#ruta-nombresCur-nuevo").value; // ID seleccionado
+    const tituloSesion = document.getElementById("modulo-1").value.trim();
+    const nombreVideo = document.getElementById("nombre-1").value.trim();
+    const urlVideo = document.getElementById("url-1").value.trim();
+
+    if (!tituloSesion || !nombreVideo || !urlVideo) {
+        alert("Por favor, complete todos los campos.");
+        return;
+    }
+
+    const nuevoModulo = {
+        id_curso: parseInt(cursoId),
+        titulo_sesion: tituloSesion,
+        descripcion: "Descripción predeterminada", // Valor predeterminado
+        orden: modulosTemp.length + 1, // Orden basado en el índice actual
+        duracion_minutos: 10, // Valor predeterminado
+        url_video: urlVideo,
+        titulo_video: nombreVideo,
+    };
+
+    modulosTemp.push(nuevoModulo);
+    renderizarModulosTemp();
+
+    // Limpiar los campos del formulario
+    document.getElementById("modulo-1").value = "";
+    document.getElementById("nombre-1").value = "";
+    document.getElementById("url-1").value = "";
 }
 
 
-// Abrir modal para actualizar datos del curso
+function guardarModulos() {
+    if (modulosTemp.length === 0) {
+        alert("No hay módulos para guardar.");
+        return;
+    }
+
+    try {
+        fetch(API_AGREGAR_VIDEO_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(modulosTemp),
+        })
+            .then((response) => {
+                if (!response.ok) throw new Error("Error al guardar los módulos");
+                alert("Módulos guardados correctamente");
+                modulosTemp = []; // Limpiar la lista temporal
+                renderizarModulosTemp(); // Actualizar la vista
+                document.getElementById("modal-videos-curso-1").style.display = "none"; // Cerrar modal
+            })
+            .catch((error) => {
+                console.error("Error al guardar los módulos:", error.message);
+                alert("Error al guardar los módulos");
+            });
+    } catch (error) {
+        console.error("Error:", error.message);
+    }
+}
+
+// Función para abrir el modal de actualizar datos del curso
 function abrirModalActualizarCurso() {
-    const modalEditar = document.getElementById("modal-editar-curso-1");
+    const modalEditar = document.getElementById("modal-editar-curso");
+    if (!modalEditar) {
+        console.error("Error: El modal 'modal-editar-curso' no existe en el DOM");
+        return;
+    }
     modalEditar.style.display = "flex";
 
-    document.getElementById("guardar-editar-1").addEventListener("click", async function () {
-        const cursoId = document.querySelector("#ruta-nombresCur-nuevo").value; // ID seleccionado
-        const nombreCurso = document.getElementById("nombre-curso").value.trim();
-        const idProfesor = document.getElementById("docente-curso-nuevo").value.trim();
-        const precioCurso = document.getElementById("precio-curso").value.trim();
-
-        if (!cursoId || !nombreCurso || !idProfesor || !precioCurso) {
-            alert("Por favor, complete todos los campos.");
-            return;
-        }
-
-        const datosCurso = {
-            id_curso: parseInt(cursoId),
-            nombre_curso: nombreCurso,
-            id_profesor: parseInt(idProfesor),
-            precio: parseFloat(precioCurso),
-        };
-
-        try {
-            const response = await fetch(API_ACTUALIZAR_CURSO_URL, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(datosCurso),
-            });
-
-            if (!response.ok) throw new Error("Error al actualizar el curso");
-
-            alert("Datos actualizados correctamente");
+    const btnCerrar = document.getElementById("cerrar-modal-editar");
+    if (btnCerrar) {
+        btnCerrar.addEventListener("click", () => {
             modalEditar.style.display = "none";
-            cargarCursos();
-        } catch (error) {
-            console.error("Error:", error.message);
-            alert("Error al actualizar el curso");
-        }
-    });
+        });
+    } else {
+        console.error("Error: Botón 'cerrar-modal-editar' no existe en el DOM");
+    }
 }
+
 
 // Abrir modal para agregar descripción al curso
 function abrirModalDescripcionCurso() {
@@ -309,8 +417,6 @@ function abrirModalDescripcionCurso() {
 }
 
 
-// Variables para almacenar los módulos temporalmente
-let modulosTemp = [];
 
 // Función para añadir un módulo temporalmente
 document.getElementById("add-modulo-1").addEventListener("click", function () {
@@ -364,7 +470,6 @@ function renderizarModulosTemp() {
         videosContainer.innerHTML += moduloHTML;
     });
 
-    // Agregar evento para eliminar módulos
     document.querySelectorAll(".btn-eliminar-modulo").forEach((btn) => {
         btn.addEventListener("click", function () {
             const index = parseInt(this.getAttribute("data-index"));
@@ -402,16 +507,54 @@ document.getElementById("guardar-videos-1").addEventListener("click", async func
     }
 });
 
-// Función para abrir el modal y configurar los botones
+// Función para abrir el modal de agregar sesiones
 function abrirModalAgregarSesiones() {
-    const modalSesiones = document.getElementById("modal-videos-curso-1");
+    const modalSesiones = document.getElementById("modal-videos-curso-1"); // Cambia el ID
+    if (!modalSesiones) {
+        console.error("Error: modal-videos-curso-1 no existe en el DOM");
+        return;
+    }
+
     modalSesiones.style.display = "flex";
 
-    // Botón para cerrar el modal
-    document.getElementById("cerrar-modal-editar-1").addEventListener("click", function () {
-        modalSesiones.style.display = "none";
+    // Configurar el botón para cerrar el modal
+    const btnCerrar = document.getElementById("cerrar-modal-editar-1");
+    if (btnCerrar) {
+        btnCerrar.addEventListener("click", () => {
+            modalSesiones.style.display = "none";
+        });
+    } else {
+        console.error("Error: cerrar-modal-editar-1 no existe en el DOM");
+    }
+}
+document.getElementById("cerrar-modal-editar-1").addEventListener("click", () => {
+    const modal = document.getElementById("modal-videos-curso-1");
+    if (modal) modal.style.display = "none";
+});
+
+
+// Renderizar módulos temporales
+function renderizarModulosTemp() {
+    const videosContainer = document.getElementById("videos-container2");
+    videosContainer.innerHTML = ""; // Limpiar el contenedor antes de renderizar
+
+    modulosTemp.forEach((modulo, index) => {
+        const moduloHTML = `
+            <div class="modulo-item">
+                <p><strong>Módulo ${index + 1}:</strong> ${modulo.titulo_sesion}</p>
+                <p><strong>Nombre del Video:</strong> ${modulo.titulo_video}</p>
+                <p><strong>URL:</strong> <a href="${modulo.url_video}" target="_blank">${modulo.url_video}</a></p>
+                <button class="btn-eliminar-modulo" data-index="${index}">Eliminar</button>
+            </div>
+        `;
+        videosContainer.innerHTML += moduloHTML;
     });
 
-    // Renderizar módulos temporales (si existen)
-    renderizarModulosTemp();
+    document.querySelectorAll(".btn-eliminar-modulo").forEach((btn) => {
+        btn.addEventListener("click", function () {
+            const index = parseInt(this.getAttribute("data-index"));
+            modulosTemp.splice(index, 1); // Eliminar el módulo de la lista temporal
+            renderizarModulosTemp(); // Volver a renderizar
+        });
+    });
 }
