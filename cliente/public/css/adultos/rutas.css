@@ -3,7 +3,6 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     background: #c99e8f;
     margin: 0;
     padding: 0;
@@ -78,7 +77,6 @@ body {
 
 /* Texto al lado del logo */
 .ms-2.mb-0.text-start {
-    font-family: 'Concert One', cursive;
     font-size: 17px;
     color: #000000;
     text-align: left;
@@ -89,7 +87,6 @@ body {
     font-size: 25px;
     margin-bottom: 10px;
     text-align: left;
-    font-family: 'Concert One', cursive;
     font-weight: bold;
     color: rgb(15, 59, 95);
 
@@ -117,7 +114,6 @@ body {
     padding: 12px;
     font-size: 16px;
     border-radius: 8px;
-    font-family: 'Coiny', cursive;
     width: calc(100% - 0);
     /* Ajuste para el ancho completo del contenedor */
     margin-top: 20px;

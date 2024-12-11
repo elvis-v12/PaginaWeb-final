@@ -10,7 +10,6 @@ body.hidden {
 
 /* Estilo General */
 body {
-    font-family: 'Arial', sans-serif;
     background: #d6d0cd;
     background-size: cover;
     margin: 0;
@@ -29,7 +28,6 @@ body.hidden {
 
 /* Estilo General */
 body {
-    font-family: 'Arial', sans-serif;
     background: #d6d0cd;
     background-size: cover;
     margin: 0;
@@ -100,7 +98,6 @@ body {
     /* Centra el texto */
     margin-bottom: 20px;
     /* Espacio debajo del texto */
-    font-family: 'Courier Prime', monospace;
     /* Fuente Courier Prime */
     font-size: 1.8em;
     /* Aumenta el tamaño de la fuente */
@@ -255,14 +252,12 @@ body {
 }
 
 .fade-text {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2.7rem;
     color: #ffffff;
     margin-bottom: 50px;
 }
 
 .fade-text2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2.4rem;
     color: #ffffff;
     margin-bottom: 50px;
@@ -533,7 +528,6 @@ body {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 10px;
-    font-family: 'Bubblegum Sans', cursive;
     /* Fuente divertida */
 }
 
@@ -587,8 +581,6 @@ body {
     padding: 20px;
     /* Espaciado interior */
     font-size: 0.9rem;
-    /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif;
     /* Tipografía simple y limpia */
     border-top: 2px solid #778c43;
     /* Líneas de separación */
@@ -934,7 +926,6 @@ body {
 
 /* Títulos Estilo Baby Shark */
 .phrase {
-    font-family: 'Fredoka One', sans-serif;
     font-size: 4.6rem;
 
     /* Propiedades para compatibilidad */
@@ -997,8 +988,6 @@ body {
     text-align: center;
     /* Centra el texto */
     margin-bottom: 20px;
-    /* Espacio debajo del texto */
-    font-family: 'Courier Prime', monospace;
     /* Fuente Courier Prime */
     font-size: 1.8em;
     /* Aumenta el tamaño de la fuente */
@@ -1170,7 +1159,6 @@ body {
 .title-quality,
 .title-programming,
 .title-exclusive {
-    font-family: 'Fredoka One', sans-serif;
     font-size: 3.5rem;
     color: rgb(91 123 151 / 70%);
     /* Ajuste de tamaño de fuente */
@@ -1179,14 +1167,12 @@ body {
 }
 
 .fade-text {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2.7rem;
     color: #ffffff;
     margin-bottom: 50px;
 }
 
 .fade-text2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2.4rem;
     color: #ffffff;
     margin-bottom: 50px;
@@ -1294,7 +1280,6 @@ body {
 
 .title {
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
     font-size: 2.7rem;
     /* Color del texto del título */
     margin-bottom: 20px;
@@ -1564,14 +1549,12 @@ body {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 10px;
-    font-family: 'Bubblegum Sans', cursive;
     /* Fuente divertida */
 }
 
 .box-subtitle {
     font-size: 1rem;
     color: #666;
-    font-family: 'Roboto', sans-serif;
 }
 
 /* Responsivo */

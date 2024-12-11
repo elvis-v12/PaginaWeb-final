@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgb(15, 59, 90);
+  background-color: #01617A;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
@@ -45,7 +45,7 @@ body {
   margin-left: 10px;
   font-size: 3rem;
   font-family: 'Fredoka One', sans-serif;
-  color: #109b94;
+  color: #ffffff;
 
 }
 

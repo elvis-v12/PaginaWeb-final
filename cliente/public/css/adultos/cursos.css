@@ -5,7 +5,6 @@
 
 /* Estilos generales */
 body {
-  font-family: 'Arial', sans-serif;
   background: #c99e8f;
   margin-top: 0;
   padding: 0;
@@ -66,7 +65,6 @@ body {
 .titulo {
   text-align: center;
   /* Alinea el texto a la izquierda */
-  font-family: 'Fredoka One', sans-serif;
   /* Fuente redondeada */
   font-size: 5rem;
   background: #1175a3;
@@ -107,7 +105,6 @@ body {
   text-align: center;
   /* Alinea el texto a la izquierda */
   width: 1400px;
-  font-family: 'Fredoka One', sans-serif;
   /* Fuente redondeada */
   font-size: 3rem;
   /* Tamaño grande */
@@ -131,7 +128,6 @@ body {
 
 
 p {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
   font-size: 1.3rem;
   margin-bottom: 30px;
   color: #f9f9f9;
@@ -177,7 +173,6 @@ p {
 /* Estilo del título */
 .modal-title,
 .modal-body h4 {
-  font-family: 'Fredoka One', cursive;
   font-size: 30px;
   color: #778c43;
   text-shadow: -1px -1px 0 #fff700, 1px -1px 0 #fff700, -1px 1px 0 #fff700, 1px 1px 0 #fff700 !important;
@@ -225,7 +220,6 @@ p {
 
 /* Estilo del texto en el modal */
 .modal-body p {
-  font-family: 'Poppins', sans-serif;
   color: #000;
   font-size: 18px;
   margin: 10px 0;
@@ -297,7 +291,6 @@ p {
 h1,
 .modal-title,
 .modal-body h4 {
-  font-family: 'Fredoka One', cursive;
   color: #1175a3;
 }
 
@@ -310,7 +303,6 @@ h1 {
 h2,
 .instructor-name,
 .modal-body p {
-  font-family: 'Poppins', sans-serif;
   font-size: 1.2em;
   color: #555;
 }
@@ -326,7 +318,6 @@ h2,
   display: flex;
   align-items: center;
   margin-top: 6px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .instructor-image {
@@ -387,7 +378,6 @@ a {
   /* Centra el texto */
   margin-bottom: 20px;
   /* Espacio debajo del texto */
-  font-family: 'Courier Prime', monospace;
   /* Fuente Courier Prime */
   font-size: 1.8em;
   /* Aumenta el tamaño de la fuente */

@@ -5,7 +5,6 @@
 
 /* Estilo General */
 body {
-    font-family: 'Arial', sans-serif;
     background: #d6d0cd;
     background-size: cover;
     margin: 0;
@@ -32,7 +31,6 @@ body {
 
 .titulo-seccion {
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
     font-size: 4.2rem;
     background: none;
 
@@ -294,7 +292,6 @@ body {
     /* Color vibrante */
     margin: 0 0 10px 0;
     /* Margen inferior */
-    font-family: 'Poppins', sans-serif;
     /* Cambiar a la fuente deseada */
 }
 
@@ -306,7 +303,6 @@ body {
     /* Color del texto */
     margin: 0 0 20px 0;
     /* Margen inferior */
-    font-family: 'Poppins', sans-serif;
     /* Cambiar a la fuente deseada */
 }
 
@@ -323,7 +319,6 @@ body {
     /* Tamaño de fuente para pasos aumentado */
     margin: 5px 0;
     /* Margen entre los pasos */
-    font-family: 'Poppins', sans-serif;
     /* Cambiar a la fuente deseada */
 }
 
@@ -366,7 +361,6 @@ body {
     /* Espaciado interior */
     font-size: 0.9rem;
     /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif;
     /* Tipografía simple y limpia */
     border-top: 2px solid #778c43;
     /* Líneas de separación */

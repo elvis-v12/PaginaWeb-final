@@ -5,7 +5,6 @@
 
 /* Estilo General */
 body {
-    font-family: 'Arial', sans-serif;
     background-color: #dbd8d3;
     margin: 0;
     padding: 0;
@@ -14,9 +13,8 @@ body {
 
 .soporte {
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 110px auto;
     padding: 20px;
-    margin-top: 110px;
     background: #eee9e7;
     /* Fondo blanco translúcido */
 
@@ -243,14 +241,12 @@ label.btn-subir:hover {
 .modal-body h2 {
     font-size: 2.8rem;
     /* Un poco más grande para mejor lectura */
-    font-family: 'Fredoka One', sans-serif;
     color: #1c932e;
 }
 
 .modal-body p {
     font-size: 18px;
     /* Un poco más grande para mejor lectura */
-    font-family: 'Courier New', Courier, monospace;
     color: #080909;
 }
 
@@ -301,7 +297,6 @@ label.btn-subir:hover {
     background-image: url('');
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* Estilo de las etiquetas */
@@ -348,7 +343,6 @@ form textarea:focus {
     background-color: #0c2c5c;
     color: white;
     font-size: 1.5rem;
-    font-family: 'Fredoka One', sans-serif;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -470,7 +464,6 @@ form textarea:focus {
     /* Espaciado interior */
     font-size: 0.9rem;
     /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif;
     /* Tipografía simple y limpia */
     border-top: 2px solid #ff4081;
     /* Líneas de separación */

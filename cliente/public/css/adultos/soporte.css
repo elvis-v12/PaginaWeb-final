@@ -5,7 +5,6 @@
 
 /* Estilo General */
 body {
-    font-family: 'Arial', sans-serif;
     background: #b69d94;
     background-size: cover;
     margin: 0;
@@ -76,7 +75,6 @@ body {
 /* Descripción de la respuesta */
 .pregunta p {
     font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
     /* Tipografía amigable y clara */
     color: #333;
     display: none;
@@ -133,7 +131,6 @@ body {
     background-image: url('');
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* Estilo de las etiquetas */
@@ -177,7 +174,6 @@ form textarea:focus {
     background-color: #134580;
     color: white;
     font-size: 1.5rem;
-    font-family: 'Fredoka One', sans-serif;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -217,8 +213,6 @@ form textarea:focus {
     padding: 20px;
     /* Espaciado interior */
     font-size: 0.9rem;
-    /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif;
     /* Tipografía simple y limpia */
     border-top: 2px solid #778c43;
     /* Líneas de separación */

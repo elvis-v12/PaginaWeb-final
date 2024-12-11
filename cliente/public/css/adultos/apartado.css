@@ -14,15 +14,17 @@
 
 .title {
 
-    margin-top: 90px;
-    font-size: 4rem;
-    font-weight: bold;
-    color: rgb(15, 59, 90);
-    width: 100%;
+    width: 98%;
     text-align: center;
-    z-index: 20;
+    font-size: 6rem;
+    color: rgb(15, 59, 95);
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 40px;
+    margin-top: 90px;
+    text-shadow: 4px 4px 0px #ffffff;
+    padding: 20px 0;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
-
 }
 
 
@@ -54,7 +56,6 @@
 .subtitle {
     font-size: 2.5rem;
     font-weight: bold;
-    font-family: 'Fredoka One', sans-serif;
     margin-bottom: 1rem;
     margin-top: 1rem;
     color: #ffffff;
@@ -66,7 +67,6 @@
 .description {
     font-size: 1rem;
     /* Tamaño de fuente */
-    font-family: 'Nanum Gothic Coding', monospace;
     /* Fuente */
     color: #ffffff;
     /* Color del texto */
@@ -180,7 +180,6 @@
 
 .temario h2 {
     margin-top: 28px;
-    font-family: 'Fredoka One', sans-serif;
     font-size: 4em;
     color: rgb(15, 59, 90);
     /* Color azul */
@@ -236,7 +235,6 @@
     /* Sombra */
     color: #161615;
     /* Color del texto */
-    font-family: Arial, sans-serif;
 }
 
 /* Imagen del curso */
@@ -339,7 +337,6 @@ button:hover {
 .contenedor-requisitos h3 {
     font-size: 1.2em;
     color: #ffffff;
-    font-family: 'Fredoka One', sans-serif;
 }
 
 .contenedor-requisitos ul {
@@ -368,7 +365,6 @@ button:hover {
 
 .font-bold {
     margin-top: 35px;
-    font-family: 'Rammetto One', sans-serif;
     font-size: 2.7em;
     color: rgb(213, 231, 252);
     /* Color azul */
@@ -404,7 +400,6 @@ button:hover {
 
 
 .textito {
-    font-family: 'Fredoka One', sans-serif;
     font-size: 2.5rem;
     color: #ffffff;
 }
@@ -475,27 +470,23 @@ button:hover {
 
 .info-box p {
     font-size: 1rem;
-    font-family: 'Nanum Gothic Coding', monospace;
     color: #d4dde0;
 
 }
 
 .textito1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
     margin-left: 15px;
     color: rgb(255, 255, 255)
 }
 
 .temario-iz h3 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
     margin: 0;
     margin-left: 15px;
 }
 
 .temario-iz ul li {
-    font-family: 'Nanum Gothic Coding', monospace;
     font-size: 18px;
 }
 

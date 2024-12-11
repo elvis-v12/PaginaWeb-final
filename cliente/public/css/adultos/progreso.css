@@ -5,7 +5,6 @@
 
 body {
     color: white;
-    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -43,13 +42,9 @@ h1 {
 }
 
 .stat h3 {
-    font-family: 'Nanum Gothic Coding', monospace;
     margin-bottom: 5px;
 }
 
-.stat p {
-    font-family: 'Nanum Gothic Coding', monospace;
-}
 
 .chart-container {
     display: flex;

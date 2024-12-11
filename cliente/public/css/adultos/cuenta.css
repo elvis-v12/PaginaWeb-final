@@ -1,6 +1,5 @@
 /* Estilo General */
 body {
-    font-family: 'Poppins', sans-serif;
     background: #c99e8f;
     background-size: cover;
     margin: 0;
@@ -21,11 +20,10 @@ body {
 
 .titulo-Edit {
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
     /* Fuente redondeada */
     font-size: 4rem;
     /* Tamaño grande como en la imagen */
-    color: rgb(25, 94, 158);
+    background-color: rgb(0, 0, 0);
     /* Gradiente de color vibrante (rosado a amarillo) */
     width: 100%;
     /* Se asegura que el título "Editar perfil" abarque todo el ancho */
@@ -38,13 +36,6 @@ body {
     -webkit-text-fill-color: transparent;
 
     /* Sombra para crear el borde grueso blanco y la curvatura */
-    text-shadow:
-        -2px -2px 0 #000000,
-        2px -2px 0 #23a7cf,
-        -2px 2px 0 #23a7cf,
-        2px 2px 0 #23a7cf,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra para dar profundidad */
 
     padding-bottom: 20px;
     margin-top: 20px;
@@ -53,7 +44,6 @@ body {
     border-radius: 25px;
     /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
-    background-color: #00BFFF;
     /* Fondo azul claro detrás del texto */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     /* Sombra alrededor del título */
@@ -150,7 +140,7 @@ body {
 .btn-renovar {
     display: block;
     width: 100%;
-    background-color: #FF4081;
+    background-color: #39bfd6;
     /* Color del botón social */
     color: white;
     padding: 10px;
@@ -163,7 +153,7 @@ body {
 }
 
 .btn-renovar:hover {
-    background-color: #ffad28;
+    background-color: #4f77ce;
     /* Color de hover */
 }
 
