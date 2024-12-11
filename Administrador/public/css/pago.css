@@ -1,7 +1,6 @@
 #pago {
-    width: 1300px;
-    height: 750px;
-    margin-left: 200px;
+    width: 100%;
+    height: auto;
     margin-top: 20px;
 }
 
@@ -50,10 +49,6 @@
     padding: 0;
 }
 
-.contenido-Pago {
-    text-align: left;
-}
-
 
 .filtro {
     display: flex;
@@ -64,7 +59,7 @@
 .form-grupo3,
 .form-grupo4,
 .form-grupo5 {
-    margin-bottom: 15px;
+    margin-bottom: 6px;
     display: flex;
     flex-direction: column;
 }
