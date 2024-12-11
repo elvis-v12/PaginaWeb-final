@@ -14,7 +14,9 @@ import loginRoutes from './routes/login.routes.js';
 import loginAdmiRoutes from './routes/loginAdmi.routes.js'; // Nueva ruta de administrador
 import adminRoutes from './routes/admin.routes.js';
 import RutaCursoA from './routes/curso.routes.js';
+//ruta de los clientes cursos 
 import cursoCliente from './routes/CursosCliente.routes.js';
+
 import profesoresRoutes from './routes/profesores.routes.js';
 import estudiantesRoutes from './routes/estudiantes.routes.js';
 import rutasRoutes from './routes/rutas.routes.js';
@@ -94,6 +96,8 @@ app.use('/api/becas', becasRoutes);
 // Rutas de cuenta
 app.use('/api/cuenta', cuentaRoutes);
 
+//rutas para manejar los en el cliente 
+app.use('/api/ClienteCurso',cursoCliente);
 // Rutas de prueba
 app.get('/admin/test', (req, res) => {
     res.send('<h1>El módulo Administrador está funcionando correctamente</h1>');

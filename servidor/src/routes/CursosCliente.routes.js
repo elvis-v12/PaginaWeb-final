@@ -1,10 +1,9 @@
-// routes/curso.js
-import express from 'express';
-import CursoController from '../controllers/controllersCursoController.js';
+import { Router } from 'express';
+import { listarCursosCliente } from '../controllers/ClienteCurso.controller.js';
 
-const router = express.Router();
+const router = Router();
 
-// Ruta para obtener todos los cursos
-router.get('/todos', CursoController.obtenerCursos);
+// Ruta para listar cursos
+router.get('/listar', listarCursosCliente);
 
 export default router;
