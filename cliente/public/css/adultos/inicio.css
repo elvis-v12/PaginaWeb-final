@@ -991,7 +991,8 @@ body {
     /* Fuente Courier Prime */
     font-size: 1.8em;
     /* Aumenta el tamaño de la fuente */
-    color: rgba(255, 255, 255, 0.9);
+    color: #223a76;
+    ;
     /* Color del texto más vibrante */
     /* Oculta el texto que no se ha escrito */
     border-right: 3px solid rgba(255, 255, 255, 0.9);
@@ -1025,7 +1026,8 @@ body {
 .search-bar {
     width: 60%;
     padding: 15px;
-    border: 2px solid #222938;
+    border: 2px solid #33549c;
+
     border-radius: 50px;
     font-size: 1.2rem;
     outline: none;
