@@ -1,8 +1,6 @@
 * {
-    box-sizing: border-box;
-    /* Incluye el padding y el borde en el ancho total */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
-
 /* Estilos Generales */
 body {
     font-family: 'Arial', sans-serif;
@@ -22,7 +20,7 @@ body {
     background-color: #fff;
     padding: 50px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 1000px;
     width: 90%;
     margin: 100px auto;
@@ -39,19 +37,13 @@ body {
 /* Nuevos estilos para los títulos */
 .payment-form h2,
 .order-summary h2 {
-    font-family: 'Poppins', sans-serif;
-    /* Fuente destacada para títulos */
-    font-size: 2rem;
-    /* Tamaño más grande */
-    font-weight: 700;
-    /* Asegura que el título sea más visible */
-    color: #13305c;
-    /* Conserva el color azul del diseño */
+    font-family: 'Poppins', sans-serif; /* Fuente destacada para títulos */
+    font-size: 2rem; /* Tamaño más grande */
+    font-weight: 700; /* Asegura que el título sea más visible */
+    color: #008080; /* Conserva el color azul del diseño */
     margin-bottom: 20px;
-    text-transform: uppercase;
-    /* Convierte el texto a mayúsculas */
-    letter-spacing: 1px;
-    /* Da un espacio entre las letras para más elegancia */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 1px; /* Da un espacio entre las letras para más elegancia */
     text-align: center;
 }
 
@@ -74,7 +66,7 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #000000;
+    border: 2px solid #008080;
     border-radius: 5px;
     font-size: 1rem;
 }
@@ -121,7 +113,7 @@ body {
 }
 
 .order-summary h3 {
-    color: #000000;
+    color: #d2b48c;
 }
 
 /* Ajuste para separar elementos */
@@ -176,7 +168,7 @@ h3 {
     justify-content: space-between;
     padding: 15px;
     margin-bottom: 15px;
-    background-color: rgba(148, 217, 226, 0.171);
+    background-color: rgba(224, 247, 250, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -194,7 +186,7 @@ h3 {
 
 /* Botón de Eliminar */
 .btn-eliminar {
-    background-color: #1966a5;
+    background-color: #d2b48c;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -205,7 +197,7 @@ h3 {
 }
 
 .btn-eliminar:hover {
-    background-color: #153f61;
+    background-color: #ae6b49;
 }
 
 /* Botón de Pagar */
@@ -215,7 +207,7 @@ h3 {
     padding: 15px;
     font-size: 1.2rem;
     color: white;
-    background-color: #285879;
+    background-color: #008080;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -224,5 +216,5 @@ h3 {
 }
 
 .submit-btn:hover {
-    background-color: #1d7480;
+    background-color: #198036;
 }

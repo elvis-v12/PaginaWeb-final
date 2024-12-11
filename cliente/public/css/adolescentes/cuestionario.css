@@ -1,5 +1,5 @@
 body {
-    background-image: url('/public/img/ninos/cuestionarioFondo.jpg'); /* Ruta de la imagen de fondo */
+    
     background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -11,39 +11,48 @@ body {
 }
 
 body {
-    cursor: url('/public/img/ninos/cursor2.png'), auto;
+    cursor: url('/public/img/adolescentes/cursor1.png'), auto;
  
 }
 
+body{
+    background: 
+   url('/public/img/adolescentes/arbol.png') left bottom no-repeat, /* Imagen del árbol en la parte inferior izquierda */
+   url('/public/img/adolescentes/persona.png') right bottom no-repeat, /* Imagen del niño en la parte inferior derecha */
+   url('/public/img/adolescentes/nube.png') left top no-repeat, /* Imagen del nube en la parte superior izquierda */
+   url('/public/img/adolescentes/nube.png') right top no-repeat, /* Imagen del nube en la parte superior derecha */
+   url('/public/img/adolescentes/suelo2.png') center bottom repeat-x, /* Imagen del suelo repitiéndose horizontalmente */
+   #2E004B; /* Fondo morado oscuro */
+ background-size: auto 200px, auto 200px, auto 180px, auto 180px, auto 80px, cover; /* Ajusta el tamaño de las imágenes */
+ background-position: left bottom 65px, right bottom 65px, left top 65px, right top 65px, center bottom; /* Ajusta las posiciones para que queden encima del suelo */
+ margin-top: 0;
+ padding: 50px;
+background-color: #2E004B !important;
+ position: relative;
+ display: flex;
+ flex-direction: column; /* Coloca los elementos en columna */
+
+}
+
+@font-face {
+    font-family: "RetroMario";
+    src: url("/public/css/adolescentes/fonts/RetroMario-Regular.otf");
+  }
+  
 .header {
-    background-color: #5ea6ff; /* Color de fondo de la franja */
-    background-image: url('/public/img/ninos/brillo.gif');
+    background-color: #461b61 ;/* Color de fondo de la franja */
     color: white; /* Color del texto */
     width: 100%; /* Ancho total */
-    font-family: 'Coiny', cursive;
-    font-size: 55px; /* Tamaño de fuente */
+    font-family: "RetroMario", sans-serif;
+    font-size: 62px; /* Tamaño de fuente */
     text-align: center; /* Centrar texto */
     padding: 20px 0; /* Aumentar el espaciado interno */
     position: absolute; /* Posicionarlo en la parte superior */
     top: 0; /* Arriba */
     left: 0; /* A la izquierda */
-    animation: bubble2 3s infinite ease-in-out;
+    
 }
-@keyframes bubble2 {
-    0% {
-        transform: translateY(0);
-    }
 
-    50% {
-        transform: translateY(-15px);
-        /* Sube el texto */
-    }
-
-    100% {
-        transform: translateY(0);
-        /* Vuelve a la posición original */
-    }
-}
 
 
 .outer-container {
@@ -68,14 +77,13 @@ body {
 .level-button {
     width: 110px;
     height: 110px;
-    background-color: #6cbbe8; /* Color celeste */
-    border-radius: 50%;
+    background-color: #331f45; /* Color celeste */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     position: relative;
-    border: 5px solid #6cbbe8; /* Borde celeste para los botones */
+    border: 5px solid #271c30; /* Borde celeste para los botones */
     transition: border-color 0.3s;
     
 }
@@ -83,14 +91,14 @@ body {
 /* Ajustes para el zigzag */
 .level-button:nth-child(odd) {
     transform: translateY(20px); /* Mueve hacia abajo los círculos impares */
-    background-color: #ffb6c1; /* Color rosado para los botones impares */
-    border: 5px solid #c78cc0; /* Borde rosado para los botones impares */
+    background-color: #ffb300; 
+    border: 5px solid #ffbb00; 
 }
 
 .level-button:nth-child(even) {
     transform: translateY(-20px); /* Mueve hacia arriba los círculos pares */
-    background-color: #6cbbe8; /* Color celeste para los botones pares */
-    border: 5px solid #4f98c1; /* Borde celeste para los botones pares */
+    background-color: #ffb300; 
+    border: 5px solid #ffbb00; 
 }
 
 .level-button i {
@@ -113,10 +121,9 @@ body {
 
 .message {
     display: none;
-    background-color: #ff1db7;
+    background-color: #4e2e63 ;
     color: white;
     padding: 10px; /* Padding reducido */
-    border-radius: 10px;
     margin-top: 50px; /* Margen ajustado */
     text-align: center;
     width: 100%; /* Ajustar ancho */
@@ -125,22 +132,24 @@ body {
 
 .message h3 {
     margin: 5px 0;
-    font-size: 25px; /* Tamaño de fuente reducido */
-    font-family: 'Fredoka One', sans-serif;
+    font-size: 20px; /* Tamaño de fuente reducido */
+    font-family: "Orbitron", sans-serif;
+    color: #ffffff;
 
 }
 
 .message p {
     margin: 5px 0;
-    font-size: 16px; /* Tamaño de fuente reducido */
-    font-family: 'Fredoka One', sans-serif;
+    font-size: 13px; /* Tamaño de fuente reducido */
+    font-family: 'Press start 2P';
+    color: #ffffffb6;
 
 }
 
 
 .start-button {
     background-color: white;
-    color: #FFD700;
+    color: #df9c00;
     border: none;
     padding: 8px 16px; /* Padding reducido */
     border-radius: 5px;
@@ -148,7 +157,7 @@ body {
     font-weight: bold;
     margin-top: 10px;
     transition: background-color 0.3s;
-    font-family: 'Coiny', cursive;
+    font-family: "Orbitron", sans-serif;
 }
 
 .start-button:hover {
@@ -198,7 +207,7 @@ body {
 
 .option-button {
     display: block; /* Cada botón en una nueva línea */
-    background-color: #FFD700; /* Color de fondo */
+    background-color: #ffb300; /* Color de fondo */
     color: white; /* Color del texto */
     border: none; /* Sin borde */
     padding: 10px; /* Espaciado interior */
@@ -207,11 +216,13 @@ body {
     cursor: pointer; /* Cambia el cursor al pasar el ratón */
     transition: background-color 0.3s; /* Transición de color */
     width: 100%; /* Ancho completo */
-    font-family: 'Coiny', cursive;
+    font-family: 'Press start 2P';
+    font-size: 11px;
+  
 }
 
 .option-button:hover {
-    background-color: #d8b802; /* Color al pasar el ratón */
+    background-color: #c98e05; /* Color al pasar el ratón */
 }
 
 .final-popup {
@@ -222,7 +233,6 @@ body {
     transform: translate(-50%, -50%); /* Ajustar para centrar */
     z-index: 1000; /* Asegurarse de que esté por encima */
     background-color: white; /* Fondo blanco */
-    border-radius: 10px; /* Bordes redondeados */
     padding: 30px; /* Espaciado interior */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
     text-align: center; /* Centrar texto */
@@ -248,25 +258,25 @@ body {
 }
 
 .thought-bubble h3 {
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 34px; /* Tamaño del título */
-    color: #ff06de; /* Color del título */
+    font-family: 'Press start 2P';
+    font-size: 19px; /* Tamaño del título */
+    color: #341952; /* Color del título */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del texto */
     margin-bottom: 3px; /* Espacio debajo del título */
 }
 
 .thought-bubble p {
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 18px; /* Tamaño del texto */
+    font-family: "Orbitron", sans-serif;
+    font-size: 15px; /* Tamaño del texto */
     color: #1b232786; /* Color del texto */
     margin: 0 0 20px 0; /* Espacio debajo del texto */
 }
 
 .start-button {
-    font-family: 'Coiny', cursive;
+    font-family: "Orbitron", sans-serif;
     font-size: 20px; /* Tamaño del texto del botón */
     color: white; /* Color del texto del botón */
-    background-color: #FFD700; /* Color de fondo del botón */
+    background-color: #ffbb00; /* Color de fondo del botón */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
     padding: 10px 20px; /* Espaciado interior del botón */
@@ -335,7 +345,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Coiny', cursive;
+    font-family: "Orbitron", sans-serif;
 }
 button:hover {
     background-color: #e3be03; /* Color verde más oscuro */

@@ -1,74 +1,129 @@
 * {
-    box-sizing: border-box;
-    /* Incluye el padding y el borde en el ancho total */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
 
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: #b69d94;
+    background-color: #fff;
     background-size: cover;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(
+        to bottom right, 
+        #889ab3cc 40%, /* Color predominante hasta un 40% */
+        #ffffff 60% /* Blanco cubriendo el resto */
+    );
+   
 }
 
 .soporte {
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
-    margin-top: 110px;
-    background-color: rgba(255, 255, 255, 0.9);
-    /* Fondo blanco translúcido */
-    /* Textura de burbujas */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: rotate(1deg);
+    animation: zoomIn 1s ease-out;
+
 }
 
-/* Títulos Estilo Baby Shark */
-.titulo-soporte,
-.titulo-faq,
-.titulo-mensaje {
-    text-align: center;
-    /* Fuente redondeada */
-    font-size: 4rem;
-    /* Tamaño grande como en la imagen */
+@font-face {
+    font-family: "nexa";
+    src: url("/public/css/adultos/fonts/nexa.ttf");
+  } 
 
+
+  @font-face {
+    font-family: "moder";
+    src: url("/public/css/adultos/fonts/moder.ttf");
+  } 
+
+  @font-face {
+    font-family: "mon";
+    src: url("/public/css/adultos/fonts/mon.ttf");
+  } 
+.titulo-soporte, .titulo-mensaje {
+    text-align: center; 
+    font-family:  "mon", sans-serif;
+    font-size: 4.3rem;  /* Tamaño grande como en la imagen */
     /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    
+    /* Sombra para crear el borde grueso blanco y la curvatura */
+    text-shadow:
+        -2px -2px 0 #5b7293cc;  /* Sombra para dar profundidad */
+        letter-spacing: -5px;
     padding-bottom: 20px;
     margin-top: 20px;
-    display: block;
-    /* Cambia inline-block a block para centrar */
-    border-radius: 25px;
-    /* Bordes redondeados del contenedor del texto */
+    display: block; /* Cambia inline-block a block para centrar */
+    border-radius: 25px; /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
-    background-color: #324168;
-    /* Fondo azul claro detrás del texto */
-    margin: 20px auto;
-    /* Asegura el centrado horizontal */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor del título */
+
+    /* Centramos el bloque del título */
+    margin: 20px auto; /* Asegura el centrado horizontal */
 }
+
+.titulo-faq{
+
+    text-align: center; 
+    font-family:  "nexa", sans-serif;
+    font-size: 3.4rem;  /* Tamaño grande como en la imagen */
+  
+    line-height: 1;
+    /* Propiedades para compatibilidad */
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    
+    /* Sombra para crear el borde grueso blanco y la curvatura */
+    text-shadow:
+        -2px -2px 0 #465465cc,  
+        2px -2px 0 #ffffff,   
+        -2px 2px 0 #ffffff,   
+        2px 2px 0 #ffffff,    
+        6px 6px 10px rgba(0, 0, 0, 0.3);  /* Sombra para dar profundidad */
+        
+    padding-bottom: 20px;
+    margin-top: 20px;
+    display: block; /* Cambia inline-block a block para centrar */
+    border-radius: 25px; /* Bordes redondeados del contenedor del texto */
+    padding: 10px 20px;
+    background-color: #00BFFF; /* Fondo azul claro detrás del texto */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor del título */
+
+    /* Centramos el bloque del título */
+    margin: 20px auto; /* Asegura el centrado horizontal */
+}
+
 
 /* Preguntas Frecuentes */
 .preguntas-frecuentes {
     margin-top: 30px;
     padding: 20px;
-    /* Fondo celeste translúcido */
+    background-color:#92a0b3cc; /* Fondo celeste translúcido */
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra interna */
+    font-family: 'Poppins', sans-serif; /* Fuente moderna y redondeada */
 }
 
 /* Estilo de cada pregunta */
 .pregunta {
     margin-bottom: 20px;
     padding: 15px;
-    border-bottom: 2px solid #0a6792;
+    border-bottom: 2px solid #3f4d60cc;
 }
 
 /* Título de la pregunta (interactuable) */
 .pregunta h3 {
-    font-size: 1.8rem;
-    color: #000000;
+    font-size: 1.8rem; /* Un poco más grande para mejor lectura */
+    font-family:  "mon", sans-serif;
+    color: #ffffff;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -76,20 +131,10 @@ body {
 /* Descripción de la respuesta */
 .pregunta p {
     font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    /* Tipografía amigable y clara */
+    font-family: 'Poppins', sans-serif; /* Tipografía amigable y clara */
     color: #333;
     display: none;
     transition: all 0.3s ease;
-}
-
-/* Al pasar el cursor sobre la pregunta */
-
-
-/* Al pasar el cursor sobre la pregunta */
-.pregunta:hover h3 {
-    color: #217ca0;
-    transform: scale(1.05);
 }
 
 /* Pregunta abierta (cuando se muestra la respuesta) */
@@ -97,76 +142,65 @@ body {
     display: block;
     padding-top: 10px;
     animation: fadeIn 0.5s ease-in-out;
-    /* Nueva animación para aparición */
-    opacity: 1;
 }
 
 /* Efectos de transición para preguntas */
-.pregunta h3:hover+p {
+.pregunta h3:hover + p {
     display: block;
     padding-top: 10px;
-    animation: fadeIn 0.01s ease-in-out;
-    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Animación de aparición */
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
     }
-
-    100% {
+    to {
         opacity: 1;
     }
 }
-
-
 
 /* Formulario de Mensaje */
 .mensaje-admin {
     margin-top: 40px;
     padding: 60px;
-    background-color: rgba(224, 247, 250, 0.9);
-    border-radius: 20px;
-    /* Bordes más redondeados */
+    background-color: #c0cbdacc; 
+    border-radius: 20px; /* Bordes más redondeados */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background-image: url('');
+    background-image: url(''); 
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
 }
 
 /* Estilo de las etiquetas */
 form label {
     font-size: 1.3rem;
-    color: #000000;
-    /* Color azul vibrante */
+    color: #465465cc; /* Color azul vibrante */
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
 /* Estilo de los campos de texto */
-form input,
-form textarea {
+form input, form textarea {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid #313b48cc; 
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.95); 
     font-size: 1.1rem;
     color: #333;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-    /* Sombra interna */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra interna */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efecto al hacer foco en los campos */
-form input:focus,
-form textarea:focus {
-    /* Sombra vibrante */
-    outline: none;
+form input:focus, form textarea:focus {
+    border-color: #3c536fcc; /* Cambia el borde al rosado cuando está enfocado */
+    box-shadow: 0 0 8px #637993cc; /* Sombra vibrante */
+    outline: none; 
 }
 
 /* Botón de envío */
@@ -174,21 +208,20 @@ form textarea:focus {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #134580;
+    background-color: #465465cc; 
     color: white;
     font-size: 1.5rem;
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Fredoka One', sans-serif; 
     border: none;
-    border-radius: 50px;
+    border-radius: 50px; 
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Efecto al pasar el mouse sobre el botón */
 .btn-enviar:hover {
-    background-color: #1990a0;
-    transform: scale(1.05);
-    /* Agranda ligeramente el botón */
+    background-color: #293038cc; 
+    transform: scale(1.05); /* Agranda ligeramente el botón */
 }
 
 
@@ -198,7 +231,6 @@ form textarea:focus {
         transform: scale(0.8);
         opacity: 0;
     }
-
     to {
         transform: scale(1);
         opacity: 1;
@@ -208,107 +240,78 @@ form textarea:focus {
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo del pie de página */
 .footer {
-    background-color: #333;
-    /* Color de fondo oscuro */
-    color: #fff;
-    /* Color de texto blanco */
-    text-align: center;
-    /* Centrar el texto */
-    padding: 20px;
-    /* Espaciado interior */
-    font-size: 0.9rem;
-    /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif;
-    /* Tipografía simple y limpia */
-    border-top: 2px solid #778c43;
-    /* Líneas de separación */
+    background-color: #333; /* Color de fondo oscuro */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Espaciado interior */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    font-family: 'Arial', sans-serif; /* Tipografía simple y limpia */
+    border-top: 2px solid #778c43; /* Líneas de separación */
     position: relative;
 }
 
 .footer p {
-    margin: 0;
-    /* Elimina los márgenes de los párrafos */
-    line-height: 1.5;
-    /* Espaciado de línea */
+    margin: 0; /* Elimina los márgenes de los párrafos */
+    line-height: 1.5; /* Espaciado de línea */
 }
 
 
 /* Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
-
     /* Ajusta los márgenes y el padding para que el contenido se vea bien en pantallas más pequeñas */
     .soporte {
         margin: 20px 10px;
         padding: 15px;
     }
 
-    .titulo-soporte,
-    .titulo-faq,
-    .titulo-mensaje {
-        font-size: 2.5rem;
-        /* Reduce el tamaño de los títulos */
-        padding: 10px 15px;
-        /* Reduce el padding */
+    .titulo-soporte, .titulo-faq, .titulo-mensaje {
+        font-size: 2.5rem; /* Reduce el tamaño de los títulos */
+        padding: 10px 15px; /* Reduce el padding */
     }
 
     /* Ajusta el ancho de los inputs y textarea */
-    form input,
-    form textarea {
+    form input, form textarea {
         width: 100%;
-        padding: 10px;
-        /* Reduce el padding */
-        font-size: 1rem;
-        /* Reduce el tamaño del texto */
+        padding: 10px; /* Reduce el padding */
+        font-size: 1rem; /* Reduce el tamaño del texto */
     }
 
     /* Ajusta el tamaño del botón */
     .btn-enviar {
         padding: 12px;
-        font-size: 1.3rem;
-        /* Reduce el tamaño del botón */
+        font-size: 1.3rem; /* Reduce el tamaño del botón */
     }
 
     /* Ajusta el espaciado y tamaño de las preguntas frecuentes */
     .pregunta h3 {
-        font-size: 1.5rem;
-        /* Reduce el tamaño de las preguntas */
+        font-size: 1.5rem; /* Reduce el tamaño de las preguntas */
     }
 
     .pregunta p {
-        font-size: 1rem;
-        /* Reduce el tamaño del texto */
+        font-size: 1rem; /* Reduce el tamaño del texto */
     }
 
     /* Footer */
     .footer {
-        padding: 15px;
-        /* Reduce el padding del footer */
-        font-size: 0.8rem;
-        /* Reduce el tamaño del texto */
+        padding: 15px; /* Reduce el padding del footer */
+        font-size: 0.8rem; /* Reduce el tamaño del texto */
     }
 }
 
 /* Estilos para pantallas muy pequeñas (menos de 480px) */
 @media (max-width: 480px) {
-
     /* Ajusta aún más el tamaño de los elementos para que se vean bien en móviles pequeños */
-    .titulo-soporte,
-    .titulo-faq,
-    .titulo-mensaje {
-        font-size: 2rem;
-        /* Reduce aún más el tamaño de los títulos */
+    .titulo-soporte, .titulo-faq, .titulo-mensaje {
+        font-size: 2rem; /* Reduce aún más el tamaño de los títulos */
     }
 
     /* Ajusta el ancho y espaciado del formulario */
     .mensaje-admin {
-        padding: 30px 10px;
-        /* Reduce el padding */
+        padding: 30px 10px; /* Reduce el padding */
     }
 
-    form input,
-    form textarea {
-        padding: 8px;
-        /* Reduce aún más el padding */
+    form input, form textarea {
+        padding: 8px; /* Reduce aún más el padding */
         font-size: 0.9rem;
     }
 
@@ -320,12 +323,10 @@ form textarea:focus {
 
     /* Ajuste en preguntas frecuentes */
     .pregunta h3 {
-        font-size: 1.3rem;
-        /* Reduce el tamaño de las preguntas */
+        font-size: 1.3rem; /* Reduce el tamaño de las preguntas */
     }
 
     .pregunta p {
-        font-size: 0.9rem;
-        /* Reduce el tamaño del texto */
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
     }
 }

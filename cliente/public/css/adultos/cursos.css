@@ -1,171 +1,147 @@
 * {
-  box-sizing: border-box;
-  /* Incluye el padding y el borde en el ancho total */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
-
 /* Estilos generales */
 body {
   font-family: 'Arial', sans-serif;
-  background: #c99e8f;
-  margin-top: 0;
-  padding: 0;
-  overflow-x: hidden;
-  text-align: center;
+    background: url('/public/img/adultos/adultos4.png') no-repeat center center fixed;
+    margin-top: 0;
+    padding: 0;
+    overflow-x: hidden;
+    text-align: center;
 }
 
 /* Decoración del encabezado */
 .header-decorated {
-  background-size: cover;
-  margin-top: 50px;
-  padding: 50px;
-  color: white;
-  background: #F5F5F5;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  /* Coloca los elementos en columna */
-  align-items: center;
-  /* Centra horizontalmente */
-  text-align: center;
-  /* Centra el texto */
+
+    background-size: cover;
+    padding: 50px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    background-color: #a1b1c9de; /* Color de fondo plomo */
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); /* Forma inclinada */
 }
 
 .header-decorated:before,
 .header-decorated:after {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  animation: bubble 10s infinite;
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: bubble 10s infinite;
 }
 
 .header-decorated:before {
-  top: -50px;
-  left: -50px;
+    top: -50px;
+    left: -50px;
 }
 
 .header-decorated:after {
-  bottom: -50px;
-  right: -50px;
+    bottom: -50px;
+    right: -50px;
 }
 
-.logoCurso {
-  display: none;
-}
+@font-face {
+  font-family: "nexa";
+  src: url("/public/css/adultos/fonts/nexa.ttf");
+} 
 
-.logoCurso-large {
-  width: 150px;
-  /* Ajusta el tamaño del logo aquí */
-  height: auto;
-  /* Mantiene la proporción */
-}
+
+@font-face {
+  font-family: "moder";
+  src: url("/public/css/adultos/fonts/moder.ttf");
+} 
+
+@font-face {
+  font-family: "mon";
+  src: url("/public/css/adultos/fonts/mon.ttf");
+} 
 
 /* Estilo del Título */
 .titulo {
-  text-align: center;
-  /* Alinea el texto a la izquierda */
-  font-family: 'Fredoka One', sans-serif;
-  /* Fuente redondeada */
-  font-size: 5rem;
-  background: #1175a3;
-  /* Tamaño grande */
-  /* Gradiente vibrante */
+    text-align: center;
+    /* Alinea el texto a la izquierda */
+    font-family:  "nexa", sans-serif;
+    /* Fuente redondeada */
+    font-size: 6.8rem;
+    /* Tamaño grande */
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-  /* Propiedades para compatibilidad */
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    /* Sombra para dar profundidad */
+    text-shadow:
+        -2px -2px 0 #ffffff
+      ;
+    letter-spacing: -4px;
 
-  /* Sombra para dar profundidad */
-  padding-bottom: 20px;
-  margin-top: 0;
-  /* Sin margen superior */
-  margin-bottom: 10px;
-  /* Margen inferior para espacio */
+    padding-bottom: 20px;
+    margin-top: 15px;
+    /* Sin margen superior */
+    margin-bottom: 10px;
+    /* Margen inferior para espacio */
+
+    /* Animación de burbuja */
+    animation: bubble2 3s infinite ease-in-out;
 }
-
 @keyframes bubble2 {
-  0% {
-    transform: translateY(0);
-  }
+    0% {
+        transform: translateY(0);
+    }
 
-  50% {
-    transform: translateY(-15px);
-    /* Sube el texto */
-  }
+    50% {
+        transform: translateY(-15px);
+        /* Sube el texto */
+    }
 
-  100% {
-    transform: translateY(0);
-    /* Vuelve a la posición original */
-  }
+    100% {
+        transform: translateY(0);
+        /* Vuelve a la posición original */
+    }
 }
 
 /* Estilo del sub titulo */
 .subtitu {
-  text-align: center;
-  /* Alinea el texto a la izquierda */
-  width: 1400px;
-  font-family: 'Fredoka One', sans-serif;
-  /* Fuente redondeada */
-  font-size: 3rem;
-  /* Tamaño grande */
-  /* Gradiente vibrante */
+    text-align: center;
+    /* Alinea el texto a la izquierda */
+    font-family:  "mon", sans-serif;
+    /* Fuente redondeada */
+    font-size: 3rem;
+    /* Tamaño grande */
+   
+    /* Gradiente vibrante */
+    /* Propiedades para compatibilidad */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-  /* Propiedades para compatibilidad */
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    /* Sombra para dar profundidad */
+    text-shadow:
+        -2px -2px 0 #ffffffae;
+        letter-spacing: 1px;
 
-  /* Sombra para dar profundidad */
-  text-shadow:
-    -2px -2px 0 #27abbd;
+    padding-bottom: 20px;
+    margin-top: 0;
+    /* Sin margen superior */
+    margin-bottom: 10px;
+    /* Margen inferior para espacio */
 
-  padding-bottom: 20px;
-  margin-top: 0;
-  /* Sin margen superior */
-  margin-bottom: 10px;
-  /* Margen inferior para espacio */
+    /* Animación de burbuja */
+    animation: bubble2 3s infinite ease-in-out;
 }
 
-
-p {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 30px;
-  color: #f9f9f9;
-}
-
-/* Animaciones generales */
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes bubble {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.7;
-  }
-
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(0.8);
-    opacity: 0.7;
-  }
-}
 
 /* Decoración de los cursos */
 .modal-content {
@@ -175,15 +151,6 @@ p {
 }
 
 /* Estilo del título */
-.modal-title,
-.modal-body h4 {
-  font-family: 'Fredoka One', cursive;
-  font-size: 30px;
-  color: #778c43;
-  text-shadow: -1px -1px 0 #fff700, 1px -1px 0 #fff700, -1px 1px 0 #fff700, 1px 1px 0 #fff700 !important;
-  animation: bounce 1s infinite;
-  text-align: center;
-}
 
 /* Dropdown en el modal */
 .dropdown-modal {
@@ -196,7 +163,7 @@ p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   width: 200px;
-  color: #ff8f0e;
+  color: #939eae;
 }
 
 .user-name.active .dropdown-modal {
@@ -240,127 +207,7 @@ p {
 .fondoprov {
   margin-top: -80px;
   height: 3150px;
-  background: #F5F5F5;
-}
-
-/* Contenedor de contenido */
-#content {
-  margin-top: 80px;
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  max-width: 1200px;
-  margin: 80px auto;
-  border-radius: 10px;
-}
-
-/* Estilos para los cursos */
-.info-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  color: #7c898d8e;
-}
-
-.course-card {
-  background: #ffffff;
-  border-radius: 8px;
-  border: 1px solid black;
-  margin: 10px;
-  flex: 1 1 30%;
-  max-width: 30%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.course-card:hover {
-  transform: scale(1.05);
-}
-
-.image-container {
-  overflow: hidden;
-  border-radius: 8px 8px 0 0;
-}
-
-.course-image {
-  width: 100%;
-  height: auto;
-}
-
-.content-container {
-  padding: 15px;
-}
-
-/* Título del curso */
-h1,
-.modal-title,
-.modal-body h4 {
-  font-family: 'Fredoka One', cursive;
-  color: #1175a3;
-}
-
-h1 {
-  font-size: 30px;
-  /* Cambia este valor para ajustar el tamaño del título de cada tarjeta */
-}
-
-/* Subtítulos */
-h2,
-.instructor-name,
-.modal-body p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2em;
-  color: #555;
-}
-
-/* Detalles del curso e instructores */
-.course-details,
-.instructors-list {
-  margin-top: 10px;
-}
-
-.detail-item,
-.instructor-item {
-  display: flex;
-  align-items: center;
-  margin-top: 6px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.instructor-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-/* Miembros destacados */
-.modal-horizontal {
-  display: flex;
-  align-items: center;
-  width: 50em;
-  height: 25em;
-}
-
-.top-3-members {
-  display: flex;
-  justify-content: space-around;
-}
-
-.member-card {
-  text-align: center;
-}
-
-.member-card img {
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-}
-
-a {
-  text-decoration: none;
+  background: #d6d0cd;
 }
 
 /* Contenedor del buscador */
@@ -399,11 +246,39 @@ a {
   /* Cursor de máquina de escribir más delgado */
   white-space: nowrap;
   /* Evita que el texto se divida en varias líneas */
-  width: 900px;
-
+  width: 0;
+  /* Comienza con el ancho en 0 */
+  animation: typing 3.5s steps(40, end) 1s infinite alternate, blink-caret 0.75s step-end infinite;
+  /* Animaciones */
 }
 
+/* Animación de escritura */
+@keyframes typing {
+  from {
+    width: 0;
+    /* Comienza con el ancho en 0 */
+  }
 
+  to {
+    width: 100%;
+    /* Aumenta al 100% */
+  }
+}
+
+/* Animación del cursor parpadeante */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: rgba(255, 255, 255, 0.9);
+    /* Cursor visible */
+  }
+
+  50% {
+    border-color: transparent;
+    /* Parpadeo del cursor */
+  }
+}
 
 /* Estilo general del buscador */
 .search-container {
@@ -414,17 +289,14 @@ a {
 .search-bar {
   width: 60%;
   padding: 15px;
-  border: 2px solid #00BEFE;
+  border: 2px solid #b6c8d1;
   border-radius: 50px;
   font-size: 1.2rem;
   outline: none;
   transition: all 0.3s ease;
 }
 
-.search-bar:focus {
-  border-color: #FF4081;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+
 
 /* Resultados del buscador */
 .search-results {
@@ -469,4 +341,204 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+/* CONTENIDO DE CURSOSSSSSSSSSSSSSSSSSSSSSSSSSSS*/
+
+/* Contenedor de contenido */
+#content {
+  margin-top: 80px;
+  padding: 20px;
+  background-color: #ffffff;
+
+  max-width: 1500px;
+  margin: 80px auto;
+  border-radius: 10px;
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.course-card {
+  background-color: #5b7293cc;
+  width: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen del curso ocupando todo el ancho */
+.image-container {
+  width: 100%;
+  height: 150px;
+}
+
+.course-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Imagen proporcional y sin margen */
+}
+
+/* Contenido de la tarjeta */
+.content-container {
+  padding: 15px 10px;
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Títulos del curso e instructores */
+/* Títulos del curso */
+.course-card h1 {
+  font-size: 1.8rem; /* Reducido el tamaño */
+  font-weight: 900; /* Negrita máxima */
+  color: #ffffff; /* Naranja brillante */
+  text-align: center;
+  margin-bottom: 0; /* Sin margen inferior */
+  font-family:  "mon", sans-serif;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  line-height: 1.3;
+  position: relative; /* Para aplicar subrayado animado */
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+.course-card h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #8f9db1cc; /* Subrayado naranja */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.course-card h1:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.name-price {
+  font-size: 17px;
+  color: #ffffffb5;
+  text-align: left;
+  font-family:  "nexa", sans-serif;
+  line-height: 0.5; /* Espaciado interno */
+  margin-top: 10px; /* Margen superior negativo para reducir espacio */
+  margin-left: 1rem;
+}
+
+
+/* Estilos para la lista de instructores */
+.instructors-list {
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Estilo individual de cada instructor */
+.instructor-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem; /* Aumentar tamaño para mayor visibilidad */
+  font-weight: 700; /* Negrita para destacar el texto */
+  color: #fff; /* Texto blanco para contraste con el fondo oscuro */
+  text-align: left; /* Eliminada inclinación en el texto */
+  transition: all 0.3s ease;
+  position: relative; /* Para añadir efectos */
+}
+
+/* Efecto hover para los nombres de los instructores */
+.instructor-item:hover {
+  color: #8f9db1cc; /* Naranja brillante al pasar el ratón */
+  transform: translateX(5px); /* Efecto de movimiento hacia la derecha */
+}
+
+/* Resaltar el nombre del instructor */
+.instructor-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #8f9db1cc; /* Subrayado en naranja */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto de subrayado animado */
+.instructor-item:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+
+
+/* Botón principal */
+.btn-common {
+  background-color: #ffffff; /* Naranja */
+  color: #5b7293cc;
+  border: 4px solid#5b7293cc; /* Borde oscuro */
+  border-radius: 20px; /* Bordes medio rectangulares */
+  font-family:  "mon", sans-serif;
+  font-size: 17px;
+  line-height: 0.9;
+  padding: 12px;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+
+
+/* Ajuste en márgenes */
+.course-card h1, .instructor-info, .button-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: nowrap; /* Evita que los botones se desborden y vayan a otra línea */
+}
+
+
+.clickable-text {
+  text-decoration: none;  /* Elimina el subrayado del enlace */
+  color: inherit;         /* Hereda el color del texto */
+}
+
+.clickable-text:hover {
+  cursor: pointer;       /* Cambia el cursor al pasar sobre el texto */
 }

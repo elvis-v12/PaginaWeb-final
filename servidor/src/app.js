@@ -23,6 +23,9 @@ import rutasRoutes from './routes/rutas.routes.js';
 import becasRoutes from './routes/becas.routes.js';
 import cuentaRoutes from './routes/perfil.routes.js';
 
+//import GraficosDasboard from './routes/Graficos.routes.js';
+
+
 // Configuración de __dirname para ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -98,6 +101,8 @@ app.use('/api/cuenta', cuentaRoutes);
 
 //rutas para manejar los en el cliente 
 app.use('/api/ClienteCurso',cursoCliente);
+// rutas para lo que es graficos 
+//app.use('/api/GraficosDash',GraficosDasboard);
 // Rutas de prueba
 app.get('/admin/test', (req, res) => {
     res.send('<h1>El módulo Administrador está funcionando correctamente</h1>');

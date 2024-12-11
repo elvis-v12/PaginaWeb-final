@@ -1,3 +1,18 @@
+* {
+    box-sizing: border-box;
+    /* Incluye el padding y el borde en el ancho total */
+}
+
+html,
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+
 .flex-container {
     display: flex;
     align-items: flex-start;
@@ -12,35 +27,54 @@
     position: relative;
 }
 
+@font-face {
+    font-family: "nexa";
+    src: url("/public/css/adultos/fonts/nexa.ttf");
+  } 
+  
+  
+  @font-face {
+    font-family: "moder";
+    src: url("/public/css/adultos/fonts/moder.ttf");
+  } 
+  
+  @font-face {
+    font-family: "mon";
+    src: url("/public/css/adultos/fonts/mon.ttf");
+  } 
+  
+
 .title {
-
-    margin-top: 90px;
-    font-size: 4rem;
+    margin-top:70px;
+    font-size: 4.5rem;
     font-weight: bold;
-    color: rgb(15, 59, 90);
+    letter-spacing: -5px;
+    color: #9caec7f1;
+    text-shadow: 2px 5px 0 rgb(255, 255, 255); /* Sombra sólida */
+    left: 0;
     width: 100%;
-    text-align: center;
-    z-index: 20;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
 
+    text-align: center;
+    z-index: 20; 
+    font-family:  "nexa", sans-serif;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.176), rgba(255, 255, 255, 0.025));
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.352);
+    
 }
 
 
-
 .water-stain {
-    background-color: #2598b4;
-    width: 720px;
-    height: 410px;
-    border-radius: 0;
-    /* Elimina las curvas para que sea un rectángulo */
-    animation: none;
-    /* Elimina la animación de cambio de forma */
-    margin-right: 3rem;
+    background-color: #5b7293cc;
+    width: 1000px;
+    height: 470px;
+    margin-top: -65px; /* Ajusta este valor para mover el fondo hacia arriba */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
+    justify-content: flex-start; /* Mueve el contenido hacia la parte superior */
+    padding: 20px; /* Si necesitas espacio interno para el contenido */
+    margin-bottom: 10px;
 }
 
 .subtitle-container {
@@ -52,29 +86,52 @@
 }
 
 .subtitle {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-weight: bold;
-    font-family: 'Fredoka One', sans-serif;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
     color: #ffffff;
-    /* Ajuste de tamaño de fuente */
-
+    font-family:  "moder", sans-serif;
+    margin-left: 70px;
+    margin-top: 30px;
+    margin-right: 9px;
+    margin-bottom: 10px;
 }
 
+.rating {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.stars {
+    color: gold;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.level {
+    background-color: #FFC107;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-right: 80px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 .description {
-    font-size: 1rem;
+    font-size: 1.5rem;
     /* Tamaño de fuente */
-    font-family: 'Nanum Gothic Coding', monospace;
+    font-family:  "mon", sans-serif;
     /* Fuente */
-    color: #ffffff;
+    color: #ffffffe2;
     /* Color del texto */
     text-align: justify;
     /* Justificar el texto */
     line-height: 1.5;
     /* Espaciado entre líneas */
     padding: 0 1rem;
+    margin-bottom: 10px;
     /* Espaciado interior */
     margin-top: 0.5rem;
     /* Margen superior */
@@ -98,22 +155,6 @@
     }
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-    flex: 1%;
-}
-
-.image-container img {
-    max-width: 600px;
-    max-height: 500px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-    z-index: 1;
-    margin-right: 90px;
-}
 
 
 .button-container {
@@ -123,11 +164,11 @@
 }
 
 .button-primary {
-    background-color: #1d294b;
+    background-color: #b5c1d3e9;
     font-size: 18px;
     color: white;
-    border: none;
     font-weight: bold;
+    border:none;
     margin: 5px;
     padding: 10px 15px;
     /* Asegura espacio adecuado dentro del botón */
@@ -145,7 +186,7 @@
 }
 
 .button-primary:hover {
-    background-color: #10519c;
+    background-color: #959fade9;
 }
 
 .button-primary svg {
@@ -173,22 +214,27 @@
 /* SEGUNDO APARTADO NUEVO - TEMARIO */
 
 .temario {
-    border-top: 1px solid rgb(255, 255, 255);
-    background: #f5f5f5;
-    padding: 1.5em;
+    background-color: #9faec5de;
+    color: white;
+    border-radius: 8px;
+
+
 }
 
 .temario h2 {
-    margin-top: 28px;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 4em;
-    color: rgb(15, 59, 90);
-    /* Color azul */
-    text-align: center;
-    margin-left: 10px;
-    margin-bottom: 20px;
 
-    /* Llama a la animación */
+    font-family:  "nexa", sans-serif;
+    font-size: 5.5rem;
+    color: #ffffffe4;
+    letter-spacing: -6px;
+    text-shadow: 2px 6px 0 #6d7787e4; /* Sombra sólida */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-bottom: 20px;
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.566), rgba(255, 255, 255, 0.025));
+    width: 100%;
+    text-align: center;
+    animation: bounce 2s infinite;
 }
 
 .temario-div {
@@ -198,17 +244,6 @@
     margin-top: 1em;
 }
 
-/* Estilo personalizado para los videos */
-/* Contenedor general */
-.contenedor-recursos {
-    background-color: #f7f3ef;
-    /* Fondo del contenedor principal */
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
 
 .columna-derecha {
     flex: 1;
@@ -223,7 +258,7 @@
 
 /* Tarjeta de curso */
 .content-card {
-    background-color: #909699;
+    background-color: #5b7293cc;
     /* Fondo de cada tarjeta */
     padding: 20px;
     margin: 10px;
@@ -234,7 +269,7 @@
     gap: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     /* Sombra */
-    color: #161615;
+    color: #ffffff;
     /* Color del texto */
     font-family: Arial, sans-serif;
 }
@@ -262,8 +297,8 @@
 
 /* Duración del curso */
 .duration {
-    color: #e0e0e0;
-    font-size: 0.9em;
+    color: #e0e0e0d0;
+    font-size: 1em;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -282,7 +317,7 @@
 
 .progress-bar-fill {
     height: 100%;
-    background-color: #12b2da;
+    background-color: #e4e4e4b7;
     /* Color de la barra de progreso */
     width: 80%;
     /* Cambia este valor según el progreso de cada curso */
@@ -305,51 +340,35 @@ button:hover {
 }
 
 
-
-
-
-/* Estilo personalizado para el contenedor principal */
-.bg-gray-900 {
-    background-color: hsl(197, 100%, 74%);
-    /* Cambia este valor al color que desees */
-    border-radius: 8px;
-    /* Bordes redondeados para todo el contenedor */
-    padding: 20px;
-    /* Espaciado interno para que los elementos no estén pegados al borde */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    /* Sombra para darle un efecto de elevación */
-
-}
-
 .temario-iz {
     flex: 1;
     min-width: 250px;
 }
 
+/* Estilo de la caja de requisitos */
 .contenedor-requisitos {
-    background-color: rgb(53, 89, 114);
-    padding: 20px;
-    /* Espaciado interno para que los elementos no estén pegados al borde */
-    /* Borde negro */
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra */
-    margin-bottom: 2rem;
+    background-color: #90a0b7cc; /* Fondo con transparencia */
+    border: 2px solid #5b7293cc; /* Borde de color púrpura */
+    border-radius: 20px; /* Esquinas redondeadas */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    margin-left: 20px;
 }
+
+
 
 .contenedor-requisitos h3 {
     font-size: 1.2em;
-    color: #ffffff;
-    font-family: 'Fredoka One', sans-serif;
 }
 
 .contenedor-requisitos ul {
     list-style-type: disc;
     margin-left: 20px;
-    color: #dbd3d3;
 }
 
 .contenedor-requisitos li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .contenedor-requisitos i {
@@ -357,28 +376,15 @@ button:hover {
 }
 
 .icono-reloj {
-    color: #ffffff;
+    color: #ffffffde;
     /* Ejemplo: rojo tomate */
 }
 
 .icono-ejercicio {
-    color: #ffffff;
+    color: #ffffffde;
     /* Ejemplo: azul claro */
 }
 
-.font-bold {
-    margin-top: 35px;
-    font-family: 'Rammetto One', sans-serif;
-    font-size: 2.7em;
-    color: rgb(213, 231, 252);
-    /* Color azul */
-    text-shadow: 2px 5px 0 rgb(80, 143, 219);
-    /* Sombra sólida */
-    text-align: center;
-    margin-left: 10px;
-    margin-bottom: 20px;
-
-}
 
 @keyframes reboteFrente {
 
@@ -403,58 +409,72 @@ button:hover {
 }
 
 
-.textito {
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 2.5rem;
-    color: #ffffff;
-}
-
-.gif-container {
-    display: none;
-}
-
-.image-container #ima {
-    display: none;
-}
-
 .info-box {
-    /* Borde negro */
-    padding: 20px;
-    /* Espacio interno */
 
-    /* Esquinas redondeadas */
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra */
-    background-color: rgb(53, 89, 114);
-
+    padding: 20px; /* Espacio interno */
+    border-radius: 20px; /* Esquinas redondeadas */
+    background-color: #90a0b7cc; /* Fondo con transparencia */
+    border: 2px solid #5b7293cc; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes agarrarCaja {
-    0% {
-        transform: scale(1) rotate(0deg);
-        /* Sin escala ni rotación */
-    }
+.archivo-item {
+    display: inline-flex; /* Elementos en paralelo */
+    flex-direction: column; /* Icono y texto en columna */
+    align-items: center;
+    justify-content: center;
+    margin: 10px; /* Espaciado entre los botones */
+    padding: 10px 20px;
+    
+    border-radius: 10px;
+    width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .archivo-item:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .icono-archivo {
+    font-size: 2rem; /* Tamaño del icono */
+    color: #ffffff85;
+    margin-bottom: 5px; /* Espaciado entre icono y texto */
+    text-align: center;
+  }
+  
+  .archivo-item span {
+    font-family:  "mon", sans-serif;
+    font-size: 1rem;
+    color: #ffffff8f;
+    font-weight: bold;
+    text-align: center;
+  }
 
-    25% {
-        transform: scale(1.05) rotate(2deg);
-        /* Aumenta al 105% y rota 2 grados */
-    }
 
-    50% {
-        transform: scale(1.1) rotate(-2deg);
-        /* Aumenta al 110% y rota -2 grados */
-    }
+.info-container {
+    display: flex; /* Elementos en línea */
+    flex-wrap: wrap; /* Permite filas adicionales si es necesario */
+    gap: 1rem; /* Espacio entre elementos */
+    list-style: none; /* Sin puntos de lista */
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* Centra los elementos horizontalmente */
+  }
 
-    75% {
-        transform: scale(1.05) rotate(2deg);
-        /* Vuelve al 105% y rota 2 grados */
-    }
+  .info-container li {
+    display: flex; /* Ícono y texto en línea */
+    align-items: center; /* Centra verticalmente */
+    flex: 1 1 calc(50% - 1rem); /* Dos columnas */
+    max-width: 300px; /* Limita el ancho máximo */
+    font-family:  "moder", sans-serif;
+  }
 
-    100% {
-        transform: scale(1) rotate(0deg);
-        /* Vuelve al tamaño original */
-    }
-}
 
 
 
@@ -474,30 +494,36 @@ button:hover {
 }
 
 .info-box p {
-    font-size: 1rem;
-    font-family: 'Nanum Gothic Coding', monospace;
-    color: #d4dde0;
+    font-size: 1.2rem;
+    font-family:  "moder", sans-serif;
+   color: #ffffffa9;
+   line-height: -0.8px;
 
 }
 
 .textito1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
-    margin-left: 15px;
-    color: rgb(255, 255, 255)
+    font-family: 'Satisfy', cursive;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: center; 
+  
+ 
 }
 
 .temario-iz h3 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
-    margin: 0;
-    margin-left: 15px;
+    font-family:  "mon", sans-serif;
+    font-size: 39px;
+    text-align: center; 
 }
 
 .temario-iz ul li {
-    font-family: 'Nanum Gothic Coding', monospace;
+    font-family:  "moder", sans-serif;
     font-size: 18px;
+    color: #ffffffde;
+  
 }
+
+
 
 @keyframes transformarRectangulo {
     0% {

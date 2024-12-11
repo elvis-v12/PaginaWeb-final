@@ -1,7 +1,7 @@
 /* Estilo General */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #c99e8f;
+    background: url('../imagenes/oceano.png') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -15,58 +15,45 @@ body {
     margin: 50px auto;
     padding: 20px;
     gap: 20px;
-    flex-wrap: wrap;
-    /* Permite que los elementos se reorganicen en pantallas más pequeñas */
+    flex-wrap: wrap; /* Permite que los elementos se reorganicen en pantallas más pequeñas */
 }
 
-.titulo-Edit {
+.titulo-Edit{
     text-align: center;
-    font-family: 'Fredoka One', sans-serif;
-    /* Fuente redondeada */
-    font-size: 4rem;
-    /* Tamaño grande como en la imagen */
-    color: rgb(25, 94, 158);
-    /* Gradiente de color vibrante (rosado a amarillo) */
-    width: 100%;
-    /* Se asegura que el título "Editar perfil" abarque todo el ancho */
-    margin-bottom: 30px;
-    /* Espacio para separar el título de la caja de perfil */
-
+    font-family: 'Fredoka One', sans-serif;  /* Fuente redondeada */
+    font-size: 4rem;  /* Tamaño grande como en la imagen */
+    background: linear-gradient(90deg, #FF4081, #FFC107); /* Gradiente de color vibrante (rosado a amarillo) */
+    width: 100%; /* Se asegura que el título "Editar perfil" abarque todo el ancho */
+    margin-bottom: 30px; /* Espacio para separar el título de la caja de perfil */
+    
     /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #000000,
-        2px -2px 0 #23a7cf,
-        -2px 2px 0 #23a7cf,
-        2px 2px 0 #23a7cf,
-        6px 6px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra para dar profundidad */
-
+        -2px -2px 0 #ffb302,  
+        2px -2px 0 #ffffff,   
+        -2px 2px 0 #ffffff,   
+        2px 2px 0 #ffffff,    
+        6px 6px 10px rgba(0, 0, 0, 0.3);  /* Sombra para dar profundidad */
+        
     padding-bottom: 20px;
     margin-top: 20px;
-    display: block;
-    /* Cambia inline-block a block para centrar */
-    border-radius: 25px;
-    /* Bordes redondeados del contenedor del texto */
+    display: block; /* Cambia inline-block a block para centrar */
+    border-radius: 25px; /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
-    background-color: #00BFFF;
-    /* Fondo azul claro detrás del texto */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    /* Sombra alrededor del título */
+    background-color: #00BFFF; /* Fondo azul claro detrás del texto */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor del título */
 
     /* Centramos el bloque del título */
-    margin: 20px auto;
-    /* Asegura el centrado horizontal */
+    margin: 20px auto; /* Asegura el centrado horizontal */
 }
 
 .seccion-perfil {
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.9);
-    /* Fondo translúcido */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo translúcido */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
@@ -74,8 +61,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    animation: fadeIn 0.5s ease;
-    /* Animación de aparición */
+    animation: fadeIn 0.5s ease; /* Animación de aparición */
 }
 
 .foto-perfil {
@@ -86,8 +72,7 @@ body {
 .imagen-perfil {
     width: 150px;
     height: 150px;
-    background-color: #00BFFF;
-    /* Color de fondo */
+    background-color: #00BFFF; /* Color de fondo */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -95,8 +80,7 @@ body {
     color: #fff;
     font-size: 48px;
     margin: 0 auto;
-    transition: transform 0.3s ease;
-    /* Efecto de hover */
+    transition: transform 0.3s ease; /* Efecto de hover */
 }
 
 .imagen-perfil:hover {
@@ -110,15 +94,13 @@ body {
 }
 
 .texto-subir a {
-    color: #00BFFF;
-    /* Color de enlace */
+    color: #00BFFF; /* Color de enlace */
     text-decoration: none;
 }
 
 .opciones-inicio-sesion {
     width: 100%;
-    padding: 0 10px;
-    /* Añadido para que los inputs no se vayan al borde */
+    padding: 0 10px; /* Añadido para que los inputs no se vayan al borde */
 }
 
 .opciones-inicio-sesion h3 {
@@ -130,41 +112,35 @@ body {
 .btn-social {
     display: block;
     width: 100%;
-    background-color: #00BFFF;
-    /* Color del botón social */
+    background-color: #00BFFF; /* Color del botón social */
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 10px;
-    transition: background-color 0.3s ease;
-    /* Transición para hover */
+    transition: background-color 0.3s ease; /* Transición para hover */
 }
 
 .btn-social:hover {
-    background-color: #008BBE;
-    /* Color de hover */
+    background-color: #008BBE; /* Color de hover */
 }
 
 .btn-renovar {
     display: block;
     width: 100%;
-    background-color: #FF4081;
-    /* Color del botón social */
+    background-color: #FF4081; /* Color del botón social */
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 10px;
-    transition: background-color 0.3s ease;
-    /* Transición para hover */
+    transition: background-color 0.3s ease; /* Transición para hover */
 }
 
 .btn-renovar:hover {
-    background-color: #ffad28;
-    /* Color de hover */
+    background-color: #ffad28; /* Color de hover */
 }
 
 .cambiar-contra {
@@ -176,20 +152,17 @@ body {
     width: 100%;
     margin: 10px 0;
     padding: 10px;
-    border: 1px solid #00BFFF;
-    /* Color de borde */
+    border: 1px solid #00BFFF; /* Color de borde */
     border-radius: 5px;
 }
 
 .seccion-formulario {
     flex: 2;
-    background-color: rgba(255, 255, 255, 0.9);
-    /* Fondo translúcido */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo translúcido */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.5s ease;
-    /* Animación de aparición */
+    animation: fadeIn 0.5s ease; /* Animación de aparición */
 }
 
 h2 {
@@ -201,12 +174,10 @@ h2 {
 .cambiar-contra input {
     display: block;
     width: 100%;
-    box-sizing: border-box;
-    /* Asegura que padding y borde se incluyan en el ancho total */
+    box-sizing: border-box; /* Asegura que padding y borde se incluyan en el ancho total */
     margin: 10px 0;
     padding: 10px;
-    border: 1px solid #00BFFF;
-    /* Color de borde */
+    border: 1px solid #00BFFF; /* Color de borde */
     border-radius: 5px;
 }
 
@@ -226,15 +197,13 @@ h2 {
 .grupo-input label {
     font-weight: 600;
     margin-bottom: 5px;
-    color: #333;
-    /* Color de la etiqueta */
+    color: #333; /* Color de la etiqueta */
 }
 
 .grupo-input input,
 .grupo-input textarea {
     padding: 10px;
-    border: 1px solid #00BFFF;
-    /* Color de borde */
+    border: 1px solid #00BFFF; /* Color de borde */
     border-radius: 5px;
     font-size: 16px;
 }
@@ -244,15 +213,13 @@ h2 {
     gap: 10px;
 }
 
-.opciones-genero,
-.opciones-interes {
+.opciones-genero, .opciones-interes {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.opciones-genero input,
-.opciones-interes input {
+.opciones-genero input, .opciones-interes input {
     margin-right: 5px;
 }
 
@@ -260,15 +227,12 @@ h2 {
 
 .botones-accion {
     display: flex;
-    justify-content: center;
-    /* Centra los botones horizontalmente */
-    gap: 10px;
-    /* Espacio entre los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
     margin-top: 20px;
 }
 
-.btn-guardar,
-.btn-volver {
+.btn-guardar, .btn-volver {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -299,7 +263,6 @@ h2 {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }

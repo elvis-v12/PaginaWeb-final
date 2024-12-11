@@ -1,15 +1,17 @@
 * {
-    box-sizing: border-box;
-    /* Incluye el padding y el borde en el ancho total */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
-
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: #d6d0cd;
+    background: url('/public/img/adultos/adultos4.png') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
+    background-image: radial-gradient(circle, rgba(125, 146, 176, 0.1) 10%, transparent 50%),
+    radial-gradient(circle, rgba(114, 137, 170, 0.05) 15%, transparent 60%);
+background-position: 20% 20%, 80% 80%; /* Coloca los círculos en diferentes esquinas */
+background-repeat: no-repeat; /* Evita que se repitan los círculos */
 }
 
 /* Encabezado */
@@ -34,28 +36,23 @@ body {
 
 /* Fondo del GIF */
 .cuadro {
-    position: relative;
-    /* Asegúrate de que el contenedor tenga posición relativa */
-    padding-top: 50px;
-    /* Ajusta este valor según necesites */
+    position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+    padding-top: 50px; /* Ajusta este valor según necesites */
 }
 
 .gif-background {
     position: absolute;
-    top: 50px;
-    /* Ajusta este valor según necesites */
+    top: 50px; /* Ajusta este valor según necesites */
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
-    /* Envía el fondo detrás del contenido */
+    z-index: -1; /* Envía el fondo detrás del contenido */
 }
 
 .gif-fondo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    /* Cubre todo el espacio sin distorsionar */
+    object-fit: cover; /* Cubre todo el espacio sin distorsionar */
 }
 
 
@@ -75,38 +72,57 @@ body {
     }
 }
 
+
+@font-face {
+    font-family: "nexa";
+    src: url("/public/css/adultos/fonts/nexa.ttf");
+  } 
+  
+  
+  @font-face {
+    font-family: "moder";
+    src: url("/public/css/adultos/fonts/moder.ttf");
+  } 
+  
+  @font-face {
+    font-family: "mon";
+    src: url("/public/css/adultos/fonts/mon.ttf");
+  }
 /* Estilo del Título */
 .titulo {
     text-align: center;
     /* Alinea el texto a la izquierda */
-    font-family: 'Fredoka One', sans-serif;
+    font-family:  "mon", sans-serif;
     /* Fuente redondeada */
-    font-size: 2.5rem;
-    /* Tamaño grande */
-    background-color: #1175a3;
-    /* Gradiente vibrante */
+    font-size: 3.5rem;
 
     /* Propiedades para compatibilidad */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    /* Sombra para dar profundidad */
+    text-shadow:
+        -2px -2px 0 #5b7293cc;
+
     padding-bottom: 20px;
-    margin-top: 0;
+    margin-top: 10px;
     /* Sin margen superior */
     margin-bottom: 10px;
     /* Margen inferior para espacio */
+
+    /* Animación de burbuja */
+    animation: bubble 3s infinite ease-in-out;
 }
 
 /* Estilo del párrafo */
 .titulo p {
-    font-family: 'Fredoka One', sans-serif;
+    font-family:  "moder", sans-serif;
     /* Fuente moderna */
-    font-size: 2rem;
+    font-size: 2.6rem;
     /* Tamaño más pequeño */
     text-shadow:
-        -2px -2px 0 #27abbd;
-    background-color: #F5F5F5;
+        -2px -2px 0 #9dafc8cc;
 }
 
 /* GIF Derecha */
@@ -121,7 +137,6 @@ body {
     width: 250px;
     /* Tamaño del GIF */
     height: auto;
-    display: none;
     /* Mantiene la proporción */
 }
 
@@ -134,11 +149,9 @@ body {
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
-    margin: -20px auto 50px auto;
-    /* Subir contenedor (-20px) */
+    margin: -20px auto 50px auto; /* Subir contenedor (-20px) */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    /* Fondo blanco translúcido */
+    background-color: rgba(231, 238, 245, 0.9);; /* Fondo blanco translúcido */
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
@@ -161,14 +174,15 @@ body {
     flex: 2;
     padding-left: 20px;
     font-family: 'Arial', sans-serif;
-    text-align: justify;
-    /* Texto justificado */
+    text-align: justify; /* Texto justificado */
 }
 
 /* Estilo del Título */
 .somos-text h1 {
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 3rem;
+  
+   font-family:  "mon", sans-serif;
+    font-weight: bold;
+    font-size: 3.3rem;
     margin-bottom: 20px;
     text-align: left;
     color: #333;
@@ -176,7 +190,7 @@ body {
 
 /* Destacado en el Título */
 .highlight {
-    color: #323392;
+    color: #5b7293cc;
 }
 
 /* Estilo del Párrafo */
@@ -185,20 +199,17 @@ body {
     line-height: 1.6;
     color: #555;
     margin-bottom: 20px;
-    text-align: justify;
-    /* Justificado para el párrafo */
+    text-align: justify; /* Justificado para el párrafo */
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilos compartidos */
 .section-container {
     display: flex;
-    align-items: center;
-    /* Alinear verticalmente */
+    align-items: center; /* Alinear verticalmente */
     justify-content: space-between;
     max-width: 1200px;
-    margin: -20px auto 50px auto;
-    /* Subir contenedor */
+    margin: -20px auto 50px auto; /* Subir contenedor */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -206,80 +217,67 @@ body {
 
 /* Estilos específicos para "Nuestra Misión" */
 .vision-container {
-    background-color: rgba(241, 235, 229, 0.9);
-    /* Fondo claro para la misión */
+    background-color: rgba(241, 235, 229, 0.9); /* Fondo claro para la misión */
 }
 
 .vision-text h1 {
-    color: #FF5733;
-    /* Color del título de la misión */
+    color: #FF5733; /* Color del título de la misión */
 }
 
 /* Estilos específicos para "Nuestros Servicios" */
 .nuestros-servicios {
-    background-color: rgba(231, 238, 245, 0.9);
-    /* Fondo claro para los servicios */
+    background-color: rgba(231, 238, 245, 0.9); /* Fondo claro para los servicios */
 }
 
 .quienes-text2 h1 {
-    color: #007BFF;
-    /* Color del título de los servicios */
+    color: #007BFF; /* Color del título de los servicios */
 }
 
 /* Estilo general para los textos */
 .section-text {
-    padding-left: 20px;
-    /* Espacio entre imagen y texto */
+    padding-left: 20px; /* Espacio entre imagen y texto */
     font-family: 'Arial', sans-serif;
-    text-align: justify;
-    /* Texto justificado */
+    text-align: justify; /* Texto justificado */
 }
 
 .section-text h1 {
-    font-family: 'Fredoka One', sans-serif;
+    font-family:  "mon", sans-serif;
     font-size: 3rem;
     margin-bottom: 20px;
     text-align: left;
-    color: #333;
-    /* Color general de texto */
+    color: #333; /* Color general de texto */
 }
 
 .section-text p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #555;
-    /* Color general de párrafo */
+    color: #555; /* Color general de párrafo */
 }
 
 /* Estilos para la imagen */
 .image-container {
-    flex: 0 0 40%;
-    /* Ajusta el tamaño del contenedor */
-    position: relative;
-    /* Necesario para posicionar el pseudo-elemento */
+    flex: 0 0 40%; /* Ajusta el tamaño de la imagen */
 }
 
 .image-container img {
-    display: none;
-    /* Oculta la imagen original */
+    width: 100%; /* Mantiene la proporción */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
 }
 
-.image-container::after {
-    content: "";
-    /* Necesario para que el pseudo-elemento funcione */
-    display: block;
-    /* Asegura que sea visible */
-    width: 500px;
-    /* Ajusta al ancho del contenedor */
-    height: 500px;
-    margin-left: 50px;
-    /* Relación de aspecto (ajústalo si es necesario) */
-    background-image: url('../../img/adultos/guimar.png');
-    /* Imagen de reemplazo */
-    background-size: cover;
-    /* Escala la imagen para cubrir el área */
-    background-position: center;
-    /* Centra la imagen */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.02); /* Aumenta ligeramente el tamaño */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .section-container {
@@ -296,77 +294,55 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #f0f8ff;
-    /* Color de fondo claro */
+    background-color: #f0f8ff; /* Color de fondo claro */
     padding: 20px;
-    border-radius: 10px;
-    /* Bordes redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    /* Sombra para profundidad */
-    margin: 20px;
-    /* Margen alrededor del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    margin: 20px; /* Margen alrededor del contenedor */
 }
 
 .item {
     text-align: center;
-    display: flex;
-    /* Flexbox para alinear el logo y el texto */
-    align-items: center;
-    /* Centrar verticalmente */
-    justify-content: center;
-    /* Centrar horizontalmente */
+    display: flex; /* Flexbox para alinear el logo y el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
 }
 
 .logoFace {
-    width: 60px;
-    /* Ajusta el tamaño del logo según sea necesario */
-    height: auto;
-    /* Mantiene la proporción */
-    margin-right: 10px;
-    /* Espacio entre el logo y el texto */
-    display: block;
-    /* Asegura que la imagen se comporte como bloque */
+    width: 60px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+    display: block; /* Asegura que la imagen se comporte como bloque */
     padding-left: 30px;
     justify-content: center;
 }
 
 .logoInsta {
-    width: 60px;
-    /* Ajusta el tamaño del logo según sea necesario */
-    height: auto;
-    /* Mantiene la proporción */
-    margin-right: 10px;
-    /* Espacio entre el logo y el texto */
-    display: block;
-    /* Asegura que la imagen se comporte como bloque */
+    width: 60px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+    display: block; /* Asegura que la imagen se comporte como bloque */
     padding-left: 30px;
     justify-content: center;
 }
 
 
-.red-social,
-.red-social2 {
+.red-social, .red-social2 {
     text-decoration: none;
-    color: #333;
-    /* Color del texto */
+    color: #333; /* Color del texto */
     font-size: 1.5rem;
-    transition: color 0.3s ease;
-    /* Suaviza la transición del color */
+    transition: color 0.3s ease; /* Suaviza la transición del color */
 }
 
-.red-social:hover,
-.red-social2:hover {
-    color: #FF4081;
-    /* Cambia el color al pasar el mouse */
+.red-social:hover, .red-social2:hover {
+    color: #FF4081; /* Cambia el color al pasar el mouse */
 }
 
 .cantidad {
     font-size: 2.5rem;
     font-weight: bold;
-    display: block;
-    /* Asegura que la cantidad ocupe su línea */
-    margin: 5px 0;
-    /* Espacio entre la cantidad y el texto */
+    display: block; /* Asegura que la cantidad ocupe su línea */
+    margin: 5px 0; /* Espacio entre la cantidad y el texto */
 }
 
 .seguidores {
@@ -376,26 +352,17 @@ body {
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Estilo del pie de página */
 .footer {
-    background-color: #333;
-    /* Color de fondo oscuro */
-    color: #fff;
-    /* Color de texto blanco */
-    text-align: center;
-    /* Centrar el texto */
-    padding: 20px;
-    /* Espaciado interior */
-    font-size: 0.9rem;
-    /* Tamaño de fuente más pequeño */
-    font-family: 'Arial', sans-serif;
-    /* Tipografía simple y limpia */
-    border-top: 2px solid #d2b48c;
-    /* Líneas de separación */
+    background-color: #333; /* Color de fondo oscuro */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Espaciado interior */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    font-family: 'Arial', sans-serif; /* Tipografía simple y limpia */
+    border-top: 2px solid #d2b48c; /* Líneas de separación */
     position: relative;
 }
 
 .footer p {
-    margin: 0;
-    /* Elimina los márgenes de los párrafos */
-    line-height: 1.5;
-    /* Espaciado de línea */
+    margin: 0; /* Elimina los márgenes de los párrafos */
+    line-height: 1.5; /* Espaciado de línea */
 }
