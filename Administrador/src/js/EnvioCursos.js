@@ -12,6 +12,7 @@ const API_NOMBRES_CURSOS_URL = `${API_BASE_URL}/nombres-cursos`;
 // Variables globales
 let modulosTemp = [];
 
+const formData = new FormData();
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarCursos();
@@ -21,6 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarNombresCursos();
     configurarModales();
     configurarBotonesGenerales();
+
+    // Vincular el botón de guardar curso a la función agregarCurso
+    const btnGuardarCurso = document.getElementById("guardar-curso-nuevo");
+    if (btnGuardarCurso) {
+        btnGuardarCurso.addEventListener("click", agregarCurso);
+    } else {
+        console.error("Error: Botón 'guardar-curso-nuevo' no encontrado.");
+    }
 });
 
 
@@ -111,9 +120,6 @@ if (Array.isArray(cursos)) {
 } else {
     console.error("Error: cursos no es un array", cursos);
 }
-
-
-
 
 // Cargar y renderizar rutas
 async function cargarRutas() {
@@ -558,3 +564,4 @@ function renderizarModulosTemp() {
         });
     });
 }
+
