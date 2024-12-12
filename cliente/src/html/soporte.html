@@ -166,17 +166,17 @@
 
         <div class="mensaje-admin">
             <h2 class="titulo-mensaje">Contacta con nosotros</h2>
-            <form action="enviar-mensaje.php" method="POST">
+            <form method="POST" id="contact-form">
                 <label for="nombre">Tu Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
-
+        
                 <label for="email">Tu Correo:</label>
                 <input type="email" id="email" name="email" required>
-
+        
                 <label for="mensaje">Tu Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+        
+                <button type="submit" class="btn-enviar" id="submit-btn">Enviar Mensaje</button>
             </form>
         </div>
     </section>
@@ -242,6 +242,7 @@
 
 
     <script src="/src/js/menu.js"></script>
+    <script src="/src/js/soporte.js"></script>
 
 </body>
 

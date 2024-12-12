@@ -285,3 +285,69 @@ h2 {
 .seccion-beca h3{
     text-align: center;  /* Centra el texto horizontalmente */
 }
+
+
+/* Estilos para la sección de respuestas dinámicas */
+.seccion-respuestas {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-respuestas h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+#lista-respuestas {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#lista-respuestas li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#lista-respuestas li:hover {
+    background-color: #f1f1f1;
+    transform: translateX(5px); /* Efecto al pasar el ratón */
+}
+
+#lista-respuestas li:focus {
+    outline: none;
+    border: 2px solid #007bff; /* Border azul al dar click */
+}
+
+#lista-respuestas li p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* Estilos para íconos o botones adicionales si los necesitas */
+#lista-respuestas li .btn-respuesta {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+#lista-respuestas li .btn-respuesta:hover {
+    background-color: #0056b3;
+}
