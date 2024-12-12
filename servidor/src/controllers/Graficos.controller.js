@@ -12,18 +12,41 @@ export const obtenerDatosDashboard = async (req, res) => {
     const [[docentes]] = await pool.query(`
       SELECT COUNT(*) AS total FROM profesores WHERE estado = 'Activo'
     `);
+    const [rutas] = await pool.query(`
+      SELECT nombre_ruta, COUNT(cursos.id_curso) AS total
+      FROM rutas
+      LEFT JOIN cursos ON rutas.id_ruta = cursos.id_ruta
+      GROUP BY nombre_ruta
+      ORDER BY total DESC
+    `);
+    const [categorias] = await pool.query(`
+      SELECT nombre_categoria, COUNT(cursos.id_curso) AS total
+      FROM categorias
+      LEFT JOIN cursos ON categorias.id_categoria = cursos.id_categoria
+      GROUP BY nombre_categoria
+    `);
+    const [cursosPopulares] = await pool.query(`
+      SELECT nombre_curso, COUNT(*) AS total
+      FROM cursos
+      GROUP BY nombre_curso
+      ORDER BY total DESC
+      LIMIT 10
+    `);
     const [estudiantesTop] = await pool.query(`
       SELECT nombres AS nombre_estudiante, COUNT(*) AS total
-      FROM estudiantes
-      GROUP BY nombres
-      ORDER BY total DESC
-      LIMIT 3
+  FROM estudiantes
+  GROUP BY nombres
+  ORDER BY total DESC
+  LIMIT 3
     `);
 
     res.status(200).json({
       planes: planes?.total || 0,
       totalCuentas: cuentas?.total || 0,
       totalDocentes: docentes?.total || 0,
+      rutas,
+      categorias,
+      cursosPopulares,
       estudiantesTop,
     });
   } catch (error) {
