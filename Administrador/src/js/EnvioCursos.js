@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
 // Cargar y renderizar nombres de los cursos
 async function cargarNombresCursos() {
     try {
@@ -44,7 +43,6 @@ async function cargarNombresCursos() {
         console.error("Error:", error.message);
     }
 }
-
 
 function renderNombresCursos(nombresCursos) {
     const selects = document.querySelectorAll("#ruta-nombresCur-nuevo");
@@ -75,43 +73,55 @@ async function cargarCursos() {
         const response = await fetch(API_CURSOS_URL);
         if (!response.ok) throw new Error("Error al cargar los cursos");
         const data = await response.json();
-        const cursos = Array.isArray(data) ? data : data.cursos || []; // Manejo flexible de datos
-        renderCursos(cursos); // Asegúrate de pasar "cursos"
+
+        // Validar que data.cursos sea un array
+        const cursos = Array.isArray(data) ? data : data.cursos || [];
+
+        // Depuración: Verificar si hay duplicados en los datos
+        const uniqueCursos = [...new Map(cursos.map(curso => [curso.id_curso, curso])).values()];
+        console.log("Cursos únicos:", uniqueCursos);
+
+        renderCursos(uniqueCursos); // Usar cursos únicos
     } catch (error) {
         console.error("Error al cargar los cursos:", error.message);
     }
 }
 
 function renderCursos(cursos) {
-    // Validar que cursos sea un array
+    const cursosContainer = document.getElementById("cursos-container");
+    cursosContainer.innerHTML = ""; // Limpiar el contenedor antes de renderizar
+
     if (!Array.isArray(cursos)) {
         console.error("Error: cursos no es un array", cursos);
         return;
     }
 
-    const cursosContainer = document.getElementById("cursos-container");
     if (cursos.length === 0) {
         cursosContainer.innerHTML = "<p>No hay cursos registrados.</p>";
         return;
     }
 
-    cursosContainer.innerHTML = cursos
-        .map((curso) => {
-            const imagenUrl = curso.imagen_url
-                ? `http://localhost:3000${curso.imagen_url}`
-                : "default-image-path";
-            return `
-                <div class="curso-card" data-edad="${curso.nivel_edad || "todos"}" data-categoria="${curso.id_categoria}">
-                    <img src="${imagenUrl}" alt="Imagen del curso" />
-                    <h3>${curso.nombre_curso}</h3>
-                    <p><strong>Docente:</strong> ${curso.docente || "No asignado"}</p>
-                    <p><strong>Precio:</strong> S/${parseFloat(curso.precio).toFixed(2)}</p>
-                    <p><strong>Duración:</strong> ${curso.duracion_horas} horas</p>
-                    <button class="btn-insertar" data-curso-id="${curso.id_curso}">Insertar</button>
-                </div>`;
-        })
-        .join("");
+    // Usar un conjunto único para evitar duplicados
+    const uniqueCursos = [...new Map(cursos.map(curso => [curso.id_curso, curso])).values()];
+
+    uniqueCursos.forEach((curso) => {
+        const imagenUrl = curso.imagen_url
+            ? `http://localhost:3000${curso.imagen_url}`
+            : "default-image-path";
+        const cursoHTML = `
+            <div class="curso-card" data-edad="${curso.nivel_edad || "todos"}" data-categoria="${curso.id_categoria}">
+                <img src="${imagenUrl}" alt="Imagen del curso" />
+                <h3>${curso.nombre_curso}</h3>
+                <p><strong>Docente:</strong> ${curso.docente || "No asignado"}</p>
+                <p><strong>Precio:</strong> S/${parseFloat(curso.precio).toFixed(2)}</p>
+                <p><strong>Duración:</strong> ${curso.duracion_horas} horas</p>
+                <button class="btn-insertar" data-curso-id="${curso.id_curso}">Insertar</button>
+            </div>`;
+        cursosContainer.innerHTML += cursoHTML;
+    });
 }
+
+
 
 if (Array.isArray(cursos)) {
     cursos.forEach((curso) => {
@@ -215,7 +225,6 @@ for (let [key, value] of formData.entries()) {
 }
 
 // Agregar un nuevo curso
-// Definimos la función agregarCurso correctamente
 async function agregarCurso() {
     const formData = new FormData();
     const imagen = document.getElementById("imagen-curso-nuevo").files[0];

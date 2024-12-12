@@ -7,7 +7,7 @@ body {
     overflow-x: hidden;
     background: linear-gradient(
         to bottom right, 
-        #889ab3cc 40%, /* Color predominante hasta un 40% */
+        #3f8a9c92 40%, /* Color predominante hasta un 40% */
         #ffffff 60% /* Blanco cubriendo el resto */
     );
    
@@ -40,6 +40,7 @@ body {
     font-family: "mon";
     src: url("/public/css/adultos/fonts/mon.ttf");
   } 
+
 .titulo-soporte, .titulo-mensaje {
     text-align: center; 
     font-family:  "mon", sans-serif;
@@ -51,7 +52,7 @@ body {
     
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #5b7293cc;  /* Sombra para dar profundidad */
+        -2px -2px 0 #01617A;  /* Sombra para dar profundidad */
         letter-spacing: -5px;
     padding-bottom: 20px;
     margin-top: 20px;
@@ -64,11 +65,17 @@ body {
     margin: 20px auto; /* Asegura el centrado horizontal */
 }
 
+
+@font-face {
+    font-family: "east";
+    src: url("/public/css/adultos/fonts/east.otf");
+  } 
+
 .titulo-faq{
 
     text-align: center; 
-    font-family:  "nexa", sans-serif;
-    font-size: 3.4rem;  /* Tamaño grande como en la imagen */
+    font-family:  "east", sans-serif;
+    font-size: 3.5rem;  /* Tamaño grande como en la imagen */
   
     line-height: 1;
     /* Propiedades para compatibilidad */
@@ -78,13 +85,15 @@ body {
     
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #465465cc;  /* Sombra para dar profundidad */
+        -2px -2px 0 #ffffff,  
+        2px -2px 0 #1e6375a4;  /* Sombra para dar profundidad */
         
     padding-bottom: 20px;
     margin-top: 20px;
     display: block; /* Cambia inline-block a block para centrar */
     border-radius: 25px; /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
+ 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor del título */
 
     /* Centramos el bloque del título */
@@ -96,7 +105,7 @@ body {
 .preguntas-frecuentes {
     margin-top: 30px;
     padding: 20px;
-    background-color:#b5c1d3cc; /* Fondo celeste translúcido */
+    background-color:#5391a1a4; /* Fondo celeste translúcido */
     border-radius: 10px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra interna */
     font-family: 'Poppins', sans-serif; /* Fuente moderna y redondeada */
@@ -106,8 +115,9 @@ body {
 .pregunta {
     margin-bottom: 20px;
     padding: 15px;
-    border-bottom: 2px solid #687991cc;
+    border-bottom: 2px solid #3f4d60cc;
 }
+
 
 /* Título de la pregunta (interactuable) */
 .pregunta h3 {
@@ -346,7 +356,7 @@ label.btn-subir:hover {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #5b7293cc; 
+    background-color:  #01617A; 
     color: white;
     font-size: 1.5rem;
     font-family: 'Fredoka One', sans-serif; 
@@ -410,7 +420,7 @@ label.btn-subir:hover {
 /* Estilo para el título del curso */
 .tarjeta-curso h3 {
     font-size: 29px;
-    color: #5b7293cc;
+    color: #01617A;
     text-align: left; /* Alinea el texto a la izquierda */
     
 font-family:  "moder", sans-serif;
@@ -429,7 +439,7 @@ font-family:  "moder", sans-serif;
 
 .btn-gratis {
     display: inline-block;
-    background-color: #344050cc; /* Azul brillante */
+    background-color: #01617A; /* Azul brillante */
     color: #fff; /* Texto blanco */
     font-size: 16px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -443,10 +453,6 @@ font-family:  "moder", sans-serif;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.btn-gratis:hover {
-    background-color: #0056b3; /* Azul más oscuro */
-    transform: scale(1.05); /* Ligero zoom al pasar el cursor */
-}
 
 
 

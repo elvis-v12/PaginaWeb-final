@@ -11,8 +11,8 @@ async function cargarGraficos() {
 
     const data = await response.json();
 
-    document.querySelector(".graficos .box-info li:nth-child(1) h3").textContent = `$${data.planes}`;
-    document.querySelector(".graficos .box-info li:nth-child(2) h3").textContent = `$${data.totalCuentas}`;
+    document.querySelector(".graficos .box-info li:nth-child(1) h3").textContent = `${data.planes}`;
+    document.querySelector(".graficos .box-info li:nth-child(2) h3").textContent = `${data.totalCuentas}`;
     document.querySelector(".graficos .box-info li:nth-child(3) h3").textContent = `283`; // Visitas estáticas
     document.querySelector(".graficos .box-info li:nth-child(4) h3").textContent = data.totalDocentes;
 

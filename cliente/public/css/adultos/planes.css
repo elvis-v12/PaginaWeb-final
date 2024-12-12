@@ -94,7 +94,7 @@ body {
 /* Estilo para cada recuadro */
 .recuadro {
     background-color: #ffffff;
-    border: 2px solid #5b7293cc;
+    border: 2px solid #1f7b92a4;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 300px; /* Ancho fijo para cada plan */
@@ -141,7 +141,7 @@ body {
 /* Estilo para el texto principal */
 .texto-principal {
     font-size: 2.2rem;
-    color: #7a90b2;
+    color: #01617A;
     margin: 15px 0;
     font-family:  "nexa", sans-serif;
 
@@ -150,7 +150,7 @@ body {
 /* Estilo para el precio */
 .pago {
     font-size: 1.8rem;
-    color: #7a90b2d1;
+    color: #1f7b92a4;
     margin: 15px 0;
 }
 
@@ -167,7 +167,7 @@ body {
 
 /* Estilo para el botón */
 .boton-plan {
-    background-color: #7a90b2;
+    background-color: #328ea5a4;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -181,7 +181,7 @@ body {
 
 /* Efecto de hover en el botón */
 .boton-plan:hover {
-    background-color: #75869f;
+    background-color: #01617A;
 }
 
 .bandera {
@@ -207,7 +207,7 @@ body {
 
 /* Sección de recomendaciones +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .recomendaciones {
-    background-color: #5b7293cc;
+    background: linear-gradient(to bottom, #01617A, #5b8f9c75);
     /* Fondo claro para las recomendaciones */
     padding: 30px;
     border-radius: 10px;
@@ -233,7 +233,8 @@ body {
 
 .tweet {
     background: #fff;
-    border: 1px solid #5b7293cc;
+    border: 1px solid #01617A;
+
     border-radius: 10px;
     padding: 15px;
     margin: 10px 0;
@@ -256,7 +257,8 @@ body {
     /* Centra los elementos verticalmente */
     background-color: #ffffff;
     /* Fondo blanco para la caja */
-    border: 2px solid #5b7293cc;
+    border: 2px solid #01617A
+    ;
     /* Borde color vibrante */
     border-radius: 15px;
     /* Esquinas redondeadas */
@@ -292,7 +294,7 @@ body {
 .caja-regalo h1 {
     font-size: 2.7rem;
     /* Tamaño de fuente aumentado */
-    color: #5b7293cc;
+    color: #1f7b92a4 ;
     /* Color vibrante */
     margin: 0 0 10px 0;
     /* Margen inferior */
@@ -332,7 +334,7 @@ body {
 
 /* Estilo para el botón */
 .boton-regalo {
-    background-color: #5b7293cc;
+    background-color: #01617A ;
     /* Fondo color vibrante */
     color: white;
     /* Texto blanco */
@@ -353,7 +355,7 @@ body {
 }
 
 .boton-regalo:hover {
-    background-color: #4d5e75cc;
+    background-color: #1f7b92a4;
     /* Color al pasar el mouse */
 }
 

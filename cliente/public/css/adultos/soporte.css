@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
     background: linear-gradient(
         to bottom right, 
-        #889ab3cc 40%, /* Color predominante hasta un 40% */
+        #3f8a9c92 40%, /* Color predominante hasta un 40% */
         #ffffff 60% /* Blanco cubriendo el resto */
     );
    
@@ -45,6 +45,7 @@ body {
     font-family: "mon";
     src: url("/public/css/adultos/fonts/mon.ttf");
   } 
+
 .titulo-soporte, .titulo-mensaje {
     text-align: center; 
     font-family:  "mon", sans-serif;
@@ -56,7 +57,7 @@ body {
     
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #5b7293cc;  /* Sombra para dar profundidad */
+        -2px -2px 0 #01617A;  /* Sombra para dar profundidad */
         letter-spacing: -5px;
     padding-bottom: 20px;
     margin-top: 20px;
@@ -69,11 +70,17 @@ body {
     margin: 20px auto; /* Asegura el centrado horizontal */
 }
 
+ 
+@font-face {
+    font-family: "east";
+    src: url("/public/css/adultos/fonts/east.otf");
+  } 
+
 .titulo-faq{
 
     text-align: center; 
-    font-family:  "nexa", sans-serif;
-    font-size: 3.4rem;  /* Tamaño grande como en la imagen */
+    font-family:  "east", sans-serif;
+    font-size: 3.5rem;  /* Tamaño grande como en la imagen */
   
     line-height: 1;
     /* Propiedades para compatibilidad */
@@ -83,18 +90,15 @@ body {
     
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #465465cc,  
-        2px -2px 0 #ffffff,   
-        -2px 2px 0 #ffffff,   
-        2px 2px 0 #ffffff,    
-        6px 6px 10px rgba(0, 0, 0, 0.3);  /* Sombra para dar profundidad */
+        -2px -2px 0 #ffffff,  
+        2px -2px 0 #1e6375a4;  /* Sombra para dar profundidad */
         
     padding-bottom: 20px;
     margin-top: 20px;
     display: block; /* Cambia inline-block a block para centrar */
     border-radius: 25px; /* Bordes redondeados del contenedor del texto */
     padding: 10px 20px;
-    background-color: #00BFFF; /* Fondo azul claro detrás del texto */
+ 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor del título */
 
     /* Centramos el bloque del título */
@@ -106,7 +110,7 @@ body {
 .preguntas-frecuentes {
     margin-top: 30px;
     padding: 20px;
-    background-color:#92a0b3cc; /* Fondo celeste translúcido */
+    background-color:#5391a1a4; /* Fondo celeste translúcido */
     border-radius: 10px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra interna */
     font-family: 'Poppins', sans-serif; /* Fuente moderna y redondeada */
@@ -164,11 +168,9 @@ body {
 .mensaje-admin {
     margin-top: 40px;
     padding: 60px;
-    background-color: #c0cbdacc; 
+    background: linear-gradient(to bottom, #799da6, #8cacb475);
     border-radius: 20px; /* Bordes más redondeados */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background-image: url(''); 
-    background-repeat: no-repeat;
     background-size: 100%;
     font-family: 'Poppins', sans-serif; 
 }
@@ -198,7 +200,7 @@ form input, form textarea {
 
 /* Efecto al hacer foco en los campos */
 form input:focus, form textarea:focus {
-    border-color: #3c536fcc; /* Cambia el borde al rosado cuando está enfocado */
+    border-color: #1f7b92a4; /* Cambia el borde al rosado cuando está enfocado */
     box-shadow: 0 0 8px #637993cc; /* Sombra vibrante */
     outline: none; 
 }
@@ -208,7 +210,7 @@ form input:focus, form textarea:focus {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #465465cc; 
+    background-color: #01617A; 
     color: white;
     font-size: 1.5rem;
     font-family: 'Fredoka One', sans-serif; 

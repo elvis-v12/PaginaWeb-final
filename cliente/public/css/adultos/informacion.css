@@ -4,7 +4,6 @@
 /* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
-    background: url('/public/img/adultos/adultos4.png') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -103,7 +102,7 @@ background-repeat: no-repeat; /* Evita que se repitan los círculos */
 
     /* Sombra para dar profundidad */
     text-shadow:
-        -2px -2px 0 #5b7293cc;
+        -2px -2px 0  #01617A;
 
     padding-bottom: 20px;
     margin-top: 10px;
@@ -122,7 +121,7 @@ background-repeat: no-repeat; /* Evita que se repitan los círculos */
     font-size: 2.6rem;
     /* Tamaño más pequeño */
     text-shadow:
-        -2px -2px 0 #9dafc8cc;
+        -2px -2px 0  #1c6f848e;
 }
 
 /* GIF Derecha */
@@ -151,7 +150,7 @@ background-repeat: no-repeat; /* Evita que se repitan los círculos */
     max-width: 1200px;
     margin: -20px auto 50px auto; /* Subir contenedor (-20px) */
     padding: 20px;
-    background-color: rgba(231, 238, 245, 0.9);; /* Fondo blanco translúcido */
+    background-color: #cbdde28e ; /* Fondo blanco translúcido */
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
@@ -190,7 +189,7 @@ background-repeat: no-repeat; /* Evita que se repitan los círculos */
 
 /* Destacado en el Título */
 .highlight {
-    color: #5b7293cc;
+    color:  #01617A;
 }
 
 /* Estilo del Párrafo */
@@ -226,7 +225,7 @@ background-repeat: no-repeat; /* Evita que se repitan los círculos */
 
 /* Estilos específicos para "Nuestros Servicios" */
 .nuestros-servicios {
-    background-color: rgba(231, 238, 245, 0.9); /* Fondo claro para los servicios */
+    background-color: #cbdde28e; /* Fondo claro para los servicios */
 }
 
 .quienes-text2 h1 {

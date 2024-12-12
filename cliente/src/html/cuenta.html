@@ -148,8 +148,6 @@
 
             <div class="opciones-inicio-sesion">
                 <h3>Iniciar sesión</h3>
-                <button class="btn-social btn-twitter">Conecta con Twitter</button>
-                <button class="btn-social btn-facebook">Conecta con Facebook</button>
 
                 <div class="cambiar-contra">
                     <p>¿Desea cambiar su Contraseña?</p>
@@ -168,6 +166,17 @@
                 <h3>Trámite de Beca</h3>
                 <p id="tramite-beca"> <!-- Aquí va la variable dinámica de tu base de datos --> </p>
             </div>
+
+
+            <!-- Sección de Respuestas Dinámicas -->
+            <div class="seccion-respuestas">
+                <h3>Bandeja de respuestas</h3>
+                <ul id="mensaje-principal"></ul>
+                <ul id="lista-respuestas">
+                    <!-- Aquí se agregarán los ítems dinámicamente -->
+                </ul>
+            </div>
+
         </div>
 
         <div class="seccion-formulario">
@@ -224,7 +233,7 @@
                 <div class="botones-accion">
                     <button type="button" class="btn-guardar" onclick="guardarCambios()">Guardar cambios</button>
                     <a href="#" class="btn-volver">Volver al perfil</a>
-                </div>                
+                </div>
             </form>
         </div>
     </div>

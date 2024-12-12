@@ -10,7 +10,7 @@ body {
     max-width: 800px;
     margin: auto;
     margin-top: 30px;
-    background-color: #5b7293cc; /* Aumenta la transparencia */
+    background: linear-gradient(to bottom, #01617A, #5b8f9c75); /* Degradado de verde */
     padding: 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* Sombra más difusa para darle volumen */
     border-radius: 10px; /* Esquinas redondeadas */
@@ -120,8 +120,8 @@ input[type="radio"] {
 }
 
 .footer-button {
-    background-color: #b8c6ff; /* Color del botón */
-    color: rgb(10, 1, 37);
+    background-color: #1f7b92eb; /* Color del botón */
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -132,7 +132,7 @@ input[type="radio"] {
 }
 
 .footer-button:hover {
-    background-color: #798dff; /* Color del botón al pasar el mouse */
+    background-color: #1a6477eb; /* Color del botón al pasar el mouse */
 }
 
 .timer {

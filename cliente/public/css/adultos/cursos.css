@@ -11,6 +11,13 @@ body {
     text-align: center;
 }
 
+
+
+@font-face {
+  font-family: "east";
+  src: url("/public/css/adultos/fonts/east.otf");
+} 
+
 /* Decoración del encabezado */
 .header-decorated {
 
@@ -27,7 +34,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 80px 0;
-    background-color: #a1b1c9de; /* Color de fondo plomo */
+    background: linear-gradient(to bottom, #01617A, #5b8f9c75); /* Degradado de verde */
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); /* Forma inclinada */
 }
 
@@ -52,6 +59,90 @@ body {
     right: -50px;
 }
 
+.logo-large {
+  width: 220px; /* Cambia el ancho según lo necesites */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Estilo del Título */
+.titulo {
+  text-align: center;
+  /* Alinea el texto a la izquierda */
+  font-family:  "east", sans-serif;
+  /* Fuente redondeada */
+  font-size: 6rem;
+  /* Tamaño grande */
+  /* Propiedades para compatibilidad */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Sombra para dar profundidad */
+  text-shadow:
+      -2px -2px 0 #ffffff
+    ;
+  letter-spacing: -4px;
+
+  margin-top: 0;
+  /* Sin margen superior */
+  margin-bottom: 10px;
+  /* Margen inferior para espacio */
+
+  /* Animación de burbuja */
+  animation: bubble2 3s infinite ease-in-out;
+}
+@keyframes bubble2 {
+  0% {
+      transform: translateY(0);
+  }
+
+  50% {
+      transform: translateY(-15px);
+      /* Sube el texto */
+  }
+
+  100% {
+      transform: translateY(0);
+      /* Vuelve a la posición original */
+  }
+}
+.logo-large {
+  width: 220px; /* Cambia el ancho según lo necesites */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Estilo del sub titulo */
+.subtitu {
+  text-align: center;
+  /* Alinea el texto a la izquierda */
+  font-family:  "mon", sans-serif;
+  /* Fuente redondeada */
+  font-size: 2.3rem;
+  /* Tamaño grande */
+ 
+  /* Gradiente vibrante */
+  /* Propiedades para compatibilidad */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Sombra para dar profundidad */
+  text-shadow:
+      -2px -2px 0 #ffffffae;
+      letter-spacing: 1px;
+
+  padding-bottom: 20px;
+  margin-top: 0;
+  /* Sin margen superior */
+  margin-bottom: 0;
+  /* Margen inferior para espacio */
+
+  /* Animación de burbuja */
+  animation: bubble2 3s infinite ease-in-out;
+}
+
 @font-face {
   font-family: "nexa";
   src: url("/public/css/adultos/fonts/nexa.ttf");
@@ -72,9 +163,9 @@ body {
 .titulo {
     text-align: center;
     /* Alinea el texto a la izquierda */
-    font-family:  "nexa", sans-serif;
+    font-family:  "east", sans-serif;
     /* Fuente redondeada */
-    font-size: 6.8rem;
+    font-size: 6rem;
     /* Tamaño grande */
     /* Propiedades para compatibilidad */
     background-clip: text;
@@ -88,7 +179,7 @@ body {
     letter-spacing: -4px;
 
     padding-bottom: 20px;
-    margin-top: 15px;
+    margin-top: 18px;
     /* Sin margen superior */
     margin-bottom: 10px;
     /* Margen inferior para espacio */
@@ -111,36 +202,10 @@ body {
         /* Vuelve a la posición original */
     }
 }
-
-/* Estilo del sub titulo */
-.subtitu {
-    text-align: center;
-    /* Alinea el texto a la izquierda */
-    font-family:  "mon", sans-serif;
-    /* Fuente redondeada */
-    font-size: 3rem;
-    /* Tamaño grande */
-   
-    /* Gradiente vibrante */
-    /* Propiedades para compatibilidad */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* Sombra para dar profundidad */
-    text-shadow:
-        -2px -2px 0 #ffffffae;
-        letter-spacing: 1px;
-
-    padding-bottom: 20px;
-    margin-top: 0;
-    /* Sin margen superior */
-    margin-bottom: 10px;
-    /* Margen inferior para espacio */
-
-    /* Animación de burbuja */
-    animation: bubble2 3s infinite ease-in-out;
+.logo-large {
+  width:160px ;
 }
+
 
 
 /* Decoración de los cursos */
@@ -365,7 +430,7 @@ body {
 }
 
 .course-card {
-  background-color: #5b7293cc;
+  background-color: #1f7b92a4 ;
   width: 320px;
   border-radius: 15px;
   overflow: hidden;
@@ -499,9 +564,9 @@ body {
 
 /* Botón principal */
 .btn-common {
-  background-color: #ffffff; /* Naranja */
-  color: #5b7293cc;
-  border: 4px solid#5b7293cc; /* Borde oscuro */
+  background-color: #01617A; /* Naranja */
+  color: #ffffff;
+  border: 4px solid#045468; /* Borde oscuro */
   border-radius: 20px; /* Bordes medio rectangulares */
   font-family:  "mon", sans-serif;
   font-size: 17px;

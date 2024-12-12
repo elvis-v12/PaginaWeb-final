@@ -3,13 +3,20 @@ import pool from "../models/dbConnection.js";
 export const getCertificados = async (req, res) => {
     try {
         const [rows] = await pool.query(`
-            SELECT e.nombres AS estudiantes, c.nombre_curso AS cursos, x.titulo_examen AS examenes,
-                ce.fecha_emision, ce.url_certificado, ce.estado
+            SELECT 
+                ce.id_certificado, 
+                e.nombres AS estudiantes, 
+                c.nombre_curso AS cursos, 
+                x.titulo_examen AS examenes,
+                ce.fecha_emision, 
+                ce.url_certificado, 
+                ce.estado
             FROM certificados AS ce
-            JOIN estudiantes AS e ON e.id_estudiante = ce.id_estudiante  -- Relación entre 'estudiantes' y 'certificados'
-            JOIN cursos AS c ON c.id_curso = ce.id_curso  -- Relación entre 'cursos' y 'certificados'
-            JOIN examenes AS x ON x.id_examen = ce.id_examen;  -- Relación entre 'examenes' y 'certificados'
+            JOIN estudiantes AS e ON e.id_estudiante = ce.id_estudiante
+            JOIN cursos AS c ON c.id_curso = ce.id_curso
+            JOIN examenes AS x ON x.id_examen = ce.id_examen;
         `);
+
         res.json(rows);
     } catch (error) {
         console.error("Error en la consulta: ", error.message);
@@ -26,8 +33,13 @@ export const queryCertificados = async (req, res) => {
 
     try {
         const [rows] = await pool.query(
-            `SELECT e.nombres AS estudiantes, c.nombre_curso AS cursos, x.titulo_examen AS examenes,
-                    ce.fecha_emision, ce.url_certificado, ce.estado
+            `SELECT 
+                e.nombres AS estudiantes, 
+                c.nombre_curso AS cursos, 
+                x.titulo_examen AS examenes,
+                ce.fecha_emision, 
+                ce.url_certificado, 
+                ce.estado
             FROM certificados AS ce
             JOIN estudiantes AS e ON e.id_estudiante = ce.id_estudiante
             JOIN cursos AS c ON c.id_curso = ce.id_curso

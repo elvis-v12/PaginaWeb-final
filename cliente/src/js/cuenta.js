@@ -1,4 +1,4 @@
-/*document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const profileImg = document.querySelector('.profile-img');
 
     // Añade una animación de hover a la imagen de perfil
@@ -10,7 +10,7 @@
     profileImg.addEventListener('mouseout', () => {
         profileImg.style.transform = 'scale(1)';
     });
-});*/
+});
 
 
 // Función para obtener las categorías y agregar los checkboxes
@@ -193,3 +193,63 @@ function guardarCambios() {
 document.querySelector('.btn-guardar').addEventListener('click', guardarCambios);
 
 
+
+
+
+
+
+
+async function cargarHistorial() {
+    const correo = localStorage.getItem('correo');
+
+    try {
+        const response = await fetch(`http://localhost:3000/api/mensaje/historial?correo=${correo}`);
+        
+        if (!response.ok) {
+            throw new Error('Error al obtener el historial de mensajes.');
+        }
+
+        const { mensaje, respuestas } = await response.json();
+
+        // Mostrar el mensaje principal
+        mostrarMensajePrincipal(mensaje);
+
+        // Mostrar las respuestas
+        mostrarRespuestas(respuestas);
+    } catch (error) {
+        console.error('Error al cargar el historial:', error);
+        alert('No se pudo cargar el historial de mensajes. Intente nuevamente más tarde.');
+    }
+}
+
+function mostrarMensajePrincipal(mensaje) {
+    const mensajePrincipal = document.getElementById('mensaje-principal');
+    mensajePrincipal.innerHTML = ''; // Limpiar contenido anterior
+
+    // Crear el elemento del mensaje principal
+    const mensajeItem = document.createElement('li');
+    mensajeItem.innerHTML = `
+        <strong>Mensaje:</strong> ${mensaje.mensaje_cliente} <br>
+        <strong>Fecha:</strong> ${new Date(mensaje.fecha_envio).toLocaleString()}
+    `;
+    mensajePrincipal.appendChild(mensajeItem);
+}
+
+function mostrarRespuestas(respuestas) {
+    const listaRespuestas = document.getElementById('lista-respuestas');
+    listaRespuestas.innerHTML = ''; // Limpiar contenido anterior
+
+    // Agregar cada respuesta a la lista
+    respuestas.forEach(respuesta => {
+        const respuestaItem = document.createElement('li');
+        respuestaItem.innerHTML = `
+            <strong>Respuesta:</strong> ${respuesta.cuerpo_respuesta} <br>
+            <strong>Fecha:</strong> ${new Date(respuesta.fecha_envio).toLocaleString()}
+        `;
+        listaRespuestas.appendChild(respuestaItem);
+    });
+}
+
+
+// Llamamos a la función al cargar la página
+document.addEventListener('DOMContentLoaded', cargarHistorial);

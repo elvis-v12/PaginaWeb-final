@@ -27,7 +27,7 @@ import graficosRouter from "./routes/Graficos.routes.js";
 
 import CertiRoutes  from "./routes/certificados.routes.js";
 //import pagosCliente from "./routes/Pago.routes.js";
-
+import mensajeRoutes from './routes/mensaje.routes.js';
 // Configuración de __dirname para ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -110,6 +110,10 @@ app.use("/api/GraficosDash", graficosRouter);
 //app.use('/api/pagoCliente',pagosCliente);
 //ruta para administar los certificados
 app.use('/api/datosCertificado',CertiRoutes);
+
+
+// Rutas de mensajes
+app.use("/api/mensaje", mensajeRoutes);
 // Rutas de prueba
 app.get('/admin/test', (req, res) => {
     res.send('<h1>El módulo Administrador está funcionando correctamente</h1>');

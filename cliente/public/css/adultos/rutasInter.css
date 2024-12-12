@@ -6,8 +6,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #b2b7bb;
+  background: linear-gradient(to bottom, #01617A, #5b8f9c75); /* Degradado de verde */
+    height: 618px; /* Altura del header */
+    color: rgb(0, 0, 0); /* Color inicial del texto */
 }
+
+
 
 .search-container {
   display: flex;
@@ -102,7 +106,7 @@ body {
 
 
 .content {
-  background-color: #5b7293cc;
+  background-color: #1f7b92a4;
   padding: 40px;
   border-radius: 12px;
   width: 60%;
@@ -184,7 +188,7 @@ body {
 }
 
 .start-button {
-  background-color: #51647dcc;
+  background-color: #01617A;
   color: #ffffff;
   border: none;
   padding: 10px 16px;
@@ -240,10 +244,8 @@ body {
 }
 
 .footer {
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-
-  background-color: #9faec5de;
+ 
+  background-color: #3f8798 ;
   color: #c9d1d9;
   padding: 40px 20px;
   text-align: left;
@@ -300,7 +302,7 @@ body {
 }
 
 .next-step-item {
-  background-color: #5b7293cc ;
+  background-color: #90b6bf ;
   padding: 20px;
   border-radius: 8px;
   display: flex;

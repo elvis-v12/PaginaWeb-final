@@ -16,23 +16,33 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    
 }
 
-
-
-/* Estilo del encabezado */
 .header {
+    position: relative;
     padding: 50px;
     text-align: center;
+    background: linear-gradient(to bottom, #01617A, #5b8f9c75); /* Degradado de verde */
+    height: 490px; /* Altura del header */
+    overflow: hidden;
+    color: rgb(0, 0, 0); /* Color inicial del texto */
+    z-index: 2; /* El texto queda arriba */
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Coloca la onda en la parte inferior */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Altura de la onda */
+    background: #FFFFFF; /* Color blanco para la onda */
+    clip-path: ellipse(50% 100% at 50% 100%); /* Una sola onda suave */
+    z-index: 1; /* La onda queda debajo del contenido */
+    pointer-events: none; /* La onda no interferirá con los clics o selección */
 }
+
 
 
 @keyframes pop-effect {
@@ -70,13 +80,20 @@ body {
     src: url("/public/css/adultos/fonts/mon.ttf");
   } 
 
+  @font-face {
+    font-family: "east";
+    src: url("/public/css/adultos/fonts/east.otf");
+  } 
+
+
+
 /* Títulos Estilo Baby Shark */
 .phrase {
     text-align: center;
     font-family:  "mon", sans-serif;
     font-size: 4.5rem;
     background: none;
-    color: #7289aaa9;
+    color: #f0f6ffa9;
     letter-spacing: 8px;
     /* Propiedades para compatibilidad */
     background-clip: text;
@@ -85,7 +102,7 @@ body {
 
     /* Sombra para crear el borde grueso blanco y la curvatura */
     text-shadow:
-        -2px -2px 0 #7289aaa9;
+        -2px -2px 0 #f0f6ffa9;
     /* Sombra para dar profundidad */
 
     margin-top: 19px;
@@ -96,20 +113,20 @@ body {
 
 /* Estilo específico para "¡Programa tu éxito!" */
 .highlight-exito {
-    font-size: 6.8rem;
-    color: #5b7293cc;
-    font-family:  "nexa", sans-serif;
+    font-size: 7.5rem;
+    color: #fffffff4;
+    font-family:  "east", sans-serif;
     letter-spacing: -5px;
     margin-left: 3rem;
-    margin-top: 60px;
+    margin-top: 110px;
+    margin-bottom: 1.3rem;
 
     /* Propiedades para compatibilidad */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     text-shadow:
-        -2px -2px 0 #5b7293cc;
+        -2px -2px 0 #fffffff4
     /* Sombra para dar profundidad */
 }
 
@@ -275,7 +292,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 80px 0;
-    background-color: #91a3bede; /* Color de fondo plomo */
+    background-color: #01617A; /* Color de fondo plomo */
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); /* Forma inclinada */
 }
 
@@ -325,17 +342,15 @@ body {
 
 
 
-
-
 .title-kids, 
 .title-quality,
 .title-programming,
 .title-exclusive {
-    font-family: "Nexa", sans-serif;
-    color: #5b7293cc;
+    font-family: "east", sans-serif;
+    color: #01627aa4;
     font-size: 4.7rem;
     letter-spacing: -4px; /* Reduje un poco para mejorar legibilidad */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Efecto de sombra sutil */
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2); /* Efecto de sombra sutil */
     margin-bottom: 10px;
     transition: transform 0.3s ease, color 0.3s ease; /* Animación suave */
 }
@@ -345,7 +360,7 @@ body {
 .title-programming:hover,
 .title-exclusive:hover {
     transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
-    color: #445c7acc; /* Color más oscuro en hover */
+    color: #01617A; /* Color más oscuro en hover */
 }
 
 .fade-text {
@@ -420,7 +435,7 @@ body {
     justify-content: center; /* centrar horizontal */
     align-items: center; /* centrar vertical */
     padding: 40px; /* Espaciado en la sección */
-    background-color: #a7b9d2c0;
+    background-color: #1f7b92a4;
     background-size: cover; /* Asegúrate de que la imagen cubra el área */
     background-position: center; /* Centra la imagen */
     border-radius: 15px; /* Bordes redondeados */
@@ -554,7 +569,7 @@ body {
 /* Estilo para cada recuadro */
 .recuadro {
     background-color: #ffffff;
-    border: 2px solid #5b7293cc;
+    border: 2px solid #1f7b92a4;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 300px; /* Ancho fijo para cada plan */
@@ -601,7 +616,7 @@ body {
 /* Estilo para el texto principal */
 .texto-principal {
     font-size: 2.2rem;
-    color: #7a90b2;
+    color: #01617A;
     margin: 15px 0;
     font-family:  "nexa", sans-serif;
 
@@ -610,7 +625,7 @@ body {
 /* Estilo para el precio */
 .pago {
     font-size: 1.8rem;
-    color: #7a90b2d1;
+    color: #1f7b92a4;
     margin: 15px 0;
 }
 
@@ -627,7 +642,7 @@ body {
 
 /* Estilo para el botón */
 .boton-plan {
-    background-color: #7a90b2;
+    background-color: #328ea5a4;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -641,7 +656,7 @@ body {
 
 /* Efecto de hover en el botón */
 .boton-plan:hover {
-    background-color: #75869f;
+    background-color: #01617A;
 }
 
 .bandera {

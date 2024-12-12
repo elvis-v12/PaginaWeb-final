@@ -1161,76 +1161,127 @@
 
 
 
-      <div id="mensajeria" class="section">
-        
-        <div class="botones">
-            <!-- Botones para mostrar Bandeja de Entrada y Redactar -->
-            <button class="tab-btn" onclick="mostrarBandeja()">Bandeja de Entrada</button>
-            <button class="tab-btn" onclick="mostrarRedactar()">Redactar</button>
-        </div>
-        
-        <!-- Bandeja de Entrada -->
-        <div id="bandeja">
-            <h2>Bandeja de Entrada</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Remitente</th>
-                        <th>Asunto</th>
-                        <th>Fecha</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ana López</td>
-                        <td>Reunión</td>
-                        <td>2024-12-05</td>
-                        <td><button onclick="abrirMensaje()">Leer</button></td>
-                    </tr>
-                    <tr>
-                        <td>Juan Pérez</td>
-                        <td>Informe</td>
-                        <td>2024-12-03</td>
-                        <td><button onclick="abrirMensaje()">Leer</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <!-- Redactar Mensaje -->
-        <div id="redactar" style="display:none;">
-          <h2>Redactar Nuevo Mensaje</h2>
-          <form id="form-redactar">
-            <label for="destinatario">Destinatario:</label>
-            <input type="email" id="destinatario" name="destinatario" placeholder="Escribe el correo del destinatario" required>
-        
-            <label for="asunto">Asunto:</label>
-            <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto del mensaje" required>
-        
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
-        
-            <button type="submit" class="btn-enviar">Enviar</button>
-        </form>
-      </div>
+  <!-- Ventana para la gestión de mensajería -->
+   
+  <div id="mensajeria" class="section">
 
-        
-        <div id="mensaje-leido" style="display:none;">
-          <div class="mensaje-leido-container">
-              <h2 class="mensaje-titulo">MENSAJE: REUNIÓN</h2>
-              <p><strong>De:</strong> Ana López</p>
-              <p><strong>Correo:</strong> ana.lopez@example.com</p>
-              <p><strong>Fecha:</strong> 2024-12-05</p>
-              <div class="mensaje-contenido">
-                  <strong>Mensaje:</strong>
-                  <p>Vamos a reunirnos mañana a las 10 AM.</p>
-              </div>
-              <button onclick="cerrarMensaje()" class="btn-cerrar">Cerrar</button>
-          </div>
-        </div> 
+    <div class="botones">
+      <!-- Botones para mostrar Bandeja de Entrada y Redactar -->
+      <button class="tab-btn" onclick="mostrarBandeja()">Bandeja de Entrada</button>
+      <button class="tab-btn" onclick="mostrarActivos()">Mensajes activos</button>
+      <button class="tab-btn" onclick="mostrarRedactar()">Redactar</button>
+    </div>
+
+    <!-- Bandeja de Entrada -->
+    <div id="bandeja">
+      <h2>Bandeja de Entrada</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Remitente</th>
+            <th>Correo</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se insertarán dinámicamente las filas con los mensajes -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mensaje leído -->
+    <!-- Mensaje leído con área para responder -->
+    <div id="mensaje-leido" style="display:none;">
+      <div class="mensaje-leido-container">
+        <h2 class="mensaje-titulo">MENSAJE: SOPORTE</h2>
+        <p><strong>De:</strong> Ana López</p>
+        <p><strong>Correo:</strong> ana.lopez@example.com</p>
+        <p><strong>Fecha:</strong> 2024-12-05</p>
+        <div class="mensaje-contenido">
+          <strong>Mensaje:</strong>
+          <p>Vamos a reunirnos mañana a las 10 AM.</p>
+        </div>
+        <div id="respuesta-container" style="display: none; margin-top: 20px;">
+          <textarea id="cuerpo-respuesta" placeholder="Escribe tu respuesta aquí..." rows="5"
+            style="width: 100%;"></textarea>
+          <button onclick="guardarRespuesta()" class="btn-enviar">Enviar Respuesta</button>
+        </div>
+        <button onclick="cerrarMensaje()" class="btn-cerrar">Cerrar</button>
+        <button onclick="mostrarAreaRespuesta()" class="btn-cerrar">Responder</button>
       </div>
     </div>
+
+
+
+    <!-- Mensajes activos -->
+    <div id="activos">
+      <h2>Mensajes Activos</h2>
+      <table id="mensajes-activos-table">
+        <thead>
+          <tr>
+            <th>Remitente</th>
+            <th>Correo</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los mensajes activos se cargarán aquí -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Contenedor del activo leído -->
+    <!-- Contenedor del activo leído -->
+    <div id="activo-leido" style="display:none;">
+      <div class="mensaje-leido-container">
+        <h2 class="mensaje-titulo">MENSAJE: SOPORTE</h2>
+        <p><strong>De:</strong> <span id="remitente-leido-activo"></span></p>
+        <p><strong>Correo:</strong> <span id="correo-leido-activo"></span></p>
+        <p><strong>Fecha:</strong> <span id="fecha-leido-activo"></span></p>
+        <div class="mensaje-contenido">
+          <strong>Mensaje:</strong>
+          <p id="contenido-leido-activo"></p>
+        </div>
+
+        <div class="respuesta-container" style="display: none; margin-top: 20px;">
+          <textarea id="cuerpo-respuesta-activo" placeholder="Escribe tu respuesta aquí..." rows="5"
+            style="width: 100%;"></textarea>
+          <button onclick="guardarRespuestaActivo()" class="btn-enviar">Enviar Respuesta</button>
+        </div>
+
+        <div class="respuestas-container">
+          <h3>Respuestas:</h3>
+          <div id="lista-respuestas"></div>
+        </div>
+
+        <button onclick="cerrarActivo()" class="btn-cerrar">Cerrar</button>
+        <button onclick="mostrarAreaRespuestaActivo()" class="btn-cerrar">Responder</button>
+      </div>
+    </div>
+
+    <!-- Redactar Mensaje -->
+    <div id="redactar" style="display:none;">
+      <h2>Redactar Nuevo Mensaje</h2>
+      <form id="form-redactar">
+        <label for="destinatario">Destinatario:</label>
+        <input type="email" id="destinatario" name="destinatario" placeholder="Escribe el correo del destinatario"
+          required>
+
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto del mensaje" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </div>
+
+
+
+  </div>
 
 
 <div id="pago" class="section">
@@ -1564,7 +1615,7 @@
     <script src="/src/js/desplegarPerfil.js"></script>   
     <script src="/src/js/RequesName.js"></script>  
     <script src="/src/js/ProfesoresDatos.js"></script>  
-    <script src="/src/js/certificados"></script>  
+    <script src="/src/js/certificados.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.24/jspdf.plugin.autotable.min.js"></script>
     
